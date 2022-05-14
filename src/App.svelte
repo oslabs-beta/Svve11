@@ -42,7 +42,6 @@
 </head>
 
 <div class="main-contanier">
-	<img src="src/logo.png" alt="Svvolle" />
 	<p>"Your website is only as strong as your weakest component!"<em>-Arnold Schwarzenegger</em></p>
 </div>
 
