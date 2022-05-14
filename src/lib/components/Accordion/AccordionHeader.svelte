@@ -1,39 +1,31 @@
 <script>
-// @ts-nocheck
+  // @ts-nocheck
 
-    import AccordionButton from "./AccordionButton.svelte";
-    export let headerLevel = 3;
-    export let headerTitle;
-    export let controls = '';
-    export let style;
-    export let textToRead;
-    export let id;
-    export let isOpen;
-
-
-
+  import AccordionButton from "./AccordionButton.svelte";
+  export let headerLevel = 3;
+  export let headerTitle;
+  export let controls = "";
+  export let style;
+  export let textToRead;
+  export let id;
+  export let isOpen;
 </script>
 
-<div 
-    class='accordion-header' 
-    aria-level={headerLevel} 
-    role='heading'
+<div class="accordion-header" aria-level={headerLevel} role="heading" {style}>
+  <AccordionButton
+    on:updatePanelStates
+    {textToRead}
+    {headerTitle}
+    {controls}
+    {id}
     {style}
->
-    <AccordionButton 
-        on:updatePanelStates
-        {textToRead}
-        {headerTitle} 
-        {controls} 
-        {id} 
-        {style}
-        {isOpen}
-    />
+    {isOpen}
+  />
 </div>
 
 <style>
-    .accordion-header {
-        height: 30px;
-        width: 100%;
-    }
+  .accordion-header {
+    height: 30px;
+    width: 100%;
+  }
 </style>
