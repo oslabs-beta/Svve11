@@ -1,0 +1,34 @@
+Gonna write my test in the following format:
+
+Component this applies to:
+  What the test should look out for
+
+---------------
+
+<input>:
+  Should have "type" attribute
+
+<input type="submit"> OR <button> used for submitting:
+  Should have an alert built in when button is clicked (??? not sure how to do this other than looking for onClick function)
+  This one also doesn't apply to all forms (example: login)'
+
+<input>:
+  should have a <label> associated with input with "for/id" attributes describing what is expected in the input
+
+<input>:
+  should have corresponding "autocomplete" attribute if "type" is something like: tel, email, bday, etc.
+
+<input>:
+  should have "placeholder" attribute
+  or not? https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/
+
+
+
+  -might be able to accomplish some alerts with reactive statements
+  -preventDefault() for forms may be useful
+
+
+
+
+
+
