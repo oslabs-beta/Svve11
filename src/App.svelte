@@ -77,8 +77,8 @@
 </fieldset>
 
 <fieldset>
-  <legend> Check Box</legend>
-  <Checkbox checkBoxValue="" id="" checked="" />
+  <legend> Check Box </legend>
+  <Checkbox checkBoxValue="G'mornin " checked= false id="oneCheck"/>
 </fieldset>
 
 <fieldset>
@@ -101,7 +101,7 @@
 
 <!-- ************************* Styles ************************* -->
 <style>
-  * {
+  /* * {
     font-family: "Roboto", sans-serif;
   }
 
@@ -122,5 +122,5 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+  } */
 </style>

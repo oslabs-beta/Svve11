@@ -48,10 +48,11 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 ### CheckBox
 
 1. **IMPORT** the checkbox component by **COPY** and **PASTE** code **_BELOW_** on the file where you'll render the checkbox
-   `bash import Checkbox from "./lib/components/Checkbox.svelte" `
+   - `` import Checkbox from "./lib/components/Checkbox.svelte" ``
+
 
 2. Head to the file where the checkbox will be used, simply **COPY** and **PASTE** code **_BELOW_**
-   `js <Checkbox checkBoxValue="" id="" checked="" /> `
+   - ``<Checkbox checkBoxValue="" id="" checked="" />``
 
 - **Make sure to give value to all the variables**, if not you will encounter problems down the road.
 - **checkBoxValue** will be the **_TEXT_** you render next to the checkbox
