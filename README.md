@@ -11,7 +11,7 @@
 
 ## About Us
 
-Svve11 is Svelte Accessible Component Library
+Svve11 is a Svelte Accessible Component Library
 
 check out our website [http://localhost:8080/](http://localhost:8080/)
 
@@ -61,7 +61,13 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
 ### Form
 
-### Accordian
+### Accordion
+
+1. **IMPORT** the accordion component using the command below in the <script/> section of your .svelte file
+   `bash import { Accordion } from "Svve11"`
+
+2. An accordion instance can be created by placing the code below in the body of your .svelte file
+   ``
 
 ### Button
 
