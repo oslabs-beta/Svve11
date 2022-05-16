@@ -1,12 +1,20 @@
 <script>
 	export let checkBoxValue;
 	export let id;
-	export let checked;
+	export let checked = false;
 </script>
 
-<input aria-label={checkBoxValue} {id} type="checkbox" bind:checked />
-<label for={id}>{checkBoxValue}</label>
+<label for={id}>
+  <input aria-label={checkBoxValue} {id} type="checkbox" bind:checked>
+{checkBoxValue}</label>
+
+
 <br />
 
 <style>
+  [type="checkbox"]
+  {
+      vertical-align:middle;
+  }
+  
 </style>
