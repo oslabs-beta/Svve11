@@ -2,7 +2,7 @@
 <script lang="ts">
   // @ts-nocheck
 
-  import Input from "./lib/components/Input.svelte";
+  import Input from "./lib/components/TextInput.svelte";
   import AccordionItem from "./lib/components/Accordion/AccordionItem.svelte";
   import Accordion from "./lib/components/Accordion/Accordion.svelte";
   import Button from "./lib/components/Button.svelte";
