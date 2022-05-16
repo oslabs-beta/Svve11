@@ -1,9 +1,9 @@
 <script>
   // import index from './client/index.svelte';
-  import Accordion from './client/pages/Accordion.svelte';
+  import AccordionPage from './client/pages/AccordionPage.svelte';
 </script>
 
-<Accordion />
+<AccordionPage />
 
 <style>
   * {
