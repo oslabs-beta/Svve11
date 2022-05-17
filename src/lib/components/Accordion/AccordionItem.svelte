@@ -10,11 +10,9 @@
   export let isOpen;
 
   $: state = isOpen ? "expanded" : "collapsed";
-
-  console.log(customStyles);
 </script>
 
-<div class="accordion-item" data-state={state}>
+<div class="accordion-item" data-state={state} style={customStyles[2]}>
   <AccordionHeader
     on:updatePanelStates
     headerTitle={options.headerTitle}
