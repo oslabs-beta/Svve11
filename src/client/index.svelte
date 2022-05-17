@@ -41,13 +41,13 @@
 
 <!-- ************************* HTML ************************* -->
 
-<head>
+<svelte:head>
   <title>Sve11</title>
   <meta
     name="description"
     content="An accessible component library for Svelte."
   />
-</head>
+</svelte:head>
 
 <div class="main-contanier">
   <p>

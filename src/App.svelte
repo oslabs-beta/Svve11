@@ -1,10 +1,12 @@
 <script>
   // import index from './client/index.svelte';
   import AccordionPage from './client/pages/AccordionPage.svelte';
+  import Home from './client/Home.svelte';
 </script>
 
-<AccordionPage />
+<Home />
 
+<!-- <AccordionPage /> -->
 <style>
   * {
     margin: 0;

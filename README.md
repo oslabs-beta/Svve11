@@ -11,7 +11,7 @@
 
 ## About Us
 
-Svve11 is Svelte Accessible Component Library
+Svve11 is a Svelte Accessible Component Library
 
 check out our website [http://localhost:8080/](http://localhost:8080/)
 
@@ -60,7 +60,61 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
 ### Form
 
-### Accordian
+### Accordion
+
+1. Import the accordion component using the command below in the script section of your .svelte file. <br><br>
+   `import { Accordion } from "Svve11"`
+
+2. An accordion instance can be created by placing the code below in the body of your .svelte file. <br><br>
+   `<Accordion options={options}/>`
+
+3. To supply the accordion with its contents, an options object is passed as a prop to the accordion. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 4 properties.
+
+   1. **panelInfo**: This property is **required**. It must be an array of objects, with each object containing information for one accordion item. The object must contain:
+
+      - an `id` property set to a number. If you will have more than one accordion in your application, be sure to continue the sequence of numbers instead of starting back at 1. Each panel should have a unique `id`.
+      - a `panelContent` property set to a string specifying the desired contents of each panel.
+      - a `headerTitle` property set to a string that clearly describes each section of the accordion.
+
+   2. **headerLevel**: This property is **required**, and sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
+
+   3. **styles**: This property is optional. If this property is supplied, it must be an array with 4 entries. If you wish to leave out an entry in one position, `null` must be included at the correct index. Each entry is a string that resembles a style object.
+
+      - The first entry will style the headers of the accordion
+      - The second entry will style the panels of the accordion
+      - The third entry will style each individual item within the accordion.
+      - The fourth entry will style the entirety of the accordion
+
+   4. **multiselectable**: This property is optional, and will default to `false`. When set to `true`, the accordion will allow multiple panels to be open at a time. When set to `false`, the opening of one panel will cause the collapse of the current panel so that only one panel is open at a time.
+
+   #### Example Options Object
+
+   `const options = {`<br>
+   &emsp;`multiselectable: false,`<br>
+   &emsp;`headerLevel: 4,`<br>
+   &emsp;`styles: [`<br>
+   &emsp;&emsp;`"header styles",`<br>
+   &emsp;&emsp;`"panel styles",`<br>
+   &emsp;&emsp;`"item styles",`<br>
+   &emsp;&emsp;`"accordion styles"`<br>
+   &emsp;`],`<br>
+   &emsp;`panelInfo: [`<br>
+   &emsp;&emsp;`{`<br>
+   &emsp;&emsp;&emsp;`id: 1,`<br>
+   &emsp;&emsp;&emsp;`panelContent: "My first panel text.",`<br>
+   &emsp;&emsp;&emsp;`headerTitle: "My first header title"`<br>
+   &emsp;&emsp;`}`<br>
+   &emsp;&emsp;`{`<br>
+   &emsp;&emsp;&emsp;`id: 2,`<br>
+   &emsp;&emsp;&emsp;`panelContent: "My second panel text.",`<br>
+   &emsp;&emsp;&emsp;`headerTitle: "My second header title"`<br>
+   &emsp;&emsp;`}`<br>
+   &emsp;`]`<br>
+   `}`
+
+   #### Example Styles String
+
+   `"height: 50px; width: 100%; background-color: coral; border: 1px solid black"`
 
 ### Button
 
