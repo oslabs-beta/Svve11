@@ -38,28 +38,26 @@ describe('Accessible Accordion Unit Tests', () => {
     }
     
     describe('Button Unit Tests', () => {
+        let buttons, button
+        beforeEach(() => {
+            const {getAllByRole, getByText} = render(Accordion, {options})
+            buttons = getAllByRole('button')
+            button = getByText('First Section')
+        })
 
         it('should have a role attribute set to button', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const buttons = getAllByRole('button')
             expect(buttons.length).toEqual(options.panelInfo.length)
         })
 
         it('should have no siblings', () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.nextElementSibling).toEqual(null)
         })
 
         it('should have an attribute aria-expanded initialized to false', () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.getAttribute('aria-expanded')).toEqual('false')
         })
 
         it('should toggle aria-expanded when clicked', async () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.getAttribute('aria-expanded')).toEqual('false')
             await fireEvent.click(button)
             expect(button.getAttribute('aria-expanded')).toEqual('true')
@@ -68,8 +66,6 @@ describe('Accessible Accordion Unit Tests', () => {
         })
 
         it('should have an attribute aria-label that toggles between an empty string and panel contents when clicked', async () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.getAttribute('aria-label')).toEqual('')
             await fireEvent.click(button)
             expect(button.getAttribute('aria-label')).toEqual(options.panelInfo[0].panelContent)
@@ -78,121 +74,106 @@ describe('Accessible Accordion Unit Tests', () => {
         })
 
         it('should have a class name set to header-button', () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.getAttribute('class')).toContain('header-button')
         })
 
         it('should habe an id attribute set to button and the id number', () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.getAttribute('id')).toEqual(`button${options.panelInfo[0].id}`)
         })
 
         it('should have an attribute aria-controls set to the panel it controls', () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.getAttribute('aria-controls')).toEqual(`panel${options.panelInfo[0].id}`)
         })
 
         it('should be passed the styles string in the 0th index of the styles array', () => {
-            const {getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
             expect(button.getAttribute('style')).toEqual(options.styles[0])
         })
     })
 
     describe('Header Unit Tests', () => {
+        let headers, heading, button
+        beforeEach(() => {
+            const {getAllByRole, getByText} = render(Accordion, {options})
+            headers = getAllByRole("heading")
+            heading = getAllByRole('heading')[0]
+            button = getByText('First Section')
+        })
 
         it('should have a role attribute set to heading', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const headers = getAllByRole("heading")
             expect(headers.length).toEqual(options.panelInfo.length)
         })
 
         it('should have a class attribute set to accordion-header', () => {
-            const {getAllByRole, getByText} = render(Accordion, {options})
-            const heading = getAllByRole('heading')[0]
             expect(heading.getAttribute('class')).toContain('accordion-header')
         })
 
         it('should have a child that is a button', () => {
-            const {getAllByRole, getByText} = render(Accordion, {options})
-            const button = getByText('First Section')
-            const heading = getAllByRole('heading')[0]
             expect(heading.firstChild).toBe(button)
         })
 
         it('should have an aria-level attribute set to appropriate header level number', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const heading = getAllByRole("heading")[0]
             expect(heading.getAttribute('aria-level')).toEqual(options.headerLevel.toString())
         })
 
         it('should be passed the styles string in the 0th index of the styles array', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const heading = getAllByRole("heading")[0]
             expect(heading.getAttribute('style')).toEqual(options.styles[0])
         })
 
     })    
 
     describe('Panel Unit Tests', () => {
+        let panels, panel
+
+        beforeEach(() => {
+            const {getAllByRole} = render(Accordion, {options})
+            panels = getAllByRole('region')
+            panel = panels[0]
+        })
 
         it('should have a role attribute set to region', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const panels = getAllByRole('region')
             expect(panels.length).toEqual(options.panelInfo.length)
         })
 
         it('should have an id attribute set to panel and the appropriate id number', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const panels = getAllByRole('region')
-            expect(panels[0].getAttribute('id')).toEqual(`panel${options.panelInfo[0].id}`)
+            expect(panel.getAttribute('id')).toEqual(`panel${options.panelInfo[0].id}`)
         })
 
         it('should have an aria-labelledby attribute set to the button labeling it', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const panels = getAllByRole('region')
-            expect(panels[0].getAttribute('aria-labelledby')).toEqual(`button${options.panelInfo[0].id}`)
+            expect(panel.getAttribute('aria-labelledby')).toEqual(`button${options.panelInfo[0].id}`)
         })
 
         it('should have a class attribute set to accordion-panel', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const panels = getAllByRole('region')
-            expect(panels[0].getAttribute('class')).toContain('accordion-panel')
+            expect(panel.getAttribute('class')).toContain('accordion-panel')
         })
 
         it('should be passed the appropriate styles', () => {
-            const {getAllByRole} = render(Accordion, {options})
-            const panels = getAllByRole('region')
-            expect(panels[0].getAttribute('style')).toEqual(options.styles[1])
+            expect(panel.getAttribute('style')).toEqual(options.styles[1])
         })
 
     })
 
     describe('Item Unit Tests', () => {
+        let items, item, button, panel, header
+        beforeEach(() => {
+            const {getByText, getAllByRole} = render(Accordion, {options})
+            items = document.getElementsByClassName('accordion-item')
+            item = items[0]
+            button = document.querySelector('#button1')
+            panel = document.querySelector('#panel1')
+            header = document.querySelectorAll('.accordion-header')[0]
+        })
 
         it('should render one item for each panelInfo in options object', () => {
-            const {} = render(Accordion, {options});
-            const items = document.getElementsByClassName('accordion-item')
             expect(items.length).toEqual(options.panelInfo.length)
         })
 
         it('should have a data-state attribute set to collapsed initially, and should toggle to expanded when corresponding button is clicked', async () => {
-            const {getByText} = render(Accordion, {options})
-            const item = document.querySelector('.accordion-item')
             expect(item.getAttribute('data-state')).toBe('collapsed')
-            await fireEvent.click(getByText('First Section'))
+            await fireEvent.click(button)
             expect(item.getAttribute('data-state')).toBe('expanded')
         })
 
         it('should have two children, the first being the button and the second the panel', () => {
-            const {getByText, getAllByRole} = render(Accordion, {options})
-            const item = document.querySelector('.accordion-item')
-            const button = document.querySelector('#button1')
-            const panel = document.querySelector('#panel1')
-            const header = document.querySelectorAll('.accordion-header')[0]
             expect(item.firstChild).toBe(header)
             expect(item.firstChild.firstChild).toBe(button)
             expect(item.firstChild.nextElementSibling).toBe(panel)
@@ -208,7 +189,6 @@ describe('Accessible Accordion Unit Tests', () => {
             expect(accordion.getAttribute('aria-multiselectable')).toEqual(`${options.multiselectable}`)
         })
     })
-
 })
 
 
