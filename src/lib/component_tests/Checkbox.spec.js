@@ -1,14 +1,37 @@
 import '@testing-library/jest-dom';
-import { render, fireEvent } from '@testing-library/svelte';
+import {
+  render,
+  fireEvent,
+  getByRole,
+  getAllByRole,
+} from '@testing-library/svelte';
 
 import Checkbox from '../components/Checkbox.svelte';
 
-describe('Accessible Button Testing Unit Tests', () => {
-  describe('Button Unit Tests', () => {
-    const { component } = render(Checkbox);
+const props = {
+  checkBoxValue: 'This is checkbox value',
+  id: 'checkBoxOne',
+  checked: false,
+};
 
-    // Does the button have a role attribute of button
-    it('It should have type attribute', () => {});
+const { component, getByText } = render(Checkbox, { ...props });
+let checkbox = document.getElementById('checkBoxOne');
+
+describe('Accessible Checkbox Testing Unit Tests', () => {
+  test('checking for aria-label', () => {
+    expect(checkbox).toHaveAttribute('aria-label');
+  });
+
+  test('checking for id', () => {
+    expect(checkbox).toHaveAttribute('id');
+  });
+
+  test('checking for type', () => {
+    expect(checkbox).toHaveAttribute('type');
+  });
+
+  test('checking if type equals checkbox', () => {
+    expect(document.getAttribute('type')).toHaveTextContent('checkbox');
   });
 });
 

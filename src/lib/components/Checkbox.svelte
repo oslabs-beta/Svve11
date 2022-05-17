@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let checkBoxValue;
 	export let id;
-	export let checked:boolean = true;
+	export let checked:boolean=false;
 
 
 </script>
@@ -11,6 +11,7 @@
 
 <!-- <input  type="checkbox" aria-label={checkBoxValue} id={id} name={name} bind:checked>
 <label for={id}>{checkBoxValue}</label> -->
+<!-- bind:checked={checked} -->
 
 <input type="checkbox" id={id} aria-label={checkBoxValue} bind:checked={checked}>
 <label for={id}> {checkBoxValue} </label><br>

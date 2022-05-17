@@ -79,7 +79,8 @@
 
 <fieldset>
   <legend> Check Box </legend>
-  <Checkbox checkBoxValue="G'mornin " checked= false id="oneCheck"/>
+  <!-- checked='false' -->
+  <Checkbox checkBoxValue="G'mornin " id="oneCheck" checked={false}/>
 </fieldset>
 
 <fieldset>
