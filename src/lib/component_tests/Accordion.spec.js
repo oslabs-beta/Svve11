@@ -2,8 +2,7 @@
 import '@testing-library/jest-dom'
 import {render, fireEvent} from '@testing-library/svelte'
 
-// import { Accordion, AccordionItem, AccordionHeader, AccordionButton, AccordionPanel } from '../components/Accordion.svelte'
-import AccordionButton from '../components/Accordion/AccordionButton.svelte'
+import Accordion from '../components/Accordion/Accordion.svelte'
 
 // List of Accordion Parts:
     // - Accordion: contains accordion item(s)
@@ -21,16 +20,16 @@ describe('Accessible Accordion Unit Tests', () => {
         //BeforeEach render an AccordionButton for testing
 
         // beforeEach((done) => {
-            const results = render(AccordionButton/*, {options} */)
-            const {component} = render(AccordionButton/*, {options} */)
+            // const results = render(AccordionButton/*, {options} */)
+            const {component} = render(Accordion/*, {options} */)
             console.log(component)
             // return done
         // })
 
         // Does the button have a role attribute of button
         it('should have a role attribute set to button', () => {
-            let button = getAllByRole('button');
-            console.log(button)
+            // let button = getAllByRole('button');
+            // console.log(button)
         })
         // Does the button have 0 siblings?? 
 

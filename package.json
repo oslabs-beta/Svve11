@@ -7,7 +7,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "test": "jest",
+    "test": "jest src/lib/component_tests",
     "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "@tsconfig/svelte": "^2.0.0",
     "babel-jest": "^28.1.0",
     "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
@@ -30,22 +31,24 @@
     "svelte-check": "^2.0.0",
     "svelte-jester": "^2.3.2",
     "svelte-preprocess": "^4.0.0",
+    "ts-jest": "^28.0.2",
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"
   },
   "dependencies": {
+    "jest-axe": "^6.0.0",
     "sirv-cli": "^2.0.0"
   },
   "jest": {
     "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.mjs$": "babel-jest",
-      "^.+\\.svelte$": "svelte-jester"
+      "^.+\\.svelte$": "svelte-jester",
+      "^.+\\.js$": "babel-jest"
     },
     "moduleFileExtensions": [
       "js",
       "svelte"
-    ]
+    ],
+    "testEnvironment": "jsdom"
   },
   "setupFilesAfterEnv": [
     "@testing-library/jest-dom/extend-expect"
