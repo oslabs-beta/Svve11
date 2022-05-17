@@ -11,7 +11,7 @@
 
   const dispatch = createEventDispatcher();
   const handleHeaderClick = (event) => {
-    dispatch("updatePanelStates", {
+    return dispatch("updatePanelStates", {
       target: event.target.id,
     });
   };

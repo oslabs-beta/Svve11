@@ -11,7 +11,13 @@
   export let isOpen;
 </script>
 
-<div class="accordion-header" aria-level={headerLevel} role="heading" {style}>
+<div
+  class="accordion-header"
+  aria-level={headerLevel}
+  role="heading"
+  {style}
+  aria-expanded={isOpen}
+>
   <AccordionButton
     on:updatePanelStates
     {textToRead}

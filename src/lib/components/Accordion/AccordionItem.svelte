@@ -10,8 +10,6 @@
   export let isOpen;
 
   $: state = isOpen ? "expanded" : "collapsed";
-
-  console.log(customStyles);
 </script>
 
 <div class="accordion-item" data-state={state}>

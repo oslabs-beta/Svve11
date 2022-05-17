@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { afterUpdate, beforeUpdate, onMount } from "svelte";
 
   import AccordionItem from "./AccordionItem.svelte";
   export let options = {
@@ -19,6 +19,7 @@
     for (let i = 0; i < options.panelInfo.length; i++) {
       panelStates.push(false);
     }
+    panelStates = panelStates;
   });
 
   const updatePanelStates = (event) => {
@@ -39,6 +40,8 @@
     } else {
       panelStates[panelIndex] = true;
     }
+
+    panelStates = panelStates;
   };
 </script>
 
