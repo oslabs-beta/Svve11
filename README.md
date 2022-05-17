@@ -128,7 +128,38 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
 ### Button
 
-#### More Component to Come...
+1. Import the Button component using the command below in the script section of your .svelte file.
+
+   ```js
+   import { Button } from "Svve11";
+   ```
+
+2. The button component has (5) props:
+  - (4) **required** props:
+    - **`id`** (*`string`*): sets the `id` attribute of the button component.
+    - **`label`** (*`string`*): sets the `aria-label` attribute.
+    - **`content`** (*`string`*): sets the text that is displayed inside the button component.
+    - **`handleClick`** (*`function`*): defines the action or event to be triggered when the button is clicked.
+
+  - (1) *optional* prop:
+    - **`style`** (*`string`*): sets the styles of the button component
+  
+3. A Button instance can be created by placing the code below in the body of your .svelte file.
+     ```js
+     <Button 
+       id:'demo-button',
+       label:'an accessible button',
+       content:'Click me',
+       handleClick: () => console.log('you clicked a button!'),
+       style: 'background-color: blue; color: white;'
+     />
+      ```
+  
+
+
+
+#### More accessible components to come...
+
 
 ## The Svve11 Team
 
