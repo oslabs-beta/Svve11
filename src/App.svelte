@@ -42,9 +42,10 @@
   import Home from "./client/Home.svelte";
 </script>
 
-<Home />
+<!-- <Home /> -->
+<AccordionPage />
 
-<head>
+<!-- <head>
   <title>Sve11</title>
   <meta
     name="description"
@@ -105,9 +106,9 @@
 <!-- ************************* Styles ************************* -->
 
 <!-- <AccordionPage /> -->
-<style>
+<!-- <style>
   * {
     margin: 0;
     padding: 0;
   }
-</style>
+</style> -->
