@@ -9,13 +9,13 @@
   import Checkbox from "./lib/components/Checkbox.svelte";
 
   const options = {
-    multiselectable: true,
+    multiselectable: false,
     headerLevel: 4,
     //layout of styles array [headerStyle, panelStyles, ]
-    styles: [
-      "height: 50px; width: 100%; background-color: coral; border: 1px solid black",
-      "background-color: yellow",
-    ],
+    // styles: [
+    //   "height: 50px; width: 100%; background-color: coral; border: 1px solid black",
+    //   "background-color: yellow",
+    // ],
     panelInfo: [
       {
         id: 1,
@@ -78,7 +78,7 @@
 
 <fieldset>
   <legend> Check Box</legend>
-  <Checkbox checkBoxValue="yoyoy" id="hi" checked=false />
+  <Checkbox checkBoxValue="yoyoy" id="hi" checked="false" />
 </fieldset>
 
 <fieldset>

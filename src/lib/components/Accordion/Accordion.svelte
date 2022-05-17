@@ -10,10 +10,11 @@
   };
 
   if (!options.styles) {
-    options.styles = ["", ""];
+    options.styles = [null, null, null, null];
   }
 
-  let panelStates = [];
+  let panelStates;
+  $: panelStates = [];
 
   onMount(() => {
     for (let i = 0; i < options.panelInfo.length; i++) {
@@ -41,11 +42,15 @@
       panelStates[panelIndex] = true;
     }
 
-    panelStates = panelStates;
+    // panelStates = panelStates;
   };
 </script>
 
-<div class="accordion-main" aria-multiselectable={options.multiselectable}>
+<div
+  class="accordion-main"
+  aria-multiselectable={options.multiselectable}
+  style={options.styles[3]}
+>
   {#each options.panelInfo as info, i}
     <AccordionItem
       options={info}

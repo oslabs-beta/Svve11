@@ -35,4 +35,8 @@
     height: 100%;
     width: 100%;
   }
+
+  .header-button:focus {
+    border: solid 2px black;
+  }
 </style>
