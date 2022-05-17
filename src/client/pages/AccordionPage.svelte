@@ -3,6 +3,7 @@
    * import your component
    */
   import Accordion from '../../lib/components/Accordion/Accordion.svelte';
+  import Button from '../../lib/components/Button.svelte'
   import Navbar from '../components/Navbar.svelte';
   import PropsTable from '../components/PropsTable.svelte';
   import CodeSample from '../components/CodeSample.svelte';

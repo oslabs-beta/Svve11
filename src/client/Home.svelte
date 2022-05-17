@@ -10,13 +10,25 @@
   <div id="content">
     <!-- logo/hero -->
     <div id="splash">
-      <div>svve11</div>
+      <div id="blurb">
+        <i
+          ><h1 id="blurb-quote">
+            The power of the Web is in its universality. Access by everyone
+            regardless of disability is an essential aspect.
+          </h1></i
+        >
+        <h3 id="blurb-attribution">
+          Tim Berners-Lee <br />
+          <i>Creator of World Wide Web</i>
+        </h3>
+      </div>
+      <div id="pane2">
+        <!-- installation -->
+        <pre><code>
+          npm install @svve11
+        </code></pre>
+      </div>
     </div>
-
-    <!-- installation -->
-    <pre><code>
-      npm install @svve11
-    </code></pre>
   </div>
 </div>
 
@@ -41,18 +53,43 @@
 
   #content {
     grid-column: 1 2;
-    padding: 1rem 3rem;
     display: flex;
     flex-direction: column;
     margin: 0;
   }
 
-  fieldset {
-    border: none;
+  #splash {
+    margin: 3vh 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #2744e0;
+    padding: 0;
+    height: 50vh;
+    border-radius: 1rem;
   }
 
-  legend {
-    display: none;
+  #blurb {
+    grid-column: 0 1;
+    padding: 3vh 3vw;
+    /* background-color: #2744e0; */
+    color: white;
+    line-height: 1.2;
+  }
+
+  #blurb-quote {
+    margin: 0;
+  }
+
+  #blurb-attribution {
+    text-align: right;
+    line-height: 0.9;
+    color: #eee;
+  }
+
+  #pane2 {
+    grid-column: 1 2;
+    padding: 1rem;
   }
 
   code {
@@ -69,13 +106,11 @@
   }
 
   h1 {
-    font-size: 42px;
+    font-size: 48px;
   }
 
   h2 {
     font-size: 36px;
-    border-bottom: 1px solid;
-    margin: 1em 0;
   }
 
   h3 {
@@ -86,9 +121,8 @@
     margin: 1em 0;
   }
 
-  a {
-    /* text-decoration: none; */
+  /* a {
     font-weight: 500;
     color: #2744e0;
-  }
+  } */
 </style>
