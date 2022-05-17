@@ -74,7 +74,7 @@
   <legend>Accordion</legend>
   <Accordion {options} />
 </fieldset>
-
+<!---------------------------------------------------------------- Checkbox ---------------------------------------------------------------->
 <fieldset>
   <legend> Check Box</legend>
   <Checkbox checkBoxValue="" id="" checked="" />
