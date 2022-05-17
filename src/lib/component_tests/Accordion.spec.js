@@ -10,13 +10,11 @@ import AccordionButton from '../components/Accordion/AccordionButton'
 import AccordionPanel from '../components/Accordion/AccordionPanel'
 
 // List of Accordion Parts:
-    // - Accordion: contains accordion item(s)
-        // - Accordion Item: contains header and panel
-            // - Accordion Header: contains button
-                // - Accordion Button: labels header
-            // - Accordion Panel: contains contents
-
-
+// - Accordion: contains accordion item(s)
+// - Accordion Item: contains header and panel
+// - Accordion Header: contains button
+// - Accordion Button: labels header
+// - Accordion Panel: contains contents
 
 describe('Accessible Accordion Unit Tests', () => {
 
@@ -181,7 +179,6 @@ describe('Accessible Accordion Unit Tests', () => {
         it('should be passed the appropriate styles', () => {
             expect(panel.getAttribute('style')).toEqual(options.styles[1])
         })
-
     })
 
     describe('Item Unit Tests', () => {

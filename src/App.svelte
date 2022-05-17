@@ -36,9 +36,13 @@
       },
     ],
   };
+
+  // import index from './client/index.svelte';
+  import AccordionPage from "./client/pages/AccordionPage.svelte";
+  import Home from "./client/Home.svelte";
 </script>
 
-<!-- ************************* HTML ************************* -->
+<Home />
 
 <head>
   <title>Sve11</title>
@@ -99,27 +103,11 @@
 </fieldset>
 
 <!-- ************************* Styles ************************* -->
+
+<!-- <AccordionPage /> -->
 <style>
   * {
-    font-family: "Roboto", sans-serif;
-  }
-
-  #buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1em 1em 2em 1em;
-    gap: 2em;
-  }
-
-  #buttons > * {
-    flex-grow: 0;
-  }
-
-  .main-contanier {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding: 0;
   }
 </style>
