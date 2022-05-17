@@ -37,7 +37,7 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
 ### Technologies
 
-[Svelte](https://svelte.dev/) | [Typescript](https://www.typescriptlang.org/) | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) | [DENODE](https://www.denodo.com/en) | [Express](https://expressjs.com/en/starter/installing.html) | [Jest](https://jestjs.io/) | [Svelte-Kit](https://kit.svelte.dev/docs/introduction)
+[Svelte](https://svelte.dev/) | [Typescript](https://www.typescriptlang.org/) | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) | [DENO](https://deno.com/deploy/docs) | [Express](https://expressjs.com/en/starter/installing.html) | [Jest](https://jestjs.io/) | [Svelte-Kit](https://kit.svelte.dev/docs/introduction)
 
 ---
 
@@ -48,11 +48,11 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 ### CheckBox
 
 1. **IMPORT** the checkbox component by **COPY** and **PASTE** code **_BELOW_** on the file where you'll render the checkbox
-   - `` import Checkbox from "./lib/components/Checkbox.svelte" ``
 
+   - `import Checkbox from "./lib/components/Checkbox.svelte"`
 
 2. Head to the file where the checkbox will be used, simply **COPY** and **PASTE** code **_BELOW_**
-   - ``<Checkbox checkBoxValue="" id="" checked="" />``
+   - `<Checkbox checkBoxValue="" id="" checked="" />`
 
 - **Make sure to give value to all the variables**, if not you will encounter problems down the road.
 - **checkBoxValue** will be the **_TEXT_** you render next to the checkbox
@@ -90,32 +90,29 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
    #### Example Options Object
 
-   `const options = {`<br>
-   &emsp;`multiselectable: false,`<br>
-   &emsp;`headerLevel: 4,`<br>
-   &emsp;`styles: [`<br>
-   &emsp;&emsp;`"header styles",`<br>
-   &emsp;&emsp;`"panel styles",`<br>
-   &emsp;&emsp;`"item styles",`<br>
-   &emsp;&emsp;`"accordion styles"`<br>
-   &emsp;`],`<br>
-   &emsp;`panelInfo: [`<br>
-   &emsp;&emsp;`{`<br>
-   &emsp;&emsp;&emsp;`id: 1,`<br>
-   &emsp;&emsp;&emsp;`panelContent: "My first panel text.",`<br>
-   &emsp;&emsp;&emsp;`headerTitle: "My first header title"`<br>
-   &emsp;&emsp;`}`<br>
-   &emsp;&emsp;`{`<br>
-   &emsp;&emsp;&emsp;`id: 2,`<br>
-   &emsp;&emsp;&emsp;`panelContent: "My second panel text.",`<br>
-   &emsp;&emsp;&emsp;`headerTitle: "My second header title"`<br>
-   &emsp;&emsp;`}`<br>
-   &emsp;`]`<br>
-   `}`
+```js
+const options = {
+  multiselectable: false,
+  headerLevel: 4,
+  styles: ['header styles', 'panel styles', 'item styles', 'accordion styles'],
+  panelInfo: [
+    {
+      id: 1,
+      panelContent: 'My first panel text.',
+      headerTitle: 'My first header title',
+    },
+    {
+      id: 2,
+      panelContent: 'My second panel text.',
+      headerTitle: 'My second header title',
+    },
+  ],
+};
+```
 
-   #### Example Styles String
+#### Example Styles String
 
-   `"height: 50px; width: 100%; background-color: coral; border: 1px solid black"`
+`"height: 50px; width: 100%; background-color: coral; border: 1px solid black"`
 
 ### Button
 
