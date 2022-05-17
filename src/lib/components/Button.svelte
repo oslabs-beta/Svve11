@@ -1,5 +1,6 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
+
   // function for button to execute
   export let handleClick: () => void;
 
