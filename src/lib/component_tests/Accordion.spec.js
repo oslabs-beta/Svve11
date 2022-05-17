@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import '@testing-library/jest-dom'
 import {render, fireEvent} from '@testing-library/svelte'
+import userEvent from '@testing-library/user-event'
 
 import Accordion from '../components/Accordion/Accordion'
 import AccordionItem from '../components/Accordion/AccordionItem'
@@ -38,11 +39,12 @@ describe('Accessible Accordion Unit Tests', () => {
     }
     
     describe('Button Unit Tests', () => {
-        let buttons, button
+        let buttons, button, user
         beforeEach(() => {
             const {getAllByRole, getByText} = render(Accordion, {options})
             buttons = getAllByRole('button')
             button = getByText('First Section')
+            user = userEvent.setup()
         })
 
         it('should have a role attribute set to button', () => {
@@ -59,17 +61,17 @@ describe('Accessible Accordion Unit Tests', () => {
 
         it('should toggle aria-expanded when clicked', async () => {
             expect(button.getAttribute('aria-expanded')).toEqual('false')
-            await fireEvent.click(button)
+            await user.click(button)
             expect(button.getAttribute('aria-expanded')).toEqual('true')
-            await fireEvent.click(button)
+            await user.click(button)
             expect(button.getAttribute('aria-expanded')).toEqual('false')
         })
 
         it('should have an attribute aria-label that toggles between an empty string and panel contents when clicked', async () => {
             expect(button.getAttribute('aria-label')).toEqual('')
-            await fireEvent.click(button)
+            await user.click(button)
             expect(button.getAttribute('aria-label')).toEqual(options.panelInfo[0].panelContent)
-            await fireEvent.click(button)
+            await user.click(button)
             expect(button.getAttribute('aria-label')).toEqual('')
         })
 
@@ -87,6 +89,37 @@ describe('Accessible Accordion Unit Tests', () => {
 
         it('should be passed the styles string in the 0th index of the styles array', () => {
             expect(button.getAttribute('style')).toEqual(options.styles[0])
+        })
+
+        it('should be able to have focus', () => {
+            user.tab()
+            expect(button).toHaveFocus()
+        })
+
+        it('should expand/collapse when space key is pressed', async () => {
+            user.tab()
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button).toHaveFocus()
+            expect(button.getAttribute('aria-label')).toEqual('')
+            await user.keyboard(' ')
+            expect(button.getAttribute('aria-expanded')).toEqual('true')
+            expect(button.getAttribute('aria-label')).toEqual(options.panelInfo[0].panelContent)
+            await user.keyboard('{enter}')
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button.getAttribute('aria-label')).toEqual('')
+        })
+
+        it('should expand/collapse when enter key is pressed', async () => {
+            user.tab()
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button).toHaveFocus()
+            expect(button.getAttribute('aria-label')).toEqual('')
+            await user.keyboard('{enter}')
+            expect(button.getAttribute('aria-expanded')).toEqual('true')
+            expect(button.getAttribute('aria-label')).toEqual(options.panelInfo[0].panelContent)
+            await user.keyboard('{enter}')
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button.getAttribute('aria-label')).toEqual('')
         })
     })
 
@@ -118,7 +151,6 @@ describe('Accessible Accordion Unit Tests', () => {
         it('should be passed the styles string in the 0th index of the styles array', () => {
             expect(heading.getAttribute('style')).toEqual(options.styles[0])
         })
-
     })    
 
     describe('Panel Unit Tests', () => {
@@ -153,7 +185,7 @@ describe('Accessible Accordion Unit Tests', () => {
     })
 
     describe('Item Unit Tests', () => {
-        let items, item, button, panel, header
+        let items, item, button, panel, header, user
         beforeEach(() => {
             const {getByText, getAllByRole} = render(Accordion, {options})
             items = document.getElementsByClassName('accordion-item')
@@ -161,6 +193,7 @@ describe('Accessible Accordion Unit Tests', () => {
             button = document.querySelector('#button1')
             panel = document.querySelector('#panel1')
             header = document.querySelectorAll('.accordion-header')[0]
+            user = userEvent.setup()
         })
 
         it('should render one item for each panelInfo in options object', () => {
@@ -169,7 +202,7 @@ describe('Accessible Accordion Unit Tests', () => {
 
         it('should have a data-state attribute set to collapsed initially, and should toggle to expanded when corresponding button is clicked', async () => {
             expect(item.getAttribute('data-state')).toBe('collapsed')
-            await fireEvent.click(button)
+            await user.click(button)
             expect(item.getAttribute('data-state')).toBe('expanded')
         })
 

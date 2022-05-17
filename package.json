@@ -18,6 +18,7 @@
     "@rollup/plugin-typescript": "^8.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/svelte": "^3.1.1",
+    "@testing-library/user-event": "^14.2.0",
     "@tsconfig/svelte": "^2.0.0",
     "@types/jest": "^27.5.1",
     "babel-jest": "^28.1.0",
@@ -41,7 +42,12 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.svelte$": ["svelte-jester", {"preprocess": true}],
+      "^.+\\.svelte$": [
+        "svelte-jester",
+        {
+          "preprocess": true
+        }
+      ],
       "^.+\\.ts$": "ts-jest",
       "^.+\\.js$": "babel-jest"
     },

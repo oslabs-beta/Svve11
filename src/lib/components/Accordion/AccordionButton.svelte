@@ -37,6 +37,6 @@
   }
 
   .header-button:focus {
-    border: solid 2px black;
+    border-width: 5px;
   }
 </style>

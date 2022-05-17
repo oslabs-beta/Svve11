@@ -11,11 +11,10 @@
   const options = {
     multiselectable: false,
     headerLevel: 4,
-    //layout of styles array [headerStyle, panelStyles, ]
-    // styles: [
-    //   "height: 50px; width: 100%; background-color: coral; border: 1px solid black",
-    //   "background-color: yellow",
-    // ],
+    styles: [
+      "height: 50px; width: 100%; background-color: coral; border-color: black; border-radius: 10px",
+      "background-color: yellow; border-radius: 10px",
+    ],
     panelInfo: [
       {
         id: 1,
