@@ -1,5 +1,5 @@
 <div style='display: flex; justify-content: center; margin-bottom: 20px;' >
-<img src='./src/img/svvell-logo-yellow.png' style='height: auto; width: 60%'>
+<img src='./src/img/svvell-logo-yellow.png' style='height: auto; width: 60%; margin: auto'>
 </div>
 
 <p align="center">
