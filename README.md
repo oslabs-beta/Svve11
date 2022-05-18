@@ -47,17 +47,38 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
 ### CheckBox
 
-1. **IMPORT** the checkbox component by **COPY** and **PASTE** code **_BELOW_** on the file where you'll render the checkbox
+1. Import the CheckBox component using the command below in the script section of your .svelte file.
 
-   - `import Checkbox from "./lib/components/Checkbox.svelte"`
+   ```js
+   import { CheckBox } from 'Svve11';
+   ```
 
-2. Head to the file where the checkbox will be used, simply **COPY** and **PASTE** code **_BELOW_**
-   - `<Checkbox checkBoxValue="" id="" checked="" />`
+2. An accordion instance can be created by placing the code below in the body of your .svelte file.
 
-- **Make sure to give value to all the variables**, if not you will encounter problems down the road.
-- **checkBoxValue** will be the **_TEXT_** you render next to the checkbox
-- **ID** will be the id you'd like to give to the checkbox
-- **CHECKED** checked will be wether you'd like to check box to be **_CHECKED_** from start or not
+   ```js
+   <Checkbox checkBoxLabel="" id="" checked={} checkBoxStyle={''} checkBoxLabelStyle={''} />
+   ```
+
+3. The CheckBox component has (5) props:
+
+- `Props`
+  - **`id`** (_`string`_): sets the `id` attribute of the button component.
+  - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component
+  - **`checked`** (_`boolean`_):
+  - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox
+  - **`checkBoxLabelStyle`** (_`string`_): sets the styling for the checkbox label text'
+
+4. Example Code
+
+```js
+<Checkbox
+  checkBoxLabel="This should be the value"
+  id="one"
+  checked={false}
+  checkBoxStyle={'height: 1.5em; width: 1.5em;'}
+  checkBoxLabelStyle={'font-size:1.5em; '}
+/>
+```
 
 ### Form
 
@@ -66,7 +87,7 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 1. Import the accordion component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Accordion } from "Svve11";
+   import { Accordion } from 'Svve11';
    ```
 
 2. An accordion instance can be created by placing the code below in the body of your .svelte file.
@@ -96,51 +117,26 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
    #### Example Options Object
 
-<<<<<<< HEAD
-```js
-const options = {
-  multiselectable: false,
-  headerLevel: 4,
-  styles: ['header styles', 'panel styles', 'item styles', 'accordion styles'],
-  panelInfo: [
-    {
-      id: 1,
-      panelContent: 'My first panel text.',
-      headerTitle: 'My first header title',
-    },
-    {
-      id: 2,
-      panelContent: 'My second panel text.',
-      headerTitle: 'My second header title',
-    },
-  ],
-};
-```
-
-#### Example Styles String
-
-`"height: 50px; width: 100%; background-color: coral; border: 1px solid black"`
-=======
    ```js
    const options = {
      panelInfo: [
        {
          id: 1,
-         panelContent: "My first panel text.",
-         headerTitle: "My first header title",
+         panelContent: 'My first panel text.',
+         headerTitle: 'My first header title',
        },
        {
          id: 2,
-         panelContent: "My second panel text.",
-         headerTitle: "My second header title",
+         panelContent: 'My second panel text.',
+         headerTitle: 'My second header title',
        },
      ],
      headerLevel: 4,
      styles: [
-       "header styles",
-       "panel styles",
-       "item styles",
-       "accordion styles",
+       'header styles',
+       'panel styles',
+       'item styles',
+       'accordion styles',
      ],
      multiselectable: false,
    };
@@ -149,44 +145,41 @@ const options = {
    #### Example Styles String
 
    ```js
-   "height: 50px; width: 100%; background-color: coral; border: 1px solid black";
+   'height: 50px; width: 100%; background-color: coral; border: 1px solid black';
    ```
->>>>>>> main
 
 ### Button
 
 1. Import the Button component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Button } from "Svve11";
+   import { Button } from 'Svve11';
    ```
 
 2. The button component has (5) props:
-  - (4) **required** props:
-    - **`id`** (*`string`*): sets the `id` attribute of the button component.
-    - **`label`** (*`string`*): sets the `aria-label` attribute.
-    - **`content`** (*`string`*): sets the text that is displayed inside the button component.
-    - **`handleClick`** (*`function`*): defines the action or event to be triggered when the button is clicked.
 
-  - (1) *optional* prop:
-    - **`style`** (*`string`*): sets the styles of the button component
-  
+- (4) **required** props:
+
+  - **`id`** (_`string`_): sets the `id` attribute of the button component.
+  - **`label`** (_`string`_): sets the `aria-label` attribute.
+  - **`content`** (_`string`_): sets the text that is displayed inside the button component.
+  - **`handleClick`** (_`function`_): defines the action or event to be triggered when the button is clicked.
+
+- (1) _optional_ prop:
+  - **`style`** (_`string`_): sets the styles of the button component
+
 3. A Button instance can be created by placing the code below in the body of your .svelte file.
-     ```js
-     <Button 
-       id:'demo-button',
-       label:'an accessible button',
-       content:'Click me',
-       handleClick: () => console.log('you clicked a button!'),
-       style: 'background-color: blue; color: white;'
-     />
-      ```
-  
-
-
+   ```js
+   <Button
+     id:'demo-button',
+     label:'an accessible button',
+     content:'Click me',
+     handleClick: () => console.log('you clicked a button!'),
+     style: 'background-color: blue; color: white;'
+   />
+   ```
 
 #### More accessible components to come...
-
 
 ## The Svve11 Team
 
