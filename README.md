@@ -74,8 +74,6 @@ yarn add 'Svve11'
 
 ---
 
-<br>
-
 ## Component
 
 ### Accordion
