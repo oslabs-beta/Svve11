@@ -18,7 +18,7 @@
   }>();
 
   //I cannot figure out how to type the event here!!
-  const handleHeaderClick = (event): void => {
+  const handleHeaderClick = (event: MouseEvent): void => {
     dispatch("updatePanelStates", {
       target: event.target.id,
     });
