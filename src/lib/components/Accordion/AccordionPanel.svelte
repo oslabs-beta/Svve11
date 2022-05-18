@@ -5,8 +5,6 @@
   export let panelID;
   export let labeledBy;
   export let style;
-
-  console.log(style);
 </script>
 
 <div
