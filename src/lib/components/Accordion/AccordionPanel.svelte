@@ -1,9 +1,9 @@
-<script>
-  export let panelContent = "";
-  export let isOpen;
-  export let panelID;
-  export let labeledBy;
-  export let style;
+<script lang="ts">
+  export let panelContent: string = "";
+  export let isOpen: boolean;
+  export let panelID: string;
+  export let labeledBy: string;
+  export let style: string = "";
 </script>
 
 <!-- Panel Attributes:

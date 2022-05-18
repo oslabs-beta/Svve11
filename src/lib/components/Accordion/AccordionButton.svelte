@@ -1,21 +1,28 @@
-<script>
+<script lang="ts">
   // @ts-nocheck
   import { createEventDispatcher } from "svelte";
 
-  export let headerTitle;
-  export let controls;
-  export let id;
-  export let style;
-  export let textToRead;
-  export let isOpen;
+  export let headerTitle: string;
+  export let controls: string;
+  export let id: string;
+  export let style: string;
+  export let textToRead: string;
+  export let isOpen: boolean;
 
   //this function is an event dispatcher which will dispatch to the main accordion containing the
   //the panel states for every panel to invoke the function, passing in the button target as an option
-  const dispatch = createEventDispatcher();
-  const handleHeaderClick = (event) => {
-    return dispatch("updatePanelStates", {
+  const dispatch = createEventDispatcher<{
+    updatePanelStates: {
+      target: string;
+    };
+  }>();
+
+  //I cannot figure out how to type the event here!!
+  const handleHeaderClick< = (event) : void => {
+    dispatch("updatePanelStates", {
       target: event.target.id,
     });
+    return;
   };
 </script>
 

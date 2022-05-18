@@ -1,16 +1,19 @@
-<script>
+<script lang="ts">
   // @ts-nocheck
 
   import AccordionPanel from "./AccordionPanel.svelte";
   import AccordionHeader from "./AccordionHeader.svelte";
 
-  export let options;
-  export let headerLevel = 2;
-  export let customStyles;
-  export let isOpen;
+  import { panelInfoTypes } from "./AccordionTypes";
+
+  export let options: panelInfoTypes;
+  export let headerLevel: number = 2;
+  export let customStyles: string[];
+  export let isOpen: boolean;
 
   // this is to supply the data-state of the accordion item with expanded
   // when panel is open and collapsed when panel is closed
+  let state: string;
   $: state = isOpen ? "expanded" : "collapsed";
 </script>
 

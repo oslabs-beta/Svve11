@@ -1,8 +1,10 @@
 <script lang="ts">
-  import { afterUpdate, beforeUpdate, onMount } from "svelte";
+  import { onMount } from "svelte";
 
   import AccordionItem from "./AccordionItem.svelte";
-  export let options = {
+  import type { optionsTypes } from "./AccordionTypes";
+
+  export let options: optionsTypes = {
     multiselectable: false,
     headerLevel: null,
     panelInfo: [],
@@ -14,7 +16,7 @@
   }
 
   // Instantiate panelStates and set as reactive
-  let panelStates;
+  let panelStates: boolean[];
   $: panelStates = [];
 
   onMount(() => {
@@ -25,12 +27,14 @@
     panelStates = panelStates;
   });
 
-  const updatePanelStates = (event) => {
+  // Need to type the event input and confirm the function is typed propery
+  const updatePanelStates = (event: CustomEvent<{ target: string }>): void => {
     // Determin index of panel to be expanded
-    const panelIndex = Number(event.detail.target.slice(6)) - 1;
+    const panelIndex: number = Number(event.detail.target.slice(6)) - 1;
     // If panel at the index to be changed is already true, set to false (i.e. collapse the panel)
     if (panelStates[panelIndex] === true) {
-      return (panelStates[panelIndex] = false);
+      panelStates[panelIndex] = false;
+      return;
     }
 
     // If only one panel should be open at a time

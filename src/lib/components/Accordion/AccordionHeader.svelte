@@ -1,14 +1,14 @@
-<script>
+<script lang="ts">
   // @ts-nocheck
 
   import AccordionButton from "./AccordionButton.svelte";
-  export let headerLevel = 3;
-  export let headerTitle;
-  export let controls = "";
-  export let style;
-  export let textToRead;
-  export let id;
-  export let isOpen;
+  export let headerLevel: number = 3;
+  export let headerTitle: string;
+  export let controls: string = "";
+  export let style: string = "";
+  export let textToRead: string = "";
+  export let id: string;
+  export let isOpen: boolean;
 </script>
 
 <!-- Header Attributes:
