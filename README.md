@@ -1,5 +1,5 @@
 <div style='display: flex; justify-content: center; margin-bottom: 20px;' >
-<img src='./src/img/svvell-logo-yellow.png' style='height: auto; width: 60%'>
+<img src='./src/img/svvell-logo-yellow.png' style='height: auto; width: 60%; margin: auto'>
 </div>
 
 <p align="center">
@@ -73,8 +73,6 @@ yarn add 'Svve11'
 [Svelte](https://svelte.dev/) | [Typescript](https://www.typescriptlang.org/) | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) | [DENO](https://deno.com/deploy/docs) | [Express](https://expressjs.com/en/starter/installing.html) | [Jest](https://jestjs.io/) | [Rollup](https://rollupjs.org/guide/en/)
 
 ---
-
-<br>
 
 ## Component
 
