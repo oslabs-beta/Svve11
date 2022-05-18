@@ -1,8 +1,3 @@
-
-
-
-
-
 export type panelInfoTypes = {
     id: number;
     panelContent: string;
