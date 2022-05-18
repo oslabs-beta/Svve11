@@ -7,7 +7,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "test": "jest src/lib/component_tests",
+    "test": "jest",
     "test:watch": "npm run test -- --watch"
   },
   "devDependencies": {
@@ -19,6 +19,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/svelte": "^3.1.1",
     "@tsconfig/svelte": "^2.0.0",
+    "@types/jest": "^27.5.1",
     "babel-jest": "^28.1.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
@@ -41,11 +42,13 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.svelte$": "svelte-jester",
+      "^.+\\.svelte$": ["svelte-jester", {"preprocess": true}],
+      "^.+\\.ts$": "ts-jest",
       "^.+\\.js$": "babel-jest"
     },
     "moduleFileExtensions": [
       "js",
+      "ts",
       "svelte"
     ],
     "testEnvironment": "jsdom"

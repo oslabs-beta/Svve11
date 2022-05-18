@@ -6,7 +6,7 @@
   export let labeledBy;
   export let style;
 
-  console.log(style);
+  // console.log(style);
 </script>
 
 <div
