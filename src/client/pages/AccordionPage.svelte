@@ -2,10 +2,18 @@
   /**
    * import your component
    */
+<<<<<<< HEAD
   import Accordion from "../../lib/components/Accordion/Accordion.svelte";
   import Navbar from "../components/Navbar.svelte";
   import PropsTable from "../components/PropsTable.svelte";
   import CodeSample from "../components/CodeSample.svelte";
+=======
+  import Accordion from '../../lib/components/Accordion/Accordion.svelte';
+  import Navbar from '../components/Navbar.svelte';
+  import PropsTable from '../components/PropsTable.svelte';
+  import CodeSample from '../components/CodeSample.svelte';
+  
+>>>>>>> main
 
   // import '@sveltejs/svelte-repl';
 

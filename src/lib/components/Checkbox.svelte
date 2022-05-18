@@ -1,20 +1,23 @@
-<script>
-	export let checkBoxValue;
+<script lang="ts">
+	export let checkBoxLabel;
 	export let id;
-	export let checked = false;
+	export let checked:boolean=false;
+	export let defaultStyle: string = 'display: inline-block; user-select: none;'
+	export let checkBoxStyle:string = ''
+	export let checkBoxLabelStyle:string = ''
+
 </script>
 
-<label for={id}>
-  <input aria-label={checkBoxValue} {id} type="checkbox" bind:checked>
-{checkBoxValue}</label>
+ <!-- <input aria-label={checkBoxLabel} id={id} type="checkbox" bind:checked />  -->
+<!-- <label for={id}>{checkBoxLabel}</label>  -->
 
+<!-- <input  type="checkbox" aria-label={checkBoxLabel} id={id} name={name} bind:checked>
+<label for={id}>{checkBoxLabel}</label> -->
+<!-- bind:checked={checked} -->
 
-<br />
+<input style={checkBoxStyle} type="checkbox" id={id} aria-label={checkBoxLabel} bind:checked={checked} name="accessible-checkbox">
+<label style={checkBoxLabelStyle + defaultStyle} for={id}> {checkBoxLabel} </label><br>
+
 
 <style>
-  [type="checkbox"]
-  {
-      vertical-align:middle;
-  }
-  
 </style>
