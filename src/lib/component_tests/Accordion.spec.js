@@ -1,13 +1,9 @@
 /* eslint-disable no-undef */
 import '@testing-library/jest-dom'
-import {render, fireEvent} from '@testing-library/svelte'
+import {render} from '@testing-library/svelte'
 import userEvent from '@testing-library/user-event'
 
 import Accordion from '../components/Accordion/Accordion'
-import AccordionItem from '../components/Accordion/AccordionItem'
-import AccordionHeader from '../components/Accordion/AccordionHeader'
-import AccordionButton from '../components/Accordion/AccordionButton'
-import AccordionPanel from '../components/Accordion/AccordionPanel'
 
 // List of Accordion Parts:
 // - Accordion: contains accordion item(s)
