@@ -43,7 +43,18 @@
 </script>
 
 <!-- <Home /> -->
-<AccordionPage />
+<!-- <AccordionPage /> -->
+<fieldset>
+  <legend> Check Box</legend>
+  <Checkbox 
+  checkBoxLabel="This should be the value" 
+  id="one" 
+  checked={false} 
+  checkBoxStyle={'height: 1.5em; width: 1.5em;'} 
+  checkBoxLabelStyle={'font-size:1.5em; '}
+  /> 
+</fieldset>
+
 
 <!-- <head>
   <title>Sve11</title>
