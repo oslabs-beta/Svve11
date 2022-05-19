@@ -34,15 +34,10 @@ Sve11 is created using `npm`. Be sure to have Node.js and NPM installed on your 
 To clone this repository, you must:
 
 1. Fork the repository to your own GitHub.
-2. Clone the repository into a local directory on your computer by running the following command in the terminal.
+2. Clone the repository and install dependencies by running the following commands in the terminal.
 
 ```
 git clone https://github.com/[Your GitHub Handle]/Svve11
-```
-
-3. Install dependencies to the repository.
-
-```
 cd Svve11
 npm install
 ```
