@@ -1,6 +1,4 @@
 <script>
-  import "prismjs";
-  import Prism from "svelte-prism";
   /**
    * import your component
    */
@@ -118,8 +116,7 @@
             </p>
             <pre><code class="code-block">
             {"<Accordion {options} />"}
-          </code></pre>
-
+            </code></pre>
             <p>
               To supply the accordion with its contents, an options object is
               passed as a prop to the accordion. This object can be created in
