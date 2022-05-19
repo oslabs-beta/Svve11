@@ -1,116 +1,224 @@
 /* eslint-disable no-undef */
 import '@testing-library/jest-dom'
 import {render, fireEvent} from '@testing-library/svelte'
+import userEvent from '@testing-library/user-event'
 
-import Accordion from '../components/Accordion/Accordion.svelte'
+import Accordion from '../components/Accordion/Accordion'
+import AccordionItem from '../components/Accordion/AccordionItem'
+import AccordionHeader from '../components/Accordion/AccordionHeader'
+import AccordionButton from '../components/Accordion/AccordionButton'
+import AccordionPanel from '../components/Accordion/AccordionPanel'
 
 // List of Accordion Parts:
-    // - Accordion: contains accordion item(s)
-        // - Accordion Item: contains header and panel
-            // - Accordion Header: contains button
-                // - Accordion Button: labels header
-            // - Accordion Panel: contains contents
-
-
+// - Accordion: contains accordion item(s)
+// - Accordion Item: contains header and panel
+// - Accordion Header: contains button
+// - Accordion Button: labels header
+// - Accordion Panel: contains contents
 
 describe('Accessible Accordion Unit Tests', () => {
+
+    const options =  {
+        multiselectable: true,
+        headerLevel: 4,
+        styles: ['background-color: coral', 'background-color: coral', 'border: 1px solid blue', 'border: 1px solid yellow'],
+        panelInfo: [
+            {
+            id: 1,
+            panelContent: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Cursus eget nunc scelerisque viverra mauris. Lacus laoreet non curabitur gravida arcu ac tortor dignissim. Proin fermentum leo vel orci porta non pulvinar neque laoreet. Nisl vel pretium lectus quam id. Ultrices eros in cursus turpis massa. Mauris pharetra et ultrices neque. Tristique senectus et netus et malesuada fames ac turpis. Turpis tincidunt id aliquet risus feugiat in ante metus. Pellentesque habitant morbi tristique senectus et netus et malesuada.",
+            headerTitle: "First Section",
+            },
+            {
+            id: 2,
+            panelContent: "Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut enim blandit volutpat maecenas volutpat blandit. Mi ipsum faucibus vitae aliquet nec. Dui ut ornare lectus sit amet est placerat in. Convallis convallis tellus id interdum. Vitae aliquet nec ullamcorper sit amet risus. Eu mi bibendum neque egestas congue quisque egestas diam in. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus. Ullamcorper a lacus vestibulum sed. Vitae purus faucibus ornare suspendisse. Curabitur gravida arcu ac tortor dignissim convallis. Viverra ipsum nunc aliquet bibendum enim facilisis gravida. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Id leo in vitae turpis massa sed. Faucibus interdum posuere lorem ipsum dolor.",
+            headerTitle: "Second Section",
+            }
+        ]
+    }
     
     describe('Button Unit Tests', () => {
-
-        //BeforeEach render an AccordionButton for testing
-
-        // beforeEach((done) => {
-            // const results = render(AccordionButton/*, {options} */)
-            const {component} = render(Accordion/*, {options} */)
-            console.log(component)
-            // return done
-        // })
-
-        // Does the button have a role attribute of button
-        it('should have a role attribute set to button', () => {
-            // let button = getAllByRole('button');
-            // console.log(button)
+        let buttons, button, user
+        beforeEach(() => {
+            const {getAllByRole, getByText} = render(Accordion, {options})
+            buttons = getAllByRole('button')
+            button = getByText('First Section')
+            user = userEvent.setup()
         })
-        // Does the button have 0 siblings?? 
 
-        // Does the button have an attribute aria-expanded
+        it('should have a role attribute set to button', () => {
+            expect(buttons.length).toEqual(options.panelInfo.length)
+        })
 
-        // Is aria-expanded false when button is inactive and true when active
+        it('should have no siblings', () => {
+            expect(button.nextElementSibling).toEqual(null)
+        })
 
-        // Does the button have toggle ability
+        it('should have an attribute aria-expanded initialized to false', () => {
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+        })
 
+        it('should toggle aria-expanded when clicked', async () => {
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            await user.click(button)
+            expect(button.getAttribute('aria-expanded')).toEqual('true')
+            await user.click(button)
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+        })
+
+        it('should have an attribute aria-label that toggles between an empty string and panel contents when clicked', async () => {
+            expect(button.getAttribute('aria-label')).toEqual('')
+            await user.click(button)
+            expect(button.getAttribute('aria-label')).toEqual(options.panelInfo[0].panelContent)
+            await user.click(button)
+            expect(button.getAttribute('aria-label')).toEqual('')
+        })
+
+        it('should have a class name set to header-button', () => {
+            expect(button.getAttribute('class')).toContain('header-button')
+        })
+
+        it('should habe an id attribute set to button and the id number', () => {
+            expect(button.getAttribute('id')).toEqual(`button${options.panelInfo[0].id}`)
+        })
+
+        it('should have an attribute aria-controls set to the panel it controls', () => {
+            expect(button.getAttribute('aria-controls')).toEqual(`panel${options.panelInfo[0].id}`)
+        })
+
+        it('should be passed the styles string in the 0th index of the styles array', () => {
+            expect(button.getAttribute('style')).toEqual(options.styles[0])
+        })
+
+        it('should be able to have focus', () => {
+            user.tab()
+            expect(button).toHaveFocus()
+        })
+
+        it('should expand/collapse when space key is pressed', async () => {
+            user.tab()
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button).toHaveFocus()
+            expect(button.getAttribute('aria-label')).toEqual('')
+            await user.keyboard(' ')
+            expect(button.getAttribute('aria-expanded')).toEqual('true')
+            expect(button.getAttribute('aria-label')).toEqual(options.panelInfo[0].panelContent)
+            await user.keyboard('{enter}')
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button.getAttribute('aria-label')).toEqual('')
+        })
+
+        it('should expand/collapse when enter key is pressed', async () => {
+            user.tab()
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button).toHaveFocus()
+            expect(button.getAttribute('aria-label')).toEqual('')
+            await user.keyboard('{enter}')
+            expect(button.getAttribute('aria-expanded')).toEqual('true')
+            expect(button.getAttribute('aria-label')).toEqual(options.panelInfo[0].panelContent)
+            await user.keyboard('{enter}')
+            expect(button.getAttribute('aria-expanded')).toEqual('false')
+            expect(button.getAttribute('aria-label')).toEqual('')
+        })
     })
 
-    
+    describe('Header Unit Tests', () => {
+        let headers, heading, button
+        beforeEach(() => {
+            const {getAllByRole, getByText} = render(Accordion, {options})
+            headers = getAllByRole("heading")
+            heading = getAllByRole('heading')[0]
+            button = getByText('First Section')
+        })
 
+        it('should have a role attribute set to heading', () => {
+            expect(headers.length).toEqual(options.panelInfo.length)
+        })
 
-//******* Header Tests *******//
+        it('should have a class attribute set to accordion-header', () => {
+            expect(heading.getAttribute('class')).toContain('accordion-header')
+        })
 
-    //******* Header Unit Tests *******//
+        it('should have a child that is a button', () => {
+            expect(heading.firstChild).toBe(button)
+        })
 
-        // Is the title of the header an element with role button
+        it('should have an aria-level attribute set to appropriate header level number', () => {
+            expect(heading.getAttribute('aria-level')).toEqual(options.headerLevel.toString())
+        })
 
-        // Is the role of the header set to heading
+        it('should be passed the styles string in the 0th index of the styles array', () => {
+            expect(heading.getAttribute('style')).toEqual(options.styles[0])
+        })
+    })    
 
-        // Is the value a valid aria-level/number 1-6
+    describe('Panel Unit Tests', () => {
+        let panels, panel
 
-    
+        beforeEach(() => {
+            const {getAllByRole} = render(Accordion, {options})
+            panels = getAllByRole('region')
+            panel = panels[0]
+        })
 
-//******* Panel Tests *******//
+        it('should have a role attribute set to region', () => {
+            expect(panels.length).toEqual(options.panelInfo.length)
+        })
 
-    //******* Panel Unit Tests *******//
+        it('should have an id attribute set to panel and the appropriate id number', () => {
+            expect(panel.getAttribute('id')).toEqual(`panel${options.panelInfo[0].id}`)
+        })
 
-        // Does the panel have a role attribute set to region
+        it('should have an aria-labelledby attribute set to the button labeling it', () => {
+            expect(panel.getAttribute('aria-labelledby')).toEqual(`button${options.panelInfo[0].id}`)
+        })
 
+        it('should have a class attribute set to accordion-panel', () => {
+            expect(panel.getAttribute('class')).toContain('accordion-panel')
+        })
 
+        it('should be passed the appropriate styles', () => {
+            expect(panel.getAttribute('style')).toEqual(options.styles[1])
+        })
+    })
 
-//******* Item Tests  *******// 
+    describe('Item Unit Tests', () => {
+        let items, item, button, panel, header, user
+        beforeEach(() => {
+            const {getByText, getAllByRole} = render(Accordion, {options})
+            items = document.getElementsByClassName('accordion-item')
+            item = items[0]
+            button = document.querySelector('#button1')
+            panel = document.querySelector('#panel1')
+            header = document.querySelectorAll('.accordion-header')[0]
+            user = userEvent.setup()
+        })
 
-    //******* Item Unit Tests *******//
+        it('should render one item for each panelInfo in options object', () => {
+            expect(items.length).toEqual(options.panelInfo.length)
+        })
 
-        // Does the item have a state attribute
+        it('should have a data-state attribute set to collapsed initially, and should toggle to expanded when corresponding button is clicked', async () => {
+            expect(item.getAttribute('data-state')).toBe('collapsed')
+            await user.click(button)
+            expect(item.getAttribute('data-state')).toBe('expanded')
+        })
 
-//******* Accordion Tests *******//
+        it('should have two children, the first being the button and the second the panel', () => {
+            expect(item.firstChild).toBe(header)
+            expect(item.firstChild.firstChild).toBe(button)
+            expect(item.firstChild.nextElementSibling).toBe(panel)
+            expect(item.firstChild.nextElementSibling.nextElementSibling).toEqual(null)
+        })
+    })
 
-    // Does the Accordion have an aria-multiselectable attribute set to false
+    describe('Accordion Unit Tests', () => {
 
-
-
-
-
+        it('should have an aria-multiselectable attribute corresponding to that passed into the options object', () => {
+            const {} = render(Accordion, {options})
+            const accordion = document.getElementsByClassName('accordion-main')[0]
+            expect(accordion.getAttribute('aria-multiselectable')).toEqual(`${options.multiselectable}`)
+        })
+    })
 })
-
-//******* INTEGRATION TESTS *******//
-
-    //******* Button Integration Tests  *******//
-
-        // Does the button contain an aria-controls attribute set to the ID of 
-        // the panel it controls
-
-    //******* Header Integration Tests *******//
-
-    //******* Panel Integration Tests *******//
-
-        // Does the panel have an aria-labelledby attribute refering to the button element
-        // it is controlled by
-
-    //******* Item Integration Tests *******//
-
-        // Does the Item state attribute toggle with associated button click
-
-        // Does the item have 2 children
-
-        // Does the item have a header child first
-
-        // Does the item have a panel child second
-
-
-
-
-
-
-// Can space/enter expand the focused content panel
-
-// Does one
 
 

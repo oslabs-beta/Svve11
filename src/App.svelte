@@ -9,12 +9,11 @@
   import Checkbox from "./lib/components/Checkbox.svelte";
 
   const options = {
-    multiselectable: true,
+    multiselectable: false,
     headerLevel: 4,
-    //layout of styles array [headerStyle, panelStyles, ]
     styles: [
-      "height: 50px; width: 100%; background-color: coral; border: 1px solid black",
-      "background-color: yellow",
+      "height: 50px; width: 100%; background-color: coral; border-color: black; border-radius: 10px",
+      "background-color: yellow; border-radius: 10px",
     ],
     panelInfo: [
       {
@@ -37,11 +36,16 @@
       },
     ],
   };
+
+  // import index from './client/index.svelte';
+  import AccordionPage from "./client/pages/AccordionPage.svelte";
+  import Home from "./client/Home.svelte";
 </script>
 
-<!-- ************************* HTML ************************* -->
+<!-- <Home /> -->
+<AccordionPage />
 
-<head>
+<!-- <head>
   <title>Sve11</title>
   <meta
     name="description"
@@ -78,7 +82,7 @@
 
 <fieldset>
   <legend> Check Box</legend>
-  <Checkbox checkBoxValue="yoyoy" id="hi" checked=false />
+  <Checkbox checkBoxValue="yoyoy" id="hi" checked="false" />
 </fieldset>
 
 <fieldset>
@@ -100,27 +104,11 @@
 </fieldset>
 
 <!-- ************************* Styles ************************* -->
-<style>
+
+<!-- <AccordionPage /> -->
+<!-- <style>
   * {
-    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
   }
-
-  #buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1em 1em 2em 1em;
-    gap: 2em;
-  }
-
-  #buttons > * {
-    flex-grow: 0;
-  }
-
-  .main-contanier {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
+</style> -->

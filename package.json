@@ -13,11 +13,13 @@
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
+    "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-typescript": "^8.0.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/svelte": "^3.1.1",
+    "@testing-library/user-event": "^14.2.0",
     "@tsconfig/svelte": "^2.0.0",
     "@types/jest": "^27.5.1",
     "babel-jest": "^28.1.0",
@@ -37,12 +39,18 @@
     "typescript": "^4.0.0"
   },
   "dependencies": {
-    "jest-axe": "^6.0.0",
+    "@sveltejs/svelte-repl": "^0.4.1",
     "sirv-cli": "^2.0.0"
   },
   "jest": {
+    "verbose": true,
     "transform": {
-      "^.+\\.svelte$": ["svelte-jester", {"preprocess": true}],
+      "^.+\\.svelte$": [
+        "svelte-jester",
+        {
+          "preprocess": true
+        }
+      ],
       "^.+\\.ts$": "ts-jest",
       "^.+\\.js$": "babel-jest"
     },

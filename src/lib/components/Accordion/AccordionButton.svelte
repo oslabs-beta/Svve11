@@ -11,7 +11,7 @@
 
   const dispatch = createEventDispatcher();
   const handleHeaderClick = (event) => {
-    dispatch("updatePanelStates", {
+    return dispatch("updatePanelStates", {
       target: event.target.id,
     });
   };
@@ -34,5 +34,9 @@
   .header-button {
     height: 100%;
     width: 100%;
+  }
+
+  .header-button:focus {
+    border-width: 5px;
   }
 </style>
