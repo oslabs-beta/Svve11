@@ -95,7 +95,7 @@ yarn add 'Svve11'
 
    - **`headerLevel`**: This property is **required**, and sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
 
-   - **`styles`**: This property is **optional**. If this property is supplied, it must be an array with 4 entries. If you wish to leave out an entry in one position, `null` must be included at the correct index. Each entry is a string that resembles a style object. An example is provided below.
+   - **`styles`**: This property is **optional**. If this property is supplied, it must be an array with 4 entries. Each entry is a string that resembles a style object. If you wish to leave out an entry in one position, `null` must be included at the correct index. An example is provided below.
 
      - The first entry will style the headers of the accordion
      - The second entry will style the panels of the accordion

@@ -1,4 +1,6 @@
 <script>
+  import "prismjs";
+  import Prism from "svelte-prism";
   /**
    * import your component
    */
@@ -33,19 +35,19 @@
       {
         id: 1,
         panelContent:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Cursus eget nunc scelerisque viverra mauris. Lacus laoreet non curabitur gravida arcu ac tortor dignissim. Proin fermentum leo vel orci porta non pulvinar neque laoreet. Nisl vel pretium lectus quam id. Ultrices eros in cursus turpis massa. Mauris pharetra et ultrices neque. Tristique senectus et netus et malesuada fames ac turpis. Turpis tincidunt id aliquet risus feugiat in ante metus. Pellentesque habitant morbi tristique senectus et netus et malesuada.",
         headerTitle: "First Section",
       },
       {
         id: 2,
         panelContent:
-          "Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut enim blandit volutpat maecenas volutpat blandit.",
+          "Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut enim blandit volutpat maecenas volutpat blandit. Mi ipsum faucibus vitae aliquet nec. Dui ut ornare lectus sit amet est placerat in. Convallis convallis tellus id interdum. Vitae aliquet nec ullamcorper sit amet risus. Eu mi bibendum neque egestas congue quisque egestas diam in. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus. Ullamcorper a lacus vestibulum sed. Vitae purus faucibus ornare suspendisse. Curabitur gravida arcu ac tortor dignissim convallis. Viverra ipsum nunc aliquet bibendum enim facilisis gravida. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Id leo in vitae turpis massa sed. Faucibus interdum posuere lorem ipsum dolor.",
         headerTitle: "Second Section",
       },
       {
         id: 3,
         panelContent:
-          "Velit egestas dui id ornare arcu odio ut sem. Quis enim lobortis scelerisque fermentum dui faucibus in ornare.",
+          "Dicat inani suscipit ne mel, eam ad viris tollit essent. Hinc facilis electram eu cum, usu ad praesent sadipscing, nam consetetur scriptorem cu. Labore mollis aperiam no vel, mollis feugait noluisse sed at. Nec ex vide eirmod audire.",
         headerTitle: "Third Section",
       },
     ],
@@ -66,7 +68,7 @@
           WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
         </li>
       </ul>
-      <p>
+      <p class="header-paragraph">
         An accordion is a vertically stacked set of interactive headings that
         each contain a title, content snippet, or thumbnail representing a
         section of content. The headings function as controls that enable users
@@ -82,23 +84,25 @@
         <fieldset>
           <legend>Installation</legend>
           <h2>Installation</h2>
-          <p>For npm, run the following in your command line</p>
-          <pre><code class="code-block">  
+          <section class="content-section">
+            <p>For npm, run the following in your command line</p>
+            <pre><code class="code-block">  
             npm install 'svve11'
           </code></pre>
-          <p>For yarn, run:</p>
-          <pre><code class="code-block">
+            <p>For yarn, run:</p>
+            <pre><code class="code-block">
             yarn add 'svve11'
           </code></pre>
-          <p>
-            Then, import the component in the script section of your Svelte
-            file:
-          </p>
-          <pre><code class="code-block">
+            <p>
+              Then, import the component in the script section of your Svelte
+              file:
+            </p>
+            <pre><code class="code-block">
             import <span class="curly-symbol">&#10100</span> Accordion <span
-                class="curly-symbol">&#10101</span
-              > from 'sve11'
+                  class="curly-symbol">&#10101</span
+                > from 'sve11'
           </code></pre>
+          </section>
         </fieldset>
       </section>
       <!-- Usage Guide -->
@@ -106,45 +110,117 @@
         <fieldset>
           <legend>Usage</legend>
           <h2>Usage</h2>
-          <label for="options-object-code"
-            >Accordion Options Object example:</label
-          >
-          <pre>
-          <code class="code-block" id="options-object-code">
+          <section class="content-section">
+            <h3>Creating an Accordion</h3>
+            <p>
+              An accordion instance can be created by placing the code below in
+              the body of your Svelte file.
+            </p>
+            <pre><code class="code-block">
+            {"<Accordion {options} />"}
+          </code></pre>
+
+            <p>
+              To supply the accordion with its contents, an options object is
+              passed as a prop to the accordion. This object can be created in
+              the script section of the .svelte file or imported in from another
+              location. The options object has 4 properties.
+            </p>
+            <ul class="options-object-list">
+              <li>
+                panelInfo: This property is <span class="bold-word"
+                  >required</span
+                >. It must be an array of objects, with each object containing
+                information for one accordion item. The object must contain:
+              </li>
+              <ul>
+                <li>
+                  an id (number): used to set the id of accordion header and
+                  panel. If you will have more than one accordion in your
+                  application, be sure to continue the sequence of numbers
+                  instead of starting back at 1.
+                </li>
+                <li>
+                  a panelContent (string): sets text contents of the panel.
+                </li>
+                <li>
+                  a headerTitle (string): sets the title of the accordion
+                  section.
+                </li>
+              </ul>
+              <li>
+                headerLevel (number): This property is <span class="bold-word"
+                  >required</span
+                >, and sets the aria-level for each header in the accordion. For
+                information on deciding the appropriate value to be supplied,
+                visit this
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level"
+                  >ARIA webpage</a
+                >.
+              </li>
+              <li>
+                styles (array): This property is <span class="bold-word"
+                  >optional</span
+                >. If this property is supplied, it must be an array with 4
+                entries. Each entry is a string that resembles a style object.
+                If you wish to leave out an entry in one position, null must be
+                included at the correct index. An example is provided below.
+              </li>
+              <ul>
+                <li>The first entry will style the headers of the accordion</li>
+                <li>The second entry will style the panels of the accordion</li>
+                <li>
+                  The third entry will style each individual item within the
+                  accordion
+                </li>
+                <li>
+                  The fourth entry will style the entirety of the accordion
+                </li>
+              </ul>
+              <li>
+                multiselectable (boolean): This property is <span
+                  class="bold-word">optional</span
+                >, and will default to false. When set to true, the accordion
+                can expand multiple panels at one time. When set to false, the
+                accordion can expand only one panel at a time.
+              </li>
+            </ul>
+            <h4>Example Options Object:</h4>
+            <pre><code class="code-block example-code">
             {`options = {
               multiselectable: true,
               headerLevel: 4,
-              // layout of styles array [headerStyle, panelStyles, ]
               styles: [
-                'height: 50px; width: 100%; background-color: coral; border: 1px solid black',
-                'background-color: yellow',
+                "header styles", "panel styles", "item styles", "accordion styles"
               ],
               panelInfo: [
                 {
                   id: 1,
-                  headerTitle: 'First Section',
-                  panelContent:
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                  headerTitle: "First Section",
+                  panelContent: "First Panel Text Content"
                 },
                 {
                   id: 2,
-                  headerTitle: 'Second Section',
-                  panelContent:
-                    'Et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut enim blandit volutpat maecenas volutpat blandit. Mi ipsum faucibus vitae aliquet nec.'
+                  headerTitle: "Second Section",
+                  panelContent: "Second Panel Text Content"
                   
                 },
                 {
                   id: 3,
-                  headerTitle: 'Third Section',
-                  panelContent:
-                    'Velit egestas dui id ornare arcu odio ut sem. Quis enim lobortis scelerisque fermentum dui faucibus in ornare.',
+                  headerTitle: "Third Section",
+                  panelContent: "Third Panel Text Content"
                   
                 },
               ],
             };`}
-            </code>
-          </pre>
-          <Accordion {options} />
+            </code></pre>
+            <h4>Example Styles String:</h4>
+            <pre><code class="code-block example-code">
+              {`"height: 50px; width: 100%; background-color: coral; border: 1px solid black"`}
+            </code></pre>
+            <Accordion {options} />
+          </section>
         </fieldset>
       </section>
 
@@ -168,6 +244,10 @@
     font-size: 16px;
   }
 
+  .bold-word {
+    font-weight: 600;
+  }
+
   .curly-symbol {
     font-family: -apple-system, BlinkMacSystemFont, monospace;
     font-size: 14px;
@@ -179,10 +259,26 @@
     font-weight: 600;
   }
 
+  .content-section {
+    margin-left: 10px;
+  }
+
+  .header-paragraph {
+    margin-left: 10px;
+  }
+
   .main-container {
     display: grid;
     grid-template-columns: 15% 85%;
     overflow: auto;
+  }
+
+  .options-object-list {
+    line-height: 1.3;
+  }
+
+  .example-code {
+    margin-bottom: 20px;
   }
 
   .page-component {
@@ -234,11 +330,15 @@
   h2 {
     font-size: 36px;
     border-bottom: 1px solid;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 10px;
   }
 
   h3 {
     font-size: 28px;
+    margin: 0;
+  }
+  h4 {
+    margin: 10px 0;
   }
 
   pre {
@@ -246,7 +346,7 @@
   }
 
   p {
-    margin: 5px 0;
+    margin: 10px 0;
   }
 
   a {
