@@ -64,7 +64,7 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 - `Props`
   - **`id`** (_`string`_): sets the `id` attribute of the button component.
   - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component
-  - **`checked`** (_`boolean`_):
+  - **`checked`** (_`boolean`_): sets the initial state of the checkbox
   - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox
   - **`checkBoxLabelStyle`** (_`string`_): sets the styling for the checkbox label text'
 
