@@ -2,7 +2,7 @@
 <script lang="ts">
   // @ts-nocheck
 
-  import Input from "./lib/components/TextInput.svelte";
+  import TextInput from "./lib/components/TextInput.svelte";
   import AccordionItem from "./lib/components/Accordion/AccordionItem.svelte";
   import Accordion from "./lib/components/Accordion/Accordion.svelte";
   import Button from "./lib/components/Button.svelte";
@@ -43,8 +43,8 @@
 </script>
 
 <!-- <Home /> -->
-<!-- <AccordionPage /> -->
-<fieldset>
+<AccordionPage />
+<!-- <fieldset>
   <legend> Check Box</legend>
   <Checkbox 
   checkBoxLabel="This should be the value" 
@@ -53,8 +53,7 @@
   checkBoxStyle={'height: 1.5em; width: 1.5em;'} 
   checkBoxLabelStyle={'font-size:1.5em; '}
   /> 
-</fieldset>
-
+</fieldset> -->
 
 <!-- <head>
   <title>Sve11</title>
@@ -98,15 +97,15 @@
 
 <fieldset>
   <legend> Form </legend>
-  <Input label="Name" id="name" type="text" placeholder="eg. John Smith" /><br
+  <TextInput label="Name" id="name" type="text" placeholder="eg. John Smith" /><br
   /><br />
-  <Input
+  <TextInput
     label="Email"
     id="email"
     type="email"
     placeholder="eg. jsmith@gmail.com"
   /><br /><br />
-  <Input
+  <TextInput
     label="Phone"
     id="phone"
     type="tel"
