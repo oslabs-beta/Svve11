@@ -5,11 +5,6 @@
   export let panelID;
   export let labeledBy;
   export let style;
-<<<<<<< HEAD
-
-  // console.log(style);
-=======
->>>>>>> 940a577f9f44fc17b7e70825dacd230f926bd999
 </script>
 
 <div
