@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let id: string = '';
+  export let id: string = "";
 </script>
 
 <svelte:head>
@@ -10,45 +10,49 @@
     rel="stylesheet"
   />
 </svelte:head>
-<nav {id}>
-  <div id="logo">svve11</div>
-  <!-- <img src="./../../img/svvell-logo-yellow.png" alt="yellow svvell logo" /> -->
-
-  <div id="head">
-    <ul>
+<section class="nav-section">
+  <nav id="navbard">
+    <div id="logo-container">
+      <img src="images/svvell-logo-yellow.png" alt="Svell" id="logo-image" />
+    </div>
+    <ul id="head">
       <li><a href="#">Home</a></li>
       <li><a href="#">GitHub</a></li>
       <li><a href="#">Blog</a></li>
       <li><a href="#">Svelte Community</a></li>
     </ul>
-  </div>
-  <hr aria-hidden="true" class="border" />
-  <div id="main">
-    Components
-    <ul>
+    <hr aria-hidden="true" class="border" />
+    <label for="component-list">Library Components</label>
+    <ul id="component-list">
       <li><a href="#">Accordion</a></li>
       <li><a href="#">Button</a></li>
       <li><a href="#">Checkbox</a></li>
       <li><a href="#">Form</a></li>
     </ul>
-  </div>
-
-  <hr aria-hidden="true" class="border" />
-
-  <div class="other">
-    <ul>
+    <hr aria-hidden="true" class="border" />
+    <ul class="miscellaneous-nav-list">
       <li><a href="#">About the team</a></li>
       <li><a href="#">Blog</a></li>
     </ul>
-  </div>
-</nav>
+  </nav>
+</section>
 
 <style>
-  #logo {
-    font-family: 'Oleo Script', cursive;
-    color: #edbb07;
-    font-size: 60px;
-    text-shadow: 0.05em 0.05em #2744e0;
+  .nav-section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  #logo-image {
+    width: 100%;
+    height: auto;
+  }
+
+  #logo-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
   }
 
   #wavy-lines {

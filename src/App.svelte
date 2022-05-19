@@ -43,8 +43,8 @@
 </script>
 
 <!-- <Home /> -->
-<!-- <AccordionPage /> -->
-<fieldset>
+<AccordionPage />
+<!-- <fieldset>
   <legend> Check Box</legend>
   <Checkbox 
   checkBoxLabel="This should be the value" 
@@ -53,8 +53,7 @@
   checkBoxStyle={'height: 1.5em; width: 1.5em;'} 
   checkBoxLabelStyle={'font-size:1.5em; '}
   /> 
-</fieldset>
-
+</fieldset> -->
 
 <!-- <head>
   <title>Sve11</title>
@@ -117,9 +116,8 @@
 <!-- ************************* Styles ************************* -->
 
 <!-- <AccordionPage /> -->
-<!-- <style>
-  * {
-    margin: 0;
-    padding: 0;
+<style>
+  body {
+    overflow: auto;
   }
-</style> -->
+</style>
