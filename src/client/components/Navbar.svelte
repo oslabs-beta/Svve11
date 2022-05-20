@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let id: string = "";
+  // export let id: string = "";
 </script>
 
 <svelte:head>
@@ -42,14 +42,43 @@
 </section>
 
 <style>
-  .nav-label {
-    color: white;
-    font-size: 60%;
-    margin-bottom: 10px;
+  @media screen and (max-width: 667px) {
+    .nav-list-item {
+      font-size: 8px;
+    }
+
+    ul li::before {
+      font-size: 8px;
+    }
+
+    .nav-label {
+      font-size: 8px;
+    }
   }
 
-  .nav-list-item {
-    font-size: 1.1vw;
+  @media screen and (min-width: 667) {
+    .nav-list-item {
+      font-size: 12px;
+    }
+
+    ul li::before {
+      font-size: 12px;
+    }
+
+    .nav-label {
+      font-size: 20px;
+    }
+  }
+
+  /* @media screen and (min-width: 1200px) {
+    .nav-list-item {
+      font-size: 12px;
+    }
+  } */
+
+  .nav-label {
+    color: white;
+    margin-bottom: 10px;
   }
 
   .nav-section {
@@ -70,14 +99,10 @@
   }
 
   nav {
-    /* position: fixed; */
     height: 100%;
-    /* display: flex;
-    flex-direction: column; */
     margin: 0;
     background-color: #eb1646;
     padding: 20px 5px;
-    /* padding-left: 5px; */
     gap: 0.5em;
   }
 
@@ -90,13 +115,12 @@
   ul li::before {
     color: white;
     content: "\2014    ";
-    font-size: 1.1vw;
   }
 
   li a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: 300;
   }
 

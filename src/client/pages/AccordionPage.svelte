@@ -25,10 +25,7 @@
     multiselectable: false,
     headerLevel: 4,
     //layout of styles array [headerStyle, panelStyles, ]
-    // styles: [
-    //   'height: 50px; width: 100%; background-color: coral; border: 1px solid black',
-    //   'background-color: yellow',
-    // ],
+    styles: [null, null, null, null],
     panelInfo: [
       {
         id: 1,
@@ -60,7 +57,7 @@
   <article class="page-component">
     <header>
       <h1>{componentName}</h1>
-      <ul>
+      <ul class="resource-links-list">
         <li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
         <li>
           WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
@@ -216,7 +213,10 @@
             <pre><code class="code-block example-code">
               {`"height: 50px; width: 100%; background-color: coral; border: 1px solid black"`}
             </code></pre>
-            <Accordion {options} />
+            <h4>Example Accordion:</h4>
+            <div class="example-accordion">
+              <Accordion {options} />
+            </div>
           </section>
         </fieldset>
       </section>
@@ -235,10 +235,79 @@
 </section>
 
 <style>
+  /* Styles for mobile */
+  @media screen and (max-width: 667px) {
+    p {
+      font-size: 8px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    h2 {
+      font-size: 14px;
+      margin: 0 0 10px 0;
+    }
+
+    h3 {
+      font-size: 10px;
+    }
+    h4 {
+      font-size: 8px;
+    }
+    .code-block {
+      font-size: 8px;
+    }
+    ul {
+      font-size: 8px;
+    }
+
+    .example-accordion {
+      font-size: 8px;
+    }
+
+    .curly-symbol {
+      font-size: 8px;
+    }
+  }
+  /* Styles for tablet and computer */
+  @media screen and (min-width: 668px) {
+    p {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 42px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin: 0 0 10px 10px;
+    }
+
+    h3 {
+      font-size: 28px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+    .code-block {
+      font-size: 20;
+    }
+
+    .curly-symbol {
+      font-size: 14px;
+    }
+
+    .example-accordion {
+      font-size: 16px;
+    }
+  }
+
   * {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 100;
-    font-size: 16px;
   }
 
   .bold-word {
@@ -247,12 +316,10 @@
 
   .curly-symbol {
     font-family: -apple-system, BlinkMacSystemFont, monospace;
-    font-size: 14px;
     font-weight: 50;
   }
 
   .code-block {
-    font-size: 20;
     font-weight: 600;
   }
 
@@ -287,6 +354,10 @@
     margin: 0 15px;
   }
 
+  .resource-links-list {
+    padding-left: 20px;
+  }
+
   #nav-container {
     grid-column: 0 1;
     grid-row: auto;
@@ -296,7 +367,8 @@
 
   fieldset {
     border: none;
-    margin-top: 0;
+    margin: 0;
+    padding-left: 0;
   }
 
   legend {
@@ -316,22 +388,19 @@
     /* padding: 1em; */
   }
 
-  header {
-    margin-left: 20px;
-  }
+  /* header {
+  } */
+
   h1 {
-    font-size: 42px;
     margin-bottom: 0;
   }
 
   h2 {
-    font-size: 36px;
     border-bottom: 1px solid;
-    margin: 0 0 10px 10px;
+    margin: 0 0 10px 0;
   }
 
   h3 {
-    font-size: 28px;
     margin: 0;
   }
   h4 {
@@ -350,5 +419,9 @@
     /* text-decoration: none; */
     font-weight: 500;
     color: #2744e0;
+  }
+
+  article {
+    width: auto;
   }
 </style>

@@ -1,7 +1,15 @@
 {
-  "name": "svelte-app",
+  "name": "svve11",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "svelte": "src/index.js",
+  "exports": {
+		"./package.json": "./package.json",
+		"./App.svelte": "./src/App.svelte",
+		".": "./src/App.svelte"
+	},
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
