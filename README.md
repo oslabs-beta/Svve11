@@ -11,10 +11,6 @@
 
 <h1 align="center"> A Svelte Accessibility Component Library </h2>
 
-### Table of Contents
-
-**[CheckBox Component](#CheckBox)**<br>
-
 ## About Us
 
 Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design!
@@ -26,6 +22,13 @@ For easier readability of documentation, check out our website [http://localhost
 ✅ **Ready-to-use Components**
 
 ✅
+
+### Table of Contents
+
+**[Accordion Component](#accordion)**<br>
+**[Box Component](#box)**<br>
+**[CheckBox Component](#checkbox)**<br>
+**[Form](#form)**<br>
 
 ---
 
