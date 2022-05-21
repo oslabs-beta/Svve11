@@ -20,9 +20,6 @@
 <!-- replace this with accessible Button component -->
 <button
   class="header-button"
-  aria-expanded={isOpen}
-  aria-controls={controls}
-  aria-label={isOpen ? textToRead : ""}
   {id}
   on:click={(event) => handleHeaderClick(event)}
   {style}

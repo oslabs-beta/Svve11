@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import { afterUpdate, beforeUpdate, onMount } from "svelte";
 
-  import AccordionItem from "./AccordionItem.svelte";
+  import InaccessibleAccordionItem from "./InaccessibleAccordionItem.svelte";
   export let options = {
     multiselectable: false,
     headerLevel: null,
@@ -52,11 +52,10 @@
 
 <div
   class="accordion-main"
-  aria-multiselectable={options.multiselectable}
   style={options.styles[3]}
 >
   {#each options.panelInfo as info, i}
-    <AccordionItem
+    <InaccessibleAccordionItem
       options={info}
       headerLevel={options.headerLevel}
       customStyles={options.styles}

@@ -1,8 +1,8 @@
 <script>
   // @ts-nocheck
 
-  import AccordionPanel from "./AccordionPanel.svelte";
-  import AccordionHeader from "./AccordionHeader.svelte";
+  import InaccessibleAccordionPanel from "./InaccessibleAccordionPanel.svelte";
+  import InaccessibleAccordionHeader from "./InaccessibleAccordionHeader.svelte";
 
   export let options;
   export let headerLevel = 2;
@@ -12,8 +12,8 @@
   $: state = isOpen ? "expanded" : "collapsed";
 </script>
 
-<div class="accordion-item" data-state={state} style={customStyles[2]}>
-  <AccordionHeader
+<div class="accordion-item" style={customStyles[2]}>
+  <InaccessibleAccordionHeader
     on:updatePanelStates
     headerTitle={options.headerTitle}
     controls={`panel${options.id}`}
@@ -23,7 +23,7 @@
     {isOpen}
     {headerLevel}
   />
-  <AccordionPanel
+  <InaccessibleAccordionPanel
     panelContent={options.panelContent}
     panelID={`panel${options.id}`}
     labeledBy={`button${options.id}`}

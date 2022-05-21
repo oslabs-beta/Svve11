@@ -12,7 +12,6 @@
   role="region"
   class:open-panel={isOpen}
   id={panelID}
-  aria-labelledby={labeledBy}
   {style}
 >
   {#if isOpen}
