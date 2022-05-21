@@ -76,7 +76,7 @@ yarn add 'Svve11'
 1. Import the accordion component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Accordion } from "Svve11";
+   import { Accordion } from 'Svve11';
    ```
 
 2. An accordion instance can be created by placing the code below in the body of your .svelte file.
@@ -95,7 +95,7 @@ yarn add 'Svve11'
 
    - **`headerLevel`**: This property is **required**, and sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
 
-   - **`styles`**: This property is **optional**. If this property is supplied, it must be an array with 4 entries. If you wish to leave out an entry in one position, `null` must be included at the correct index. Each entry is a string that resembles a style object. An example is provided below.
+   - **`styles`**: This property is **optional**. If this property is supplied, it must be an array with 4 entries. Each entry is a string that resembles a style object. If you wish to leave out an entry in one position, `null` must be included at the correct index. An example is provided below.
 
      - The first entry will style the headers of the accordion
      - The second entry will style the panels of the accordion
@@ -108,33 +108,28 @@ yarn add 'Svve11'
 
    ```js
    const options = {
-     panelInfo: [
-       {
-         id: 1,
-         panelContent: "My first panel text.",
-         headerTitle: "My first header title",
-       },
-       {
-         id: 2,
-         panelContent: "My second panel text.",
-         headerTitle: "My second header title",
-       },
-     ],
-     headerLevel: 4,
-     styles: [
-       "header styles",
-       "panel styles",
-       "item styles",
-       "accordion styles",
-     ],
-     multiselectable: false,
+   	panelInfo: [
+   		{
+   			id: 1,
+   			panelContent: 'My first panel text.',
+   			headerTitle: 'My first header title'
+   		},
+   		{
+   			id: 2,
+   			panelContent: 'My second panel text.',
+   			headerTitle: 'My second header title'
+   		}
+   	],
+   	headerLevel: 4,
+   	styles: ['header styles', 'panel styles', 'item styles', 'accordion styles'],
+   	multiselectable: false
    };
    ```
 
    #### Example Styles String
 
    ```js
-   "height: 50px; width: 100%; background-color: coral; border: 1px solid black";
+   'height: 50px; width: 100%; background-color: coral; border: 1px solid black';
    ```
 
 ### Button
@@ -142,7 +137,7 @@ yarn add 'Svve11'
 1. Import the Button component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Button } from "Svve11";
+   import { Button } from 'Svve11';
    ```
 
 2. The button component has (5) props:
@@ -173,7 +168,7 @@ yarn add 'Svve11'
 1. Import the CheckBox component using the command below in the script section of your .svelte file.
 
    ```js
-   import { CheckBox } from "Svve11";
+   import { CheckBox } from 'Svve11';
    ```
 
 2. An accordion instance can be created by placing the code below in the body of your .svelte file.
@@ -195,11 +190,11 @@ yarn add 'Svve11'
 
 ```js
 <Checkbox
-  checkBoxLabel="This should be the value"
-  id="one"
-  checked={false}
-  checkBoxStyle={"height: 1.5em; width: 1.5em;"}
-  checkBoxLabelStyle={"font-size:1.5em; "}
+	checkBoxLabel="This should be the value"
+	id="one"
+	checked={false}
+	checkBoxStyle={'height: 1.5em; width: 1.5em;'}
+	checkBoxLabelStyle={'font-size:1.5em; '}
 />
 ```
 
