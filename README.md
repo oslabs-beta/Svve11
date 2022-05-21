@@ -1,71 +1,94 @@
-![](/src/img/Svve11%20Logo.png)
+<div style='display: flex; justify-content: center; margin-bottom: 20px;' >
+<img src='./src/img/svvell-logo-yellow.png' style='height: auto; width: 60%; margin: auto'>
+</div>
 
 <p align="center">
-  <img src="http`xs://img.shields.io/badge/License-MIT-green.svg" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" />
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com"/>
   <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues"/>
   <img src="https://travis-ci.org/boennemann/badges.svg?branch=master" /> 
 </p>
 
-<h2 align="center"> Svelte Accessible Component Library </h2>
+<h1 align="center"> A Svelte Accessibility Component Library </h2>
 
 ## About Us
 
-Svve11 is a Svelte Accessible Component Library
+Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design!
 
-check out our website [http://localhost:8080/](http://localhost:8080/)
+For easier readability of documentation, check out our website [http://localhost:8080/](http://localhost:8080/)
 
 ## Features
 
-✅ **Making your component accessible**
+✅ **Ready-to-use Components**
 
-✅ **Ability to simple copy and paste code and have it working**
+✅
+
+### Table of Contents
+
+**[Accordion Component](#accordion)**<br>
+**[Box Component](#box)**<br>
+**[CheckBox Component](#checkbox)**<br>
+**[Form](#form)**<br>
 
 ---
-
-<br>
 
 ## Getting Started
 
-### Installation
+### Cloning this Repository
 
-**Prerequisite**: Make sure you downloaded most recent versions of components
+Sve11 is created using `npm`. Be sure to have Node.js and NPM installed on your computer before beginning.
 
-1. Fork and clone this repository.
-2. `npm install`
-3. `npm start dev`
+To clone this repository, you must:
+
+1. Fork the repository to your own GitHub.
+2. Clone the repository into a local directory on your computer by running the following command in the terminal.
+
+```
+git clone https://github.com/[Your GitHub Handle]/Svve11
+```
+
+3. Install dependencies to the repository.
+
+```
+cd Svve11
+npm install
+```
+
+### Installing Component Library as a product dependency
+
+Svve11 can easily be installed for use in your application as follows.
+
+1. From the terminal, navigate to your project directory.
+2. Run one of the following commands in your terminal.
+
+- Using `npm`
+
+```node
+npm install --save-dev 'Svve11'
+```
+
+- Using `yarn`
+
+```yarn
+yarn add 'Svve11'
+```
+
+3. Components can now be imported directly into your Svelte files as documented below.
 
 ### Technologies
 
-[Svelte](https://svelte.dev/) | [Typescript](https://www.typescriptlang.org/) | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) | [DENODE](https://www.denodo.com/en) | [Express](https://expressjs.com/en/starter/installing.html) | [Jest](https://jestjs.io/) | [Svelte-Kit](https://kit.svelte.dev/docs/introduction)
+[Svelte](https://svelte.dev/) | [Typescript](https://www.typescriptlang.org/) | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) | [DENO](https://deno.com/deploy/docs) | [Express](https://expressjs.com/en/starter/installing.html) | [Jest](https://jestjs.io/) | [Rollup](https://rollupjs.org/guide/en/)
 
 ---
 
-<br>
-
 ## Component
-
-### CheckBox
-
-1. **IMPORT** the checkbox component by **COPY** and **PASTE** code **_BELOW_** on the file where you'll render the checkbox
-   `bash import Checkbox from "./lib/components/Checkbox.svelte" `
-
-2. Head to the file where the checkbox will be used, simply **COPY** and **PASTE** code **_BELOW_**
-   `js <Checkbox checkBoxValue="" id="" checked="" /> `
-
-- **Make sure to give value to all the variables**, if not you will encounter problems down the road.
-- **checkBoxValue** will be the **_TEXT_** you render next to the checkbox
-- **ID** will be the id you'd like to give to the checkbox
-- **CHECKED** checked will be wether you'd like to check box to be **_CHECKED_** from start or not
-
-### Form
 
 ### Accordion
 
 1. Import the accordion component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Accordion } from "Svve11";
+   import { Accordion } from 'Svve11';
    ```
 
 2. An accordion instance can be created by placing the code below in the body of your .svelte file.
@@ -76,22 +99,22 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 
 3. To supply the accordion with its contents, an options object is passed as a prop to the accordion. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 4 properties.
 
-   - `panelInfo`: This property is **required**. It must be an array of objects, with each object containing information for one accordion item. The object must contain:
+   - **`panelInfo`**: This property is **required**. It must be an array of objects, with each object containing information for one accordion item. The object must contain:
 
-     - an `id` property set to a number. If you will have more than one accordion in your application, be sure to continue the sequence of numbers instead of starting back at 1. Each panel should have a unique `id`.
-     - a `panelContent` property set to a string specifying the desired contents of each panel.
-     - a `headerTitle` property set to a string that clearly describes each section of the accordion.
+     - **`id`** (_`number`_): used to set the `id` of accordion header and panel. If you will have more than one accordion in your application, be sure to continue the sequence of numbers instead of starting back at 1.
+     - **`panelContent`** (_`string`_): sets text contents of the panel.
+     - **`headerTitle`** (_`string`_): sets the title of the accordion section.
 
-   - `headerLevel`: This property is **required**, and sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
+   - **`headerLevel`**: This property is **required**, and sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
 
-   - `styles`: This property is optional. If this property is supplied, it must be an array with 4 entries. If you wish to leave out an entry in one position, `null` must be included at the correct index. Each entry is a string that resembles a style object.
+   - **`styles`**: This property is **optional**. If this property is supplied, it must be an array with 4 entries. If you wish to leave out an entry in one position, `null` must be included at the correct index. Each entry is a string that resembles a style object. An example is provided below.
 
      - The first entry will style the headers of the accordion
      - The second entry will style the panels of the accordion
      - The third entry will style each individual item within the accordion.
      - The fourth entry will style the entirety of the accordion
 
-   - `multiselectable`: This property is optional, and will default to `false`. When set to `true`, the accordion will allow multiple panels to be open at a time. When set to `false`, the opening of one panel will cause the collapse of the current panel so that only one panel is open at a time.
+   - **`multiselectable`**: This property is **optional**, and will default to `false`. When set to `true`, the accordion can expand multiple panels at one time. When set to `false`, the accordion can expand only one panel at a time.
 
    #### Example Options Object
 
@@ -100,21 +123,21 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
      panelInfo: [
        {
          id: 1,
-         panelContent: "My first panel text.",
-         headerTitle: "My first header title",
+         panelContent: 'My first panel text.',
+         headerTitle: 'My first header title',
        },
        {
          id: 2,
-         panelContent: "My second panel text.",
-         headerTitle: "My second header title",
+         panelContent: 'My second panel text.',
+         headerTitle: 'My second header title',
        },
      ],
      headerLevel: 4,
      styles: [
-       "header styles",
-       "panel styles",
-       "item styles",
-       "accordion styles",
+       'header styles',
+       'panel styles',
+       'item styles',
+       'accordion styles',
      ],
      multiselectable: false,
    };
@@ -123,7 +146,7 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
    #### Example Styles String
 
    ```js
-   "height: 50px; width: 100%; background-color: coral; border: 1px solid black";
+   'height: 50px; width: 100%; background-color: coral; border: 1px solid black';
    ```
 
 ### Button
@@ -131,35 +154,68 @@ check out our website [http://localhost:8080/](http://localhost:8080/)
 1. Import the Button component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Button } from "Svve11";
+   import { Button } from 'Svve11';
    ```
 
 2. The button component has (5) props:
-  - (4) **required** props:
-    - **`id`** (*`string`*): sets the `id` attribute of the button component.
-    - **`label`** (*`string`*): sets the `aria-label` attribute.
-    - **`content`** (*`string`*): sets the text that is displayed inside the button component.
-    - **`handleClick`** (*`function`*): defines the action or event to be triggered when the button is clicked.
 
-  - (1) *optional* prop:
-    - **`style`** (*`string`*): sets the styles of the button component
-  
+- (4) **required** props:
+
+  - **`id`** (_`string`_): sets the `id` attribute of the button component.
+  - **`label`** (_`string`_): sets the `aria-label` attribute.
+  - **`content`** (_`string`_): sets the text that is displayed inside the button component.
+  - **`handleClick`** (_`function`_): defines the action or event to be triggered when the button is clicked.
+
+- (1) _optional_ prop:
+  - **`style`** (_`string`_): sets the styles of the button component
+
 3. A Button instance can be created by placing the code below in the body of your .svelte file.
-     ```js
-     <Button 
-       id:'demo-button',
-       label:'an accessible button',
-       content:'Click me',
-       handleClick: () => console.log('you clicked a button!'),
-       style: 'background-color: blue; color: white;'
-     />
-      ```
-  
+   ```js
+   <Button
+     id:'demo-button',
+     label:'an accessible button',
+     content:'Click me',
+     handleClick: () => console.log('you clicked a button!'),
+     style: 'background-color: blue; color: white;'
+   />
+   ```
 
+## CheckBox
 
+1. Import the CheckBox component using the command below in the script section of your .svelte file.
 
-#### More accessible components to come...
+   ```js
+   import { CheckBox } from 'Svve11';
+   ```
 
+2. An accordion instance can be created by placing the code below in the body of your .svelte file.
+
+   ```js
+   <Checkbox checkBoxLabel="" id="" checked={} checkBoxStyle={''} checkBoxLabelStyle={''} />
+   ```
+
+3. The CheckBox component has (5) props:
+
+- `Props`
+  - **`id`** (_`string`_): sets the `id` attribute of the button component.
+  - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component
+  - **`checked`** (_`boolean`_):
+  - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox
+  - **`checkBoxLabelStyle`** (_`string`_): sets the styling for the checkbox label text'
+
+4. Example Code
+
+```js
+<Checkbox
+  checkBoxLabel="This should be the value"
+  id="one"
+  checked={false}
+  checkBoxStyle={'height: 1.5em; width: 1.5em;'}
+  checkBoxLabelStyle={'font-size:1.5em; '}
+/>
+```
+
+### Form
 
 ## The Svve11 Team
 
