@@ -1,6 +1,6 @@
 <script lang="ts">
   // @ts-nocheck
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte';
 
   export let headerTitle: string;
   export let controls: string;
@@ -19,7 +19,7 @@
 
   //I cannot figure out how to type the event here!!
   const handleHeaderClick = (event: MouseEvent): void => {
-    dispatch("updatePanelStates", {
+    dispatch('updatePanelStates', {
       target: event.target.id,
     });
     return;
@@ -35,13 +35,13 @@
   class="header-button"
   aria-expanded={isOpen}
   aria-controls={controls}
-  aria-label={isOpen ? textToRead : ""}
+  aria-label={isOpen ? textToRead : ''}
   {id}
   on:click={(event) => handleHeaderClick(event)}
   {style}
 >
   <!-- if no header title is supplied in options object, then a default phrase reminds the user to supply one! -->
-  {headerTitle ? headerTitle : "Please define header title in options object!"}
+  {headerTitle ? headerTitle : 'Please define header title in options object!'}
 </button>
 
 <style>
@@ -50,6 +50,10 @@
     width: 100%;
     padding: 1em;
     margin: 0;
+  }
+
+  .header-button:focus {
+    border-width: 5px;
   }
 
   .header-button:focus {

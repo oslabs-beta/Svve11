@@ -1,22 +1,19 @@
-<script lang="ts">
-  import { afterUpdate, beforeUpdate, onMount } from 'svelte';
+<script>
+  import { afterUpdate, beforeUpdate, onMount } from "svelte";
 
-  import AccordionItem from './AccordionItem.svelte';
-  import type { optionsTypes } from './AccordionTypes';
-
-  export let options: optionsTypes = {
+  import InaccessibleAccordionItem from "./InaccessibleAccordionItem.svelte";
+  export let options = {
     multiselectable: false,
     headerLevel: null,
+    styles: ["", ""],
     panelInfo: [],
   };
 
-  // if no custom styles supplied, set styles array to be all null
-  if (!options['styles']) {
-    options['styles'] = [null, null, null, null];
+  if (!options.styles) {
+    options.styles = [null, null, null, null];
   }
 
-  // Instantiate panelStates and set as reactive
-  let panelStates: boolean[];
+  let panelStates;
   $: panelStates = [];
 
   onMount(() => {
@@ -27,14 +24,12 @@
     panelStates = panelStates;
   });
 
-  // Need to type the event input and confirm the function is typed propery
-  const updatePanelStates = (event: CustomEvent<{ target: string }>): void => {
+  const updatePanelStates = (event) => {
     // Determin index of panel to be expanded
-    const panelIndex: number = Number(event.detail.target.slice(6)) - 1;
+    const panelIndex = Number(event.detail.target.slice(6)) - 1;
     // If panel at the index to be changed is already true, set to false (i.e. collapse the panel)
     if (panelStates[panelIndex] === true) {
-      panelStates[panelIndex] = false;
-      return;
+      return (panelStates[panelIndex] = false);
     }
 
     // If only one panel should be open at a time
@@ -55,21 +50,12 @@
   };
 </script>
 
-<!-- aria-multiselectable indicates whether accordion permits multiple panels to be open at once 
-style are the custom styles supplied by a user of the library for the Accordion -->
 <div
   class="accordion-main"
-  aria-multiselectable={options.multiselectable}
   style={options.styles[3]}
 >
-  <!-- Each loop iterating over the array of panelInfo, setting:
-    options of item as the panel info for a given item
-    headerLevel as the header level from options
-    customStyles attribute passes down the styles array 
-    isOpen is a reactive attribute that will change from false to true and back when item's panel expands and collapses 
-    supply updatePanelStates function to be passed through props to the button in the header -->
   {#each options.panelInfo as info, i}
-    <AccordionItem
+    <InaccessibleAccordionItem
       options={info}
       headerLevel={options.headerLevel}
       customStyles={options.styles}
@@ -79,7 +65,6 @@ style are the custom styles supplied by a user of the library for the Accordion 
   {/each}
 </div>
 
-<!-- Default styles for accordion -->
 <style>
   .accordion-main {
     width: 100%;

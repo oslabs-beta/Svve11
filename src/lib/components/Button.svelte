@@ -1,8 +1,7 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-
   // function for button to execute
-  export let handleClick: () => void;
+  export let handleClick: <Input, Output>(Input?: any) => Output | void;
 
   // text to go inside button
   export let content: string = '';
