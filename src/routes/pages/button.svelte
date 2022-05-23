@@ -64,7 +64,7 @@
             <legend>Usage</legend>
             <h2>Usage</h2>
             <section class="content-section">
-              <h3>Creating an Accordion</h3>
+              <h3>Creating a Button</h3>
               <p>
                 A button instance can be created by placing the code below in
                 the body of your Svelte file.
