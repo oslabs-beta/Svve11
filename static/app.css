@@ -28,6 +28,7 @@
 
     .code-block {
       font-size: 8px;
+      width: 100%;
     }
 
     .curly-symbol {
@@ -68,6 +69,7 @@
     
     .code-block {
       font-size: 16px;
+      width: 100%;
     }
 
     .curly-symbol {
@@ -101,14 +103,13 @@
 
   code {
     font-family: -apple-system, BlinkMacSystemFont, monospace;
-    padding-right: 50px;
   }
 
   fieldset {
     border: none;
     margin: 0;
     padding-left: 0;
-    width: auto;
+    width: 100%;;
   }
 
   h1 {
@@ -184,7 +185,6 @@
 
   .content-section {
     margin-left: 10px;
-    width: auto;
   }
 
   .curly-symbol {
@@ -205,7 +205,6 @@
     margin: 0;
     display: grid;
     grid-template-columns: 15% 85%;
-    overflow: auto;
   }
 
   .options-object-list {
@@ -216,7 +215,7 @@
     width: auto;
     margin: 0;
     padding: 0;
-    overflow-y: auto;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     margin: 0 15px;

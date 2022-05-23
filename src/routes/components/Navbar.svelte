@@ -20,7 +20,7 @@
       <img src={logo} alt="Svvell" id="logo-image" />
     </div>
     <ul id="head">
-      <li><a class="nav-list-item" href="#">Home</a></li>
+      <li><a class="nav-list-item" href="/">Home</a></li>
       <li>
         <a class="nav-list-item" href="https://github.com/oslabs-beta/svve11"
           >GitHub</a
