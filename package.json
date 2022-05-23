@@ -1,6 +1,19 @@
 {
-  "name": "attempting",
+  "name": "svve11",
+<<<<<<< HEAD
+  "version": "1.0.0",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "svelte": "src/index.js",
+  "exports": {
+		"./package.json": "./package.json",
+		"./App.svelte": "./src/App.svelte",
+		".": "./src/App.svelte"
+	},
+=======
   "version": "0.0.1",
+>>>>>>> main
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",

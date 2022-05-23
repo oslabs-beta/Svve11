@@ -180,7 +180,7 @@ yarn add 'Svve11'
 3. The CheckBox component has (5) props:
 
 - `Props`
-  - **`id`** (_`string`_): sets the `id` attribute of the button component.
+  - **`id`** (_`string`_): sets the `id` attribute of the checkbox component.
   - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component
   - **`checked`** (_`boolean`_):
   - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox
@@ -194,7 +194,7 @@ yarn add 'Svve11'
 	id="one"
 	checked={false}
 	checkBoxStyle={'height: 1.5em; width: 1.5em;'}
-	checkBoxLabelStyle={'font-size:1.5em; '}
+	checkBoxLabelStyle={'font-size:1.5em;'}
 />
 ```
 

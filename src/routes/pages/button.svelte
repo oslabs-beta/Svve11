@@ -1,11 +1,12 @@
 <script>
-    import TextInput from "$lib/TextInput.svelte";
+    import Button from "../../lib/Button.svelte";
+    import PropsTable from "../components/PropsTable.svelte"
     import Navbar from "../components/Navbar.svelte";
   
-    const componentName = "Text Input";
+    const componentName = "Button";
     const githubSourceLink = "https://github.com/Svve11/";
     const WAIARIApracticesLink =
-      "https://w3c.github.io/aria-practices/#combobox";
+      "https://w3c.github.io/aria-practices/#button";
   
   </script>
   
@@ -24,13 +25,14 @@
           </li>
         </ul>
         <p class="header-paragraph">
-            A text input is a widget that enables users to input a string of text, 
-            typically in response to questions or to supply user information. Furthermore, 
-            text inputs are often paired with buttons for submission of the text.
+            A button is a widget that enables users to trigger an action or event, 
+            such as submitting a form, opening a dialog, canceling an action, or 
+            performing a delete operation.
         </p>
       </header>
   
       <main>
+        <!-- Installation Guide -->
         <section>
           <fieldset>
             <legend>Installation</legend>
@@ -49,7 +51,7 @@
                 file:
               </p>
               <pre><code class="code-block">
-              import <span class="curly-symbol">&#10100</span> TextInput <span
+              import <span class="curly-symbol">&#10100</span> Button <span
                     class="curly-symbol">&#10101</span
                   > from 'svve11'
             </code></pre>
@@ -62,73 +64,52 @@
             <legend>Usage</legend>
             <h2>Usage</h2>
             <section class="content-section">
-              <h3>Creating a Text Input</h3>
+              <h3>Creating a Button</h3>
               <p>
-                A text input instance can be created by placing the code below in
+                A button instance can be created by placing the code below in
                 the body of your Svelte file.
               </p>
               <pre><code class="code-block">
-              {`<Checkbox />`}
+              {`<Button {id} {label} {content} {handleClick} {style}/>`}
               </code></pre>
-              <p>There are four required attributes:</p>
+              <p>Each attribute should be defined as follows:</p>
               <ul class="options-object-list">
                 <li>
-                  label (string): describes what the text input is requesting from the user
+                  id (string): sets the id attribute of the button component.
                 </li>
                 <li>
-                  placeholder (string): sets the text displayed in the text input box before the
-                  user inputs anything. This gives the user a hint as to what kind of input is being
-                  requested.
+                  label (string): sets the aria-label attribute of the button component.
                 </li>
                 <li>
-                  id (string): sets the unique id for the text field
+                  content (string): sets the text that is displayed inside the button component.
                 </li>
                 <li>
-                  type (string): sets the the kind of input expected to be submitted by the user.
+                  handleClick (function): defined the action or event to be triggered when the button is clicked.
+                </li>
+                <li>
+                  style (string): This attribute is <span class="bold-word">optional</span> and sets the styles of the button component.
                 </li>
               </ul>
-              <h4>Example Text Input Code:</h4>
+              <h4>Example Button Code:</h4>
               <pre><code class="code-block">
-              {`<TextInput
-                 label='Your email here: '
-                 placeholder='jsmith@gmail.com'
-                 id='user-email'
-                 type='email'
+              {`<Button 
+                id="demo-button-1" 
+                label="accessible-button-1" 
+                content="Click me!" 
+                handleClick={() => console.log('You clicked a button!')} 
+                style="height: 50px; width:300px;"
               />`}
               </code></pre>
-              
-              <p>Styles are optional and can be passed to the text input box as follows:</p>
-              <ul class="options-object-list">
-                <li>
-                  inputStyle (string): styles the text input box
-                </li>
-                <li>
-                  labelStyle (string): styles the text of the label for a text input box
-                </li>
-              </ul>
-              <pre><code class="code-block">
-              {`<TextInput 
-                 label='Your email here: ' 
-                 placeholder='jsmith@gmail.com' 
-                 id='user-email' 
-                 type='email' 
-                 labelStyle='font-family:Times New Roman; font-size:20px; color: blue;' 
-                 inputStyle='color: blue'
-              />`}
-              </code></pre>
-              <h4>Example Text Input without styles:</h4>
-              <div class="example-text-input-no-style">
-                <TextInput label='Your email here: ' placeholder='jsmith@gmail.com' id='user-email' type='email'/>
+              <h4>Example Button:</h4>
+              <div class="example-button">
+                  <Button 
+                  id='demo-button-1'
+                  label="accesible-button-1"
+                  content='Click me!'
+                  handleClick={() => console.log('You clicked a button!')}
+                  style="height: 50px; width: 300px;"
+                  />
               </div>
-              <h4>Example Text Input with styles:</h4>
-              <div class="example-text-input-style">
-                <TextInput label='Your email here: ' placeholder='jsmith@gmail.com' id='user-email' type='email' labelStyle='font-family:Times New Roman; font-size:20px; color: blue' inputStyle='color: blue'/>
-              </div>
-              
-              <p>There are a number of other optional attributes that can be supplied to the text input:</p>
-
-              <h1>PAUL HELP ME OUT HERE</h1>
-              
             </section>
           </fieldset>
         </section>
@@ -160,25 +141,25 @@
                     <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checkBoxLabel</code></th>
+                    <th><code>label</code></th>
                     <td>string</td>
                     <td>true</td>
                     <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checked</code></th>
-                    <td>boolean</td>
-                    <td>false</td>
-                    <td>false</td>
+                    <th><code>content</code></th>
+                    <td>string</td>
+                    <td>true</td>
+                    <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checkBoxStyle</code></th>
-                    <td>string</td>
+                    <th><code>handleClick</code></th>
+                    <td>function</td>
                     <td>false</td>
                     <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checkBoxLabelStyle</code></th>
+                    <th><code>style</code></th>
                     <td>string</td>
                     <td>false</td>
                     <td>N/A</td>
@@ -195,13 +176,7 @@
   
   <style>
 
-    .example-text-input-style {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .example-text-input-no-style {
+    .example-button {
         display: flex;
         justify-content: center;
         align-items: center;

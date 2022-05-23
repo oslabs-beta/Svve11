@@ -41,6 +41,7 @@
     </tbody>
   </table>
 </div>
+<<<<<<< HEAD:src/client/components/PropsTable.svelte
 
 <style>
   @media screen and (max-width: 667px) {
@@ -117,3 +118,5 @@
     font-weight: 600;
   }
 </style>
+=======
+>>>>>>> main:src/routes/components/PropsTable.svelte
