@@ -87,7 +87,7 @@
         </fieldset>
       </section>
       <!-- Usage Guide -->
-      <section>
+      <section class="main-section">
         <fieldset>
           <legend>Usage</legend>
           <h2>Usage</h2>
@@ -212,48 +212,48 @@
           <legend>Component API</legend>
           <h2>Component API</h2>
           <div
-  role="region"
-  tabindex="0"
-  style="max-width:100%;overflow:auto"
-  class="props-table"
->
-  <table id="props-table">
-    <thead>
-      <tr>
-        <th>Prop</th>
-        <th>Type</th>
-        <th>Required</th>
-        <th>Default Value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th><code>multiselectable</code></th>
-        <td>boolean</td>
-        <td>false</td>
-        <td>true</td>
-      </tr>
-      <tr>
-        <th><code>headerLevel</code></th>
-        <td>number</td>
-        <td>true</td>
-        <td>N/A</td>
-      </tr>
-      <tr>
-        <th><code>styles</code></th>
-        <td>array of strings</td>
-        <td>false</td>
-        <td>N/A</td>
-      </tr>
-      <tr>
-        <th><code>panelInfo</code></th>
-        <td>array of objects</td>
-        <td>false</td>
-        <td>N/A</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+            role="region"
+            tabindex="0"
+            style="max-width:100%;overflow:auto"
+            class="props-table"
+          >
+            <table id="props-table">
+              <thead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Default Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><code>multiselectable</code></th>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>true</td>
+                </tr>
+                <tr>
+                  <th><code>headerLevel</code></th>
+                  <td>number</td>
+                  <td>true</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <th><code>styles</code></th>
+                  <td>array of strings</td>
+                  <td>false</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <th><code>panelInfo</code></th>
+                  <td>array of objects</td>
+                  <td>false</td>
+                  <td>N/A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </fieldset>
       </section>
     </main>
