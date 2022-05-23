@@ -76,7 +76,7 @@ yarn add 'Svve11'
 1. Import the accordion component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Accordion } from "Svve11";
+   import { Accordion } from 'Svve11';
    ```
 
 2. An accordion instance can be created by placing the code below in the body of your .svelte file.
@@ -108,33 +108,28 @@ yarn add 'Svve11'
 
    ```js
    const options = {
-     panelInfo: [
-       {
-         id: 1,
-         panelContent: "My first panel text.",
-         headerTitle: "My first header title",
-       },
-       {
-         id: 2,
-         panelContent: "My second panel text.",
-         headerTitle: "My second header title",
-       },
-     ],
-     headerLevel: 4,
-     styles: [
-       "header styles",
-       "panel styles",
-       "item styles",
-       "accordion styles",
-     ],
-     multiselectable: false,
+   	panelInfo: [
+   		{
+   			id: 1,
+   			panelContent: 'My first panel text.',
+   			headerTitle: 'My first header title'
+   		},
+   		{
+   			id: 2,
+   			panelContent: 'My second panel text.',
+   			headerTitle: 'My second header title'
+   		}
+   	],
+   	headerLevel: 4,
+   	styles: ['header styles', 'panel styles', 'item styles', 'accordion styles'],
+   	multiselectable: false
    };
    ```
 
    #### Example Styles String
 
    ```js
-   "height: 50px; width: 100%; background-color: coral; border: 1px solid black";
+   'height: 50px; width: 100%; background-color: coral; border: 1px solid black';
    ```
 
 ### Button
@@ -142,7 +137,7 @@ yarn add 'Svve11'
 1. Import the Button component using the command below in the script section of your .svelte file.
 
    ```js
-   import { Button } from "Svve11";
+   import { Button } from 'Svve11';
    ```
 
 2. The button component has (5) props:
@@ -173,7 +168,7 @@ yarn add 'Svve11'
 1. Import the CheckBox component using the command below in the script section of your .svelte file.
 
    ```js
-   import { CheckBox } from "Svve11";
+   import { CheckBox } from 'Svve11';
    ```
 
 2. An accordion instance can be created by placing the code below in the body of your .svelte file.
@@ -185,7 +180,7 @@ yarn add 'Svve11'
 3. The CheckBox component has (5) props:
 
 - `Props`
-  - **`id`** (_`string`_): sets the `id` attribute of the button component.
+  - **`id`** (_`string`_): sets the `id` attribute of the checkbox component.
   - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component
   - **`checked`** (_`boolean`_):
   - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox
@@ -195,11 +190,11 @@ yarn add 'Svve11'
 
 ```js
 <Checkbox
-  checkBoxLabel="This should be the value"
-  id="one"
-  checked={false}
-  checkBoxStyle={"height: 1.5em; width: 1.5em;"}
-  checkBoxLabelStyle={"font-size:1.5em; "}
+	checkBoxLabel="This should be the value"
+	id="one"
+	checked={false}
+	checkBoxStyle={'height: 1.5em; width: 1.5em;'}
+	checkBoxLabelStyle={'font-size:1.5em;'}
 />
 ```
 
