@@ -1,6 +1,8 @@
 <script lang="ts">
   // export let id: string = "";
   import logo from "../../images/svvell-logo-yellow.png"
+
+  export let pages;
 </script>
 
 <svelte:head>
@@ -11,6 +13,7 @@
     rel="stylesheet"
   />
 </svelte:head>
+
 <section class="nav-section">
   <nav id="navbard">
     <div id="logo-container">
@@ -29,14 +32,14 @@
     <hr aria-hidden="true" class="border" />
     <label for="component-list" class="nav-label">Library Components:</label>
     <ul id="component-list">
-      <li><a class="nav-list-item" href="#">Accordion</a></li>
-      <li><a class="nav-list-item" href="#">Button</a></li>
-      <li><a class="nav-list-item" href="#">Checkbox</a></li>
-      <li><a class="nav-list-item" href="#">Form</a></li>
+      <li><a class="nav-list-item" href="/pages/accordion">Accordion</a></li>
+      <li><a class="nav-list-item" href="/pages/button">Button</a></li>
+      <li><a class="nav-list-item" href="/pages/checkbox">Checkbox</a></li>
+      <li><a class="nav-list-item" href="/pages/textinput">Text Input</a></li>
     </ul>
     <hr aria-hidden="true" class="border" />
     <ul class="miscellaneous-nav-list">
-      <li><a class="nav-list-item" href="#">About the team</a></li>
+      <li><a class="nav-list-item" href="about">About the team</a></li>
       <li><a class="nav-list-item" href="#">Blog</a></li>
     </ul>
   </nav>

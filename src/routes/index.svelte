@@ -1,21 +1,29 @@
-<script>
+<script lang="ts">
 
     import Navbar from './components/Navbar.svelte';
-    import AccordionPage from './pages/AccordionPage.svelte'
+    import AccordionPage from './pages/accordion.svelte'
+
+    // let pageState = {
+    //   main: true,
+    //   accordion: false,
+    //   button: false,
+    //   checkbox: false,
+    //   textInput: false
+    // }
+
 
 </script>
 
 
 <section id="main-container">
 
-
   <section id="nav-container">
     <Navbar />
   </section>
 
   <section id="content-container">
-    <AccordionPage/>
-  </section>
+    <h1>Welcome to Svve11</h1>
+  </section> 
 
 </section>
 

@@ -1,11 +1,12 @@
 <script>
-    import Checkbox from "$lib/Checkbox.svelte";
+    import Button from "../../lib/Button.svelte";
+    import PropsTable from "../components/PropsTable.svelte"
     import Navbar from "../components/Navbar.svelte";
   
-    const componentName = "Checkbox";
+    const componentName = "Button";
     const githubSourceLink = "https://github.com/Svve11/";
     const WAIARIApracticesLink =
-      "https://w3c.github.io/aria-practices/#checkbox";
+      "https://w3c.github.io/aria-practices/#button";
   
   </script>
   
@@ -24,13 +25,14 @@
           </li>
         </ul>
         <p class="header-paragraph">
-            A checkbox is a widget that enables users to select zero, one or many options 
-            from a list of options. This means that each checkbox is independent of the other
-            checkboxes in the list.
+            A button is a widget that enables users to trigger an action or event, 
+            such as submitting a form, opening a dialog, canceling an action, or 
+            performing a delete operation.
         </p>
       </header>
   
       <main>
+        <!-- Installation Guide -->
         <section>
           <fieldset>
             <legend>Installation</legend>
@@ -49,7 +51,7 @@
                 file:
               </p>
               <pre><code class="code-block">
-              import <span class="curly-symbol">&#10100</span> Checkbox <span
+              import <span class="curly-symbol">&#10100</span> Button <span
                     class="curly-symbol">&#10101</span
                   > from 'svve11'
             </code></pre>
@@ -64,50 +66,49 @@
             <section class="content-section">
               <h3>Creating an Accordion</h3>
               <p>
-                A checkbox instance can be created by placing the code below in
+                A button instance can be created by placing the code below in
                 the body of your Svelte file.
               </p>
               <pre><code class="code-block">
-              {`<Checkbox {checkBoxLabel} {id} {checked} {checkBoxStyle} {checkBoxLabelStyle}/>`}
+              {`<Button {id} {label} {content} {handleClick} {style}/>`}
               </code></pre>
               <p>Each attribute should be defined as follows:</p>
               <ul class="options-object-list">
                 <li>
-                  id (string): sets the id attribute of the checkbox component.
+                  id (string): sets the id attribute of the button component.
                 </li>
                 <li>
-                  checkBoxLabel (string): sets the aria-label attribute of the checkbox component.
+                  label (string): sets the aria-label attribute of the button component.
                 </li>
                 <li>
-                  checked (boolean): sets the initial state of the checkbox, where true will render a
-                  pre-checked box and false will render a non-checked checkbox.
+                  content (string): sets the text that is displayed inside the button component.
                 </li>
                 <li>
-                  checkBoxStyle (string): sets the styling for the checkbox
+                  handleClick (function): defined the action or event to be triggered when the button is clicked.
                 </li>
                 <li>
-                  checkBoxLabelStyle (string): sets the styling for the checkbox label text.
+                  style (string): This attribute is <span class="bold-word">optional</span> and sets the styles of the button component.
                 </li>
               </ul>
-              <h4>Example Checkbox Code:</h4>
+              <h4>Example Button Code:</h4>
               <pre><code class="code-block">
-              {`<Checkbox
-                checkBoxLabel="checkbox number one"
-                id="checkbox-1"
-                checked={false}
-                checkBoxStyle='height: 1.5em; width: 1.5em; vertical-align: middle;'
-                checkBoxLabelStyle='font-size:1em; vertical-align: middle;'
+              {`<Button 
+                id="demo-button-1" 
+                label="accessible-button-1" 
+                content="Click me!" 
+                handleClick={() => console.log('You clicked a button!')} 
+                style="height: 50px; width:300px;"
               />`}
               </code></pre>
-              <h4>Example Checkbox:</h4>
-              <div class="example-checkbox">
-                <Checkbox
-                checkBoxLabel="checkbox number one"
-                id="checkbox-1"
-                checked={false}
-                checkBoxStyle='height: 1.5em; width: 1.5em; vertical-align: middle;'
-                checkBoxLabelStyle='font-size:1em; vertical-align: middle;'
-              />
+              <h4>Example Button:</h4>
+              <div class="example-button">
+                  <Button 
+                  id='demo-button-1'
+                  label="accesible-button-1"
+                  content='Click me!'
+                  handleClick={() => console.log('You clicked a button!')}
+                  style="height: 50px; width: 300px;"
+                  />
               </div>
             </section>
           </fieldset>
@@ -140,25 +141,25 @@
                     <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checkBoxLabel</code></th>
+                    <th><code>label</code></th>
                     <td>string</td>
                     <td>true</td>
                     <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checked</code></th>
-                    <td>boolean</td>
-                    <td>false</td>
-                    <td>false</td>
+                    <th><code>content</code></th>
+                    <td>string</td>
+                    <td>true</td>
+                    <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checkBoxStyle</code></th>
-                    <td>string</td>
+                    <th><code>handleClick</code></th>
+                    <td>function</td>
                     <td>false</td>
                     <td>N/A</td>
                   </tr>
                   <tr>
-                    <th><code>checkBoxLabelStyle</code></th>
+                    <th><code>style</code></th>
                     <td>string</td>
                     <td>false</td>
                     <td>N/A</td>
