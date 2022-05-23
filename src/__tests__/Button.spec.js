@@ -5,7 +5,7 @@ import { render, getByRole } from '@testing-library/svelte';
 // import '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 
-import Button from '../components/Button.svelte';
+import Button from '../lib/Button.svelte';
 let user;
 let button;
 const props = {

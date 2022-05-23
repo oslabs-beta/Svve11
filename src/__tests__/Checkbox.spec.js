@@ -7,7 +7,7 @@ import {
   queries,
 } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
-import Checkbox from '../components/Checkbox.svelte';
+import Checkbox from '../lib/Checkbox.svelte';
 
 const props = {
   checkBoxLabel: 'This is checkbox value',

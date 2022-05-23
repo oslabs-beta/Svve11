@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import TextInput from "../components/TextInput.svelte";
+import TextInput from "../lib/TextInput.svelte";
 import { render } from "@testing-library/svelte";
 import userEvent from '@testing-library/user-event';
 
