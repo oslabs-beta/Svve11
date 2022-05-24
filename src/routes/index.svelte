@@ -2,6 +2,7 @@
 
     import Navbar from './components/Navbar.svelte';
     import AccordionPage from './pages/accordion.svelte'
+    import Table from '../lib/Table.svelte';
 
     // let pageState = {
     //   main: true,
@@ -11,6 +12,17 @@
     //   textInput: false
     // }
 
+  const tableProps = {
+    ariaLabel:'demo',
+    ariaDescription: 'svve11 team information',
+    tableColumnNames: ['Name', 'Age', 'Birthday', 'Address'],
+    rowsArr: [['Simon', '26', 'November 25, 1995', '8433 Governors Run']]
+  }
+
+  const tableAriaLabel:string = 'demo';
+  const tableAriaDesc:string = 'svve11 team information'
+  const tableColumnNames: String[] = ['Name', 'Age', 'Birthday', 'Address'];
+  const rowsArr: [String[]] = [['Simon', '26', 'November 25, 1995', '8433 Governors Run']]
 
 </script>
 
@@ -48,6 +60,10 @@
         </code></pre>
         </section>
       </fieldset>
+    </section>
+
+    <section>
+      <Table {...tableProps} />
     </section>
   </article> 
 
