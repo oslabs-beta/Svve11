@@ -1,10 +1,12 @@
 <script lang="ts">
-	export let checkBoxLabel: any;
+	export let radioButtonLabel: any;
 	export let id: any;
 	export let checked: boolean = false;
-	export let defaultStyle: string = 'display: inline-block; user-select: none;';
-	export let checkBoxStyle: string = '';
-	export let checkBoxLabelStyle: string = '';
+	export let defaultStyle: string = '';
+	export let radioButtonStyle: string = '';
+	export let radioButtonLabelStyle: string = '';
+	export let name: string = '';
+	export let value: string = '';
 </script>
 
 <!-- <input aria-label={checkBoxLabel} id={id} type="checkbox" bind:checked />  -->
@@ -15,14 +17,15 @@
 <!-- bind:checked={checked} -->
 
 <input
-	style={checkBoxStyle}
-	type="checkbox"
+	style={radioButtonStyle}
+	type="radio"
 	{id}
-	aria-label={checkBoxLabel}
-	bind:checked
-	name="accessible-checkbox"
+	aria-label={radioButtonLabel}
+	aria-checked={checked}
+	{name}
+	{value}
 />
-<label style={checkBoxLabelStyle + defaultStyle} for={id}> {checkBoxLabel} </label><br />
+<label style={radioButtonLabelStyle} for={id}> {radioButtonLabel} </label>
 
 <style>
 </style>
