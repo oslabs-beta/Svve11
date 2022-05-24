@@ -1,17 +1,54 @@
+<!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-	export let label: string;
-	export let placeholder: string;
-	export let id: string;
-	export let type: string;
+  //required attributes
+	export let label: string = '';
+	export let placeholder: string = '';
+	export let id: string = '';
+	export let type: string = '';
+
+  //optional attributes
+  export let max: string = '';
+  export let min: string = '';
+  export let maxlength: string = '';
+  export let size: string = '';
+  export let step: string = '';
+  export let inputStyle: string = '';
+  export let labelStyle: string = '';
+
+  export let autocomplete: boolean = false; 
+  export let disabled: boolean = false;
+  export let multiple: boolean = false;
+  export let readonly: boolean = false;
+  export let required: boolean = false;
 </script>
 
-<label for={id}>{label}</label>
-<input {id} {type} {placeholder} />
 
+<!-- ************************* HTML ************************* -->
+<label 
+  for={id}
+  style={labelStyle}>
+  {label}
+</label>
+<input 
+  {id} 
+  {type} 
+  {placeholder} 
+  {min} 
+  {max} 
+  {maxlength} 
+  {size}
+  {step}
+  {disabled}
+  {autocomplete}
+  {multiple}
+  {readonly}
+  {required}
+  style={inputStyle}/>
+
+
+<!-- ************************* STYLES ************************* -->  
 <style>
 	/*
-    Style these later
-
-    Also, can making the text box inline be accompished to customStyles object?
+    Style these however we'd like later
   */
 </style>

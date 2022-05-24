@@ -1,27 +1,13 @@
 <script>
-  /**
-   * import your component
-   */
   import Accordion from "../../lib/Accordion.svelte";
-
-  import Navbar from "../components/Navbar.svelte"
   import PropsTable from "../components/PropsTable.svelte"
-  // import CodeSample from "../components/CodeSample.svelte";
+  import Navbar from "../components/Navbar.svelte";
 
-  // import '@sveltejs/svelte-repl';
-
-  // import CodeMirror from '../components/CodeMirror.svelte';
-  /**
-   * Update variable assignments below with names and links specific to your component.
-   */
   const componentName = "Accordion";
   const githubSourceLink = "https://github.com/Svve11/";
   const WAIARIApracticesLink =
-    "https://www.w3.org/TR/wai-aria-practices-1.1/#accordion";
+    "https://w3c.github.io/aria-practices/#accordion";
 
-  /**
-   * Other relevant scripts below
-   */
   const options = {
     multiselectable: false,
     headerLevel: 4,
@@ -49,10 +35,10 @@
   };
 </script>
 
-<!-- <section class="main-container"> -->
-  <!-- <section id="nav-container">
+<section class="main-container">
+  <section id="nav-container">
     <Navbar />
-  </section> -->
+  </section>
 
   <article class="page-component">
     <header>
@@ -95,13 +81,13 @@
             <pre><code class="code-block">
             import <span class="curly-symbol">&#10100</span> Accordion <span
                   class="curly-symbol">&#10101</span
-                > from 'sve11'
+                > from 'svve11'
           </code></pre>
           </section>
         </fieldset>
       </section>
       <!-- Usage Guide -->
-      <section>
+      <section class="main-section">
         <fieldset>
           <legend>Usage</legend>
           <h2>Usage</h2>
@@ -122,7 +108,7 @@
             </p>
             <ul class="options-object-list">
               <li>
-                panelInfo: This property is <span class="bold-word"
+                panelInfo (array): This property is <span class="bold-word"
                   >required</span
                 >. It must be an array of objects, with each object containing
                 information for one accordion item. The object must contain:
@@ -225,16 +211,63 @@
         <fieldset>
           <legend>Component API</legend>
           <h2>Component API</h2>
-          <!-- props -->
-          <h3>Props</h3>
-          <PropsTable />
+          <div
+            role="region"
+            tabindex="0"
+            style="max-width:100%;overflow:auto"
+            class="props-table"
+          >
+            <table id="props-table">
+              <thead>
+                <tr>
+                  <th>Prop</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Default Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th><code>multiselectable</code></th>
+                  <td>boolean</td>
+                  <td>false</td>
+                  <td>true</td>
+                </tr>
+                <tr>
+                  <th><code>headerLevel</code></th>
+                  <td>number</td>
+                  <td>true</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <th><code>styles</code></th>
+                  <td>array of strings</td>
+                  <td>false</td>
+                  <td>N/A</td>
+                </tr>
+                <tr>
+                  <th><code>panelInfo</code></th>
+                  <td>array of objects</td>
+                  <td>false</td>
+                  <td>N/A</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </fieldset>
       </section>
     </main>
   </article>
-<!-- </section> -->
+</section>
 
 <style>
+
+
+/******* ID Styles for index page ********/
+
+ .example-accordion {
+   font-size: 16px;
+ }
 
   .options-object-list {
     line-height: 1.3;
