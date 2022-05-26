@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653339663995" clover="3.2.0">
-  <project timestamp="1653339663995" name="All files">
-    <metrics statements="110" coveredstatements="106" conditionals="73" coveredconditionals="32" methods="1" coveredmethods="1" elements="184" coveredelements="139" complexity="0" loc="110" ncloc="110" packages="2" files="8" classes="8"/>
+<coverage generated="1653595126778" clover="3.2.0">
+  <project timestamp="1653595126778" name="All files">
+    <metrics statements="148" coveredstatements="141" conditionals="88" coveredconditionals="37" methods="1" coveredmethods="1" elements="237" coveredelements="179" complexity="0" loc="148" ncloc="148" packages="2" files="9" classes="9"/>
     <package name="lib">
-      <metrics statements="58" coveredstatements="54" conditionals="40" coveredconditionals="21" methods="0" coveredmethods="0"/>
+      <metrics statements="96" coveredstatements="89" conditionals="55" coveredconditionals="26" methods="0" coveredmethods="0"/>
       <file name="Accordion.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Accordion.svelte">
         <metrics statements="21" coveredstatements="17" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
@@ -39,15 +39,56 @@
         <line num="22" count="10" type="cond" truecount="0" falsecount="1"/>
       </file>
       <file name="Checkbox.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Checkbox.svelte">
-        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="2" methods="0" coveredmethods="0"/>
+        <metrics statements="10" coveredstatements="10" conditionals="7" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="5" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="cond" truecount="0" falsecount="3"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="25" count="1" type="cond" truecount="0" falsecount="3"/>
+      </file>
+      <file name="Meter.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Meter.svelte">
+        <metrics statements="36" coveredstatements="33" conditionals="15" coveredconditionals="5" methods="0" coveredmethods="0"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="38" count="5" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="5" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="5" type="stmt"/>
+        <line num="42" count="5" type="cond" truecount="0" falsecount="2"/>
+        <line num="44" count="5" type="stmt"/>
+        <line num="46" count="5" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="5" type="stmt"/>
+        <line num="48" count="5" type="stmt"/>
+        <line num="49" count="5" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="55" count="5" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="57" count="5" type="cond" truecount="0" falsecount="2"/>
+        <line num="58" count="5" type="stmt"/>
       </file>
       <file name="TextInput.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/TextInput.svelte">
         <metrics statements="22" coveredstatements="22" conditionals="17" coveredconditionals="12" methods="0" coveredmethods="0"/>
