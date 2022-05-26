@@ -171,7 +171,7 @@ yarn add 'Svve11'
    import { CheckBox } from 'Svve11';
    ```
 
-2. An accordion instance can be created by placing the code below in the body of your .svelte file.
+2. An checkbox instance can be created by placing the code below in the body of your .svelte file.
 
    ```js
    <Checkbox checkBoxLabel="" id="" checked={} checkBoxStyle={''} checkBoxLabelStyle={''} />
@@ -243,6 +243,49 @@ yarn add 'Svve11'
     optimumValue={85}
    />
    ```
+
+### Radio Button
+
+1. Import the Radio Button component using the command below in the script section of your .svelte file.
+
+   ```js
+   import { RadioButton } from 'Svve11';
+   ```
+
+2. A Radio Button instance can be created by placing the code below in the body of your .svelte file.
+
+   ```js
+   <Radiobutton
+   	radioButtonLabel="Pizza"
+   	id=""
+   	name=""
+   	value=""
+   	checked={false}
+   	radioButtonStyle=""
+   	radioButtonLabelStyle=""
+   />
+   ```
+
+3. The RadioButton component has (5) props:
+
+- `Props`
+  - **`id`** (_`string`_): sets the `id` attribute of the radiobutton component.
+  - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
+  - **`checked`** (_`boolean`_):
+  - **`radioButtonStyle`** (_`string`_): sets the styling for the radiobutton
+  - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radiobutton label text'
+
+4. Example Code
+
+```js
+<Radiobutton
+	radioButtonLabel="Pizza"
+	id="radioButtonOne"
+	checked={false}
+	radioButtonStyle="height: 1.5em; width: 1.5em;"
+	radioButtonLabelStyle="font-size:1.5em;"
+/>
+```
 
 ### Text Input
 
