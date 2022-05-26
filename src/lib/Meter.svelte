@@ -1,4 +1,7 @@
 <script lang='ts'>
+import { afterUpdate } from "svelte";
+
+
     //Require Props
     export let value : number;
     export let maxValue : number;
@@ -21,13 +24,15 @@
     let displayString : string;
 
     // Build Display String. Default to percentage form unless displayDecimal is provided as true
-   if (displayDecimal) {
-        displayValue = value;
-        displayString = displayValue.toString() + units
-    } else {
-        displayValue = (value/maxValue) * 100
-        displayString = displayValue + '%'
-    }
+    afterUpdate(() => {
+        if (displayDecimal) {
+            displayValue = value;
+            displayString = displayValue.toString() + units
+        } else {
+            displayValue = (value/maxValue) * 100
+            displayString = displayValue + '%'
+        }
+    })
 
     if (minValue > maxValue) {
         console.log('The min value must be less than the max value')

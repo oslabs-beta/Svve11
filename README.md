@@ -222,7 +222,7 @@ yarn add 'Svve11'
   - **`optimumValue`** (number): sets the optimal numeric value of the meter. Must be a number between the `minValue` and `maxValue`. If the optimal value is set between the `minValue` and `lowValue`, or the `maxValue` and `highValue`, this range is considered optimal. Different browsers will color the bar differently depending on where the current value falls in relation to the optimal value.
   - **`valueText`** (string): used for assistive technologies that read the value of the meter to the users. Most assistive technologies will read value as a percentage by default, thus this props should be provided if a percentage read does not make sense in the context of your meter use.
   - **`displayDecimal`** (boolean): this will default to false. If set to true, this indicates to the meter that the value should not be presented as a percentage. This prop must be accompanied by the units prop described next.
-  - **`units`** (string): sets the units to be displayed in the meter label should the percentage appearancew not be relevant.
+  - **`units`** (string): sets the units to be displayed in the meter label should the percentage appearance not be relevant.
   - **`meterStyle`** (string): sets the style for the meter for any custom styles.
   - **`labelStyle`** (string): sets the style for the meter label for any custom styles.
 
