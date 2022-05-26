@@ -198,45 +198,96 @@ yarn add 'Svve11'
 />
 ```
 
+### Meter
+
+1. Import the accordion component using the command below in the script section of your .svelte file.
+
+   ```js
+   import { Meter } from 'Svve11';
+   ```
+
+2. The meter component has (13) attributes:
+
+- (5) **required** props:
+
+  - **`value`** (number): sets the current value of the meter. Must be within the `minValue` to `maxValue` range. It is recommended to use a reactive variable to allow meter value now to change as necessary.
+  - **`maxValue`** (number): sets the maximum value for the meter range.
+  - **`minValue`** (number): sets the minimum value for the meter range.
+  - **`meterLabel`** (string): sets the text label for the meter. The label will be automatically joined with a percentage calculation, unless otherwise specified. See _optional_ props section.
+  - **`id`** (number): sets the id for the meter. Remember to provide different id numbers when instantiating more than one meter on a page as the id should be unique.
+
+- (8) _optional_ props:
+  - **`lowValue`** (number): sets the value from which a current value below is considered low. Must be greater than `minValue` and less than the `maxValue` and `highValue`.
+  - **`highValue`** (number): sets the value from which a current value above is considered high. Must be less than `maxValue` and greater than the `minValue` and `lowValue`.
+  - **`optimumValue`** (number): sets the optimal numeric value of the meter. Must be a number between the `minValue` and `maxValue`. If the optimal value is set between the `minValue` and `lowValue`, or the `maxValue` and `highValue`, this range is considered optimal. Different browsers will color the bar differently depending on where the current value falls in relation to the optimal value.
+  - **`valueText`** (string): used for assistive technologies that read the value of the meter to the users. Most assistive technologies will read value as a percentage by default, thus this props should be provided if a percentage read does not make sense in the context of your meter use.
+  - **`displayDecimal`** (boolean): this will default to false. If set to true, this indicates to the meter that the value should not be presented as a percentage. This prop must be accompanied by the units prop described next.
+  - **`units`** (string): sets the units to be displayed in the meter label should the percentage appearancew not be relevant.
+  - **`meterStyle`** (string): sets the style for the meter for any custom styles.
+  - **`labelStyle`** (string): sets the style for the meter label for any custom styles.
+
+3. A meter instance can be created by placing the code below in the body of your .svelte file.
+
+   ```js
+   <script>
+    let value = 60;
+   </script>
+   <Meter
+    {value}
+    maxValue={100}
+    minValue={0}
+    meterLabel="Demo meter"
+    id={1}
+    lowValue={20}
+    highValue={80}
+    optimumValue={85}
+   />
+   ```
+
 ### Text Input
 
 1. Import the text input component using the command below in the script section of your .svelte file.
 
-  ```js
-   import { TextInput } from 'Svve11';
-   ```
+```js
+import { TextInput } from 'Svve11';
+```
 
 2. A TextInput instance can be created by placing the code below in the body of your .svelte file.
 
 ```js
-   <TextInput />
-  ```
+<TextInput />
+```
 
-3. There are four required attributes that must be passed into every instance of TextInput - label, placeholder, id, and type. 
-  a. **`label`** (_`string`_): A short summary describing what the text input is asking for from the user. An example would be “Your email here:”.
-  b. **`placeholder`** (_`string`_): A short statement in the text input box that will hint to the user what kind of input is expected. An example would be “eg. jsmith@gmail.com”.
-  c. **`id`** (_`string`_): Specifies a unique id for the text field for developers to reference. An example would be “user-email”.
-  d. **`type`** (_`string`_): Specifies what kind of input is expected by the developer. An example would be “email”.
+3. There are four required attributes that must be passed into every instance of TextInput - label, placeholder, id, and type.
+   a. **`label`** (_`string`_): A short summary describing what the text input is asking for from the user. An example would be “Your email here:”.
+   b. **`placeholder`** (_`string`_): A short statement in the text input box that will hint to the user what kind of input is expected. An example would be “eg. jsmith@gmail.com”.
+   c. **`id`** (_`string`_): Specifies a unique id for the text field for developers to reference. An example would be “user-email”.
+   d. **`type`** (_`string`_): Specifies what kind of input is expected by the developer. An example would be “email”.
 
-  Putting all these together, the example component’s code would look like this:
+Putting all these together, the example component’s code would look like this:
 
 ```js
-   <TextInput label='Your email here:' placeholder='jsmith@gmail.com' id='user-email' type='email'/>
-  ```
-
+<TextInput label="Your email here:" placeholder="jsmith@gmail.com" id="user-email" type="email" />
+```
 
 4. Passing styles into the TextInput component is left as an optional attribute for the developer. There are two sets of styles available for customization - inputStyle and labelStyle.
-  a. **`inputStyle`** (_`string`_): Used to style the text input box.
-  b. **`labelStyle`** (_`string`_): Used to style the label above the text input box.
+   a. **`inputStyle`** (_`string`_): Used to style the text input box.
+   b. **`labelStyle`** (_`string`_): Used to style the label above the text input box.
 
 Styles are passed using HTML inline styling format (attributes separated by semicolons). Example:
 
- ```js
-   <TextInput label='Your email here:' placeholder='jsmith@gmail.com' id='user-email' type='email' labelStyle='font-family:Times New Roman; font-size:20px' inputStyle='color: blue'/>
-   ```
+```js
+<TextInput
+	label="Your email here:"
+	placeholder="jsmith@gmail.com"
+	id="user-email"
+	type="email"
+	labelStyle="font-family:Times New Roman; font-size:20px"
+	inputStyle="color: blue"
+/>
+```
 
 5. For a complete list of optional attributes available, please checkout the Text Input documentation on the web page.
-
 
 ## The Svve11 Team
 

@@ -1,31 +1,31 @@
 <script lang='ts'>
+    //Require Props
     export let value : number;
     export let maxValue : number;
     export let minValue : number;
+    export let meterLabel : string;
+    export let id : number;
+
+    //Optional Props
 
     export let lowValue : number;
     export let highValue : number;
     export let optimumValue : number;
-
-    export let meterLabel : string;
-    export let id : number;
-
-    export let displayPercent : boolean = true;
+    export let valueText : string = '';
     export let displayDecimal : boolean = false;
     export let units : string = '';
-
     export let meterStyle : string = ''
     export let labelStyle : string = ''
 
     let displayValue : number;
     let displayString : string;
-
-    if (displayPercent) {
-        displayValue = (value/maxValue) * 100
-        displayString = displayValue + '%'
-    } else if (displayDecimal) {
+        
+   if (displayDecimal) {
         displayValue = value;
         displayString = displayValue.toString() + units
+    } else {
+        displayValue = (value/maxValue) * 100
+        displayString = displayValue + '%'
     }
 
     if (minValue > maxValue) {
@@ -59,6 +59,7 @@
     aria-valuemax={maxValue} 
     aria-valuemin={minValue}
     aria-labelledby={`meter-label-${id}`}
+    aria-valuetext={valueText}
 >
 </meter>
 
