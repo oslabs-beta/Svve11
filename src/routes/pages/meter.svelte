@@ -1,4 +1,5 @@
-<script>
+<script lang='ts'>
+  import { onDestroy } from "svelte";
 
     import Meter from "$lib/Meter.svelte";
 
@@ -15,9 +16,11 @@
 
     $: changingValue = 60
 
-    setInterval(function(){
+    const interval = setInterval(function(){
         changingValue = Math.floor(Math.random() * 100)
     }, 2000);
+
+    onDestroy(() => clearInterval(interval))
 
 </script>
   
