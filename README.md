@@ -171,7 +171,7 @@ yarn add 'Svve11'
    import { CheckBox } from 'Svve11';
    ```
 
-2. An accordion instance can be created by placing the code below in the body of your .svelte file.
+2. An checkbox instance can be created by placing the code below in the body of your .svelte file.
 
    ```js
    <Checkbox checkBoxLabel="" id="" checked={} checkBoxStyle={''} checkBoxLabelStyle={''} />
@@ -198,45 +198,93 @@ yarn add 'Svve11'
 />
 ```
 
+### Radio Button
+
+1. Import the Radio Button component using the command below in the script section of your .svelte file.
+
+   ```js
+   import { RadioButton } from 'Svve11';
+   ```
+
+2. An RadioButton can be created by placing the code below in the body of your .svelte file.
+
+   ```js
+   <Radiobutton
+   	radioButtonLabel="Pizza"
+   	id=""
+   	name=""
+   	value=""
+   	checked={false}
+   	radioButtonStyle=""
+   	radioButtonLabelStyle=""
+   />
+   ```
+
+3. The RadioButton component has (5) props:
+
+- `Props`
+  - **`id`** (_`string`_): sets the `id` attribute of the radiobutton component.
+  - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
+  - **`checked`** (_`boolean`_):
+  - **`radioButtonStyle`** (_`string`_): sets the styling for the radiobutton
+  - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radiobutton label text'
+
+4. Example Code
+
+```js
+<Radiobutton
+	radioButtonLabel="Pizza"
+	id="radioButtonOne"
+	checked={false}
+	radioButtonStyle="height: 1.5em; width: 1.5em;"
+	radioButtonLabelStyle="font-size:1.5em;"
+/>
+```
+
 ### Text Input
 
 1. Import the text input component using the command below in the script section of your .svelte file.
 
-  ```js
-   import { TextInput } from 'Svve11';
-   ```
+```js
+import { TextInput } from 'Svve11';
+```
 
 2. A TextInput instance can be created by placing the code below in the body of your .svelte file.
 
 ```js
-   <TextInput />
-  ```
+<TextInput />
+```
 
-3. There are four required attributes that must be passed into every instance of TextInput - label, placeholder, id, and type. 
-  a. **`label`** (_`string`_): A short summary describing what the text input is asking for from the user. An example would be “Your email here:”.
-  b. **`placeholder`** (_`string`_): A short statement in the text input box that will hint to the user what kind of input is expected. An example would be “eg. jsmith@gmail.com”.
-  c. **`id`** (_`string`_): Specifies a unique id for the text field for developers to reference. An example would be “user-email”.
-  d. **`type`** (_`string`_): Specifies what kind of input is expected by the developer. An example would be “email”.
+3. There are four required attributes that must be passed into every instance of TextInput - label, placeholder, id, and type.
+   a. **`label`** (_`string`_): A short summary describing what the text input is asking for from the user. An example would be “Your email here:”.
+   b. **`placeholder`** (_`string`_): A short statement in the text input box that will hint to the user what kind of input is expected. An example would be “eg. jsmith@gmail.com”.
+   c. **`id`** (_`string`_): Specifies a unique id for the text field for developers to reference. An example would be “user-email”.
+   d. **`type`** (_`string`_): Specifies what kind of input is expected by the developer. An example would be “email”.
 
-  Putting all these together, the example component’s code would look like this:
+Putting all these together, the example component’s code would look like this:
 
 ```js
-   <TextInput label='Your email here:' placeholder='jsmith@gmail.com' id='user-email' type='email'/>
-  ```
-
+<TextInput label="Your email here:" placeholder="jsmith@gmail.com" id="user-email" type="email" />
+```
 
 4. Passing styles into the TextInput component is left as an optional attribute for the developer. There are two sets of styles available for customization - inputStyle and labelStyle.
-  a. **`inputStyle`** (_`string`_): Used to style the text input box.
-  b. **`labelStyle`** (_`string`_): Used to style the label above the text input box.
+   a. **`inputStyle`** (_`string`_): Used to style the text input box.
+   b. **`labelStyle`** (_`string`_): Used to style the label above the text input box.
 
 Styles are passed using HTML inline styling format (attributes separated by semicolons). Example:
 
- ```js
-   <TextInput label='Your email here:' placeholder='jsmith@gmail.com' id='user-email' type='email' labelStyle='font-family:Times New Roman; font-size:20px' inputStyle='color: blue'/>
-   ```
+```js
+<TextInput
+	label="Your email here:"
+	placeholder="jsmith@gmail.com"
+	id="user-email"
+	type="email"
+	labelStyle="font-family:Times New Roman; font-size:20px"
+	inputStyle="color: blue"
+/>
+```
 
 5. For a complete list of optional attributes available, please checkout the Text Input documentation on the web page.
-
 
 ## The Svve11 Team
 

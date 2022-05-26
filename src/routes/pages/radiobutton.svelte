@@ -2,9 +2,13 @@
 	import Radiobutton from '../../lib/Radiobutton.svelte';
 </script>
 
-
-    <Radiobutton>
-
+<Radiobutton
+	radioButtonLabel=""
+	id=""
+	checked={false}
+	radioButtonStyle=""
+	radioButtonLabelStyle=""
+/>
 
 <style>
 </style>
