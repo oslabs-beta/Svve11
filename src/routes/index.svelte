@@ -15,14 +15,14 @@
   const tableProps = {
     ariaLabel:'demo',
     ariaDescription: 'svve11 team information',
-    tableColumnNames: ['Name', 'Age', 'Birthday', 'Address'],
-    rowsArr: [['Simon', '26', 'November 25, 1995', '8433 Governors Run']]
+    columnNames: ['Name', 'Age', 'Address'],
+    rowsContent: [
+      ['Simon Lee', '26', 'Murland'],
+      ['Paul Swierkosz', '26', 'Canadia'],
+      ['Timothy Barry', '29', 'Kenturkey'],
+      ['Nurbek Jourbourev', '19', 'New Joisey']
+    ]
   }
-
-  const tableAriaLabel:string = 'demo';
-  const tableAriaDesc:string = 'svve11 team information'
-  const tableColumnNames: String[] = ['Name', 'Age', 'Birthday', 'Address'];
-  const rowsArr: [String[]] = [['Simon', '26', 'November 25, 1995', '8433 Governors Run']]
 
 </script>
 
@@ -30,7 +30,7 @@
 <section class="main-container">
 
   <section id="nav-container">
-    <Navbar />
+    <Navbar pages='' />
   </section>
 
   <article class="page-component">
@@ -63,7 +63,7 @@
     </section>
 
     <section>
-      <Table {...tableProps} />
+      <Table {tableProps} />
     </section>
   </article> 
 

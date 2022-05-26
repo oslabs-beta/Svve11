@@ -1,53 +1,62 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-	export let ariaLabel: string = '';
-	export let ariaDescription: string = '';
-	// export const tableContents: [String[], String[]] = [
-	// 	// column names *required
-	// 	['Name', 'Age', 'Birthday'],
-	// 	// each additional array represents a row
-	// 	['Simon', '26', '11/25/1995']
-	// ];
+	import type { TableProps } from "./Table/TableTypes";
 
-	let columnNamesArr: String[] = ['Name', 'Age', 'Birthday'];
-  $: columnNamesArr = [];
-	let rowsArr: [String[]] = [['Simon', '26', '11/25/1995']];
-  $: rowsArr = [];
+	export let tableProps: TableProps = {
+		ariaLabel: '',
+		ariaDescription: '',
+		columnNames: [''],
+		rowsContent: [['']],
+	}
 
-  
+	let { ariaLabel, ariaDescription, columnNames, rowsContent } = tableProps;
+
+	$: columnNames
+	$: rowsContent
+	
 </script>
 
 <!-- ************************* HTML ************************* -->
 <!-- overall table component -->
-<div role="table" aria-label={ariaLabel} aria-describedby={ariaLabel + '_table_desc'}>
-	<div id={ariaLabel + '_table_desc'}>
+<table aria-label={ariaLabel} aria-describedby={ariaLabel + '_table_desc'}>
+	<div id={ariaLabel + '_table_desc'} style="font-weight: bold; font-size: 125%">
 		{ariaDescription}
 	</div>
 
 	<!-- first row contains Column Names -->
-	<div role="rowgroup" id="column-names">
-		<div role="row">
+	<tr id="column-names">
 			<!-- populate the columns with each element in the column names array -->
-			{#each columnNamesArr as columnName}
-				<span role="columnheader">{columnName}</span>
+			{#each columnNames as columnName}
+				<th role="columnheader">{columnName}</th>
 			{/each}
-		</div>
-	</div>
+	</tr>
 
 	<!-- populate table with all row content -->
-	<div role="rowgroup">
-		<!-- for each row... -->
-		{#each rowsArr as rowContentArr}
-			<div role="row">
-				<!-- for each item in the row... -->
-				{#each rowContentArr as rowContent}
-					<!-- fill in cell with string -->
-					<span role="cell">{rowContent}</span>
-				{/each}
-			</div>
-		{/each}
-	</div>
-</div>
+	<!-- for each row... -->
+	{#each rowsContent as rowContent}
+		<tr>
+			<!-- for each item in the row... -->
+			{#each rowContent as cellContent}
+				<!-- fill in cell with string -->
+				<td role="cell">{cellContent}</td>
+			{/each}
+		</tr>
+	{/each}
+</table>
 
 <!-- ************************* STYLES ************************* -->
-<style></style>
+<style>
+	
+
+	#column-names {
+		background-color: powderblue;
+	}
+
+	th {
+		font-weight: 500;
+	}
+
+	td {
+	background-color: lightgrey;
+	}
+</style>
