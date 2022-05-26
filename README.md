@@ -213,7 +213,7 @@ yarn add 'Svve11'
   - **`value`** (number): sets the current value of the meter. Must be within the `minValue` to `maxValue` range. It is recommended to use a reactive variable to allow meter value now to change as necessary.
   - **`maxValue`** (number): sets the maximum value for the meter range.
   - **`minValue`** (number): sets the minimum value for the meter range.
-  - **`meterLabel`** (string): sets the text label for the meter. The label will be automatically joined with a percentage calculation, unless otherwise specified. See _optional_ props section.
+  - **`meterLabel`** (string): sets the text label for the meter. The label will be automatically joined with a percentage calculation, unless otherwise specified. See `displayDecimal` in _optional_ props section.
   - **`id`** (number): sets the id for the meter. Remember to provide different id numbers when instantiating more than one meter on a page as the id should be unique.
 
 - (8) _optional_ props:
