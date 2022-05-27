@@ -22,7 +22,7 @@
     <ul id="head">
       <li><a class="nav-list-item" href="/">Home</a></li>
       <li>
-        <a class="nav-list-item" href="https://github.com/oslabs-beta/svve11"
+        <a class="nav-list-item" href="https://github.com/oslabs-beta/svve11" target="_blank"
           >GitHub</a
         >
       </li>

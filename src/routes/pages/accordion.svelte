@@ -34,6 +34,31 @@
     ],
   };
 
+  const options1 = {
+    id: "testnav",
+    header: "Menu",
+    contentInfo: [
+      {
+        subheading: "general",
+        options: [
+          "option1", "option2", "option3"
+        ],
+        links: [
+          "", "", ""
+        ]
+      },
+      {
+        subheading: "other stuff",
+        options: [
+          "option4", "option5", "option6"
+        ],
+        links: [
+          "", "", ""
+        ]
+      }
+    ]
+  }
+
   const tableProps = {
     id: 'props-table-accordion',
     ariaLabel:'Accordion props table',
@@ -53,9 +78,9 @@
     <header>
       <h1>{componentName}</h1>
       <ul class="resource-links-list">
-        <li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+        <li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
         <li>
-          WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+          WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
         </li>
       </ul>
       <p class="header-paragraph">
@@ -144,7 +169,7 @@
                 information on deciding the appropriate value to be supplied,
                 visit this
                 <a
-                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level"
+                  href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level" target="_blank"
                   >ARIA webpage</a
                 >.
               </li>
