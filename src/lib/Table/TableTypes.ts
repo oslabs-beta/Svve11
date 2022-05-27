@@ -4,5 +4,12 @@ export type TableProps = {
   ariaDescription: string;
   columnNames: string[];
   rowsContent: string[][];
-  styles?: string[];
+  styles?: TableStyles;
+}
+
+export type TableStyles = {
+  overallTableStyles?:(string | null);
+  tableTitleStyles?:(string | null);
+	headerRowStyles?:(string | null);
+  genRowStyles?:(string | null);
 }
