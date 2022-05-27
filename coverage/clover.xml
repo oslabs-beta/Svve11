@@ -1,146 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1653339663995" clover="3.2.0">
-  <project timestamp="1653339663995" name="All files">
-    <metrics statements="110" coveredstatements="106" conditionals="73" coveredconditionals="32" methods="1" coveredmethods="1" elements="184" coveredelements="139" complexity="0" loc="110" ncloc="110" packages="2" files="8" classes="8"/>
-    <package name="lib">
-      <metrics statements="58" coveredstatements="54" conditionals="40" coveredconditionals="21" methods="0" coveredmethods="0"/>
-      <file name="Accordion.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Accordion.svelte">
-        <metrics statements="21" coveredstatements="17" conditionals="10" coveredconditionals="5" methods="0" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="20" count="26" type="stmt"/>
-        <line num="24" count="26" type="stmt"/>
-        <line num="25" count="52" type="stmt"/>
-        <line num="33" count="9" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="53" count="5" type="stmt"/>
-        <line num="60" count="26" type="stmt"/>
-        <line num="62" count="26" type="cond" truecount="2" falsecount="1"/>
-        <line num="63" count="26" type="cond" truecount="2" falsecount="1"/>
-        <line num="71" count="35" type="stmt"/>
-        <line num="73" count="70" type="cond" truecount="0" falsecount="1"/>
-        <line num="74" count="70" type="cond" truecount="0" falsecount="1"/>
-        <line num="75" count="70" type="cond" truecount="0" falsecount="1"/>
-        <line num="76" count="140" type="cond" truecount="1" falsecount="0"/>
-        <line num="77" count="52" type="stmt"/>
-      </file>
-      <file name="Button.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Button.svelte">
-        <metrics statements="7" coveredstatements="7" conditionals="6" coveredconditionals="2" methods="0" coveredmethods="0"/>
-        <line num="5" count="10" type="stmt"/>
-        <line num="8" count="10" type="cond" truecount="0" falsecount="1"/>
-        <line num="11" count="10" type="cond" truecount="0" falsecount="1"/>
-        <line num="14" count="10" type="cond" truecount="0" falsecount="1"/>
-        <line num="17" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="10" type="cond" truecount="0" falsecount="1"/>
-      </file>
-      <file name="Checkbox.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Checkbox.svelte">
-        <metrics statements="8" coveredstatements="8" conditionals="7" coveredconditionals="2" methods="0" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="5" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="cond" truecount="0" falsecount="3"/>
-      </file>
-      <file name="TextInput.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/TextInput.svelte">
-        <metrics statements="22" coveredstatements="22" conditionals="17" coveredconditionals="12" methods="0" coveredmethods="0"/>
-        <line num="4" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="5" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="6" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="7" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="10" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="18" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="21" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="27" count="4" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="29" count="4" type="stmt"/>
-        <line num="30" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="32" count="4" type="stmt"/>
-        <line num="46" count="4" type="stmt"/>
-      </file>
-    </package>
-    <package name="lib.Accordion">
-      <metrics statements="52" coveredstatements="52" conditionals="33" coveredconditionals="11" methods="1" coveredmethods="1"/>
-      <file name="AccordionButton.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Accordion/AccordionButton.svelte">
-        <metrics statements="15" coveredstatements="15" conditionals="9" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="52" type="stmt"/>
-        <line num="6" count="52" type="stmt"/>
-        <line num="7" count="52" type="stmt"/>
-        <line num="8" count="52" type="stmt"/>
-        <line num="9" count="52" type="stmt"/>
-        <line num="10" count="52" type="stmt"/>
-        <line num="14" count="52" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
-        <line num="34" count="52" type="stmt"/>
-        <line num="36" count="113" type="stmt"/>
-        <line num="37" count="52" type="stmt"/>
-        <line num="38" count="52" type="cond" truecount="4" falsecount="0"/>
-        <line num="40" count="52" type="stmt"/>
-        <line num="44" count="113" type="cond" truecount="2" falsecount="3"/>
-      </file>
-      <file name="AccordionHeader.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Accordion/AccordionHeader.svelte">
-        <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="52" type="cond" truecount="0" falsecount="1"/>
-        <line num="6" count="52" type="stmt"/>
-        <line num="7" count="52" type="cond" truecount="0" falsecount="1"/>
-        <line num="8" count="52" type="cond" truecount="0" falsecount="1"/>
-        <line num="9" count="52" type="cond" truecount="0" falsecount="1"/>
-        <line num="10" count="52" type="stmt"/>
-        <line num="11" count="52" type="stmt"/>
-        <line num="18" count="52" type="stmt"/>
-      </file>
-      <file name="AccordionItem.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Accordion/AccordionItem.svelte">
-        <metrics statements="17" coveredstatements="17" conditionals="15" coveredconditionals="4" methods="0" coveredmethods="0"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="9" count="52" type="stmt"/>
-        <line num="10" count="52" type="cond" truecount="0" falsecount="1"/>
-        <line num="11" count="52" type="stmt"/>
-        <line num="12" count="52" type="stmt"/>
-        <line num="17" count="113" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="61" type="cond" truecount="2" falsecount="1"/>
-        <line num="34" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="35" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="36" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="37" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="38" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="50" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="51" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="52" count="61" type="cond" truecount="0" falsecount="1"/>
-        <line num="53" count="61" type="cond" truecount="0" falsecount="1"/>
-      </file>
-      <file name="AccordionPanel.svelte" path="/Users/tim/Development/OSP/Svve11/src/lib/Accordion/AccordionPanel.svelte">
-        <metrics statements="11" coveredstatements="11" conditionals="5" coveredconditionals="1" methods="0" coveredmethods="0"/>
-        <line num="2" count="52" type="cond" truecount="0" falsecount="1"/>
-        <line num="3" count="52" type="stmt"/>
-        <line num="4" count="52" type="stmt"/>
-        <line num="5" count="52" type="stmt"/>
-        <line num="6" count="52" type="cond" truecount="0" falsecount="1"/>
-        <line num="15" count="52" type="stmt"/>
-        <line num="18" count="113" type="stmt"/>
-        <line num="19" count="52" type="stmt"/>
-        <line num="20" count="52" type="stmt"/>
-        <line num="24" count="52" type="cond" truecount="1" falsecount="1"/>
-        <line num="25" count="5" type="cond" truecount="0" falsecount="1"/>
-      </file>
-    </package>
+<coverage generated="1653594762350" clover="3.2.0">
+  <project timestamp="1653594762350" name="All files">
+    <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="14" coveredelements="14" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
+    <file name="Table.svelte" path="/home/simonlee1125/GitHub/Svve11/src/lib/Table.svelte">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="30" count="3" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="37" count="4" type="stmt"/>
+      <line num="39" count="4" type="stmt"/>
+      <line num="41" count="12" type="stmt"/>
+    </file>
   </project>
 </coverage>

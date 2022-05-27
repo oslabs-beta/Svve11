@@ -2,7 +2,8 @@
 
     import Navbar from './components/Navbar.svelte';
     import AccordionPage from './pages/accordion.svelte'
-    import Table from '../lib/Table.svelte';
+    // import Table from '../lib/Table.svelte';
+    import Button from '$lib/Button.svelte';
 
     // let pageState = {
     //   main: true,
@@ -13,6 +14,7 @@
     // }
 
   const tableProps = {
+    id: 'demo-table',
     ariaLabel:'demo',
     ariaDescription: 'svve11 team information',
     columnNames: ['Name', 'Age', 'Address'],
@@ -60,10 +62,6 @@
         </code></pre>
         </section>
       </fieldset>
-    </section>
-
-    <section>
-      <Table {tableProps} />
     </section>
   </article> 
 
