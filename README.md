@@ -198,6 +198,52 @@ yarn add 'Svve11'
 />
 ```
 
+### Meter
+
+1. Import the accordion component using the command below in the script section of your .svelte file.
+
+   ```js
+   import { Meter } from 'Svve11';
+   ```
+
+2. The meter component has (13) attributes:
+
+- (5) **required** props:
+
+  - **`value`** (number): sets the current value of the meter. Must be within the `minValue` to `maxValue` range. It is recommended to use a reactive variable to allow meter value now to change as necessary.
+  - **`maxValue`** (number): sets the maximum value for the meter range.
+  - **`minValue`** (number): sets the minimum value for the meter range.
+  - **`meterLabel`** (string): sets the text label for the meter. The label will be automatically joined with a percentage calculation, unless otherwise specified. See `displayDecimal` in _optional_ props section.
+  - **`id`** (number): sets the id for the meter. Remember to provide different id numbers when instantiating more than one meter on a page as the id should be unique.
+
+- (8) _optional_ props:
+  - **`lowValue`** (number): sets the value from which a current value below is considered low. Must be greater than `minValue` and less than the `maxValue` and `highValue`.
+  - **`highValue`** (number): sets the value from which a current value above is considered high. Must be less than `maxValue` and greater than the `minValue` and `lowValue`.
+  - **`optimumValue`** (number): sets the optimal numeric value of the meter. Must be a number between the `minValue` and `maxValue`. If the optimal value is set between the `minValue` and `lowValue`, or the `maxValue` and `highValue`, this range is considered optimal. Different browsers will color the bar differently depending on where the current value falls in relation to the optimal value.
+  - **`valueText`** (string): used for assistive technologies that read the value of the meter to the users. Most assistive technologies will read value as a percentage by default, thus this props should be provided if a percentage read does not make sense in the context of your meter use.
+  - **`displayDecimal`** (boolean): this will default to false. If set to true, this indicates to the meter that the value should not be presented as a percentage. This prop must be accompanied by the units prop described next.
+  - **`units`** (string): sets the units to be displayed in the meter label should the percentage appearance not be relevant.
+  - **`meterStyle`** (string): sets the style for the meter for any custom styles.
+  - **`labelStyle`** (string): sets the style for the meter label for any custom styles.
+
+3. A meter instance can be created by placing the code below in the body of your .svelte file.
+
+   ```js
+   <script>
+    let value = 60;
+   </script>
+   <Meter
+    {value}
+    maxValue={100}
+    minValue={0}
+    meterLabel="Demo meter"
+    id={1}
+    lowValue={20}
+    highValue={80}
+    optimumValue={85}
+   />
+   ```
+
 ### Radio Button
 
 1. Import the Radio Button component using the command below in the script section of your .svelte file.
@@ -206,7 +252,7 @@ yarn add 'Svve11'
    import { RadioButton } from 'Svve11';
    ```
 
-2. An RadioButton can be created by placing the code below in the body of your .svelte file.
+2. A Radio Button instance can be created by placing the code below in the body of your .svelte file.
 
    ```js
    <Radiobutton
