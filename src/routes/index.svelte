@@ -2,6 +2,8 @@
 
     import Navbar from './components/Navbar.svelte';
     import AccordionPage from './pages/accordion.svelte'
+    // import Table from '../lib/Table.svelte';
+    import Button from '$lib/Button.svelte';
 
     // let pageState = {
     //   main: true,
@@ -11,6 +13,18 @@
     //   textInput: false
     // }
 
+  const tableProps = {
+    id: 'demo-table',
+    ariaLabel:'demo',
+    ariaDescription: 'svve11 team information',
+    columnNames: ['Name', 'Age', 'Address'],
+    rowsContent: [
+      ['Simon Lee', '26', 'Murland'],
+      ['Paul Swierkosz', '26', 'Canadia'],
+      ['Timothy Barry', '29', 'Kenturkey'],
+      ['Nurbek Jourbourev', '19', 'New Joisey']
+    ]
+  }
 
 </script>
 
@@ -18,7 +32,7 @@
 <section class="main-container">
 
   <section id="nav-container">
-    <Navbar />
+    <Navbar pages='' />
   </section>
 
   <article class="page-component">
