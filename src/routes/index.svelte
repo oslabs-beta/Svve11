@@ -1,16 +1,16 @@
 <script lang="ts">
-
-    import Navbar from './components/Navbar.svelte';
-    import AccordionPage from './pages/accordion.svelte'
-
-    // let pageState = {
-    //   main: true,
-    //   accordion: false,
-    //   button: false,
-    //   checkbox: false,
-    //   textInput: false
-    // }
-
+  const tableProps = {
+    id: 'props-table-accordion',
+    ariaLabel:'demo',
+    ariaDescription: 'svve11 team information',
+    columnNames: ['Name', 'Age', 'Address'],
+    rowsContent: [
+      ['Simon Lee', '26', 'Murland'],
+      ['Paul Swierkosz', '26', 'Canadia'],
+      ['Timothy Barry', '29', 'Kenturkey'],
+      ['Nurbek Jourbourev', '19', 'New Joisey']
+    ]
+  }
 
 </script>
 

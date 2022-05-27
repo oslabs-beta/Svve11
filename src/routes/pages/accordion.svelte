@@ -1,6 +1,6 @@
 <script>
   import Accordion from "../../lib/Accordion.svelte";
-  import PropsTable from "../components/PropsTable.svelte"
+  import Table from "../../lib/Table.svelte"
   import Navbar from "../components/Navbar.svelte";
 
   const componentName = "Accordion";
@@ -33,6 +33,20 @@
       },
     ],
   };
+
+  const tableProps = {
+    id: 'props-table-accordion',
+    ariaLabel:'Accordion props table',
+    ariaDescription: 'This table describes the props that should be passed to the accordion in the options object',
+    columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
+    rowsContent: [
+      ['multiselectable', 'boolean', 'false', 'true'],
+      ['headerLevel', 'number', 'true', 'N/A'],
+      ['styles', 'array of strings', 'false', 'N/A'],
+      ['panelInfo', 'array of object', 'true', 'N/A']
+    ],
+    style: ['','','']
+  }
 </script>
 
   <article class="page-component">
@@ -212,7 +226,8 @@
             style="max-width:100%;overflow:auto"
             class="props-table"
           >
-            <table id="props-table">
+          <Table {tableProps}/>
+            <!-- <table id="props-table">
               <thead>
                 <tr>
                   <th>Prop</th>
@@ -247,7 +262,7 @@
                   <td>N/A</td>
                 </tr>
               </tbody>
-            </table>
+            </table> -->
           </div>
         </fieldset>
       </section>
