@@ -24,11 +24,6 @@
 
 </script>
   
-  <section class="main-container">
-    <section id="nav-container">
-      <Navbar />
-    </section>
-  
     <article class="page-component">
       <header>
         <h1>{componentName}</h1>
@@ -173,7 +168,7 @@
                 />
               </div>
               <h4>Example meter with style strings:</h4>
-              <div>
+              <div class="example-meter">
                   <pre><code class="code-block">
                           meterStyle='width: 50px;'
                           labelStyle='font-size: 20px; color: blue;'
@@ -285,15 +280,8 @@
         </section>
       </main>
     </article>
-  </section>
   
   <style>
 
-    .example-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
   </style>
   

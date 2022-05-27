@@ -9,11 +9,7 @@
   
   </script>
   
-  <section class="main-container">
-    <section id="nav-container">
-      <Navbar />
-    </section>
-  
+
     <article class="page-component">
       <header>
         <h1>{componentName}</h1>
@@ -171,7 +167,6 @@
         </section>
       </main>
     </article>
-  </section>
   
   <style>
 

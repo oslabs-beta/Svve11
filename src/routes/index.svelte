@@ -14,13 +14,6 @@
 
 </script>
 
-
-<section class="main-container">
-
-  <section id="nav-container">
-    <Navbar />
-  </section>
-
   <article class="page-component">
     <header>
     <h1>Welcome to Svve11</h1>
@@ -50,9 +43,6 @@
       </fieldset>
     </section>
   </article> 
-
-</section>
-
 
 <style>
   

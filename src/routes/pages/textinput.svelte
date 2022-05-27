@@ -9,11 +9,6 @@
   
   </script>
   
-  <section class="main-container">
-    <section id="nav-container">
-      <Navbar />
-    </section>
-  
     <article class="page-component">
       <header>
         <h1>{componentName}</h1>
@@ -117,11 +112,11 @@
               />`}
               </code></pre>
               <h4>Example Text Input without styles:</h4>
-              <div class="example-text-input-no-style">
+              <div class="example-text-input">
                 <TextInput label='Your email here: ' placeholder='jsmith@gmail.com' id='user-email' type='email'/>
               </div>
               <h4>Example Text Input with styles:</h4>
-              <div class="example-text-input-style">
+              <div class="example-text-input">
                 <TextInput label='Your email here: ' placeholder='jsmith@gmail.com' id='user-email' type='email' labelStyle='font-family:Times New Roman; font-size:20px; color: blue' inputStyle='color: blue'/>
               </div>
               
@@ -191,17 +186,16 @@
         </section>
       </main>
     </article>
-  </section>
   
   <style>
 
-    .example-text-input-style {
+    .example-text-input {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .example-text-input-no-style {
+    .example-text-input {
         display: flex;
         justify-content: center;
         align-items: center;
