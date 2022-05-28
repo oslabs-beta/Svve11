@@ -188,8 +188,4 @@
 </article>
 
 <style>
-	.example-radiobutton {
-		display: grid;
-		grid-template-columns: 2em 2em;
-	}
 </style>
