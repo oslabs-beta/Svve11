@@ -1,7 +1,6 @@
 <script>
 	import Accordion from '../../lib/Accordion.svelte';
 	import Table from '../../lib/Table.svelte';
-	import Navbar from '../components/Navbar.svelte';
 
 	const componentName = 'Accordion';
 	const githubSourceLink = 'https://github.com/Svve11/';
@@ -29,23 +28,6 @@
 				panelContent:
 					'Dicat inani suscipit ne mel, eam ad viris tollit essent. Hinc facilis electram eu cum, usu ad praesent sadipscing, nam consetetur scriptorem cu. Labore mollis aperiam no vel, mollis feugait noluisse sed at. Nec ex vide eirmod audire.',
 				headerTitle: 'Third Section'
-			}
-		]
-	};
-
-	const options1 = {
-		id: 'testnav',
-		header: 'Menu',
-		contentInfo: [
-			{
-				subheading: 'general',
-				options: ['option1', 'option2', 'option3'],
-				links: ['', '', '']
-			},
-			{
-				subheading: 'other stuff',
-				options: ['option4', 'option5', 'option6'],
-				links: ['', '', '']
 			}
 		]
 	};

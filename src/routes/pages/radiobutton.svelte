@@ -98,13 +98,13 @@
 					<h4>Example Radio Button Code:</h4>
 					<pre><code class="code-block">
 		{`<RadioButton
-			name="food"
-			value={1}
-			radioButtonLabel="Pizza"
-			id="radioButtonOne"
-			checked={false}
-			radioButtonStyle="height: 1.5em; width: 1.5em;"
-			radioButtonLabelStyle="font-size:1.5em;"
+		  name="food"
+		  value={1}
+		  radioButtonLabel="Pizza"
+		  id="radioButtonOne"
+		  checked={false}
+		  radioButtonStyle="height: 1.5em; width: 1.5em;"
+		  radioButtonLabelStyle="font-size:1.5em;"
 		/>`}
               </code></pre>
 					<h4>Example Radio Button Group:</h4>
