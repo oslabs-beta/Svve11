@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Navbar from './components/Navbar.svelte';
 	import AccordionPage from './pages/accordion.svelte';
-	// import Table from '../lib/Table.svelte';
+	import Table from '../lib/Table.svelte';
 	import Button from '$lib/Button.svelte';
 
 	// let pageState = {
@@ -51,6 +51,8 @@
 				pages.
 			</p>
 		</header>
+
+		<Table />
 
 		<section>
 			<fieldset>
