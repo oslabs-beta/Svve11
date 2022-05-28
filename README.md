@@ -131,6 +131,7 @@ yarn add 'Svve11'
    ```js
    'height: 50px; width: 100%; background-color: coral; border: 1px solid black';
    ```
+
 ---
 
 ### Button
@@ -163,6 +164,7 @@ yarn add 'Svve11'
      style: 'background-color: blue; color: white;'
    />
    ```
+
 ---
 
 ### CheckBox
@@ -199,6 +201,7 @@ yarn add 'Svve11'
 	checkBoxLabelStyle={'font-size:1.5em;'}
 />
 ```
+
 ---
 
 ### Meter
@@ -293,6 +296,7 @@ yarn add 'Svve11'
 	radioButtonLabelStyle="font-size:1.5em;"
 />
 ```
+
 ---
 
 ### Table
@@ -312,25 +316,27 @@ yarn add 'Svve11'
 3. To supply the Table with its contents, a tableProps object is passed as a prop to the Table. This object can be created in the script section of the .svelte file or imported in from another location. The tableProps object has (6) properties.
 
 - (4) Required properties:
-	- **`ariaLabel`** (*`string`*): sets the `aria-label` attribute of the table
-   - **`ariaDescription`** (*`string`*): this `string` will be displayed as the title of the table. It will also set the table's `aria-description` attribute.
-   - **`columnNames`** (an *`array`* of *`strings`*): each `string` in the array corresponds to a column name of the table.
-   - **`rowsContent`** (an *`array`* of  *`arrays`* of *`strings`*): 
-     - each `array` corresponds to a row of the table
-       - each  `string` in the `array` corresponds to a cell in the row
-       - **Note:** the number of `strings` in each of these `arrays` should match the number of `strings` in the **`columnNames`** `array`
+
+  - **`ariaLabel`** (_`string`_): sets the `aria-label` attribute of the table
+  - **`ariaDescription`** (_`string`_): this `string` will be displayed as the title of the table. It will also set the table's `aria-description` attribute.
+  - **`columnNames`** (an _`array`_ of _`strings`_): each `string` in the array corresponds to a column name of the table.
+  - **`rowsContent`** (an _`array`_ of _`arrays`_ of _`strings`_):
+    - each `array` corresponds to a row of the table
+      - each `string` in the `array` corresponds to a cell in the row
+      - **Note:** the number of `strings` in each of these `arrays` should match the number of `strings` in the **`columnNames`** `array`
 
 - (2) Optional properties:
-  - **`id`** (*`string`*): sets the `id` attribute of the table
-  - **`styles`** (*`object`* with (6) optional properties) 
-    - **`overallStyles`** (*`string`*): sets the `style` attribute of the overall table element
-  	 - **`titleStyles`** (*`string`*): sets the `style` attribute of the table's title
-	 - **`headersRowStyles`** (*`string`*) sets the `style` attribute of the first row of the table, which contains the table's column names
-	 - **`generalRowStyles`** (*`string`*): sets the `style` attributes of all the table's rows
-	 - **`oddRowStyles`** (*`string`*): sets the `style` attributes of all the table's odd rows
-	 - **`evenRowStyles`** (*`string`*): sets the `style` attributes of all the table's even rows
-  
+  - **`id`** (_`string`_): sets the `id` attribute of the table
+  - **`styles`** (_`object`_ with (6) optional properties)
+    - **`overallStyles`** (_`string`_): sets the `style` attribute of the overall table element
+    - **`titleStyles`** (_`string`_): sets the `style` attribute of the table's title
+  - **`headersRowStyles`** (_`string`_) sets the `style` attribute of the first row of the table, which contains the table's column names
+  - **`generalRowStyles`** (_`string`_): sets the `style` attributes of all the table's rows
+  - **`oddRowStyles`** (_`string`_): sets the `style` attributes of all the table's odd rows
+  - **`evenRowStyles`** (_`string`_): sets the `style` attributes of all the table's even rows
+
 4. Example code:
+
    ```js
    <script>
       const tableProps = {
@@ -499,6 +505,7 @@ Styles can be applied to different parts of the NavBar in your styling file by r
 
 - **`NavBar as a whole`**: Has an id of whatever you input as your id property.
 - **`NavBar Header`**: Has an id of “navbar-header”. Created using <h2> under the hood.
+- **`NavBar Sections`**: Has a class of "sv-navbar-section". Created using <ul> under the hood.
 - **`NavBar Subheading(s)`**: Have a class of “navbar-subheader”. Created using <h3> under the hood.
 - **`NavBar Options`**: Have a class of “navbar-option”. Created using <li> under the hood.
 

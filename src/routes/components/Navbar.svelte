@@ -1,21 +1,16 @@
 <script lang="ts">
-  // export let id: string = "";
   import logo from "./../../images/svve11-logo-white.png"
-
-  // export let pages;
 </script>
 
 <svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap"
-    rel="stylesheet"
-  />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet" />
 </svelte:head>
 
 <section class="nav-section">
-  <nav id="navbard">
+
+  <nav id="navbar">
     <div id="logo-container">
       <img src={logo} alt="Svvell" id="logo-image" />
     </div>
@@ -46,100 +41,100 @@
 </section>
 
 <style>
-  @media screen and (max-width: 667px) {
-    .nav-list-item {
-      font-size: 8px;
-    }
+	@media screen and (max-width: 667px) {
+		.nav-list-item {
+			font-size: 8px;
+		}
 
-    ul li::before {
-      font-size: 8px;
-    }
+		ul li::before {
+			font-size: 8px;
+		}
 
-    .nav-label {
-      font-size: 8px;
-    }
-  }
+		.nav-label {
+			font-size: 8px;
+		}
+	}
 
-  @media screen and (min-width: 667) {
-    .nav-list-item {
-      font-size: 12px;
-    }
+	@media screen and (min-width: 667) {
+		.nav-list-item {
+			font-size: 12px;
+		}
 
-    ul li::before {
-      font-size: 12px;
-    }
+		ul li::before {
+			font-size: 12px;
+		}
 
-    .nav-label {
-      font-size: 20px;
-    }
-  }
+		.nav-label {
+			font-size: 20px;
+		}
+	}
 
-  /* @media screen and (min-width: 1200px) {
+	/* @media screen and (min-width: 1200px) {
     .nav-list-item {
       font-size: 12px;
     }
   } */
 
-  .nav-label {
-    color: white;
-    margin-bottom: 10px;
-  }
+	.nav-label {
+		color: white;
+		margin-bottom: 10px;
+	}
 
-  .nav-section {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+	.nav-section {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
 
-  #logo-image {
-    width: 100%;
-    height: auto;
-  }
+	#logo-image {
+		width: 100%;
+		height: auto;
+	}
 
-  #logo-container {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
+	#logo-container {
+		width: 100%;
+		height: auto;
+		margin-bottom: 20px;
+	}
 
-  nav {
-    height: 100%;
-    margin: 0;
-    background-color: #eb1646;
-    padding: 20px 5px;
-    gap: 0.5em;
-  }
+	nav {
+		height: 100%;
+		margin: 0;
+		background-color: #eb1646;
+		padding: 20px 5px;
+		gap: 0.5em;
+	}
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 
-  ul li::before {
-    color: white;
-    content: "\2014    ";
-  }
+	ul li::before {
+		color: white;
+		content: '\2014    ';
+	}
 
-  li a {
-    text-decoration: none;
-    color: white;
-    /* font-size: 20px; */
-    font-weight: 300;
-  }
+	li a {
+		text-decoration: none;
+		color: white;
+		/* font-size: 20px; */
+		font-weight: 300;
+	}
 
-  hr {
-    display: block;
-    unicode-bidi: isolate;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    box-sizing: content-box;
-    height: 0;
-    border: none;
-    border-top: 1px solid #e1e1e1;
-    margin: 3rem 0;
-    opacity: 1;
-  }
+	hr {
+		display: block;
+		unicode-bidi: isolate;
+		margin-block-start: 0.5em;
+		margin-block-end: 0.5em;
+		margin-inline-start: auto;
+		margin-inline-end: auto;
+		box-sizing: content-box;
+		height: 0;
+		border: none;
+		border-top: 1px solid #e1e1e1;
+		margin: 3rem 0;
+		opacity: 1;
+	}
 </style>
