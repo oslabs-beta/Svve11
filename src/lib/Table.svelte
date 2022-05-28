@@ -6,27 +6,8 @@
 		ariaLabel: '',
 		ariaDescription: '',
 		columnNames: [''],
-<<<<<<< HEAD
-		rowsContent: [['']],
-		
-		styles: {
-			overallTableStyles: '',
-			tableTitleStyles: '',
-			headerRowStyles: ''
-		}
-			// [0] Overall Table styles
-			'',
-			// [1] ColumnName Row styles
-			'',
-			// [2 - ...] Individual Row styles
-			'',
-			// Individual Cell styles?
-		],
-	}
-=======
 		rowsContent: [['']]
 	};
->>>>>>> main
 
 	const { id, ariaLabel, ariaDescription } = tableProps;
 	let { columnNames, rowsContent } = tableProps;
@@ -44,27 +25,19 @@
 </script>
 
 <!-- ************************* HTML ************************* -->
-<<<<<<< HEAD
-<table id={id} aria-label={ariaLabel} aria-describedby={ariaLabel + '_table_desc'}
-	style={tableProps.style[0] ? tableProps.style[0] : ''}
->
-	<div id={ariaLabel + '_table_desc'} class='table-description'
-			style={tableTitleStyles}
-=======
 <table
 	{id}
 	aria-label={ariaLabel}
 	aria-describedby={ariaLabel + '_table_desc'}
 	style={overallTableStyles ? overallTableStyles : ''}
 >
-	<div
+	<caption
 		id={ariaLabel + '_table_desc'}
 		class="table-title"
 		style={tableTitleStyles ? tableTitleStyles : ''}
->>>>>>> main
 	>
 		{ariaDescription}
-	</div>
+</caption>
 
 	<!-- first row contains Column Names -->
 	<tr id="column-names" style={headerRowStyles ? headerRowStyles : ''}>
@@ -101,16 +74,4 @@
 	th {
 		font-weight: 500;
 	}
-<<<<<<< HEAD
-
-	td {
-	background-color: lightgrey;
-	}
-
-	.table-description {
-		font-weight: bold; 
-		font-size: 125%
-	}
-=======
->>>>>>> main
 </style>

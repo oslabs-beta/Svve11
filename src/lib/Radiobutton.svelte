@@ -5,9 +5,14 @@
 	// export let defaultStyle: string = '';
 	export let radioButtonStyle: string = '';
 	export let radioButtonLabelStyle: string = '';
+
+	export let name;
+	export let value;
 </script>
 
 <input
+	{name}
+	{value}
 	style={radioButtonStyle}
 	type="radio"
 	{id}
