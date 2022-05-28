@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '../app.css';
-	// import Navbar from './components/Navbar.svelte';
 	import NavBar from '$lib/NavBar.svelte';
-	import logo from '../images/svvell-logo-yellow.png';
+	import logo from '../images/svve11-logo-white.png';
 
 	const navOptions = {
 		id: 'nav-bar',
