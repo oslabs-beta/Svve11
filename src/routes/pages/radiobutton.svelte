@@ -1,6 +1,7 @@
 <script lang="ts">
 	import RadioButton from '$lib/RadioButton.svelte';
 	import Table from '$lib/Table.svelte';
+	import tableStyles from './tableStyles';
 
 	const componentName = 'Radio Button';
 	const githubSourceLink = 'https://github.com/Svve11/';
@@ -21,12 +22,7 @@
 			['radioButtonStyle', 'string', 'false', 'N/A'],
 			['radioButtonLabelStyle', 'string', 'false', 'N/A']
 		],
-		styles: {
-			overallTableStyles: '',
-			tableTitleStyles: 'font-size: 16px; text-align: left',
-			headerRowStyles: 'width: 25%;',
-			genRowStyles: 'width: 25%;'
-		}
+		styles: tableStyles
 	};
 </script>
 

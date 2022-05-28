@@ -66,27 +66,28 @@
 	</caption>
 
 	<!-- first row contains Column Names -->
-	<tr class="sv-table-row-headers" style={headersRowStyles ? headersRowStyles : ''}>
+	<tr class="sv-table-row-headers">
 		<!-- populate the columns with each element in the column names array -->
 		{#each columnNames as columnName}
-			<th role="columnheader">{columnName}</th>
+			<th role="columnheader" style={headersRowStyles ? headersRowStyles : ''}>{columnName}</th>
 		{/each}
 	</tr>
 
 	<!-- populate table with all row content -->
 	{#each rowsContent as rowContent, i}
-		<tr
-			class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}
-			style={'' +
-				(generalRowStyles ? generalRowStyles : '') +
-				'; ' +
-				(i % 2 === 0 && evenRowStyles ? evenRowStyles : '') +
-				(i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')}
-		>
+		<tr class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}>
 			<!-- for each item in the row... -->
 			{#each rowContent as cellContent}
 				<!-- fill in cell with string -->
-				<td role="cell" class="sv-table-cell">{cellContent}</td>
+				<td
+					role="cell"
+					class="sv-table-cell"
+					style={'' +
+						(generalRowStyles ? generalRowStyles : '') +
+						'; ' +
+						(i % 2 === 0 && evenRowStyles ? evenRowStyles : '') +
+						(i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')}>{cellContent}</td
+				>
 			{/each}
 		</tr>
 	{/each}

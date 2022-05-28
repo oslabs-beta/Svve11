@@ -9,7 +9,7 @@
 			Here at Svve11, we believe that accessible web development is the future. We know that
 			creating and designing accessible web pages can be a challenge, thus we have created a library
 			of Svelte components built with an accessibility first design strategy. These components can
-			be easily imported into you Svelte files and quickly rendered to your web pages.
+			be easily imported into your Svelte files and quickly rendered to your web pages.
 		</p>
 	</header>
 

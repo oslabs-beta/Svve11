@@ -3,6 +3,7 @@
 
 	import Meter from '$lib/Meter.svelte';
 	import Table from '$lib/Table.svelte';
+	import tableStyles from './tableStyles';
 
 	const componentName = 'Meter';
 	const githubSourceLink = 'https://github.com/Svve11/';
@@ -37,12 +38,7 @@
 			['meterStyle', 'string', 'false', 'N/A'],
 			['labelStyle', 'string', 'false', 'N/A']
 		],
-		styles: {
-			overallTableStyles: '',
-			tableTitleStyles: 'font-size: 16px; text-align: left',
-			headerRowStyles: 'width: 25%;',
-			genRowStyles: 'width: 25%;'
-		}
+		styles: tableStyles
 	};
 </script>
 

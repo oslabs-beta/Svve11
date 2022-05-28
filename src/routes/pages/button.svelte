@@ -1,7 +1,7 @@
 <script>
 	import Button from '$lib/Button.svelte';
 	import Table from '$lib/Table.svelte';
-
+	import tableStyles from './tableStyles';
 	const componentName = 'Button';
 	const githubSourceLink = 'https://github.com/Svve11/';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#button';
@@ -18,12 +18,7 @@
 			['handleClick', 'function', 'false', 'N/A'],
 			['style', 'string', 'false', 'N/A']
 		],
-		styles: {
-			overallTableStyles: '',
-			tableTitleStyles: 'font-size: 16px; text-align: left',
-			headerRowStyles: 'width: 25%;',
-			genRowStyles: 'width: 25%;'
-		}
+		styles: tableStyles
 	};
 </script>
 

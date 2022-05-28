@@ -1,6 +1,7 @@
 <script>
 	import Table from '$lib/Table.svelte';
 	import TextInput from '$lib/TextInput.svelte';
+	import tableStyles from './tableStyles';
 
 	const componentName = 'Text Input';
 	const githubSourceLink = 'https://github.com/Svve11/';
@@ -31,12 +32,7 @@
 			['readonly', 'boolean', 'false', 'false'],
 			['required', 'boolean', 'false', 'false']
 		],
-		styles: {
-			overallTableStyles: '',
-			tableTitleStyles: 'font-size: 16px; text-align: left',
-			headerRowStyles: 'width: 25%;',
-			genRowStyles: 'width: 25%;'
-		}
+		styles: tableStyles
 	};
 </script>
 

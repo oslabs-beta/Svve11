@@ -1,6 +1,7 @@
 <script>
 	import Checkbox from '$lib/Checkbox.svelte';
 	import Table from '$lib/Table.svelte';
+	import tableStyles from './tableStyles';
 
 	const componentName = 'Checkbox';
 	const githubSourceLink = 'https://github.com/Svve11/';
@@ -19,12 +20,7 @@
 			['checkBoxStyle', 'string', 'false', 'N/A'],
 			['checkBoxLabelStyle', 'string', 'false', 'N/A']
 		],
-		styles: {
-			overallTableStyles: '',
-			tableTitleStyles: 'font-size: 16px; text-align: left',
-			headerRowStyles: 'width: 25%;',
-			genRowStyles: 'width: 25%;'
-		}
+		styles: tableStyles
 	};
 </script>
 

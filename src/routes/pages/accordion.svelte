@@ -1,6 +1,7 @@
 <script>
 	import Accordion from '../../lib/Accordion.svelte';
 	import Table from '../../lib/Table.svelte';
+	import tableStyles from './tableStyles';
 
 	const componentName = 'Accordion';
 	const githubSourceLink = 'https://github.com/Svve11/';
@@ -44,12 +45,7 @@
 			['styles', 'array of strings', 'false', 'N/A'],
 			['panelInfo', 'array of objects', 'true', 'N/A']
 		],
-		styles: {
-			overallTableStyles: '',
-			tableTitleStyles: 'font-size: 16px; text-align: left',
-			headerRowStyles: 'width: 25%;',
-			genRowStyles: 'width: 25%;'
-		}
+		styles: tableStyles
 	};
 </script>
 
