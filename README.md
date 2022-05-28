@@ -69,7 +69,7 @@ yarn add 'Svve11'
 
 ---
 
-## Component
+## Components
 
 ### Accordion
 
@@ -131,6 +131,7 @@ yarn add 'Svve11'
    ```js
    'height: 50px; width: 100%; background-color: coral; border: 1px solid black';
    ```
+---
 
 ### Button
 
@@ -162,6 +163,7 @@ yarn add 'Svve11'
      style: 'background-color: blue; color: white;'
    />
    ```
+---
 
 ### CheckBox
 
@@ -197,6 +199,7 @@ yarn add 'Svve11'
 	checkBoxLabelStyle={'font-size:1.5em;'}
 />
 ```
+---
 
 ### Meter
 
@@ -244,6 +247,8 @@ yarn add 'Svve11'
    />
    ```
 
+---
+
 ### Radio Button
 
 1. Import the Radio Button component using the command below in the script section of your .svelte file.
@@ -286,6 +291,72 @@ yarn add 'Svve11'
 	radioButtonLabelStyle="font-size:1.5em;"
 />
 ```
+---
+
+### Table
+
+1. Import the Table component using the command below in the script section of your .svelte file.
+
+   ```js
+   import { Table } from 'Svve11';
+   ```
+
+2. An Table instance can be created by placing the code below in the body of your .svelte file.
+
+   ```js
+   <Table {tableProps} />
+   ```
+
+3. To supply the Table with its contents, a tableProps object is passed as a prop to the Table. This object can be created in the script section of the .svelte file or imported in from another location. The tableProps object has (6) properties.
+
+- (4) Required properties:
+	- **`ariaLabel`** (*`string`*): sets the `aria-label` attribute of the table
+   - **`ariaDescription`** (*`string`*): this `string` will be displayed as the title of the table. It will also set the table's `aria-description` attribute.
+   - **`columnNames`** (an *`array`* of *`strings`*): each `string` in the array corresponds to a column name of the table.
+   - **`rowsContent`** (an *`array`* of  *`arrays`* of *`strings`*): 
+     - each `array` corresponds to a row of the table
+       - each  `string` in the `array` corresponds to a cell in the row
+       - **Note:** the number of `strings` in each of these `arrays` should match the number of `strings` in the **`columnNames`** `array`
+
+- (2) Optional properties:
+  - **`id`** (*`string`*): sets the `id` attribute of the table
+  - **`styles`** (*`object`* with (6) optional properties) 
+    - **`overallStyles`** (*`string`*): sets the `style` attribute of the overall table element
+  	 - **`titleStyles`** (*`string`*): sets the `style` attribute of the table's title
+	 - **`headersRowStyles`** (*`string`*) sets the `style` attribute of the first row of the table, which contains the table's column names
+	 - **`generalRowStyles`** (*`string`*): sets the `style` attributes of all the table's rows
+	 - **`oddRowStyles`** (*`string`*): sets the `style` attributes of all the table's odd rows
+	 - **`evenRowStyles`** (*`string`*): sets the `style` attributes of all the table's even rows
+  
+4. Example code:
+   ```js
+   <script>
+      const tableProps = {
+         id: 'demo-table',
+         ariaLabel: 'demo',
+         ariaDescription: 'svve11 team information',
+         columnNames: ['Name', 'Age', 'Favorite Color'],
+         rowsContent: [
+            ['Nurbek', '19', 'White'],
+            ['Paul', '26', 'Red'],
+            ['Tim', '29', 'Blue'],
+            ['Simon', '26', 'Green']
+         ],
+         styles: {
+            overallStyles: 'background-color: powderblue',
+            titleStyles: 'text-align: left;',
+            headersRowStyles: 'background-color: grey',
+            generalRowStyles: 'font-weight: lighter',
+            oddRowStyles: 'background-color: white',
+            evenRowStyles: 'background-color: lightgrey',
+      }
+      };
+   </script>
+
+   <Table {tableProps} />
+   ```
+
+---
 
 ### Text Input
 
