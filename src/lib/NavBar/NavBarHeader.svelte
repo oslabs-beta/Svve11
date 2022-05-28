@@ -11,7 +11,7 @@
 <!-- ************************* HTML ************************* -->
 
 {#if header !== ''}
-  <h2 id="navbar-header">{header}</h2>
+  <h2 id="sv-navbar-header">{header}</h2>
 {/if}
 
 {#if imgSrc !== ''}

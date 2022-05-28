@@ -20,7 +20,7 @@
     columnNames: ['Name', 'Age', 'Address'],
     rowsContent: [
       ['Simon Lee', '26', 'Murland'],
-      ['Paul Swierkosz', '26', 'Canadia'],
+      ['Paul Swierkosz', '24', 'Canadia'],
       ['Timothy Barry', '29', 'Kenturkey'],
       ['Nurbek Jourbourev', '19', 'New Joisey']
     ]

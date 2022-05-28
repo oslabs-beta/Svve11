@@ -9,13 +9,13 @@
 
 
 <!-- ************************* HTML ************************* -->
-<ul>
   {#if subheading !== ''}
-    <h3 class="navbar-subheader">{subheading}</h3>
+    <h3 class="sv-navbar-subheader">{subheading}</h3>
   {/if}
 
+<ul class="sv-navbar-section">
   {#each options as option, i}
-    <li class="navbar-option"><a href={links[i]}>{option}</a></li>
+    <li class="sv-navbar-option"><a href={links[i]}>{option}</a></li>
   {/each}
 </ul>
 

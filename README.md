@@ -436,6 +436,7 @@ Styles can be applied to different parts of the NavBar in your styling file by r
 
 - **`NavBar as a whole`**: Has an id of whatever you input as your id property.
 - **`NavBar Header`**: Has an id of “navbar-header”. Created using <h2> under the hood.
+- **`NavBar Sections`**: Has a class of "sv-navbar-section". Created using <ul> under the hood.
 - **`NavBar Subheading(s)`**: Have a class of “navbar-subheader”. Created using <h3> under the hood.
 - **`NavBar Options`**: Have a class of “navbar-option”. Created using <li> under the hood.
 
