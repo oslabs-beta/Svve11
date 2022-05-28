@@ -1,26 +1,51 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-	import type { TableProps } from './Table/TableTypes';
+	type TableProps = {
+		id?: string;
+		ariaLabel: string;
+		ariaDescription: string;
+		columnNames: string[];
+		rowsContent: string[][];
+		styles?: TableStyles;
+	};
+
+	type TableStyles = {
+		overallStyles?: string | null;
+		titleStyles?: string | null;
+		headersRowStyles?: string | null;
+		generalRowStyles?: string | null;
+		oddRowStyles?: string | null;
+		evenRowStyles?: string | null;
+	};
 
 	export let tableProps: TableProps = {
+		id: '',
 		ariaLabel: '',
 		ariaDescription: '',
 		columnNames: [''],
 		rowsContent: [['']]
 	};
 
-	const { id, ariaLabel, ariaDescription } = tableProps;
-	let { columnNames, rowsContent } = tableProps;
+	const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = tableProps;
 	$: columnNames;
 	$: rowsContent;
 
-	let styles, overallTableStyles, tableTitleStyles, headerRowStyles, genRowStyles;
+	let styles,
+		overallStyles: string,
+		titleStyles: string,
+		headersRowStyles: string,
+		generalRowStyles: string,
+		oddRowStyles: string,
+		evenRowStyles: string;
+
 	if (tableProps.styles) {
 		styles = tableProps.styles;
-		if (styles.overallTableStyles) overallTableStyles = styles.overallTableStyles;
-		if (styles.tableTitleStyles) tableTitleStyles = styles.tableTitleStyles;
-		if (styles.headerRowStyles) headerRowStyles = styles.headerRowStyles;
-		if (styles.genRowStyles) genRowStyles = styles.genRowStyles;
+		if (styles.overallStyles) overallStyles = styles.overallStyles;
+		if (styles.titleStyles) titleStyles = styles.titleStyles;
+		if (styles.headersRowStyles) headersRowStyles = styles.headersRowStyles;
+		if (styles.generalRowStyles) generalRowStyles = styles.generalRowStyles;
+		if (styles.oddRowStyles) oddRowStyles = styles.oddRowStyles;
+		if (styles.evenRowStyles) evenRowStyles = styles.evenRowStyles;
 	}
 </script>
 
@@ -29,18 +54,19 @@
 	{id}
 	aria-label={ariaLabel}
 	aria-describedby={ariaLabel + '_table_desc'}
-	style={overallTableStyles ? overallTableStyles : ''}
+	class="sv-table"
+	style={overallStyles ? overallStyles : ''}
 >
 	<caption
 		id={ariaLabel + '_table_desc'}
-		class="table-title"
-		style={tableTitleStyles ? tableTitleStyles : ''}
+		class="sv-table-title"
+		style={titleStyles ? titleStyles : ''}
 	>
 		{ariaDescription}
-</caption>
+	</caption>
 
 	<!-- first row contains Column Names -->
-	<tr id="column-names" style={headerRowStyles ? headerRowStyles : ''}>
+	<tr class="sv-table-row-headers" style={headersRowStyles ? headersRowStyles : ''}>
 		<!-- populate the columns with each element in the column names array -->
 		{#each columnNames as columnName}
 			<th role="columnheader">{columnName}</th>
@@ -48,12 +74,19 @@
 	</tr>
 
 	<!-- populate table with all row content -->
-	{#each rowsContent as rowContent}
-		<tr style={genRowStyles ? genRowStyles : ''}>
+	{#each rowsContent as rowContent, i}
+		<tr
+			class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}
+			style={'' +
+				(generalRowStyles ? generalRowStyles : '') +
+				'; ' +
+				(i % 2 === 0 && evenRowStyles ? evenRowStyles : '') +
+				(i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')}
+		>
 			<!-- for each item in the row... -->
 			{#each rowContent as cellContent}
 				<!-- fill in cell with string -->
-				<td role="cell">{cellContent}</td>
+				<td role="cell" class="sv-table-cell">{cellContent}</td>
 			{/each}
 		</tr>
 	{/each}
@@ -61,11 +94,7 @@
 
 <!-- ************************* STYLES ************************* -->
 <style>
-	#column-names {
-		background-color: powderblue;
-	}
-
-	.table-title {
+	.sv-table-title {
 		font-weight: bold;
 		font-size: 125%;
 		background-color: none;

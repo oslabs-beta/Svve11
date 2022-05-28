@@ -18,7 +18,13 @@ const tableProps = {
 		['Paul Swierkosz', '26', 'Canadia'],
 		['Timothy Barry', '29', 'Kenturkey'],
 		['Nurbek Jourbourev', '19', 'New Joisey']
-	]
+	],
+	styles: {
+		overallTableStyles: 'background-color: none',
+		headerRowStyles: 'background-color: powderblue',
+		genRowStyles: 'background-color: white',
+		tableTitleStyles: 'background-color: red'
+	}
 };
 
 beforeEach(() => {
@@ -37,4 +43,6 @@ describe('Running accessible Table tests', () => {
 			expect(table).toHaveAttribute('aria-label');
 		});
 	});
+
+	describe('')
 });
