@@ -1,5 +1,9 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
+<<<<<<< HEAD
+=======
+	// defining types for the props object
+>>>>>>> main
 	type TableProps = {
 		id?: string;
 		ariaLabel: string;
@@ -50,6 +54,23 @@
 </script>
 
 <!-- ************************* HTML ************************* -->
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+	id: string (optional)
+	ariaLabel: string (required)
+	ariaDescription: string (required)
+	columnNames: array of string (required)
+	rowsContent: array of arrays of strings (required)
+	styles: object (optional) 
+	* overallStyles:string (optional)
+	* titleStyles:string (optional) 
+	* headersRowStyles:string (optional)
+	* generalRowStyles:string (optional) 
+	* oddRowStyles:string (optional)
+	* evenRowStyles:string (optional)
+```
+ -->
 <table
 	{id}
 	aria-label={ariaLabel}
@@ -57,6 +78,7 @@
 	class="sv-table"
 	style={overallStyles ? overallStyles : ''}
 >
+	<!-- Title of the table - doubles as the aria-description text -->
 	<caption
 		id={ariaLabel + '_table_desc'}
 		class="sv-table-title"
@@ -65,7 +87,7 @@
 		{ariaDescription}
 	</caption>
 
-	<!-- first row contains Column Names -->
+	<!-- First row contains Column Names -->
 	<tr class="sv-table-row-headers">
 		<!-- populate the columns with each element in the column names array -->
 		{#each columnNames as columnName}
@@ -78,7 +100,7 @@
 		<tr class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}>
 			<!-- for each item in the row... -->
 			{#each rowContent as cellContent}
-				<!-- fill in cell with string -->
+				<!-- fill in cell with content -->
 				<td
 					role="cell"
 					class="sv-table-cell"
@@ -103,5 +125,10 @@
 
 	th {
 		font-weight: 500;
+	}
+
+	td,
+	th {
+		background-color: white;
 	}
 </style>
