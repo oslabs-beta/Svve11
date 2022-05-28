@@ -1,9 +1,6 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-<<<<<<< HEAD
-=======
 	// defining types for the props object
->>>>>>> main
 	type TableProps = {
 		id?: string;
 		ariaLabel: string;
