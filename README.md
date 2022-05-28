@@ -260,11 +260,11 @@ yarn add 'Svve11'
 2. A Radio Button instance can be created by placing the code below in the body of your .svelte file.
 
    ```js
-   <Radiobutton
+   <RadioButton
+   	name="food"
    	radioButtonLabel="Pizza"
+   	value={1}
    	id=""
-   	name=""
-   	value=""
    	checked={false}
    	radioButtonStyle=""
    	radioButtonLabelStyle=""
@@ -276,14 +276,16 @@ yarn add 'Svve11'
 - `Props`
   - **`id`** (_`string`_): sets the `id` attribute of the radiobutton component.
   - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
-  - **`checked`** (_`boolean`_):
-  - **`radioButtonStyle`** (_`string`_): sets the styling for the radiobutton
-  - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radiobutton label text'
+  - **`checked`** (_`boolean`_): sets the initial state of the radio button, where true will render a pre-checked button and false will render a non-checked button.
+  - **`radioButtonStyle`** (_`string`_): sets the styling for the radio button
+  - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text'
 
 4. Example Code
 
 ```js
-<Radiobutton
+<RadioButton
+	name="food"
+	value={1}
 	radioButtonLabel="Pizza"
 	id="radioButtonOne"
 	checked={false}
@@ -403,18 +405,7 @@ Styles are passed using HTML inline styling format (attributes separated by semi
 
 5. The following are optional attributes available with this component. Each of these attributes has the same function as the HTML attribute with its same name. Please check W3Schools or MDN's webpages to learn more about how these work. By default all attributes of type boolean are set to false.
 
-  -**`max`** (_`string`_)
-  -**`min`** (_`string`_)
-  -**`maxLength`** (_`string`_)
-  -**`size`** (_`string`_)
-  -**`step`** (_`string`_)
-  -**`inputStyle`** (_`string`_)
-  -**`labelStyle`** (_`string`_)
-  -**`autocomplete`** (_`boolean`_)
-  -**`disabled`** (_`boolean`_)
-  -**`multiple`** (_`boolean`_)
-  -**`readonly`** (_`boolean`_)
-  -**`required`** (_`boolean`_)
+   -**`max`** (_`string`_) -**`min`** (_`string`_) -**`maxLength`** (_`string`_) -**`size`** (_`string`_) -**`step`** (_`string`_) -**`inputStyle`** (_`string`_) -**`labelStyle`** (_`string`_) -**`autocomplete`** (_`boolean`_) -**`disabled`** (_`boolean`_) -**`multiple`** (_`boolean`_) -**`readonly`** (_`boolean`_) -**`required`** (_`boolean`_)
 
 ### NavBar
 
@@ -427,21 +418,23 @@ Styles are passed using HTML inline styling format (attributes separated by semi
 2. A NavBar instance can be created by placing the code below in the body of your .svelte file.
 
    ```js
-   <NavBar options={options} />
+   <NavBar {options} />
    ```
 
-3. To supply the NavBar with its contents, an options object is passed as a prop to the accordion. This object can be created in the script section of the .svelte file or imported in from another location. The options object has six properties.
+3. To supply the NavBar with its contents, an options object is passed as a prop to the NavBar. This object can be created in the script section of the .svelte file or imported in from another location. The options object has six properties.
 
    - **`id`** (_`string`_): This property is **required**. This will be the id attribute you reference for styling inside your navbar component. An example would be “navbar”.
 
    - **`contentInfo`** (_`array`_): This property is **required**. It contains all the content in your navbar. The array will be full of objects, with each object having three properties - options, links and subheading.
-- **`options`**(_`array`_): This property is **required**. Contains strings in order you want them to appear in the NavBar. 
-- **`links`**(_`array`_): This property is **required**. Contains the href attributes for each option provided. This array should be provided in the same array that the options array was provided (ie. corresponding indices between the two arrays).
--**`subheading`** (_`string`_): This property is **optional**. Contains the subheading for this section of the NavBar. See example below:
+
+- **`options`**(_`array`_): This property is **required**. Contains strings in order you want them to appear in the NavBar.
+- **`links`**(_`array`_): This property is **required**. Contains the href attributes for each option provided. This array should be provided in the same order that the options array was provided (ie. corresponding indices between the two arrays).
+- **`subheading`** (_`string`_): This property is **optional**. Contains the subheading for this section of the NavBar. See example below:
 
   ```js
-   const contentInfo = [{
-subheading: "general",
+   const contentInfo = [
+      {
+        subheading: "general",
         options: [
           "option1", "option2", "option3"
         ],
@@ -458,18 +451,17 @@ subheading: "general",
           "", "", ""
       }
     ]
-   ```
+  ```
 
-   - **`header`** (_`string`_): This property is **optional**. It contains the heading for the entire NavBar. An example would be “Menu”.
+  - **`header`** (_`string`_): This property is **optional**. It contains the heading for the entire NavBar. An example would be “Menu”.
 
-   - **`imgSrc`** (_`string`_): This property is **optional**. It contains the file path for an image you want included at the top of the menu, like a company logo for example.
+  - **`imgSrc`** (_`string`_): This property is **optional**. It contains the file path for an image you want included at the top of the menu, like a company logo for example.
 
-   - **`imgClass`** (_`string`_): This property is **optional**. This will act as the class name for the imgSrc for styling purposes.
+  - **`imgClass`** (_`string`_): This property is **optional**. This will act as the class name for the imgSrc for styling purposes.
 
-   - **`imgAlt`** (_`string`_): This property is **optional**. This acts as the alternate text in the event the image cannot render. An example would be “company logo”.
+  - **`imgAlt`** (_`string`_): This property is **optional**. This acts as the alternate text in the event the image cannot render. An example would be “company logo”.
 
-
-   #### Example Options Object
+  #### Example Options Object
 
   ```js
    const options = {
@@ -493,23 +485,22 @@ subheading: "general",
        		 links: [
          		 "", "", ""
        		 ]
-     		 }	
+     		 }
     		],
-	      imgSrc: “./images/comp-logo.png”,
-	      imgClass: “navbar-logo”,
-	      imgAlt: “company logo”
+  	      imgSrc: “./images/comp-logo.png”,
+  	      imgClass: “navbar-logo”,
+  	      imgAlt: “company logo”
       }
   ```
 
-   #### NavBar Styling
+  #### NavBar Styling
 
-Styles can be applied to different parts of the NavBar in your styling file by referencing single or groups of components using their class and id names. 
+Styles can be applied to different parts of the NavBar in your styling file by referencing single or groups of components using their class and id names.
 
 - **`NavBar as a whole`**: Has an id of whatever you input as your id property.
 - **`NavBar Header`**: Has an id of “navbar-header”. Created using <h2> under the hood.
 - **`NavBar Subheading(s)`**: Have a class of “navbar-subheader”. Created using <h3> under the hood.
 - **`NavBar Options`**: Have a class of “navbar-option”. Created using <li> under the hood.
-
 
 ## The Svve11 Team
 

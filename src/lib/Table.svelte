@@ -1,44 +1,47 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
+<<<<<<< HEAD
+=======
 	// defining types for the props object
+>>>>>>> main
 	type TableProps = {
 		id?: string;
 		ariaLabel: string;
 		ariaDescription: string;
 		columnNames: string[];
 		rowsContent: string[][];
-		styles?: TableStyles
-	}
+		styles?: TableStyles;
+	};
 
 	type TableStyles = {
-		overallStyles?: (string | null);
-		titleStyles?: (string | null);
-		headersRowStyles?: (string | null);
-		generalRowStyles?: (string | null);
-		oddRowStyles?: (string | null);
-		evenRowStyles?: (string | null);
-	}
+		overallStyles?: string | null;
+		titleStyles?: string | null;
+		headersRowStyles?: string | null;
+		generalRowStyles?: string | null;
+		oddRowStyles?: string | null;
+		evenRowStyles?: string | null;
+	};
 
 	export let tableProps: TableProps = {
 		id: '',
 		ariaLabel: '',
 		ariaDescription: '',
 		columnNames: [''],
-		rowsContent: [['']],
+		rowsContent: [['']]
 	};
 
 	const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = tableProps;
 	$: columnNames;
 	$: rowsContent;
 
-	let styles, 
-	overallStyles:string, 
-	titleStyles:string, 
-	headersRowStyles:string, 
-	generalRowStyles:string, 
-	oddRowStyles:string, 
-	evenRowStyles:string;
-	
+	let styles,
+		overallStyles: string,
+		titleStyles: string,
+		headersRowStyles: string,
+		generalRowStyles: string,
+		oddRowStyles: string,
+		evenRowStyles: string;
+
 	if (tableProps.styles) {
 		styles = tableProps.styles;
 		if (styles.overallStyles) overallStyles = styles.overallStyles;
@@ -48,7 +51,6 @@
 		if (styles.oddRowStyles) oddRowStyles = styles.oddRowStyles;
 		if (styles.evenRowStyles) evenRowStyles = styles.evenRowStyles;
 	}
-
 </script>
 
 <!-- ************************* HTML ************************* -->
@@ -86,34 +88,28 @@ Props are passed in through the tableProps prop, which should be an object conta
 	</caption>
 
 	<!-- First row contains Column Names -->
-	<tr 
-		class="sv-table-row-headers"
-	>
+	<tr class="sv-table-row-headers">
 		<!-- populate the columns with each element in the column names array -->
 		{#each columnNames as columnName}
-			<th role="columnheader"
-				style={headersRowStyles ? headersRowStyles : ''}
-			>{columnName}</th>
+			<th role="columnheader" style={headersRowStyles ? headersRowStyles : ''}>{columnName}</th>
 		{/each}
 	</tr>
 
 	<!-- populate table with all row content -->
 	{#each rowsContent as rowContent, i}
-		<tr 
-			class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}
-			
-		>
+		<tr class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}>
 			<!-- for each item in the row... -->
 			{#each rowContent as cellContent}
 				<!-- fill in cell with content -->
-				<td role="cell" 
-					class="sv-table-cell" 
-					style={
-						'' + (generalRowStyles ? generalRowStyles : '') + '; '
-						+ (i % 2 === 0 && evenRowStyles ? evenRowStyles : '')
-						+ (i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')
-					}
-				>{cellContent}</td>
+				<td
+					role="cell"
+					class="sv-table-cell"
+					style={'' +
+						(generalRowStyles ? generalRowStyles : '') +
+						'; ' +
+						(i % 2 === 0 && evenRowStyles ? evenRowStyles : '') +
+						(i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')}>{cellContent}</td
+				>
 			{/each}
 		</tr>
 	{/each}
@@ -131,7 +127,8 @@ Props are passed in through the tableProps prop, which should be an object conta
 		font-weight: 500;
 	}
 
-	td, th {
-		background-color: white
+	td,
+	th {
+		background-color: white;
 	}
 </style>
