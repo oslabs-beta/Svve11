@@ -1,6 +1,6 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-
+	// defining types for the props object
 	type TableProps = {
 		id?: string;
 		ariaLabel: string;
@@ -52,6 +52,23 @@
 </script>
 
 <!-- ************************* HTML ************************* -->
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+	id: string (optional)
+	ariaLabel: string (required)
+	ariaDescription: string (required)
+	columnNames: array of string (required)
+	rowsContent: array of arrays of strings (required)
+	styles: object (optional) 
+	* overallStyles:string (optional)
+	* titleStyles:string (optional) 
+	* headersRowStyles:string (optional)
+	* generalRowStyles:string (optional) 
+	* oddRowStyles:string (optional)
+	* evenRowStyles:string (optional)
+```
+ -->
 <table
 	{id}
 	aria-label={ariaLabel}
@@ -59,6 +76,7 @@
 	class="sv-table"
 	style={overallStyles ? overallStyles : ''}
 >
+	<!-- Title of the table - doubles as the aria-description text -->
 	<caption
 		id={ariaLabel + '_table_desc'}
 		class="sv-table-title"
@@ -67,14 +85,15 @@
 		{ariaDescription}
 	</caption>
 
-	<!-- first row contains Column Names -->
+	<!-- First row contains Column Names -->
 	<tr 
 		class="sv-table-row-headers"
-		style={headersRowStyles ? headersRowStyles : ''}
 	>
 		<!-- populate the columns with each element in the column names array -->
 		{#each columnNames as columnName}
-			<th role="columnheader">{columnName}</th>
+			<th role="columnheader"
+				style={headersRowStyles ? headersRowStyles : ''}
+			>{columnName}</th>
 		{/each}
 	</tr>
 
@@ -82,16 +101,19 @@
 	{#each rowsContent as rowContent, i}
 		<tr 
 			class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}
-			style={
-				'' + (generalRowStyles ? generalRowStyles : '') + '; '
-				+ (i % 2 === 0 && evenRowStyles ? evenRowStyles : '')
-				+ (i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')
-			}
+			
 		>
 			<!-- for each item in the row... -->
 			{#each rowContent as cellContent}
-				<!-- fill in cell with string -->
-				<td role="cell" class="sv-table-cell" >{cellContent}</td>
+				<!-- fill in cell with content -->
+				<td role="cell" 
+					class="sv-table-cell" 
+					style={
+						'' + (generalRowStyles ? generalRowStyles : '') + '; '
+						+ (i % 2 === 0 && evenRowStyles ? evenRowStyles : '')
+						+ (i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')
+					}
+				>{cellContent}</td>
 			{/each}
 		</tr>
 	{/each}
@@ -107,5 +129,9 @@
 
 	th {
 		font-weight: 500;
+	}
+
+	td, th {
+		background-color: white
 	}
 </style>
