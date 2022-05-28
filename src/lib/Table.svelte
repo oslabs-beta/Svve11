@@ -1,80 +1,112 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-	import type { TableProps } from "./Table/TableTypes";
+	// defining types for the props object
+	type TableProps = {
+		id?: string;
+		ariaLabel: string;
+		ariaDescription: string;
+		columnNames: string[];
+		rowsContent: string[][];
+		styles?: TableStyles;
+	};
+
+	type TableStyles = {
+		overallStyles?: string | null;
+		titleStyles?: string | null;
+		headersRowStyles?: string | null;
+		generalRowStyles?: string | null;
+		oddRowStyles?: string | null;
+		evenRowStyles?: string | null;
+	};
 
 	export let tableProps: TableProps = {
+		id: '',
 		ariaLabel: '',
 		ariaDescription: '',
 		columnNames: [''],
-		rowsContent: [['']],
-		
-		styles: [
-			// [0] Overall Table styles
-			'',
-			// [1] ColumnName Row styles
-			'',
-			// [2 - ...] Individual Row styles
-			'',
-			// Individual Cell styles?
-		],
+		rowsContent: [['']]
+	};
+
+	const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = tableProps;
+	$: columnNames;
+	$: rowsContent;
+
+	let styles,
+		overallStyles: string,
+		titleStyles: string,
+		headersRowStyles: string,
+		generalRowStyles: string,
+		oddRowStyles: string,
+		evenRowStyles: string;
+
+	if (tableProps.styles) {
+		styles = tableProps.styles;
+		if (styles.overallStyles) overallStyles = styles.overallStyles;
+		if (styles.titleStyles) titleStyles = styles.titleStyles;
+		if (styles.headersRowStyles) headersRowStyles = styles.headersRowStyles;
+		if (styles.generalRowStyles) generalRowStyles = styles.generalRowStyles;
+		if (styles.oddRowStyles) oddRowStyles = styles.oddRowStyles;
+		if (styles.evenRowStyles) evenRowStyles = styles.evenRowStyles;
 	}
-
-	const { id, ariaLabel, ariaDescription } = tableProps;
-	let { columnNames, rowsContent } = tableProps;
-	$: columnNames
-	$: rowsContent
-
-	let overallTableStyles:(string | null) = null
-	let tableTitleStyles:(string | null) = null
-	let headerRowStyles:(string | null) = null
-	// let individualRowStyles:(string[] | null) = null
-
-	$: overallTableStyles
-	$: tableTitleStyles
-	$: headerRowStyles
-	// $: individualRowStyles
-
 </script>
 
 <!-- ************************* HTML ************************* -->
-<table id={id} aria-label={ariaLabel} aria-describedby={ariaLabel + '_table_desc'}
-	{#if (overallTableStyles !== null)} style={overallTableStyles} {/if}
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+	id: string (optional)
+	ariaLabel: string (required)
+	ariaDescription: string (required)
+	columnNames: array of string (required)
+	rowsContent: array of arrays of strings (required)
+	styles: object (optional) 
+	* overallStyles:string (optional)
+	* titleStyles:string (optional) 
+	* headersRowStyles:string (optional)
+	* generalRowStyles:string (optional) 
+	* oddRowStyles:string (optional)
+	* evenRowStyles:string (optional)
+```
+ -->
+<table
+	{id}
+	aria-label={ariaLabel}
+	aria-describedby={ariaLabel + '_table_desc'}
+	class="sv-table"
+	style={overallStyles ? overallStyles : ''}
 >
-	<div id={ariaLabel + '_table_desc'} 
-		{#if tableTitleStyles}
-			style={tableTitleStyles}
-		{:else}
-			style="font-weight: bold; font-size: 125%"
-		{/if}
+	<!-- Title of the table - doubles as the aria-description text -->
+	<caption
+		id={ariaLabel + '_table_desc'}
+		class="sv-table-title"
+		style={titleStyles ? titleStyles : ''}
 	>
 		{ariaDescription}
-	</div>
+	</caption>
 
-	<!-- first row contains Column Names -->
-	<tr id="column-names"
-		{#if headerRowStyles}
-			style={headerRowStyles}
-		{/if}
-	>
-			<!-- populate the columns with each element in the column names array -->
-			{#each columnNames as columnName}
-				<th role="columnheader">{columnName}</th>
-			{/each}
+	<!-- First row contains Column Names -->
+	<tr class="sv-table-row-headers">
+		<!-- populate the columns with each element in the column names array -->
+		{#each columnNames as columnName}
+			<th role="columnheader" style={headersRowStyles ? headersRowStyles : ''}>{columnName}</th>
+		{/each}
 	</tr>
 
 	<!-- populate table with all row content -->
-	<!-- for each row... -->
-	<!-- {#if individualRowStyles}
-		{#each individualRowStyles as rowStyle, rowIndex}
-			
-		{/each}
-	{/if} -->
-	{#each rowsContent as rowContent}
-		<tr>
+	{#each rowsContent as rowContent, i}
+		<tr class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}>
 			<!-- for each item in the row... -->
 			{#each rowContent as cellContent}
-				<!-- fill in cell with string -->
-				<td role="cell">{cellContent}</td>
+				<!-- fill in cell with content -->
+				<td
+					role="cell"
+					class="sv-table-cell"
+					style={'' +
+						(generalRowStyles ? generalRowStyles : '') +
+						'; ' +
+						(i % 2 === 0 && evenRowStyles ? evenRowStyles : '') +
+						(i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')}>{cellContent}</td
+				>
 			{/each}
 		</tr>
 	{/each}
@@ -82,16 +114,18 @@
 
 <!-- ************************* STYLES ************************* -->
 <style>
-
-	#column-names {
-		background-color: powderblue;
+	.sv-table-title {
+		font-weight: bold;
+		font-size: 125%;
+		background-color: none;
 	}
 
 	th {
 		font-weight: 500;
 	}
 
-	td {
-	background-color: lightgrey;
+	td,
+	th {
+		background-color: white;
 	}
 </style>
