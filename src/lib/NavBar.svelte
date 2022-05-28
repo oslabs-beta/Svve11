@@ -13,32 +13,11 @@
     imgAlt: '',
     contentInfo: [],
   }
-  
-  //might break this up into sub components:
-    //NavBarHeader
-    //NavBarOptions => NavBarLists
-
-  //optional attributes
 
 </script>
 
 
 <!-- ************************* HTML ************************* -->
-
-<!-- <nav {id}>
-  <h1>{header}</h1>
-  <img class={imgClass} src={imgSrc} alt={imgAlt}>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">About</a></li>
-  </ul>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">About</a></li>
-  </ul>
-</nav> -->
 
 <nav id={options.id}>
   <NavBarHeader 
