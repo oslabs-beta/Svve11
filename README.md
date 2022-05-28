@@ -357,7 +357,8 @@ Styles are passed using HTML inline styling format (attributes separated by semi
    - **`contentInfo`** (_`array`_): This property is **required**. It contains all the content in your navbar. The array will be full of objects, with each object having three properties - options, links and subheading.
 
 - **`options`**(_`array`_): This property is **required**. Contains strings in order you want them to appear in the NavBar.
-- **`links`**(_`array`_): This property is **required**. Contains the href attributes for each option provided. This array should be provided in the same order that the options array was provided (ie. corresponding indices between the two arrays). -**`subheading`** (_`string`_): This property is **optional**. Contains the subheading for this section of the NavBar. See example below:
+- **`links`**(_`array`_): This property is **required**. Contains the href attributes for each option provided. This array should be provided in the same order that the options array was provided (ie. corresponding indices between the two arrays).
+- **`subheading`** (_`string`_): This property is **optional**. Contains the subheading for this section of the NavBar. See example below:
 
   ```js
    const contentInfo = [

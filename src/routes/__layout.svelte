@@ -15,12 +15,21 @@
 			},
 			{
 				subheading: 'Library Components:',
-				options: ['Accordion', 'Button', 'Checkbox', 'Meter', 'Radio Button', 'Text Input'],
+				options: [
+					'Accordion',
+					'Button',
+					'Checkbox',
+					'Meter',
+					'Nav Bar',
+					'Radio Button',
+					'Text Input'
+				],
 				links: [
 					'/pages/accordion',
 					'/pages/button',
 					'/pages/checkbox',
 					'/pages/meter',
+					'/pages/navbar',
 					'/pages/radiobutton',
 					'/pages/textinput'
 				]
