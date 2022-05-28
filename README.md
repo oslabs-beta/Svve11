@@ -1,5 +1,5 @@
 <div style='display: flex; justify-content: center; margin-bottom: 20px;' >
-<img src='./src/img/svvell-logo-yellow.png' style='height: auto; width: 60%; margin: auto'>
+<img src='./src/images/svve11-logo-square-blueBG.png' style='height: auto; width: 100%; margin: auto'>
 </div>
 
 <p align="center">
@@ -15,7 +15,7 @@
 
 Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design!
 
-For easier readability of documentation, check out our website [http://localhost:8080/](http://localhost:8080/)
+For easier readability of documentation, check out our website [http://www.svve11.io/](http://www.svve11.io/)
 
 ## Features
 

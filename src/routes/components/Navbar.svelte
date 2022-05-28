@@ -1,8 +1,8 @@
 <script lang="ts">
   // export let id: string = "";
-  import logo from "../../images/svvell-logo-yellow.png"
+  import logo from "./../../images/svve11-logo-white.png"
 
-  export let pages;
+  // export let pages;
 </script>
 
 <svelte:head>
@@ -40,7 +40,7 @@
     <hr aria-hidden="true" class="border" />
     <ul class="miscellaneous-nav-list">
       <li><a class="nav-list-item" href="about">About the team</a></li>
-      <li><a class="nav-list-item" href="#">Blog</a></li>
+      <li><a class="nav-list-item" href="https://medium.com/@svve11">Blog</a></li>
     </ul>
   </nav>
 </section>
