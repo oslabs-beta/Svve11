@@ -57,7 +57,6 @@ describe('Running accessible Button tests', () => {
 	describe('Keyboard interaction tests', () => {
 		test('It can be focused by pressing tab', async () => {
 			await user.tab();
-			// console.log('current active element:', document.activeElement);
 			expect(document.activeElement).toBe(button);
 		});
 
@@ -83,8 +82,6 @@ describe('Running accessible Button tests', () => {
 			expect(button).toHaveTextContent('test descriptive content');
 		});
 	});
-
-	describe('Styling tests', () => {});
 });
 
 /**
