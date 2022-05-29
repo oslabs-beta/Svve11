@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-52cd0f40.css">
+	<link rel="stylesheet" href="/_app/assets/tableStyles-c360a445.css">
+	<link rel="modulepreload" href="/_app/start-f571290e.js">
+	<link rel="modulepreload" href="/_app/chunks/index-427cb11b.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-75bd3fd9.js">
+	<link rel="modulepreload" href="/_app/pages/pages/checkbox.svelte-9682d7e8.js">
+	<link rel="modulepreload" href="/_app/chunks/tableStyles-b061a170.js">
+	</head>
+	<body>
+		<div class="main-body">
+
+
+<section class="main-container"><section id="nav-container">
+		
+
+
+
+
+
+<nav id="nav-bar">
+
+
+
+
+
+
+
+<img class="svvell-logo" src="/_app/assets/svve11-logo-white-23978ec5.png" alt="svve11">
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/">Home</a></li><li class="sv-navbar-option"><a href="https://github.com/oslabs-beta/svve11">Github</a></li></ul>
+
+
+
+
+
+
+  <h3 class="sv-navbar-subheader">Library Components:</h3>
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/pages/accordion">Accordion</a></li><li class="sv-navbar-option"><a href="/pages/button">Button</a></li><li class="sv-navbar-option"><a href="/pages/checkbox">Checkbox</a></li><li class="sv-navbar-option"><a href="/pages/meter">Meter</a></li><li class="sv-navbar-option"><a href="/pages/navbar">Nav Bar</a></li><li class="sv-navbar-option"><a href="/pages/radiobutton">Radio Button</a></li><li class="sv-navbar-option"><a href="/pages/textinput">Text Input</a></li></ul>
+
+
+
+
+
+
+  
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/about">About the team</a></li></ul>
+
+
+
+
+</nav>
+
+</section>
+
+	<article class="page-component"><header><h1>Checkbox</h1>
+		<ul class="resource-links-list"><li>Source: <a href="https://github.com/Svve11/">https://github.com/Svve11/</a></li>
+			<li>WAI-ARIA: <a href="https://w3c.github.io/aria-practices/#checkbox">https://w3c.github.io/aria-practices/#checkbox</a></li></ul>
+		<p class="header-paragraph">A checkbox is a widget that enables users to select zero, one or many options from a list of
+			options. This means that each checkbox is independent of the other checkboxes in the list.
+		</p></header>
+
+	<main><section><fieldset><legend>Installation</legend>
+				<h2>Installation</h2>
+				<section class="content-section"><p>Import the component in the script section of your Svelte file:</p>
+					<pre><code class="code-block">
+              import <span class="curly-symbol">❴</span> Checkbox <span class="curly-symbol">❵</span> from &#39;svve11&#39;
+            </code></pre></section></fieldset></section>
+		
+		<section><fieldset><legend>Usage</legend>
+				<h2>Usage</h2>
+				<section class="content-section"><h3>Creating a Checkbox</h3>
+					<p>A checkbox instance can be created by placing the code below in the body of your Svelte
+						file.
+					</p>
+					<pre><code class="code-block">
+              &lt;Checkbox {checkBoxLabel} {id} {checked} {checkBoxStyle} {checkBoxLabelStyle}/&gt;
+              </code></pre>
+					<p>Each attribute should be defined as follows:</p>
+					<ul class="options-object-list"><li>id (string): sets the id attribute of the checkbox component.</li>
+						<li>checkBoxLabel (string): sets the aria-label attribute of the checkbox component.
+						</li>
+						<li>checked (boolean): sets the initial state of the checkbox, where true will render a
+							pre-checked box and false will render a non-checked checkbox.
+						</li>
+						<li>checkBoxStyle (string): sets the styling for the checkbox</li>
+						<li>checkBoxLabelStyle (string): sets the styling for the checkbox label text.</li></ul>
+					<h4>Example Checkbox Code:</h4>
+					<pre><code class="code-block">
+              &lt;Checkbox
+                checkBoxLabel=&quot;checkbox number one&quot;
+                id=&quot;checkbox-1&quot;
+                checked={false}
+                checkBoxStyle=&#39;height: 1.5em; width: 1.5em; vertical-align: middle;&#39;
+                checkBoxLabelStyle=&#39;font-size:1em; vertical-align: middle;&#39;
+              /&gt;
+              </code></pre>
+					<h4>Example Checkbox:</h4>
+					<div class="example-checkbox">
+
+
+
+
+
+<input style="height: 1.5em; width: 1.5em; vertical-align: middle;" type="checkbox" id="checkbox-1" aria-label="checkbox number one" name="accessible-checkbox">
+<label style="font-size:1em; vertical-align: middle;display: inline-block; user-select: none;" for="checkbox-1">checkbox number one </label><br></div></section></fieldset></section>
+
+		<section><fieldset><legend>Component API</legend>
+				<h2>Component API</h2>
+				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
+
+
+
+
+<table id="props-table-button" aria-label="Button props table" aria-describedby="Button props table_table_desc" class="sv-table" style="background-color: black;">
+	<caption id="Button props table_table_desc" class="sv-table-title svelte-g1q3st" style="font-size: 16px; text-align: left; background: white;">This table describes the props that should be passed to the checkbox component</caption>
+
+	
+	<tr class="sv-table-row-headers">
+		<th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Prop</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Type</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Required</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Default Value</th></tr>
+
+	
+	<tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">id</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-odd svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">checkBoxLabel</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">checked</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">boolean</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+		</tr><tr class="sv-table-row sv-table-row-odd svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">checkBoxStyle</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">checkBoxLabelStyle</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr></table>
+
+</div></fieldset></section></main>
+</article>
+</section>
+
+
+		<script type="module" data-sveltekit-hydrate="qq0c9v">
+		import { start } from "/_app/start-f571290e.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="qq0c9v"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-75bd3fd9.js"),
+						import("/_app/pages/pages/checkbox.svelte-9682d7e8.js")
+				],
+				params: {},
+				routeId: "pages/checkbox"
+			}
+		});
+	</script></div>
+	</body>
+</html>
