@@ -1,5 +1,5 @@
 <script lang="ts">
-	import RadioButton from '$lib/Radiobutton.svelte';
+	import RadioButton from '$lib/RadioButton.svelte';
 	import Table from '$lib/Table.svelte';
 	import tableStyles from './tableStyles';
 
