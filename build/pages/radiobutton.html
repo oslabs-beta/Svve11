@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-52cd0f40.css">
+	<link rel="stylesheet" href="/_app/assets/pages/pages/radiobutton.svelte-9c2a737d.css">
+	<link rel="stylesheet" href="/_app/assets/tableStyles-c360a445.css">
+	<link rel="modulepreload" href="/_app/start-f571290e.js">
+	<link rel="modulepreload" href="/_app/chunks/index-427cb11b.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-75bd3fd9.js">
+	<link rel="modulepreload" href="/_app/pages/pages/radiobutton.svelte-a2b272a2.js">
+	<link rel="modulepreload" href="/_app/chunks/tableStyles-b061a170.js">
+	</head>
+	<body>
+		<div class="main-body">
+
+
+<section class="main-container"><section id="nav-container">
+		
+
+
+
+
+
+<nav id="nav-bar">
+
+
+
+
+
+
+
+<img class="svvell-logo" src="/_app/assets/svve11-logo-white-23978ec5.png" alt="svve11">
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/">Home</a></li><li class="sv-navbar-option"><a href="https://github.com/oslabs-beta/svve11">Github</a></li></ul>
+
+
+
+
+
+
+  <h3 class="sv-navbar-subheader">Library Components:</h3>
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/pages/accordion">Accordion</a></li><li class="sv-navbar-option"><a href="/pages/button">Button</a></li><li class="sv-navbar-option"><a href="/pages/checkbox">Checkbox</a></li><li class="sv-navbar-option"><a href="/pages/meter">Meter</a></li><li class="sv-navbar-option"><a href="/pages/navbar">Nav Bar</a></li><li class="sv-navbar-option"><a href="/pages/radiobutton">Radio Button</a></li><li class="sv-navbar-option"><a href="/pages/textinput">Text Input</a></li></ul>
+
+
+
+
+
+
+  
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/about">About the team</a></li></ul>
+
+
+
+
+</nav>
+
+</section>
+
+	<article class="page-component"><header><h1>Radio Button</h1>
+		<ul class="resource-links-list"><li>Source: <a href="https://github.com/Svve11/">https://github.com/Svve11/</a></li>
+			<li>WAI-ARIA: <a href="https://w3c.github.io/aria-practices/#radiobutton">https://w3c.github.io/aria-practices/#radiobutton</a></li></ul>
+		<p class="header-paragraph">A radio button is a clickable widget that is used to gather user input or responses, and they
+			are typically used within a group of radio buttons. Only one of the radio buttons can be
+			checked at a time.
+		</p></header>
+
+	<main><section><fieldset><legend>Installation</legend>
+				<h2>Installation</h2>
+				<section class="content-section"><p>Import the component in the script section of your Svelte file:</p>
+					<pre><code class="code-block">
+              import <span class="curly-symbol">❴</span> RadioButton <span class="curly-symbol">❵</span> from &#39;svve11&#39;
+            </code></pre></section></fieldset></section>
+		
+		<section><fieldset><legend>Usage</legend>
+				<h2>Usage</h2>
+				<section class="content-section"><h3>Creating a Radio Button</h3>
+					<p>A radio button instance can be created by placing the code below in the body of your
+						Svelte file.
+					</p>
+					<pre><code class="code-block">
+              &lt;RadioButton {radioButtonLabel} {id} {checked} {radioButtonStyle} {radioButtonLabelStyle} /&gt;
+              </code></pre>
+					<p>Each attribute should be defined as follows:</p>
+					<ul class="options-object-list"><li>id (string): sets the id attribute of the radio button component.</li>
+						<li>name (string): sets the name attribute of the radio component. This should be the same
+							string for each radio button within a group.
+						</li>
+						<li>radioButtonLabel (string): sets the aria-label attribute of the radio button
+							component.
+						</li>
+						<li>checked (boolean): sets the initial state of the radio button, where true will render
+							a pre-checked button and false will render a non-checked button.
+						</li>
+						<li>radioButtonStyle (string): sets the styling for the radio button</li>
+						<li>radioButtonLabelStyle (string): sets the styling for the radio button label text.
+						</li></ul>
+					<h4>Example Radio Button Code:</h4>
+					<pre><code class="code-block">
+		&lt;RadioButton
+		  name=&quot;food&quot;
+		  value={1}
+		  radioButtonLabel=&quot;Pizza&quot;
+		  id=&quot;radioButtonOne&quot;
+		  checked={false}
+		  radioButtonStyle=&quot;height: 1.5em; width: 1.5em;&quot;
+		  radioButtonLabelStyle=&quot;font-size:1.5em;&quot;
+		/&gt;
+              </code></pre>
+					<h4>Example Radio Button Group:</h4>
+					<div class="example-radiobutton svelte-1e6xe50"><input name="food" value="1" style="height: 1.5em; width: 1.5em;" type="radio" id="radioButtonOne" aria-label="Pizza" aria-checked="false">
+<label style="font-size:1.5em;" for="radioButtonOne">Pizza </label>
+						<input name="food" value="2" style="height: 1.5em; width: 1.5em;" type="radio" id="radioButtonTwo" aria-label="Spaghetti" aria-checked="false">
+<label style="font-size:1.5em;" for="radioButtonTwo">Spaghetti </label>
+						<input name="food" value="3" style="height: 1.5em; width: 1.5em;" type="radio" id="radioButtonThree" aria-label="Salad" aria-checked="false">
+<label style="font-size:1.5em;" for="radioButtonThree">Salad </label></div></section></fieldset></section>
+
+		<section><fieldset><legend>Component API</legend>
+				<h2>Component API</h2>
+				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
+
+
+
+
+<table id="props-table-button" aria-label="Button props table" aria-describedby="Button props table_table_desc" class="sv-table" style="background-color: black;">
+	<caption id="Button props table_table_desc" class="sv-table-title svelte-g1q3st" style="font-size: 16px; text-align: left; background: white;">This table describes the props that should be passed to the radio button component</caption>
+
+	
+	<tr class="sv-table-row-headers">
+		<th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Prop</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Type</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Required</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Default Value</th></tr>
+
+	
+	<tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">id</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-odd svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">name</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">radioButtonLabel</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-odd svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">value</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">number</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">checked</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">boolean</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+		</tr><tr class="sv-table-row sv-table-row-odd svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">radioButtonStyle</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">radioButtonLabelStyle</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">string</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr></table>
+
+</div></fieldset></section></main>
+</article>
+</section>
+
+
+		<script type="module" data-sveltekit-hydrate="1qkqtqx">
+		import { start } from "/_app/start-f571290e.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1qkqtqx"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-75bd3fd9.js"),
+						import("/_app/pages/pages/radiobutton.svelte-a2b272a2.js")
+				],
+				params: {},
+				routeId: "pages/radiobutton"
+			}
+		});
+	</script></div>
+	</body>
+</html>

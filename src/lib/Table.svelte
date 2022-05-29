@@ -68,6 +68,7 @@ Props are passed in through the tableProps prop, which should be an object conta
 	* evenRowStyles:string (optional)
 ```
  -->
+<div></div>
 <table
 	{id}
 	aria-label={ariaLabel}

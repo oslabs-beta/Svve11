@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-52cd0f40.css">
+	<link rel="stylesheet" href="/_app/assets/pages/pages/accordion.svelte-e3161644.css">
+	<link rel="stylesheet" href="/_app/assets/tableStyles-c360a445.css">
+	<link rel="modulepreload" href="/_app/start-f571290e.js">
+	<link rel="modulepreload" href="/_app/chunks/index-427cb11b.js">
+	<link rel="modulepreload" href="/_app/pages/__layout.svelte-75bd3fd9.js">
+	<link rel="modulepreload" href="/_app/pages/pages/accordion.svelte-02a7d7a1.js">
+	<link rel="modulepreload" href="/_app/chunks/tableStyles-b061a170.js">
+	</head>
+	<body>
+		<div class="main-body">
+
+
+<section class="main-container"><section id="nav-container">
+		
+
+
+
+
+
+<nav id="nav-bar">
+
+
+
+
+
+
+
+<img class="svvell-logo" src="/_app/assets/svve11-logo-white-23978ec5.png" alt="svve11">
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/">Home</a></li><li class="sv-navbar-option"><a href="https://github.com/oslabs-beta/svve11">Github</a></li></ul>
+
+
+
+
+
+
+  <h3 class="sv-navbar-subheader">Library Components:</h3>
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/pages/accordion">Accordion</a></li><li class="sv-navbar-option"><a href="/pages/button">Button</a></li><li class="sv-navbar-option"><a href="/pages/checkbox">Checkbox</a></li><li class="sv-navbar-option"><a href="/pages/meter">Meter</a></li><li class="sv-navbar-option"><a href="/pages/navbar">Nav Bar</a></li><li class="sv-navbar-option"><a href="/pages/radiobutton">Radio Button</a></li><li class="sv-navbar-option"><a href="/pages/textinput">Text Input</a></li></ul>
+
+
+
+
+
+
+  
+
+<ul class="sv-navbar-section"><li class="sv-navbar-option"><a href="/about">About the team</a></li></ul>
+
+
+
+
+</nav>
+
+</section>
+
+	<article class="page-component"><header><h1>Accordion</h1>
+		<ul class="resource-links-list"><li>Source: <a href="https://github.com/Svve11/" target="_blank">https://github.com/Svve11/</a></li>
+			<li>WAI-ARIA: <a href="https://w3c.github.io/aria-practices/#accordion" target="_blank">https://w3c.github.io/aria-practices/#accordion</a></li></ul>
+		<p class="header-paragraph">An accordion is a vertically stacked set of interactive headings that each contain a title,
+			content snippet, or thumbnail representing a section of content. The headings function as
+			controls that enable users to reveal or hide their associated sections of content. Accordions
+			are commonly used to reduce the need to scroll when presenting multiple sections of content on
+			a single page.
+		</p></header>
+
+	<main>
+		<section><fieldset><legend>Installation</legend>
+				<h2>Installation</h2>
+				<section class="content-section"><p>Import the component in the script section of your Svelte file:</p>
+					<pre><code class="code-block">
+            import <span class="curly-symbol">❴</span> Accordion <span class="curly-symbol">❵</span> from &#39;svve11&#39;
+          </code></pre></section></fieldset></section>
+		
+		<section class="main-section"><fieldset><legend>Usage</legend>
+				<h2>Usage</h2>
+				<section class="content-section"><h3>Creating an Accordion</h3>
+					<p>An accordion instance can be created by placing the code below in the body of your
+						Svelte file.
+					</p>
+					<pre><code class="code-block">
+            &lt;Accordion {options} /&gt;
+            </code></pre>
+					<p>To supply the accordion with its contents, an options object is passed as a prop to the
+						accordion. This object can be created in the script section of the .svelte file or
+						imported in from another location. The options object has 4 properties.
+					</p>
+					<ul class="options-object-list svelte-po6jhz"><li>panelInfo (array): This property is <span class="bold-word">required</span>. It must
+							be an array of objects, with each object containing information for one accordion
+							item. The object must contain:
+						</li>
+						<ul><li>an id (number): used to set the id of accordion header and panel. If you will have
+								more than one accordion in your application, be sure to continue the sequence of
+								numbers instead of starting back at 1.
+							</li>
+							<li>a panelContent (string): sets text contents of the panel.</li>
+							<li>a headerTitle (string): sets the title of the accordion section.</li></ul>
+						<li>headerLevel (number): This property is <span class="bold-word">required</span>, and
+							sets the aria-level for each header in the accordion. For information on deciding the
+							appropriate value to be supplied, visit this
+							<a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level" target="_blank">ARIA webpage</a>.
+						</li>
+						<li>styles (array): This property is <span class="bold-word">optional</span>. If this
+							property is supplied, it must be an array with 4 entries. Each entry is a string that
+							resembles a style object. If you wish to leave out an entry in one position, null must
+							be included at the correct index. An example is provided below.
+						</li>
+						<ul><li>The first entry will style the headers of the accordion</li>
+							<li>The second entry will style the panels of the accordion</li>
+							<li>The third entry will style each individual item within the accordion</li>
+							<li>The fourth entry will style the entirety of the accordion</li></ul>
+						<li>multiselectable (boolean): This property is <span class="bold-word">optional</span>,
+							and will default to false. When set to true, the accordion can expand multiple panels
+							at one time. When set to false, the accordion can expand only one panel at a time.
+						</li></ul>
+					<h4>Example Options Object:</h4>
+					<pre><code class="code-block example-code">
+            options = {
+              multiselectable: true,
+              headerLevel: 4,
+              styles: [
+                &quot;header styles&quot;, &quot;panel styles&quot;, &quot;item styles&quot;, &quot;accordion styles&quot;
+              ],
+              panelInfo: [
+                {
+                  id: 1,
+                  headerTitle: &quot;First Section&quot;,
+                  panelContent: &quot;First Panel Text Content&quot;
+                },
+                {
+                  id: 2,
+                  headerTitle: &quot;Second Section&quot;,
+                  panelContent: &quot;Second Panel Text Content&quot;
+                  
+                },
+                {
+                  id: 3,
+                  headerTitle: &quot;Third Section&quot;,
+                  panelContent: &quot;Third Panel Text Content&quot;
+                  
+                },
+              ],
+            };
+            </code></pre>
+					<h4>Example Styles String:</h4>
+					<pre><code class="code-block example-code">
+              &quot;height: 50px; width: 100%; background-color: coral; border: 1px solid black&quot;
+            </code></pre>
+					<h4>Example Accordion:</h4>
+					<div class="example-accordion svelte-po6jhz">
+<div class="accordion-main svelte-1v39kh7" aria-multiselectable="false">
+  
+<div class="accordion-item svelte-ztnmqv" data-state="collapsed">
+  
+<div class="accordion-header svelte-kyhwtl" aria-level="4" role="heading">
+  
+<button class="header-button svelte-domaub" aria-controls="panel1" aria-label="" id="button1">
+  First Section
+</button>
+</div>
+
+  
+  
+<div class="accordion-panel svelte-vr4nlj" role="region" id="panel1" aria-labelledby="button1">
+  </div>
+
+</div>
+
+
+<div class="accordion-item svelte-ztnmqv" data-state="collapsed">
+  
+<div class="accordion-header svelte-kyhwtl" aria-level="4" role="heading">
+  
+<button class="header-button svelte-domaub" aria-controls="panel2" aria-label="" id="button2">
+  Second Section
+</button>
+</div>
+
+  
+  
+<div class="accordion-panel svelte-vr4nlj" role="region" id="panel2" aria-labelledby="button2">
+  </div>
+
+</div>
+
+
+<div class="accordion-item svelte-ztnmqv" data-state="collapsed">
+  
+<div class="accordion-header svelte-kyhwtl" aria-level="4" role="heading">
+  
+<button class="header-button svelte-domaub" aria-controls="panel3" aria-label="" id="button3">
+  Third Section
+</button>
+</div>
+
+  
+  
+<div class="accordion-panel svelte-vr4nlj" role="region" id="panel3" aria-labelledby="button3">
+  </div>
+
+</div>
+
+</div>
+
+</div></section></fieldset></section>
+
+		<section><fieldset><legend>Component API</legend>
+				<h2>Component API</h2>
+				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
+
+
+
+
+<table id="props-table-accordion" aria-label="Accordion props table" aria-describedby="Accordion props table_table_desc" class="sv-table" style="background-color: black;">
+	<caption id="Accordion props table_table_desc" class="sv-table-title svelte-g1q3st" style="font-size: 16px; text-align: left; background: white;">This table describes the props that should be passed to the accordion in the options object</caption>
+
+	
+	<tr class="sv-table-row-headers">
+		<th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Prop</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Type</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Required</th><th role="columnheader" style="width: 25%; background: powderblue;" class="svelte-g1q3st">Default Value</th></tr>
+
+	
+	<tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">multiselectable</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">boolean</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+		</tr><tr class="sv-table-row sv-table-row-odd svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">headerLevel</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">number</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-even svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">styles</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">array of strings</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">false</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr><tr class="sv-table-row sv-table-row-odd svelte-g1q3st">
+			
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">panelInfo</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">array of objects</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">true</td>
+				<td role="cell" class="sv-table-cell svelte-g1q3st" style="width: 25%; background: white; padding: 2px 5px;; ">N/A</td>
+		</tr></table>
+
+</div></fieldset></section></main>
+</article>
+</section>
+
+
+		<script type="module" data-sveltekit-hydrate="1x69oo2">
+		import { start } from "/_app/start-f571290e.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="1x69oo2"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/__layout.svelte-75bd3fd9.js"),
+						import("/_app/pages/pages/accordion.svelte-02a7d7a1.js")
+				],
+				params: {},
+				routeId: "pages/accordion"
+			}
+		});
+	</script></div>
+	</body>
+</html>
