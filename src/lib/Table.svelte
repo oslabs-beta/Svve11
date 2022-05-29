@@ -68,50 +68,57 @@ Props are passed in through the tableProps prop, which should be an object conta
 	* evenRowStyles:string (optional)
 ```
  -->
-<div></div>
-<table
-	{id}
-	aria-label={ariaLabel}
-	aria-describedby={ariaLabel + '_table_desc'}
-	class="sv-table"
-	style={overallStyles ? overallStyles : ''}
->
-	<!-- Title of the table - doubles as the aria-description text -->
-	<caption
-		id={ariaLabel + '_table_desc'}
-		class="sv-table-title"
-		style={titleStyles ? titleStyles : ''}
+<div role="region" aria-labelledby={id} tabindex="0">
+	<table
+		{id}
+		aria-label={ariaLabel}
+		aria-describedby={ariaLabel + '_table_desc'}
+		class="sv-table"
+		style={overallStyles ? overallStyles : ''}
 	>
-		{ariaDescription}
-	</caption>
 
-	<!-- First row contains Column Names -->
-	<tr class="sv-table-row-headers">
-		<!-- populate the columns with each element in the column names array -->
-		{#each columnNames as columnName}
-			<th role="columnheader" style={headersRowStyles ? headersRowStyles : ''}>{columnName}</th>
-		{/each}
-	</tr>
+		<!-- Title of the table - doubles as the aria-description text -->
+		<caption
+			id={ariaLabel + '_table_desc'}
+			class="sv-table-title"
+			style={titleStyles ? titleStyles : ''}
+		>
+			{ariaDescription}
+		</caption>
 
-	<!-- populate table with all row content -->
-	{#each rowsContent as rowContent, i}
-		<tr class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}>
-			<!-- for each item in the row... -->
-			{#each rowContent as cellContent}
-				<!-- fill in cell with content -->
-				<td
-					role="cell"
-					class="sv-table-cell"
-					style={'' +
-						(generalRowStyles ? generalRowStyles : '') +
-						'; ' +
-						(i % 2 === 0 && evenRowStyles ? evenRowStyles : '') +
-						(i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')}>{cellContent}</td
-				>
+		<!-- First row contains Column Names -->
+		<thead>
+			<tr class="sv-table-row-headers">
+				<!-- populate the columns with each element in the column names array -->
+				{#each columnNames as columnName}
+					<th role="columnheader" style={headersRowStyles ? headersRowStyles : ''}>{columnName}</th>
+				{/each}
+			</tr>
+		</thead>
+		<tbody>
+			<!-- populate table with all row content -->
+			{#each rowsContent as rowContent, i}
+				<tr class={'sv-table-row ' + (i % 2 === 0 ? 'sv-table-row-even' : 'sv-table-row-odd')}>
+					<!-- for each item in the row... -->
+					{#each rowContent as cellContent}
+						<!-- fill in cell with content -->
+						<td
+							role="cell"
+							class="sv-table-cell"
+							style={'' +
+								(generalRowStyles ? generalRowStyles : '') +
+								'; ' +
+								(i % 2 === 0 && evenRowStyles ? evenRowStyles : '') +
+								(i % 2 !== 0 && oddRowStyles ? oddRowStyles : '')}>{cellContent}</td
+						>
+					{/each}
+				</tr>
 			{/each}
-		</tr>
-	{/each}
-</table>
+		</tbody>
+
+		
+	</table>
+</div>
 
 <!-- ************************* STYLES ************************* -->
 <style>

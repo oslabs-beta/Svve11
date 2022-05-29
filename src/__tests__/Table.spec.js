@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/svelte';
+import { render, getByText } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 
 import Table from './../lib/Table.svelte';
@@ -41,8 +41,8 @@ beforeEach(() => {
 describe('Running accessible Table tests', () => {
 	describe('WAI-ARIA Roles, States, Properties tests', () => {
 		test('It has a role table', () => {
-			expect(table)
-		})
+			expect(table);
+		});
 
 		test('It has an accessible label', () => {
 			expect(table).toHaveAttribute('aria-label');
@@ -54,18 +54,24 @@ describe('Running accessible Table tests', () => {
 		});
 	});
 
-	// describe('Keyboard interaction tests', () => {
-	// 	test('It can be focused by pressing tab', async () => {
-	// 		// press tab
-	// 		await user.tab();
-	// 		// console.log('current active element:', document.activeElement);
-	// 		expect(document.activeElement).toBe(table);
-	// 	});
-	// });
+	describe('a11y checklist tests', () => {
+		test('The table should have a caption element', () => {
+			const caption = document.getElementById('test_table_desc');
+			console.log('table caption:', caption);
+			expect(table).toContainElement(caption);
+		});
 
-	// describe('Styling tests', () => {
-	// 	test('The test works', () => {
-	// 		console.log('nice');
-	// 	});
-	// });
+		test('Its caption element should provide a title for the table', () => {
+			const caption = document.getElementById('test_table_desc');
+			expect(caption.textContent).toBe('Table Component for Testing');
+		});
+	});
+
+	describe('Keyboard interaction tests', () => {
+		test('It can be focused by pressing tab', async () => {
+			// press tab
+			await user.tab();
+			expect(document.activeElement).toHaveAccessibleName('test');
+		});
+	});
 });
