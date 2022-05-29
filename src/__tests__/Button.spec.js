@@ -9,80 +9,82 @@ import Button from '../lib/Button.svelte';
 let user;
 let button;
 const props = {
-  content: 'test descriptive content',
-  id: 'test-button',
-  label: 'accessible-button',
-  handleClick: (e) => (e.target.textContent = 'clicked'),
+	content: 'test descriptive content',
+	id: 'test-button',
+	label: 'accessible-button',
+	handleClick: (e) => (e.target.textContent = 'clicked')
 };
 
 // before each test runs run,
 beforeEach(() => {
-  // set up a user to dispatch events
-  user = userEvent.setup();
+	// set up a user to dispatch events
+	user = userEvent.setup();
 
-  // render a Button for testing
-  const { component, getByText } = render(Button, { ...props });
-  button = getByText('test descriptive content');
+	// render a Button for testing
+	const { component, getByText } = render(Button, { ...props });
+	button = getByText('test descriptive content');
 });
 
 describe('Running accessible Button tests', () => {
-  describe('WAI-ARIA Roles, States, Properties tests', () => {
-    test('It has an accessible label', () => {
-      expect(button).toHaveAttribute('aria-label');
-    });
+	describe('WAI-ARIA Roles, States, Properties tests', () => {
+		test('It has an accessible label', () => {
+			expect(button).toHaveAttribute('aria-label');
+		});
 
-    test('It has an accessible name', () => {
-      expect(button).toHaveAccessibleName('accessible-button');
-    });
+		test('It has an accessible name', () => {
+			expect(button).toHaveAccessibleName('accessible-button');
+		});
 
-    test('Its content is unique and descriptive', () => {
-      expect(button).toHaveTextContent('test descriptive content');
-    });
+		test('Its content is unique and descriptive', () => {
+			expect(button).toHaveTextContent('test descriptive content');
+		});
 
-    test('It is not autofocused', () => {
-      expect(document.activeElement).not.toBe(button);
-    });
+		test('It is not autofocused', () => {
+			expect(document.activeElement).not.toBe(button);
+		});
 
-    test('It can can be be activated with a click', async () => {
-      await user.click(button);
-      expect(button).toHaveTextContent('clicked');
-    });
+		test('It can can be be activated with a click', async () => {
+			await user.click(button);
+			expect(button).toHaveTextContent('clicked');
+		});
 
-    test('It triggers an event or action', async () => {
-      await user.click(button);
-      expect(button).toHaveTextContent('clicked');
-    });
-  });
+		test('It triggers an event or action', async () => {
+			await user.click(button);
+			expect(button).toHaveTextContent('clicked');
+		});
+	});
 
-  describe('Keyboard interaction tests', () => {
-    test('It can be focused by pressing tab', async () => {
-      await user.tab();
-      // console.log('current active element:', document.activeElement);
-      expect(document.activeElement).toBe(button);
-    });
+	describe('Keyboard interaction tests', () => {
+		test('It can be focused by pressing tab', async () => {
+			await user.tab();
+			// console.log('current active element:', document.activeElement);
+			expect(document.activeElement).toBe(button);
+		});
 
-    test('It can can be be activated by pressing space', async () => {
-      // focus the button
-      user.tab();
-      // press space
-      await user.keyboard(' ');
-      expect(button).toHaveTextContent('clicked');
-    });
+		test('It can can be be activated by pressing space', async () => {
+			// focus the button
+			user.tab();
+			// press space
+			await user.keyboard(' ');
+			expect(button).toHaveTextContent('clicked');
+		});
 
-    test('It can can be be activated by pressing enter', async () => {
-      // focus the button
-      user.tab();
-      // press enter
-      await user.keyboard('{enter}');
-      expect(button).toHaveTextContent('clicked');
-    });
+		test('It can can be be activated by pressing enter', async () => {
+			// focus the button
+			user.tab();
+			// press enter
+			await user.keyboard('{enter}');
+			expect(button).toHaveTextContent('clicked');
+		});
 
-    test('Keys that are not space or enter do not activate the button', async () => {
-      user.tab();
-      await user.keyboard('`1234567890qwertyuiopasdfghjklzxcvbnm');
-      expect(button).toHaveTextContent('test descriptive content');
-    });
-  });
+		test('Keys that are not space or enter do not activate the button', async () => {
+			user.tab();
+			await user.keyboard('`1234567890qwertyuiopasdfghjklzxcvbnm');
+			expect(button).toHaveTextContent('test descriptive content');
+		});
+	});
+
+	describe('Styling tests', () => {});
 });
 
 /**
