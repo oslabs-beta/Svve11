@@ -35,14 +35,8 @@ Svve11 can easily be installed for use in your application as follows.
 2. Run the following command in your terminal.
 
 ```node
-npm install --save-dev 'Svve11'
+npm install --save-dev 'vve11'
 ```
-
-<!-- - Using `yarn`
-
-```yarn
-yarn add 'Svve11'
-``` -->
 
 3. Components can now be imported directly into your Svelte files as documented below.
 
@@ -433,7 +427,7 @@ yarn add 'Svve11'
    />
    ```
 
-4. The following are optional attributes available with this component. Each of these attributes has the same function as the HTML attribute with its same name. Please check [W3Schools](https://www.w3schools.com/tags/tag_input.asp) or [MDN's webpages](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) to learn more about how these work. By default, all attributes of type boolean are set to false.
+4. The following are optional attributes available with this component. Each of these attributes has the same function as the HTML attribute with its same name. Please check [W3Schools](https://www.w3schools.com/tags/tag_input.asp) or [MDN's](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) webpages to learn more about how these work. By default, all attributes of type boolean are set to false.
 
    - **`max`** (_`string`_)
    - **`min`** (_`string`_)
