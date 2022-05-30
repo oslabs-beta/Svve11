@@ -1,11 +1,19 @@
 <script lang="ts">
-	import logo from '../images/svve11-logo-blue-transparent-cropped.png';
+	import svve11Logo from '../images/svve11-logo-blue-transparent-cropped.png';
+	import jestLogo from '../images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png';
+	import NVDALogo from '../images/tech-icons/nvda_200x200.png';
+	import VoiceOverLogo from '../images/tech-icons/voiceover_logo.png';
+	import JAWSLogo from '../images/tech-icons/JAWS-screenreader-logo.png';
+	import ChromeLogo from '../images/tech-icons/chrome-logo.svg';
+	import SafariLogo from '../images/tech-icons/Safari_browser_logo.svg';
+	import FirefoxLogo from '../images/tech-icons/Firefox_logo_2019.svg';
+	import EdgeLogo from '../images/tech-icons/Microsoft_Edge_logo_(2019).svg';
 </script>
 
 <article id="splash" class="page-component">
 	<header>
 		<h1 style="font-family: 'Lobster', cursive;">
-			It's a <img id="splash-logo" src={logo} alt="svve11 logo" /> day
+			It's a <img id="splash-logo" src={svve11Logo} alt="svve11 logo" /> day
 		</h1>
 
 		<p>
@@ -38,67 +46,41 @@
 				<ul id="testing-list">
 					<li>
 						Unit-testing of individual components with
-						<img
-							class="tech-icon"
-							src="src/images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png"
-							alt="Jest logo"
-						/><a href="https://jestjs.io/"> Jest </a>
+						<img class="tech-icon" src={jestLogo} alt="Jest logo" /><a href="https://jestjs.io/">
+							Jest
+						</a>
 					</li>
 					<li>Screen readers:</li>
 					<ul>
 						<li>
-							<img class="tech-icon" src="src/images/tech-icons/nvda_200x200.png" alt="NVDA logo" />
+							<img class="tech-icon" src={NVDALogo} alt="NVDA logo" />
 							<a href="https://www.nvaccess.org/download/">NVDA</a>
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/voiceover_logo.png"
-								alt="VoiceOver logo"
-							/>
+							<img class="tech-icon" src={VoiceOverLogo} alt="VoiceOver logo" />
 							<a href="https://www.apple.com/accessibility/vision/">VoiceOver</a>
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/JAWS-screenreader-logo(1).png"
-								alt="JAWS logo"
-							/>
+							<img class="tech-icon" src={JAWSLogo} alt="JAWS logo" />
 							<a href="https://www.freedomscientific.com/products/software/jaws/">JAWS</a>
 						</li>
 					</ul>
 					<li>Browsers:</li>
 					<ul>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/chrome-logo.svg"
-								alt="Google Chrome logo"
-							/>
+							<img class="tech-icon" src={ChromeLogo} alt="Google Chrome logo" />
 							<a href="https://www.google.com/chrome/">Google Chrome</a>
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/Safari_browser_logo.svg"
-								alt="Safari logo"
-							/>
+							<img class="tech-icon" src={SafariLogo} alt="Safari logo" />
 							<a href="https://www.apple.com/safari/">Safari</a>
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/Firefox_logo_2019.svg"
-								alt="Mozilla Firefox logo"
-							/>
+							<img class="tech-icon" src={FirefoxLogo} alt="Mozilla Firefox logo" />
 							<a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/Microsoft_Edge_logo_(2019).svg"
-								alt="Microsoft Edge logo"
-							/>
+							<img class="tech-icon" src={EdgeLogo} alt="Microsoft Edge logo" />
 							<a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a>
 						</li>
 					</ul>
