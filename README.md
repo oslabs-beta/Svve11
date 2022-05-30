@@ -176,6 +176,8 @@ npm install --save-dev 'svve11'
    	checked={false}
    	checkBoxStyle={'height: 1.5em; width: 1.5em;'}
    	checkBoxLabelStyle={'font-size:1.5em;'}
+   	name="What's your favorite food?"
+   	value="foods"
    />
    ```
 
