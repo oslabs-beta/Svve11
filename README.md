@@ -159,13 +159,13 @@ npm install --save-dev 'svve11'
 
      - **`id`** (_`string`_): sets the `id` attribute of the checkbox component. Be sure to have a unique string for each checkbox.
      - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component.
-     - **`checked`** (_`boolean`_): sets the status of the checkbox on load. If true, the checkbox will be checked upon load. This defaults to false.
 
    - (4) **optional** props:
+     - **`checked`** (_`boolean`_): sets the status of the checkbox on load. If true, the checkbox will be checked upon load. This defaults to false.
      - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox.
      - **`checkBoxLabelStyle`** (_`string`_): sets the styling for the checkbox label text.
      - **`name`** (_`string`_): sets the group name to which the checkbox belongs. All checkbox in one group should have the same name attribute.
-     - **`value`** (_`number`_): sets the value associated with the given checkbox.
+     - **`value`** (_`string`_): sets the value associated with the given checkbox.
 
 3. An checkbox instance can be created by placing the code below in the body of your .svelte file.
 
@@ -197,7 +197,7 @@ npm install --save-dev 'svve11'
      - **`maxValue`** (_`number`_): sets the maximum value for the meter range.
      - **`minValue`** (_`number`_): sets the minimum value for the meter range.
      - **`meterLabel`** (_`string`_): sets the text label for the meter. The label will be automatically joined with a percentage calculation, unless otherwise specified. See `displayDecimal` in _optional_ props section.
-     - **`id`** (_`number`_): sets the id for the meter. Remember to provide different id numbers when instantiating more than one meter on a page as the id should be unique.
+     - **`id`** (_`string`_): sets the id for the meter. Remember to provide different id numbers when instantiating more than one meter on a page as the id should be unique.
 
    - (8) _optional_ props:
      - **`lowValue`** (_`number`_): sets the value from which a current value below is considered low. Must be greater than `minValue` and less than the `maxValue` and `highValue`.
@@ -310,13 +310,13 @@ npm install --save-dev 'svve11'
 
      - **`id`** (_`string`_): sets the `id` attribute of the radio button component.
      - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
-     - **`checked`** (_`boolean`_): sets the initial state of the radio button, where true will render a pre-checked button and false will render a non-checked button.
 
    - (4) **optional** props:
+     - **`checked`** (_`boolean`_): sets the initial state of the radio button, where true will render a pre-checked button and false will render a non-checked button.
      - **`radioButtonStyle`** (_`string`_): sets the styling for the radio button
      - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text'
      - **`name`** (_`string`_): sets the group name to which the radio button belongs. All radio buttons in one group should have the same name attribute. This property must be defined to allow only one radio button to be selected within a given group.
-     - **`value`** (_`number`_): sets the value associated with the given radio button.
+     - **`value`** (_`string`_): sets the value associated with the given radio button.
 
 3. A radio button instance can be created by placing the code below in the body of your .svelte file.
 

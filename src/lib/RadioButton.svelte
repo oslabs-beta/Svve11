@@ -14,6 +14,20 @@
 	export let value: any;
 </script>
 
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+radioButtonLabel: string (required)
+id: string (required)
+
+checked: boolean (option) 
+radioButtonStyle: string (option)
+radioButtonLabelStyle: string (option)
+name: string (option)
+value: string (option)
+```
+-->
+
 <!-- Rendering the Radio Button  -->
 <input
 	class="sv-radio-button-input"
