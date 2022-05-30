@@ -6,7 +6,7 @@ export type panelInfoTypes = {
 
 export type optionsTypes = {
     multiselectable: boolean;
-    headerLevel: (number | null);
+    headerLevel?: (number | null);
     panelInfo: panelInfoTypes[];
-    styles?: (string | null)[];
+    styles?: (string)[];
   };

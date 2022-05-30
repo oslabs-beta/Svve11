@@ -10,8 +10,9 @@
 	export let checked: boolean = false;
 	export let radioButtonStyle: string = '';
 	export let radioButtonLabelStyle: string = '';
-	export let name: any;
-	export let value: any;
+
+	export let name: string;
+	export let value: number;
 </script>
 
 <!-- Rendering the Radio Button  -->

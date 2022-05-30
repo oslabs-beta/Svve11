@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let panelContent: string = "";
-  export let isOpen: boolean;
-  export let panelID: string;
-  export let labeledBy: string;
-  export let style: string = "";
+	export let panelContent: string = '';
+	export let isOpen: boolean;
+	export let panelID: string;
+	export let labeledBy: string;
+	export let style: string = '';
 </script>
 
 <!-- Panel Attributes:
@@ -13,31 +13,31 @@
   aria-labelledby set to the ID of the button labeling the panel 
   styles set to custom styles string passed down-->
 <div
-  class="accordion-panel"
-  role="region"
-  class:open-panel={isOpen}
-  id={panelID}
-  aria-labelledby={labeledBy}
-  {style}
+	class="sv-accordion-panel"
+	role="region"
+	class:open-panel={isOpen}
+	id={panelID}
+	aria-labelledby={labeledBy}
+	{style}
 >
-  <!-- when panel is set to open/expand, make a <p> of panel content appear in <div> -->
-  {#if isOpen}
-    <p>{panelContent}</p>
-  {/if}
+	<!-- when panel is set to open/expand, make a <p> of panel content appear in <div> -->
+	{#if isOpen}
+		<p>{panelContent}</p>
+	{/if}
 </div>
 
 <!-- default styles -->
 <style>
-  .accordion-panel {
-    height: 0;
-    border: 0;
-  }
+	.sv-accordion-panel {
+		height: 0;
+		border: 0;
+	}
 
-  .open-panel {
-    height: auto;
-    width: auto;
-    border: solid 1px black;
-    padding: 0px 10px;
-    margin: 0;
-  }
+	.open-panel {
+		height: auto;
+		width: auto;
+		border: solid 1px black;
+		padding: 0px 10px;
+		margin: 0;
+	}
 </style>
