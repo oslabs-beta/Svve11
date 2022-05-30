@@ -6,8 +6,8 @@
 	export let radioButtonStyle: string = '';
 	export let radioButtonLabelStyle: string = '';
 
-	export let name;
-	export let value;
+	export let name: string;
+	export let value: number;
 </script>
 
 <input
