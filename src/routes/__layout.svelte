@@ -21,6 +21,7 @@
 					'Meter',
 					'Nav Bar',
 					'Radio Button',
+					'Table',
 					'Text Input'
 				],
 				links: [
@@ -30,6 +31,7 @@
 					'/pages/meter',
 					'/pages/navbar',
 					'/pages/radiobutton',
+					'/pages/table',
 					'/pages/textinput'
 				]
 			},
