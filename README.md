@@ -155,12 +155,17 @@ npm install --save-dev 'svve11'
 
 2. The checkbox component has (5) props:
 
-   - `Props`
+   - (3) **required** props:
+
      - **`id`** (_`string`_): sets the `id` attribute of the checkbox component. Be sure to have a unique string for each checkbox.
      - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component.
      - **`checked`** (_`boolean`_): sets the status of the checkbox on load. If true, the checkbox will be checked upon load. This defaults to false.
+
+   - (4) **optional** props:
      - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox.
      - **`checkBoxLabelStyle`** (_`string`_): sets the styling for the checkbox label text.
+     - **`name`** (_`string`_): sets the group name to which the checkbox belongs. All checkbox in one group should have the same name attribute.
+     - **`value`** (_`number`_): sets the value associated with the given checkbox.
 
 3. An checkbox instance can be created by placing the code below in the body of your .svelte file.
 
