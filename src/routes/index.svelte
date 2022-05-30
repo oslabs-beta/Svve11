@@ -1,6 +1,7 @@
 <script lang="ts">
 </script>
 
+<svelte:body></svelte:body>
 <article class="page-component">
 	<header>
 		<h1>Welcome to Svve11</h1>
@@ -31,5 +32,10 @@
 	</section>
 </article>
 
-<style>
+<style lang=scss>
+	@import "../stylesheets/variables";
+
+	svelte:body {
+		background-color: $blue;
+	}
 </style>
