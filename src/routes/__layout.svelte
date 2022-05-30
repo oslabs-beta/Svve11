@@ -48,9 +48,10 @@
 </script>
 
 <svelte:head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"></svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lobster&display=swap" rel="stylesheet">
+</svelte:head>
 
 <section class="main-container">
 	<!-- <section id="nav-container">
@@ -62,5 +63,8 @@
 	<slot />
 </section>
 
-<style>
+<style lang='scss'>
+	@import "../stylesheets/variables";
+
+
 </style>
