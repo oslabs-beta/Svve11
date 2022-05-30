@@ -1,10 +1,12 @@
 <script lang="ts">
-	import logo from '../images/svve11-logo-blue-transparent-cropped.png'
+	import logo from '../images/svve11-logo-blue-transparent-cropped.png';
 </script>
 
 <article id="splash" class="page-component">
 	<header>
-		<h1 style="font-family: 'Lobster', cursive;" >It's a <img id="splash-logo" src={logo} alt="svve11 logo"> day</h1>
+		<h1 style="font-family: 'Lobster', cursive;">
+			It's a <img id="splash-logo" src={logo} alt="svve11 logo" /> day!
+		</h1>
 
 		<p>
 			Here at Svve11, we believe that accessible web development is the future. We know that
@@ -23,17 +25,13 @@
 				<pre><code class="code-block">  
           npm install 'svve11'
         </code></pre>
-				<p>For yarn, run:</p>
-				<pre><code class="code-block">
-          yarn add 'svve11'
-        </code></pre>
 			</section>
 		</fieldset>
 	</section>
 </article>
 
-<style lang=scss>
-	@import "../stylesheets/variables";
+<style lang="scss">
+	@import '../stylesheets/variables';
 
 	#splash {
 		header {
@@ -65,6 +63,4 @@
 			}
 		}
 	}
-
-	
 </style>
