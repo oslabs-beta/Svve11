@@ -16,6 +16,7 @@
 
 <!-- Rendering the Radio Button  -->
 <input
+	class="sv-radio-button-input"
 	{name}
 	{value}
 	style={radioButtonStyle}
@@ -25,7 +26,9 @@
 	aria-checked={checked}
 />
 <!-- Rendering the text label for the radio button -->
-<label style={radioButtonLabelStyle} for={id}> {radioButtonLabel} </label>
+<label class="sv-radio-button-label" style={radioButtonLabelStyle} for={id}>
+	{radioButtonLabel}
+</label>
 
 <!-- Any styling for the radio button -->
 <style lang="scss">
