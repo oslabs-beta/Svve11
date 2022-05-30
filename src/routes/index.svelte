@@ -1,10 +1,12 @@
 <script lang="ts">
-	import logo from '../images/svve11-logo-blue-transparent-cropped.png'
+	import logo from '../images/svve11-logo-blue-transparent-cropped.png';
 </script>
 
 <article id="splash" class="page-component">
 	<header>
-		<h1 style="font-family: 'Lobster', cursive;" >It's a <img id="splash-logo" src={logo} alt="svve11 logo"> day</h1>
+		<h1 style="font-family: 'Lobster', cursive;">
+			It's a <img id="splash-logo" src={logo} alt="svve11 logo" /> day
+		</h1>
 
 		<p>
 			Here at Svve11, we believe that accessible web development is the future. We know that
@@ -23,17 +25,91 @@
 				<pre><code class="code-block">  
           npm install 'svve11'
         </code></pre>
-				<p>For yarn, run:</p>
-				<pre><code class="code-block">
-          yarn add 'svve11'
-        </code></pre>
+			</section>
+
+			<legend />
+			<h2>Fully tested, ready-to-use</h2>
+			<section class="content-section">
+				<p>
+					All of our components have been fully tested against the <a
+						href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Guides</a
+					> with our testing suite:
+				</p>
+				<ul id="testing-list">
+					<li>
+						Unit-testing of individual components with
+						<img
+							class="tech-icon"
+							src="src/images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png"
+							alt="Jest logo"
+						/><a href="https://jestjs.io/"> Jest </a>
+					</li>
+					<li>Screen readers:</li>
+					<ul>
+						<li>
+							<img class="tech-icon" src="src/images/tech-icons/nvda_200x200.png" alt="NVDA logo" />
+							<a href="https://www.nvaccess.org/download/">NVDA</a>
+						</li>
+						<li>
+							<img
+								class="tech-icon"
+								src="src/images/tech-icons/voiceover_logo.png"
+								alt="VoiceOver logo"
+							/>
+							<a href="https://www.apple.com/accessibility/vision/">VoiceOver</a>
+						</li>
+						<li>
+							<img
+								class="tech-icon"
+								src="src/images/tech-icons/JAWS-screenreader-logo(1).png"
+								alt="JAWS logo"
+							/>
+							<a href="https://www.freedomscientific.com/products/software/jaws/">JAWS</a>
+						</li>
+					</ul>
+					<li>Browsers:</li>
+					<ul>
+						<li>
+							<img
+								class="tech-icon"
+								src="src/images/tech-icons/chrome-logo.svg"
+								alt="Google Chrome logo"
+							/>
+							<a href="https://www.google.com/chrome/">Google Chrome</a>
+						</li>
+						<li>
+							<img
+								class="tech-icon"
+								src="src/images/tech-icons/Safari_browser_logo.svg"
+								alt="Safari logo"
+							/>
+							<a href="https://www.apple.com/safari/">Safari</a>
+						</li>
+						<li>
+							<img
+								class="tech-icon"
+								src="src/images/tech-icons/Firefox_logo_2019.svg"
+								alt="Mozilla Firefox logo"
+							/>
+							<a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
+						</li>
+						<li>
+							<img
+								class="tech-icon"
+								src="src/images/tech-icons/Microsoft_Edge_logo_(2019).svg"
+								alt="Microsoft Edge logo"
+							/>
+							<a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a>
+						</li>
+					</ul>
+				</ul>
 			</section>
 		</fieldset>
 	</section>
 </article>
 
-<style lang=scss>
-	@import "../stylesheets/variables";
+<style lang="scss">
+	@import '../stylesheets/variables';
 
 	#splash {
 		header {
@@ -65,6 +141,4 @@
 			}
 		}
 	}
-
-	
 </style>

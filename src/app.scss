@@ -36,6 +36,18 @@ body {
   h4 {
     margin: 10px 0;
   }
+  #testing-list {
+    ul {
+      list-style: none;
+    }
+    li {
+      margin: .5rem 0;
+    }
+  }
+  .tech-icon {
+    height: 2rem;
+    margin-right: 1rem;
+  }
   code {
     font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, monospace;
     font-weight: lighter;
@@ -117,6 +129,9 @@ body {
   article {
     width: auto;
   }
+  section {
+    margin-bottom: 2rem;
+  }
   .example-code {
     margin-bottom: 1.5rem;
   }
@@ -160,7 +175,7 @@ body {
     display: none;
   }
   p {
-    margin: 10px 0;
+    margin: .7rem 0;
   }
 }
 
