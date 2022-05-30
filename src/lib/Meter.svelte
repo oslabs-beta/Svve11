@@ -38,7 +38,6 @@
 	}
 </script>
 
-<<<<<<< HEAD
 <!-- @component
 Props are passed in through the tableProps prop, which should be an object containing the following properties
 ```tsx
@@ -56,8 +55,6 @@ displayDecimal : boolean (optional)
 units : string (optional)
 meterStyle : string (optional)
 labelStyle  : string (optional)
-
-
 ```
 -->
 
@@ -66,13 +63,6 @@ labelStyle  : string (optional)
 </label>
 <meter
 	class="meter"
-=======
-<label class="sv-meter-label" for={`meter-${id}`} id={`meter-label-${id}`} style={labelStyle}>
-	{meterLabel}: {displayString}
-</label>
-<meter
-	class="sv-meter"
->>>>>>> main
 	id={`meter-${id}`}
 	min={minValue}
 	max={maxValue}

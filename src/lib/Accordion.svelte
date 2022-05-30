@@ -77,11 +77,7 @@ multiselectable:boolean (optional)
 <!-- aria-multiselectable indicates whether accordion permits multiple panels to be open at once 
 style are the custom styles supplied by a user of the library for the Accordion -->
 <div
-<<<<<<< HEAD
-	class="accordion-main"
-=======
 	class="sv-accordion-main"
->>>>>>> main
 	aria-multiselectable={options.multiselectable}
 	style={options.styles[3]}
 >
@@ -104,11 +100,7 @@ style are the custom styles supplied by a user of the library for the Accordion 
 
 <!-- Default styles for accordion -->
 <style>
-<<<<<<< HEAD
-	.accordion-main {
-=======
 	.sv-accordion-main {
->>>>>>> main
 		width: 100%;
 		height: auto;
 		display: flex;
