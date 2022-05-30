@@ -1,7 +1,7 @@
 <script lang="ts">
-	import '../app.css';
+	import '../app.scss';
 	import NavBar from '$lib/NavBar.svelte';
-	import logo from '../images/svve11-logo-white.png';
+	import logo from '../images/svve11-logo-white-transparent-cropped.png';
 
 	const navOptions = {
 		id: 'nav-bar',
@@ -13,7 +13,7 @@
 				links: ['/', 'https://github.com/oslabs-beta/svve11']
 			},
 			{
-				subheading: 'Library Components:',
+				subheading: 'Components',
 				options: [
 					'Accordion',
 					'Button',
@@ -21,6 +21,7 @@
 					'Meter',
 					'Nav Bar',
 					'Radio Button',
+					'Table',
 					'Text Input'
 				],
 				links: [
@@ -30,6 +31,7 @@
 					'/pages/meter',
 					'/pages/navbar',
 					'/pages/radiobutton',
+					'/pages/table',
 					'/pages/textinput'
 				]
 			},
@@ -45,14 +47,24 @@
 	};
 </script>
 
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lobster&display=swap" rel="stylesheet">
+</svelte:head>
+
 <section class="main-container">
-	<section id="nav-container">
-		<!-- <Navbar /> -->
+	<!-- <section id="nav-container">
 		<NavBar options={navOptions} />
-	</section>
+	</section> -->
+	
+	<NavBar options={navOptions} />
 
 	<slot />
 </section>
 
-<style>
+<style lang='scss'>
+	@import "../stylesheets/variables";
+
+
 </style>

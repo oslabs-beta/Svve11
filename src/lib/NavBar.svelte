@@ -19,7 +19,7 @@
 
 <!-- ************************* HTML ************************* -->
 
-<nav id={options.id}>
+<nav id={options.id} class="sv-navbar">
   <NavBarHeader 
     header={options.header}
     imgSrc={options.imgSrc}

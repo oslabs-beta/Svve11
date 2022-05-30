@@ -1,6 +1,6 @@
 {
 	"name": "svve11",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -12,6 +12,9 @@
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
 		"test": "jest"
+	},
+	"exports": {
+		".": "./src/lib"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.18.0",
@@ -34,7 +37,7 @@
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.2.6",
 		"svelte-jester": "^2.3.2",
-		"svelte-preprocess": "^4.10.1",
+		"svelte-preprocess": "^4.10.6",
 		"svelte2tsx": "^0.5.10",
 		"ts-jest": "^28.0.2",
 		"ts-node": "^10.8.0",

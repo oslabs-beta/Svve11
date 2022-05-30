@@ -1,9 +1,10 @@
 <script lang="ts">
+	import logo from '../images/svve11-logo-blue-transparent-cropped.png'
 </script>
 
-<article class="page-component">
+<article id="splash" class="page-component">
 	<header>
-		<h1>Welcome to Svve11</h1>
+		<h1 style="font-family: 'Lobster', cursive;" >It's a <img id="splash-logo" src={logo} alt="svve11 logo"> day</h1>
 
 		<p>
 			Here at Svve11, we believe that accessible web development is the future. We know that
@@ -31,5 +32,39 @@
 	</section>
 </article>
 
-<style>
+<style lang=scss>
+	@import "../stylesheets/variables";
+
+	#splash {
+		header {
+			display: flex;
+			flex-direction: column;
+			#splash-logo {
+				display: inline-block;
+				height: 7rem;
+			}
+			h1 {
+				font-size: 8rem;
+				color: $blue;
+				margin-bottom: 0;
+			}
+			p {
+				font-size: 1.5rem;
+				font-style: italic;
+				font-weight: 400;
+				width: 65%;
+				padding-left: 3rem;
+				margin-top: 2rem;
+				margin-bottom: 3rem;
+				color: $darkgrey;
+			}
+		}
+		section {
+			* {
+				color: $blue;
+			}
+		}
+	}
+
+	
 </style>
