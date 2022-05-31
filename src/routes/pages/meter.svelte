@@ -66,9 +66,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import <span class="curly-symbol">&#10100</span> Meter <span class="curly-symbol"
-								>&#10101</span
-							> from 'svve11'
+              import Meter from 'svve11/Meter.svelte'
             </code></pre>
 				</section>
 			</fieldset>
