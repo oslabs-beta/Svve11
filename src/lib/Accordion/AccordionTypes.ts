@@ -6,7 +6,14 @@ export type panelInfoTypes = {
 
 export type optionsTypes = {
     multiselectable: boolean;
-    headerLevel?: (number | null);
+    headerLevel?: (number | undefined);
     panelInfo: panelInfoTypes[];
-    styles?: (string)[];
+    styles?: accordionStylesObject;
   };
+
+  export type accordionStylesObject = {
+    accordionHeaderStyle: string,
+    accordionPanelStyle: string,
+    accordionItemStyle: string,
+    overallAccordionStyle: string,
+  }

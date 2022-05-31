@@ -75,7 +75,7 @@
 				font-style: italic;
 				font-weight: 400;
 				width: 65%;
-				padding-left: 3rem;
+				padding-left: 0;
 				margin-top: 2rem;
 				margin-bottom: 3rem;
 				color: $darkgrey;
@@ -84,7 +84,7 @@
 		#team-display {
 			display: flex;
 			justify-content: space-between;
-
+			width: 100%;
 			* {
 				color: $blue;
 			}
@@ -107,6 +107,43 @@
 				margin: 0 20px;
 				p {
 					font-size: 2rem;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 884px) {
+		#about {
+			header {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				h1 {
+					font-size: 1.5rem;
+				}
+				#splash-logo {
+					height: 1.5rem;
+				}
+				p {
+					font-size: 1rem;
+					padding-left: 0;
+					width: 70%;
+				}
+			}
+
+			#team-display {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+
+				.team-image {
+					margin-top: 0;
+					height: 200px;
+					width: 200px;
 				}
 			}
 		}

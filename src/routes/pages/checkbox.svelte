@@ -47,9 +47,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import <span class="curly-symbol">&#10100</span> Checkbox <span class="curly-symbol"
-								>&#10101</span
-							> from 'svve11'
+              import Checkbox from 'svve11/Checkbox.svelte'
             </code></pre>
 				</section>
 			</fieldset>
