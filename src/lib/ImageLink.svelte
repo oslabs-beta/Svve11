@@ -5,6 +5,7 @@
   export let src: string = '';
   export let title: string = '';
   export let alt: string = '';
+  //make imgId optional
   export let imgId: string = '';
 </script>
 
