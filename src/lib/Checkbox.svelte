@@ -26,7 +26,7 @@
 	export let defaultStyle: string = 'display: inline-block; user-select: none;';
 
 	//QUESTION FOR BEK*** Why are name and value never read???
-
+	$: checkBoxLabel, id, checked, checkBoxStyle, checkBoxLabelStyle, name, value;
 	let { checkBoxLabel, id, checked, checkBoxStyle, checkBoxLabelStyle, name, value } = options;
 
 	// // Label that corresponds to the checkbox

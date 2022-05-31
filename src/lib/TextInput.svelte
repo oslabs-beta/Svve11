@@ -56,6 +56,22 @@
 		required: false
 	};
 
+	$: label,
+		placeholder,
+		id,
+		type,
+		min,
+		max,
+		maxlength,
+		size,
+		step,
+		inputStyle,
+		labelStyle,
+		autocomplete,
+		disabled,
+		multiple,
+		readonly,
+		required;
 	let {
 		label,
 		placeholder,
