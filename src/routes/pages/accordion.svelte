@@ -10,7 +10,12 @@
 	const options = {
 		multiselectable: false,
 		headerLevel: 4,
-		styles: [null, null, null, null],
+		styles: {
+			accordionHeaderStyle: '',
+			accordionPanelStyle: '',
+			accordionItemStyle: '',
+			overallAccordionStyle: ''
+		},
 		panelInfo: [
 			{
 				id: 1,
@@ -76,9 +81,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-            import <span class="curly-symbol">&#10100</span> Accordion <span class="curly-symbol"
-								>&#10101</span
-							> from 'svve11'
+            import Accordion from 'svve11/Accordion.svelte'
           </code></pre>
 				</section>
 			</fieldset>

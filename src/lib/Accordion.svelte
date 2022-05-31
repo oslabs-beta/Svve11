@@ -1,19 +1,30 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
 	import AccordionItem from './Accordion/AccordionItem.svelte';
-	import type { optionsTypes } from './Accordion/AccordionTypes';
+	import type { optionsTypes, accordionStylesObject } from './Accordion/AccordionTypes';
 
 	export let options: optionsTypes = {
 		multiselectable: false,
-		headerLevel: null,
+		headerLevel: undefined,
 		panelInfo: []
 	};
-
+	let styles: accordionStylesObject;
+	$: styles;
 	// if no custom styles supplied, set styles array to be all null
-	if (!options['styles']) {
-		options['styles'] = [null, null, null, null];
+	if (!options.styles) {
+		options.styles = {
+			accordionHeaderStyle: '',
+			accordionPanelStyle: '',
+			accordionItemStyle: '',
+			overallAccordionStyle: ''
+		};
 	}
+
+	styles = options.styles;
+	if (!styles.accordionHeaderStyle) styles.accordionHeaderStyle = '';
+	if (!styles.accordionPanelStyle) styles.accordionPanelStyle = '';
+	if (!styles.accordionItemStyle) styles.accordionItemStyle = '';
+	if (!styles.overallAccordionStyle) styles.overallAccordionStyle = '';
 
 	// Instantiate panelStates and set as reactive
 	let panelStates: boolean[];
@@ -60,19 +71,19 @@ style are the custom styles supplied by a user of the library for the Accordion 
 <div
 	class="sv-accordion-main"
 	aria-multiselectable={options.multiselectable}
-	style={options.styles[3]}
+	style={styles.overallAccordionStyle}
 >
 	<!-- Each loop iterating over the array of panelInfo, setting:
     options of item as the panel info for a given item
     headerLevel as the header level from options
-    customStyles attribute passes down the styles array 
+    customStyles attribute passes down the styles object 
     isOpen is a reactive attribute that will change from false to true and back when item's panel expands and collapses 
     supply updatePanelStates function to be passed through props to the button in the header -->
 	{#each options.panelInfo as info, i}
 		<AccordionItem
 			options={info}
 			headerLevel={options.headerLevel}
-			customStyles={options.styles}
+			customStyles={styles}
 			isOpen={panelStates[i]}
 			on:updatePanelStates={updatePanelStates}
 		/>
