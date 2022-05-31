@@ -52,6 +52,8 @@
 
 <!-- ************************* HTML ************************* -->
 <!-- @component
+https://svve11.io/pages/table
+
 Props are passed in through the tableProps prop, which should be an object containing the following properties
 ```tsx
 	id: string (optional)
@@ -60,12 +62,12 @@ Props are passed in through the tableProps prop, which should be an object conta
 	columnNames: array of string (required)
 	rowsContent: array of arrays of strings (required)
 	styles: object (optional) 
-	* overallStyles:string (optional)
-	* titleStyles:string (optional) 
-	* headersRowStyles:string (optional)
-	* generalRowStyles:string (optional) 
-	* oddRowStyles:string (optional)
-	* evenRowStyles:string (optional)
+	- overallStyles:string (optional)
+	- titleStyles:string (optional) 
+	- headersRowStyles:string (optional)
+	- generalRowStyles:string (optional) 
+	- oddRowStyles:string (optional)
+	- evenRowStyles:string (optional)
 ```
  -->
 <div role="region" aria-labelledby={id} tabindex="0">
