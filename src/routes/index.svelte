@@ -36,7 +36,7 @@
 			postText: 'NVDA'
 		},
 		VoiceOver: {
-			href: https://www.apple.com/accessibility/vision/',
+			href: 'https://www.apple.com/accessibility/vision/',
 			src: VoiceOverLogo,
 			title: 'Apple VoiceOver website',
 			alt: 'Apple VoiceOver logo',
