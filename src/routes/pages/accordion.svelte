@@ -10,7 +10,12 @@
 	const options = {
 		multiselectable: false,
 		headerLevel: 4,
-		styles: [null, null, null, null],
+		styles: {
+			accordionHeaderStyle: '',
+			accordionPanelStyle: '',
+			accordionItemStyle: '',
+			overallAccordionStyle: ''
+		},
 		panelInfo: [
 			{
 				id: 1,
