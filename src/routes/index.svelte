@@ -40,48 +40,62 @@
 			<section class="content-section">
 				<p>
 					All of our components have been fully tested against the <a
-						href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Guides</a
+						target="_blank" href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Guides</a
 					> with our testing suite:
 				</p>
 				<ul id="testing-list">
 					<li>
 						Unit-testing of individual components with
-						<img class="tech-icon" src={jestLogo} alt="Jest logo" /><a href="https://jestjs.io/">
+						<a target="_blank" href="https://jestjs.io/">
+							<img class="tech-icon" src={jestLogo} alt="Jest logo" />
 							Jest
 						</a>
 					</li>
 					<li>Screen readers:</li>
 					<ul>
 						<li>
-							<img class="tech-icon" src={NVDALogo} alt="NVDA logo" />
-							<a href="https://www.nvaccess.org/download/">NVDA</a>
+							<a target="_blank" href="https://www.nvaccess.org/download/">
+								<img class="tech-icon" src={NVDALogo} alt="NVDA logo" />
+								NVDA
+							</a>
 						</li>
 						<li>
-							<img class="tech-icon" src={VoiceOverLogo} alt="VoiceOver logo" />
-							<a href="https://www.apple.com/accessibility/vision/">VoiceOver</a>
+							<a target="_blank" href="https://www.apple.com/accessibility/vision/">
+								<img class="tech-icon" src={VoiceOverLogo} alt="VoiceOver logo" />
+								VoiceOver
+							</a>
 						</li>
 						<li>
-							<img class="tech-icon" src={JAWSLogo} alt="JAWS logo" />
-							<a href="https://www.freedomscientific.com/products/software/jaws/">JAWS</a>
+							<a target="_blank" href="https://www.freedomscientific.com/products/software/jaws/">
+								<img class="tech-icon" src={JAWSLogo} alt="JAWS logo" />
+								JAWS
+							</a>
 						</li>
 					</ul>
 					<li>Browsers:</li>
 					<ul>
 						<li>
-							<img class="tech-icon" src={ChromeLogo} alt="Google Chrome logo" />
-							<a href="https://www.google.com/chrome/">Google Chrome</a>
+							<a target="_blank" href="https://www.google.com/chrome/">
+								<img class="tech-icon" src={ChromeLogo} alt="Google Chrome logo" />
+								Google Chrome</a>
 						</li>
 						<li>
-							<img class="tech-icon" src={SafariLogo} alt="Safari logo" />
-							<a href="https://www.apple.com/safari/">Safari</a>
+							<a target="_blank" href="https://www.apple.com/safari/">
+								<img class="tech-icon" src={SafariLogo} alt="Safari logo" />
+								Safari
+							</a>
 						</li>
 						<li>
-							<img class="tech-icon" src={FirefoxLogo} alt="Mozilla Firefox logo" />
-							<a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
+							<a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">
+								<img class="tech-icon" src={FirefoxLogo} alt="Mozilla Firefox logo" />
+								Mozilla Firefox
+							</a>
 						</li>
 						<li>
-							<img class="tech-icon" src={EdgeLogo} alt="Microsoft Edge logo" />
-							<a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a>
+							<a target="_blank" href="https://www.microsoft.com/en-us/edge">
+								<img class="tech-icon" src={EdgeLogo} alt="Microsoft Edge logo" />
+								Microsoft Edge
+							</a>
 						</li>
 					</ul>
 				</ul>
@@ -93,34 +107,4 @@
 <style lang="scss">
 	@import '../stylesheets/variables';
 
-	#splash {
-		header {
-			display: flex;
-			flex-direction: column;
-			#splash-logo {
-				display: inline-block;
-				height: 7rem;
-			}
-			h1 {
-				font-size: 8rem;
-				color: $blue;
-				margin-bottom: 0;
-			}
-			p {
-				font-size: 1.5rem;
-				font-style: italic;
-				font-weight: 400;
-				width: 65%;
-				padding-left: 3rem;
-				margin-top: 2rem;
-				margin-bottom: 3rem;
-				color: $darkgrey;
-			}
-		}
-		section {
-			* {
-				color: $blue;
-			}
-		}
-	}
 </style>
