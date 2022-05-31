@@ -4,7 +4,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Text Input';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/TextInput.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#combobox';
 
 	const tableProps = {
@@ -40,9 +40,9 @@
 	<header>
 		<h1>{componentName}</h1>
 		<ul class="resource-links-list">
-			<li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+			<li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
 			<li>
-				WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+				WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
 			</li>
 		</ul>
 		<p class="header-paragraph">
@@ -141,11 +141,11 @@
 					<p>
 						There are a number of other optional attributes available with this component. Each of
 						these attributes has the same function as the HTML attribute with its same name. Please
-						check <a href="https://www.w3schools.com/tags/att_input_type_text.asp"
+						check <a href="https://www.w3schools.com/tags/att_input_type_text.asp" target="_blank"
 							>W3Schools' Input Tag Information</a
 						>
 						or
-						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text"
+						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text" target="_blank"
 							>MDN's Input Tag Information</a
 						> webpages to learn more about how these work. By default all attributes of type boolean
 						are set to false.
