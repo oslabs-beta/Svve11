@@ -20,6 +20,14 @@
 		],
 		styles: tableStyles
 	};
+
+	const buttonOptions = {
+		id: 'demo-button-1',
+		content: 'Click me!',
+		label: 'accessible-button-1',
+		handleClick: () => console.log('You clicked a button!'),
+		style: 'height: 50px; width:300px;'
+	};
 </script>
 
 <article class="page-component">
@@ -91,13 +99,14 @@
               </code></pre>
 					<h4>Example Button:</h4>
 					<div class="example-button">
-						<Button
+						<!-- <Button
 							id="demo-button-1"
 							label="accesible-button-1"
 							content="Click me!"
 							handleClick={() => console.log('You clicked a button!')}
 							style="height: 50px; width: 300px;"
-						/>
+						/> -->
+						<Button options={buttonOptions} />
 					</div>
 				</section>
 			</fieldset>

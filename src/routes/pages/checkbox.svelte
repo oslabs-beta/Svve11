@@ -22,6 +22,14 @@
 		],
 		styles: tableStyles
 	};
+
+	const checkboxOptions = {
+		checkBoxLabel: 'checkbox number one',
+		id: 'checkbox-1',
+		checked: false,
+		checkBoxStyle: 'height: 1.5em; width: 1.5em; vertical-align: middle;',
+		checkBoxLabelStyle: 'font-size:1em; vertical-align: middle;'
+	};
 </script>
 
 <article class="page-component">
@@ -91,13 +99,14 @@
               </code></pre>
 					<h4>Example Checkbox:</h4>
 					<div class="example-checkbox">
-						<Checkbox
+						<!-- <Checkbox
 							checkBoxLabel="checkbox number one"
 							id="checkbox-1"
 							checked={false}
 							checkBoxStyle="height: 1.5em; width: 1.5em; vertical-align: middle;"
 							checkBoxLabelStyle="font-size:1em; vertical-align: middle;"
-						/>
+						/> -->
+						<Checkbox options={checkboxOptions} />
 					</div>
 				</section>
 			</fieldset>

@@ -1,116 +1,124 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
+	type InputTypes =
+		| 'date'
+		| 'datetime-local'
+		| 'email'
+		| 'month'
+		| 'number'
+		| 'password'
+		| 'tel'
+		| 'text'
+		| 'time'
+		| 'url'
+		| 'week'
+		| '';
 
-  type TextInputOptionTypes = {
-    label: string;
-    placeholder: string;
-    id: string;
-    type: InputTypes;
+	type TextInputOptionTypes = {
+		label: string;
+		placeholder: string;
+		id: string;
+		type: InputTypes;
 
-    max?: string;
-    min?: string;
-    maxlength?: string;
-    size?: string;
-    step?: string;
-    inputStyle?: string;
-    labelStyle?: string;
+		max?: string;
+		min?: string;
+		maxlength?: string;
+		size?: string;
+		step?: string;
+		inputStyle?: string;
+		labelStyle?: string;
 
-    autocomplete?: boolean;
-    disabled?: boolean;
-    multiple?: boolean;
-    readonly?: boolean;
-    required?: boolean;
-  }
-  
-  type InputTypes = 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'tel' | 'text'| 'time' | 'url' | 'week' | ''
-  
-  export let options: TextInputOptionTypes = {
-    label: '',
-    placeholder: '',
-    id: '',
-    type: '',
+		autocomplete?: boolean;
+		disabled?: boolean;
+		multiple?: boolean;
+		readonly?: boolean;
+		required?: boolean;
+	};
 
-    min: '',
-    max: '',
-    maxlength: '',
-    size: '',
-    step: '',
-    inputStyle: '',
-    labelStyle: '',
+	export let options: TextInputOptionTypes = {
+		label: '',
+		placeholder: '',
+		id: '',
+		type: '',
 
-    autocomplete: false,
-    disabled: false,
-    multiple: false,
-    readonly: false,
-    required: false
-  };
+		min: '',
+		max: '',
+		maxlength: '',
+		size: '',
+		step: '',
+		inputStyle: '',
+		labelStyle: '',
 
-  let { label, 
-        placeholder, 
-        id, 
-        type, 
-        min, 
-        max, 
-        maxlength, 
-        size, 
-        step,
-        inputStyle,
-        labelStyle,
-        autocomplete,
-        disabled,
-        multiple,
-        readonly,
-        required
-        } = options;
+		autocomplete: false,
+		disabled: false,
+		multiple: false,
+		readonly: false,
+		required: false
+	};
 
-  // //required attributes
+	let {
+		label,
+		placeholder,
+		id,
+		type,
+		min,
+		max,
+		maxlength,
+		size,
+		step,
+		inputStyle,
+		labelStyle,
+		autocomplete,
+		disabled,
+		multiple,
+		readonly,
+		required
+	} = options;
+
+	// //required attributes
 	// export let label: string = '';
 	// export let placeholder: string = '';
 	// export let id: string = '';
 	// export let type: string = '';
 
-  // //optional attributes
-  // export let max: string = '';
-  // export let min: string = '';
-  // export let maxlength: string = '';
-  // export let size: string = '';
-  // export let step: string = '';
-  // export let inputStyle: string = '';
-  // export let labelStyle: string = '';
+	// //optional attributes
+	// export let max: string = '';
+	// export let min: string = '';
+	// export let maxlength: string = '';
+	// export let size: string = '';
+	// export let step: string = '';
+	// export let inputStyle: string = '';
+	// export let labelStyle: string = '';
 
-  // export let autocomplete: boolean = false; 
-  // export let disabled: boolean = false;
-  // export let multiple: boolean = false;
-  // export let readonly: boolean = false;
-  // export let required: boolean = false;
+	// export let autocomplete: boolean = false;
+	// export let disabled: boolean = false;
+	// export let multiple: boolean = false;
+	// export let readonly: boolean = false;
+	// export let required: boolean = false;
 </script>
 
-
 <!-- ************************* HTML ************************* -->
-<label 
-  for={id}
-  style={labelStyle}
-  class='sv-textinput-label'>
-  {label}
+<label for={id} style={labelStyle} class="sv-textinput-label">
+	{label}
 </label>
-<input 
-  {id} 
-  {type} 
-  {placeholder}
-  {min}
-  {max} 
-  {maxlength} 
-  {size}
-  {step}
-  {disabled}
-  {autocomplete}
-  {multiple}
-  {readonly}
-  {required}
-  style={inputStyle}/>
+<input
+	{id}
+	{type}
+	{placeholder}
+	{min}
+	{max}
+	{maxlength}
+	{size}
+	{step}
+	{disabled}
+	{autocomplete}
+	{multiple}
+	{readonly}
+	{required}
+	style={inputStyle}
+/>
 
-
-<!-- ************************* STYLES ************************* -->  
+<!-- ************************* STYLES ************************* -->
 <style>
 	/*
     Style these however we'd like later
