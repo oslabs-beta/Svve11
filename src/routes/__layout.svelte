@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.scss';
-	import NavBarWebsite from './NavBar-website.svelte';
+	import NavBarWebsite from '../components/NavBar-website.svelte';
 	import logo from '../images/svve11-logo-white-transparent-cropped.png';
 
 	const navOptions = {

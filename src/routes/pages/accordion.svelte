@@ -4,7 +4,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Accordion';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Accordion.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#accordion';
 
 	const options = {
