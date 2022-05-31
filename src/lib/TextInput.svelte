@@ -26,7 +26,8 @@
 <!-- ************************* HTML ************************* -->
 <label 
   for={id}
-  style={labelStyle}>
+  style={labelStyle}
+  class='sv-textinput-label'>
   {label}
 </label>
 <input 
