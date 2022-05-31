@@ -34,6 +34,20 @@
 		],
 		styles: tableStyles
 	};
+	const textInputOptions1 = {
+		label: 'Your email here: ',
+		placeholder: 'jsmith@gmail.com',
+		id: 'user-email',
+		type: 'email'
+	};
+	const textInputOptions2 = {
+		label: 'Your email here: ',
+		placeholder: 'jsmith@gmail.com',
+		id: 'user-email',
+		type: 'email',
+		labelStyle: 'font-family:Times New Roman; font-size:20px; color: blue',
+		inputStyle: 'color: blue'
+	};
 </script>
 
 <article class="page-component">
@@ -101,12 +115,7 @@
               </code></pre>
 					<h4>Example Text Input without styles:</h4>
 					<div class="example-text-input">
-						<TextInput
-							label="Your email here: "
-							placeholder="jsmith@gmail.com"
-							id="user-email"
-							type="email"
-						/>
+						<TextInput options={textInputOptions1} />
 					</div>
 					<p>Styles are optional and can be passed to the text input box as follows:</p>
 					<ul class="options-object-list">
@@ -126,14 +135,7 @@
 
 					<h4>Example Text Input with styles:</h4>
 					<div class="example-text-input">
-						<TextInput
-							label="Your email here: "
-							placeholder="jsmith@gmail.com"
-							id="user-email"
-							type="email"
-							labelStyle="font-family:Times New Roman; font-size:20px; color: blue"
-							inputStyle="color: blue"
-						/>
+						<TextInput options={textInputOptions2} />
 					</div>
 
 					<p>
