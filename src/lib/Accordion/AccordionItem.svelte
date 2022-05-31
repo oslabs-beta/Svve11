@@ -58,7 +58,7 @@
 <!-- Default styles -->
 <style>
 	.sv-accordion-item {
-		width: 50%;
+		width: 100%;
 		height: auto;
 	}
 </style>
