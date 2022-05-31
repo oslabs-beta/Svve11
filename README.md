@@ -66,12 +66,12 @@ npm install --save-dev 'svve11'
 
    - **`headerLevel`** (_`number`_): This property is **required**, and sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
 
-   - **`styles`** (an _`array`_ of _`strings`_): This property is **optional**. If this property is supplied, it must be an array with 4 entries. Each entry is a string that resembles a style object. If you wish to leave out an entry in one position, `null` must be included at the correct index. An example style string is provided below.
+   - **`styles`** (_`object`_): This property is **optional**, and has four assignable key/value pairs:
 
-     - The first entry will style the headers of the accordion.
-     - The second entry will style the panels of the accordion.
-     - The third entry will style each item (header and panel) within the accordion.
-     - The fourth entry will style the entirety of the accordion.
+     - **`accordionHeaderStyle`**: sets the style attribute for each accordion header
+     - **`accordionPanelStyle`**: sets the style attribute for each accordion panel
+     - **`accordionItemStyle`**: sets the style attribute for each accordion item
+     - **`overallAccordionStyle`**: sets the style attribute for the accordion as a whole
 
    - **`multiselectable`** (_`boolean`_): This property is **optional**, and will default to `false`. When set to `true`, the accordion can expand multiple panels at one time. When set to `false`, the accordion can expand only one panel at a time. For accesibility purposes, it is recommended to leave this as the default setting.
 
@@ -92,7 +92,12 @@ npm install --save-dev 'svve11'
    		}
    	],
    	headerLevel: 4,
-   	styles: ['header styles', 'panel styles', 'item styles', 'accordion styles'],
+   	styles: {
+   		accordionHeaderStyle: 'Header styles string',
+   		accordionPanelStyle: 'Panel styles string;',
+   		accordionItemStyle: 'Item styles string',
+   		overallAccordionStyle: 'Accordion styles string'
+   	},
    	multiselectable: false
    };
    ```
