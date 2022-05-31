@@ -14,7 +14,8 @@
 		"test": "jest"
 	},
 	"exports": {
-		".": "./src/lib"
+		".": "./src/lib",
+		"./Accordion": "./src/lib/Accordion.svelte"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.18.0",

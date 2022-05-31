@@ -40,7 +40,8 @@
 			<section class="content-section">
 				<p>
 					All of our components have been fully tested against the <a
-						target="_blank" href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Guides</a
+						target="_blank"
+						href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Guides</a
 					> with our testing suite:
 				</p>
 				<ul id="testing-list">
@@ -77,7 +78,8 @@
 						<li>
 							<a target="_blank" href="https://www.google.com/chrome/">
 								<img class="tech-icon" src={ChromeLogo} alt="Google Chrome logo" />
-								Google Chrome</a>
+								Google Chrome</a
+							>
 						</li>
 						<li>
 							<a target="_blank" href="https://www.apple.com/safari/">
@@ -106,5 +108,4 @@
 
 <style lang="scss">
 	@import '../stylesheets/variables';
-
 </style>
