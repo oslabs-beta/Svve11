@@ -8,7 +8,8 @@
 
 <section class="team-member">
 	<slot />
-	<p>{name}</p>
+	<h2>{name}</h2>
+	<h3>Software Engineer</h3>
 	<section class="team-member-info">
 		<a href={GitHubLink}>
 			<img src={GitHub} alt="GitHub Logo" class="github-logo" />
@@ -38,6 +39,7 @@
 
 		.team-member-info {
 			display: flex;
+			justify-content: center;
 			align-items: center;
 			padding-left: 75px;
 			a {
