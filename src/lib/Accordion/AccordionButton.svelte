@@ -1,11 +1,12 @@
 <script lang="ts">
 	// @ts-nocheck
 	import { createEventDispatcher } from 'svelte';
+	import type { accordionStylesObject } from './AccordionTypes';
 
 	export let headerTitle: string;
 	export let controls: string;
 	export let id: string;
-	export let style: string;
+	export let customStyles: accordionStylesObject;
 	export let textToRead: string;
 	export let isOpen: boolean;
 
@@ -38,7 +39,7 @@
 	aria-label={isOpen ? textToRead : ''}
 	{id}
 	on:click={(event) => handleHeaderClick(event)}
-	{style}
+	style={customStyles.accordionHeaderStyle}
 >
 	<!-- if no header title is supplied in options object, then a default phrase reminds the user to supply one! -->
 	{headerTitle ? headerTitle : 'Please define header title in options object!'}
