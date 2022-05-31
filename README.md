@@ -13,7 +13,7 @@
 
 ## About Us
 
-Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design!
+Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design philosophy!
 
 For easier readability of documentation, check out our website [http://www.svve11.io/](http://www.svve11.io/)
 
@@ -27,7 +27,7 @@ For easier readability of documentation, check out our website [http://www.svve1
 
 ## Getting Started
 
-### Installing Component Library as a product dependency
+### Installing the Component Library as a product dependency
 
 Svve11 can easily be installed for use in your application as follows.
 
