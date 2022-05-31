@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.scss';
-	import NavBar from '$lib/NavBar.svelte';
+	import NavBarWebsite from './NavBar-website.svelte';
 	import logo from '../images/svve11-logo-white-transparent-cropped.png';
 
 	const navOptions = {
@@ -57,9 +57,8 @@
 	<!-- <section id="nav-container">
 		<NavBar options={navOptions} />
 	</section> -->
-	
-	<NavBar options={navOptions} />
 
+	<NavBarWebsite options={navOptions} />
 	<slot />
 </section>
 
