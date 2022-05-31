@@ -16,6 +16,7 @@
 		style: ''
 	};
 
+	$: handleClick, content, id, label, style;
 	let { handleClick, content, id, label, style } = options;
 
 	// // function for button to execute
