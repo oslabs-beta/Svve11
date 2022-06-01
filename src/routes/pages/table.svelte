@@ -136,7 +136,7 @@
                         overallStyles: 'background-color: powderblue',
                         titleStyles: 'text-align: left;',
                         headersRowStyles: 'background-color: grey',
-                        generalRowStyles: 'font-weight: lighter',
+                        generalRowStyles: 'font-weight: lighter; color: black',
                         oddRowStyles: 'background-color: white',
                         evenRowStyles: 'background-color: lightgrey',
                     }
@@ -147,7 +147,7 @@
 					<h4>Example Table:</h4>
 					<div class="example-text-input">
 						<Table
-							tableProps={{
+							options={{
 								id: 'demo-table',
 								ariaLabel: 'demo',
 								ariaDescription: 'svve11 team information',
@@ -162,7 +162,7 @@
 									overallStyles: 'background-color: powderblue',
 									titleStyles: 'text-align: left;',
 									headersRowStyles: 'background-color: grey',
-									generalRowStyles: 'font-weight: lighter',
+									generalRowStyles: 'font-weight: lighter; color: black',
 									oddRowStyles: 'background-color: white',
 									evenRowStyles: 'background-color: lightgrey'
 								}
