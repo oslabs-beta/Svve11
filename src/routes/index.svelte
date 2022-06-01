@@ -13,7 +13,7 @@
 
 	// setting ImageLink props for each logo and its corresponding link
 	const imgLinkOptions = {
-    svve11: {
+		svve11: {
 			href: 'https://svve11.io/',
 			src: svve11Logo,
 			title: 'svve11 homepage',
@@ -24,7 +24,7 @@
 			src: jestLogo,
 			title: 'Jest website',
 			alt: 'Jest logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Jest'
 		},
 		NVDA: {
@@ -32,7 +32,7 @@
 			src: NVDALogo,
 			title: 'NVDA website',
 			alt: 'NVDA logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'NVDA'
 		},
 		VoiceOver: {
@@ -40,7 +40,7 @@
 			src: VoiceOverLogo,
 			title: 'Apple VoiceOver website',
 			alt: 'Apple VoiceOver logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'VoiceOver'
 		},
 		JAWS: {
@@ -48,7 +48,7 @@
 			src: JAWSLogo,
 			title: 'JAWS website',
 			alt: 'JAWS logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'JAWS'
 		},
 		Chrome: {
@@ -56,7 +56,7 @@
 			src: ChromeLogo,
 			title: 'Google Chrome website',
 			alt: 'Google Chrome logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Chrome'
 		},
 		Safari: {
@@ -64,7 +64,7 @@
 			src: SafariLogo,
 			title: 'Safari website',
 			alt: 'Safari logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Safari'
 		},
 		Firefox: {
@@ -72,7 +72,7 @@
 			src: FirefoxLogo,
 			title: 'Mozilla Firefox website',
 			alt: 'Mozilla Firefox logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Safari'
 		},
 		Edge: {
@@ -80,11 +80,21 @@
 			src: EdgeLogo,
 			title: 'Microsoft Edge website',
 			alt: 'Microsoft Edge logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Edge'
-		},
-  }
+		}
+	};
 </script>
+
+<!-- Checking for hover prop tips -->
+<!-- <Accordion />
+<Button />
+<Checkbox />
+<Meter />
+<NavBar />
+<RadioButton />
+<Table />
+<TextInput /> -->
 
 <article id="splash" class="page-component">
 	<header>

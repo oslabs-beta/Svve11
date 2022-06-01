@@ -1,23 +1,23 @@
 <script lang="ts">
 	type CheckBoxOptionTypes = {
-		checkBoxLabel: string;
-		id: string;
+		checkBoxLabel: string | null;
+		id: string | null;
 		checked: boolean;
 
-		checkBoxStyle?: string;
-		checkBoxLabelStyle?: string;
-		name?: string;
-		value?: string;
+		checkBoxStyle?: string | null;
+		checkBoxLabelStyle?: string | null;
+		name?: string | null;
+		value?: string | null;
 	};
 
 	export let options: CheckBoxOptionTypes = {
-		checkBoxLabel: '',
-		id: '',
+		checkBoxLabel: null,
+		id: null,
 		checked: false,
-		checkBoxStyle: '',
-		checkBoxLabelStyle: '',
-		name: '',
-		value: ''
+		checkBoxStyle: null,
+		checkBoxLabelStyle: null,
+		name: null,
+		value: null
 	};
 
 	// Default styling for the label
@@ -26,7 +26,7 @@
 	export let defaultStyle: string = 'display: inline-block; user-select: none;';
 
 	//QUESTION FOR BEK*** Why are name and value never read???
-	$: checkBoxLabel, id, checked, checkBoxStyle, checkBoxLabelStyle, name, value;
+	// $: checkBoxLabel, id, checked, checkBoxStyle, checkBoxLabelStyle, name, value;
 	let { checkBoxLabel, id, checked, checkBoxStyle, checkBoxLabelStyle, name, value } = options;
 
 	// // Label that corresponds to the checkbox
@@ -47,8 +47,23 @@
 	// export let value: string = '';
 </script>
 
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+id: string (required)
+checkBoxLabel: string (required)
+
+checkBoxStyle: number (string)
+checked: boolean (optional)
+checkBoxLabelStyle: string (optional)
+name: string (optional)
+value: string (optional)
+```
+-->
+
 <!-- Rendering the checkbox -->
 <input
+	class="sv-checkbox-input"
 	style={checkBoxStyle}
 	type="checkbox"
 	{id}
@@ -56,7 +71,6 @@
 	bind:checked
 	name=""
 	value=""
-	class="sv-checkbox-input"
 />
 <!-- Rendering the text beside the checkbox -->
 <label style={checkBoxLabelStyle + defaultStyle} for={id} class="sv-checkbox-label">

@@ -1,5 +1,26 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
+	type TextInputOptionTypes = {
+		label: string | null;
+		placeholder: string | null;
+		id: string | null;
+		type: InputTypes | null;
+
+		max?: string | null;
+		min?: string | null;
+		maxlength?: string | null;
+		size?: string | null;
+		step?: string | null;
+		inputStyle?: string | null;
+		labelStyle?: string | null;
+
+		autocomplete?: boolean;
+		disabled?: boolean;
+		multiple?: boolean;
+		readonly?: boolean;
+		required?: boolean;
+	};
+
 	type InputTypes =
 		| 'date'
 		| 'datetime-local'
@@ -14,40 +35,19 @@
 		| 'week'
 		| '';
 
-	type TextInputOptionTypes = {
-		label: string;
-		placeholder: string;
-		id: string;
-		type: InputTypes;
-
-		max?: string;
-		min?: string;
-		maxlength?: string;
-		size?: string;
-		step?: string;
-		inputStyle?: string;
-		labelStyle?: string;
-
-		autocomplete?: boolean;
-		disabled?: boolean;
-		multiple?: boolean;
-		readonly?: boolean;
-		required?: boolean;
-	};
-
 	export let options: TextInputOptionTypes = {
-		label: '',
-		placeholder: '',
-		id: '',
-		type: '',
+		label: null,
+		placeholder: null,
+		id: null,
+		type: null,
 
-		min: '',
-		max: '',
-		maxlength: '',
-		size: '',
-		step: '',
-		inputStyle: '',
-		labelStyle: '',
+		min: null,
+		max: null,
+		maxlength: null,
+		size: null,
+		step: null,
+		inputStyle: null,
+		labelStyle: null,
 
 		autocomplete: false,
 		disabled: false,
@@ -56,22 +56,6 @@
 		required: false
 	};
 
-	$: label,
-		placeholder,
-		id,
-		type,
-		min,
-		max,
-		maxlength,
-		size,
-		step,
-		inputStyle,
-		labelStyle,
-		autocomplete,
-		disabled,
-		multiple,
-		readonly,
-		required;
 	let {
 		label,
 		placeholder,
