@@ -3,10 +3,10 @@
 	import Table from '$lib/Table.svelte';
 	import tableStyles from './tableStyles';
 	const componentName = 'Button';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Button.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#button';
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-button',
 		ariaLabel: 'Button props table',
 		ariaDescription: 'This table describes the props that should be passed to the button component',
@@ -19,6 +19,14 @@
 			['style', 'string', 'false', 'N/A']
 		],
 		styles: tableStyles
+	};
+
+	const buttonOptions = {
+		id: 'demo-button-1',
+		content: 'Click me!',
+		label: 'accessible-button-1',
+		handleClick: () => console.log('You clicked a button!'),
+		style: 'height: 50px; width:300px;'
 	};
 </script>
 
@@ -91,13 +99,14 @@
               </code></pre>
 					<h4>Example Button:</h4>
 					<div class="example-button">
-						<Button
+						<!-- <Button
 							id="demo-button-1"
 							label="accesible-button-1"
 							content="Click me!"
 							handleClick={() => console.log('You clicked a button!')}
 							style="height: 50px; width: 300px;"
-						/>
+						/> -->
+						<Button options={buttonOptions} />
 					</div>
 				</section>
 			</fieldset>
@@ -108,7 +117,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

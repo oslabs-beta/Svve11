@@ -4,10 +4,10 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Text Input';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/TextInput.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#combobox';
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-accordion',
 		ariaLabel: 'Accordion props table',
 		ariaDescription:
@@ -34,15 +34,29 @@
 		],
 		styles: tableStyles
 	};
+	const textInputOptions1 = {
+		label: 'Your email here: ',
+		placeholder: 'jsmith@gmail.com',
+		id: 'user-email',
+		type: 'email'
+	};
+	const textInputOptions2 = {
+		label: 'Your email here: ',
+		placeholder: 'jsmith@gmail.com',
+		id: 'user-email',
+		type: 'email',
+		labelStyle: 'font-family:Times New Roman; font-size:20px; color: blue',
+		inputStyle: 'color: blue'
+	};
 </script>
 
 <article class="page-component">
 	<header>
 		<h1>{componentName}</h1>
 		<ul class="resource-links-list">
-			<li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+			<li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
 			<li>
-				WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+				WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
 			</li>
 		</ul>
 		<p class="header-paragraph">
@@ -101,12 +115,7 @@
               </code></pre>
 					<h4>Example Text Input without styles:</h4>
 					<div class="example-text-input">
-						<TextInput
-							label="Your email here: "
-							placeholder="jsmith@gmail.com"
-							id="user-email"
-							type="email"
-						/>
+						<TextInput options={textInputOptions1} />
 					</div>
 					<p>Styles are optional and can be passed to the text input box as follows:</p>
 					<ul class="options-object-list">
@@ -126,24 +135,17 @@
 
 					<h4>Example Text Input with styles:</h4>
 					<div class="example-text-input">
-						<TextInput
-							label="Your email here: "
-							placeholder="jsmith@gmail.com"
-							id="user-email"
-							type="email"
-							labelStyle="font-family:Times New Roman; font-size:20px; color: blue"
-							inputStyle="color: blue"
-						/>
+						<TextInput options={textInputOptions2} />
 					</div>
 
 					<p>
 						There are a number of other optional attributes available with this component. Each of
 						these attributes has the same function as the HTML attribute with its same name. Please
-						check <a href="https://www.w3schools.com/tags/att_input_type_text.asp"
+						check <a href="https://www.w3schools.com/tags/att_input_type_text.asp" target="_blank"
 							>W3Schools' Input Tag Information</a
 						>
 						or
-						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text"
+						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text" target="_blank"
 							>MDN's Input Tag Information</a
 						> webpages to learn more about how these work. By default all attributes of type boolean
 						are set to false.
@@ -169,7 +171,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

@@ -26,17 +26,9 @@
 	// user-select: none; Prevents text selection
 	export let defaultStyle: string = 'display: inline-block; user-select: none;';
 
-  //QUESTION FOR BEK*** Why are name and value never read???
-
-  let { checkBoxLabel,
-        id,
-        checked,
-        checkBoxStyle,
-        checkBoxLabelStyle,
-        name,
-        value
-        } = options;
-
+	//QUESTION FOR BEK*** Why are name and value never read???
+	// $: checkBoxLabel, id, checked, checkBoxStyle, checkBoxLabelStyle, name, value;
+	let { checkBoxLabel, id, checked, checkBoxStyle, checkBoxLabelStyle, name, value } = options;
 
 	// // Label that corresponds to the checkbox
 	// export let checkBoxLabel: any;
@@ -47,7 +39,6 @@
 	// //Wether the checkbox is checked or not. (By default, the checkbox is not checked)
 	// export let checked: boolean = false;
 
-	
 	// // Styling for the checkbox
 	// export let checkBoxStyle: string = '';
 	// // Styling for the text
@@ -66,15 +57,11 @@
 	bind:checked
 	name=""
 	value=""
-  class="sv-checkbox-input"
+	class="sv-checkbox-input"
 />
 <!-- Rendering the text beside the checkbox -->
-<label 
-  style={checkBoxLabelStyle + defaultStyle} 
-  for={id}
-  class="sv-checkbox-label"> 
-  {checkBoxLabel} 
-  
+<label style={checkBoxLabelStyle + defaultStyle} for={id} class="sv-checkbox-label">
+	{checkBoxLabel}
 </label><br />
 
 <style>

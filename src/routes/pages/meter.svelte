@@ -6,7 +6,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Meter';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Meter.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#meter';
 
 	let changingValue: number;
@@ -19,7 +19,7 @@
 
 	onDestroy(() => clearInterval(interval));
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-meter',
 		ariaLabel: 'Meter props table',
 		ariaDescription: 'This table describes the props that should be passed to the meter',
@@ -46,9 +46,9 @@
 	<header>
 		<h1>{componentName}</h1>
 		<ul class="resource-links-list">
-			<li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+			<li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
 			<li>
-				WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+				WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
 			</li>
 		</ul>
 		<p class="header-paragraph">
@@ -212,7 +212,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

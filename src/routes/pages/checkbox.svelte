@@ -4,10 +4,10 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Checkbox';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Checkbox.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#checkbox';
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-button',
 		ariaLabel: 'Button props table',
 		ariaDescription:
@@ -22,15 +22,23 @@
 		],
 		styles: tableStyles
 	};
+
+	const checkboxOptions = {
+		checkBoxLabel: 'checkbox number one',
+		id: 'checkbox-1',
+		checked: false,
+		checkBoxStyle: 'height: 1.5em; width: 1.5em; vertical-align: middle;',
+		checkBoxLabelStyle: 'font-size:1em; vertical-align: middle;'
+	};
 </script>
 
 <article class="page-component">
 	<header>
 		<h1>{componentName}</h1>
 		<ul class="resource-links-list">
-			<li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+			<li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
 			<li>
-				WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+				WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
 			</li>
 		</ul>
 		<p class="header-paragraph">
@@ -91,13 +99,14 @@
               </code></pre>
 					<h4>Example Checkbox:</h4>
 					<div class="example-checkbox">
-						<Checkbox
+						<!-- <Checkbox
 							checkBoxLabel="checkbox number one"
 							id="checkbox-1"
 							checked={false}
 							checkBoxStyle="height: 1.5em; width: 1.5em; vertical-align: middle;"
 							checkBoxLabelStyle="font-size:1em; vertical-align: middle;"
-						/>
+						/> -->
+						<Checkbox options={checkboxOptions} />
 					</div>
 				</section>
 			</fieldset>
@@ -108,7 +117,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

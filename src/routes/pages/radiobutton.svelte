@@ -4,10 +4,10 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Radio Button';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/RadioButton.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#radiobutton';
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-button',
 		ariaLabel: 'Button props table',
 		ariaDescription:
@@ -30,9 +30,9 @@
 	<header>
 		<h1>{componentName}</h1>
 		<ul class="resource-links-list">
-			<li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+			<li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
 			<li>
-				WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+				WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
 			</li>
 		</ul>
 		<p class="header-paragraph">
@@ -140,7 +140,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

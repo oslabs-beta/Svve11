@@ -3,7 +3,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Nav Bar';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/NavBar.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#aria_lh_navigation';
 
 	const options1 = {
@@ -23,7 +23,7 @@
 		]
 	};
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-navbar',
 		ariaLabel: 'Nav Bar props table',
 		ariaDescription:
@@ -196,7 +196,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>
