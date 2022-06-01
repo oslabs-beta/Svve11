@@ -1,5 +1,5 @@
 export type panelInfoTypes = {
-    id: number;
+    id: number | string;
     panelContent: string;
     headerTitle: string;
   };

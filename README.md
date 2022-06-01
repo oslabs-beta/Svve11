@@ -526,17 +526,21 @@ All bugs, tasks or enhancements are tracked as <a href="https://github.com/oslab
 
 The following is a list of features + improvements for future open-source developers that the The Svve11 team has either started or would like to see implemented. If you have additional new ideas, feel free to implement those as well! Much appreciated.
 
-Components to add:
+Some components to add:
 
--
--
--
+- Alert
+- Clickable Image Link
+- Dialog (Modal)
+- Disclosure
+- Listbox
+- Menu Button
+- Slider
+- Tooltip
 
-Problems to fix:
+Some enhancements to add:
 
--
--
--
+- Give each component customized classes or ids
+- Create a Prototyping GUI to build and test components
 
 ## License
 
