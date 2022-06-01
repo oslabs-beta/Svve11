@@ -18,7 +18,7 @@ body {
   background-color:$white;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   .main-body {
     height: 100%;
   }
@@ -100,7 +100,7 @@ body {
 }
 
 .main-container {
-  width: 100%;
+  width: 100vw;
   min-height: 100%;
   margin: 0;
   display: flex;
@@ -260,7 +260,8 @@ body {
 /********* Cell Phone Style **********/
 @media screen and (max-width: 667px) {
   code {
-    white-space: pre;
+    // white-space: pre;
+    -webkit-overflow-scrolling:touch;
   }
   #openbtn {
     font-size: 1.5rem;
@@ -321,7 +322,7 @@ body {
     font-size: 14px;
   }
   .code-block {
-    font-size: 14px;
+    font-size: 12px;
   }
   .curly-symbol {
     font-size: 12px;
