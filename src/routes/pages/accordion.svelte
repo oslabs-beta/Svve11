@@ -45,10 +45,10 @@
 			'This table describes the props that should be passed to the accordion in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
-			['multiselectable', 'boolean', 'false', 'true'],
+			['panelInfo', 'array of objects', 'true', 'N/A'],
 			['headerLevel', 'number', 'true', 'N/A'],
-			['styles', 'array of strings', 'false', 'N/A'],
-			['panelInfo', 'array of objects', 'true', 'N/A']
+			['multiselectable', 'boolean', 'false', 'true'],
+			['styles', 'object', 'false', 'N/A']
 		],
 		styles: tableStyles
 	};
@@ -141,31 +141,31 @@ import Accordion from 'svve11/Accordion.svelte'
 					<h4>Example Options Object:</h4>
 					<pre><code class="code-block example-code">
 {`const accordionOptions = { 
-	panelInfo: [
-		{
-			id: 1,
-			panelContent: 'My first panel text.',
-			headerTitle: 'My first header title'
-		},
-		{
-			id: 2,
-			panelContent: 'My second panel text.',
-			headerTitle: 'My second header title'
-		}
-	],
-	headerLevel: 4,
-	styles: {
-		accordionHeaderStyle: 'Header styles string',
-		accordionPanelStyle: 'Panel styles string;',
-		accordionItemStyle: 'Item styles string',
-		overallAccordionStyle: 'Accordion styles string'
+  panelInfo: [
+	{
+	  id: 1,
+	  panelContent: 'My first panel text.',
+	  headerTitle: 'My first header title'
 	},
-	multiselectable: false
+	{
+	  id: 2,
+	  panelContent: 'My second panel text.',
+	  headerTitle: 'My second header title'
+	}
+  ],
+  headerLevel: 4,
+  styles: {
+	accordionHeaderStyle: 'Header styles string',
+	accordionPanelStyle: 'Panel styles string;',
+	accordionItemStyle: 'Item styles string',
+	overallAccordionStyle: 'Accordion styles string'
+  },
+  multiselectable: false
 }`}
 					</code></pre>
 					<h4>Instantiating an accordion</h4>
 					<pre><code class="code-block">
-{'<Accordion {options} />'}
+{'<Accordion options={accordionOptions} />'}
 					</code></pre>
 					<h4>Example Accordion:</h4>
 					<div class="example-accordion">

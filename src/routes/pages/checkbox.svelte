@@ -11,7 +11,7 @@
 		id: 'props-table-button',
 		ariaLabel: 'Button props table',
 		ariaDescription:
-			'This table describes the props that should be passed to the checkbox component',
+			'This table describes the props that should be passed to the checkbox in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
 			['id', 'string', 'true', 'N/A'],
@@ -55,7 +55,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import Checkbox from 'svve11/Checkbox.svelte'
+import Checkbox from 'svve11/Checkbox.svelte'
             </code></pre>
 				</section>
 			</fieldset>
@@ -68,44 +68,45 @@
 				<section class="content-section">
 					<h3>Creating a Checkbox</h3>
 					<p>
-						A checkbox instance can be created by placing the code below in the body of your Svelte
-						file.
+						To supply the checkbox with its contents, an options object is passed as a prop to the
+						checkbox. This object can be created in the script section of the .svelte file or
+						imported in from another location. The options object has 7 properties.
 					</p>
-					<pre><code class="code-block">
-              {`<Checkbox {checkBoxLabel} {id} {checked} {checkBoxStyle} {checkBoxLabelStyle}/>`}
-              </code></pre>
-					<p>Each attribute should be defined as follows:</p>
 					<ul class="options-object-list">
+						<h4>Required Props</h4>
 						<li>id (string): sets the id attribute of the checkbox component.</li>
 						<li>
 							checkBoxLabel (string): sets the aria-label attribute of the checkbox component.
 						</li>
+						<h4>Optional Props</h4>
 						<li>
 							checked (boolean): sets the initial state of the checkbox, where true will render a
 							pre-checked box and false will render a non-checked checkbox.
 						</li>
 						<li>checkBoxStyle (string): sets the styling for the checkbox</li>
 						<li>checkBoxLabelStyle (string): sets the styling for the checkbox label text.</li>
+						<li>
+							name (string): sets the group name to which the checkbox belongs. All checkbox in one
+							group should have the same name attribute.
+						</li>
+						<li>value (string): sets the value associated with the given checkbox.</li>
 					</ul>
-					<h4>Example Checkbox Code:</h4>
+					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
-              {`<Checkbox
-                checkBoxLabel="checkbox number one"
-                id="checkbox-1"
-                checked={false}
-                checkBoxStyle='height: 1.5em; width: 1.5em; vertical-align: middle;'
-                checkBoxLabelStyle='font-size:1em; vertical-align: middle;'
-              />`}
+{`const checkboxOptions = {
+  checkBoxLabel: 'checkbox number one',
+  id: 'checkbox-1',
+  checked: false,
+  checkBoxStyle: 'height: 1.5em; width: 1.5em; vertical-align: middle;',
+  checkBoxLabelStyle: 'font-size:1em; vertical-align: middle;'
+};`}
               </code></pre>
+					<h4>Instantiating a checkbox</h4>
+					<pre><code class="code-block">
+{`<Checkbox options={checkboxOptions}/>`}
+	  </code></pre>
 					<h4>Example Checkbox:</h4>
 					<div class="example-checkbox">
-						<!-- <Checkbox
-							checkBoxLabel="checkbox number one"
-							id="checkbox-1"
-							checked={false}
-							checkBoxStyle="height: 1.5em; width: 1.5em; vertical-align: middle;"
-							checkBoxLabelStyle="font-size:1em; vertical-align: middle;"
-						/> -->
 						<Checkbox options={checkboxOptions} />
 					</div>
 				</section>
