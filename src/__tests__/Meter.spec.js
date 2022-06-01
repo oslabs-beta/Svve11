@@ -8,7 +8,6 @@ import Meter from '../lib/Meter.svelte';
 
 describe('Meter Unit Tests', () => {
     const options = {
-        value: 60,
         maxValue: 100,
         minValue: 0,
         meterLabel: "Test Meter",
@@ -22,7 +21,7 @@ describe('Meter Unit Tests', () => {
     let meter, label, meters, meterDiv
 
     beforeEach(() => {
-        const {getByTestId, getByText} = render(Meter, {...options})
+        const {getByTestId, getByText} = render(Meter, {...options, value: 60})
         meters = document.getElementsByTagName('meter')
         meter = getByTestId('meter-test')
         meterDiv = document.getElementsByTagName('div')
