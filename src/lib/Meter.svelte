@@ -87,13 +87,38 @@
 	}
 </script>
 
-<label class="sv-meter-label" for={`meter-${id}`} id={`meter-label-${id}`} style={labelStyle}>
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+value: number (required)
+maxValue: number (required)
+minValue: number (required)
+meterLabel: string (required)
+id: number (required)
+
+lowValue: number (optional)
+highValue : number (optional)
+optimumValue : number (optional)
+valueText : string (optional)
+displayDecimal : boolean (optional)
+units : string (optional)
+meterStyle : string (optional)
+labelStyle  : string (optional)
+```
+-->
+
+<label for={`meter-${id}`} id={`meter-label-${id}`} style={labelStyle}>
 	{meterLabel}: {displayString}
 </label>
 
 <meter
+<<<<<<< HEAD
+	class="meter"
+	id={`meter-${id}`}
+=======
 	class="sv-meter"
 	{id}
+>>>>>>> main
 	min={minValue}
 	max={maxValue}
 	low={lowValue}

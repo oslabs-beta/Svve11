@@ -1,4 +1,16 @@
 <script lang="ts">
+<<<<<<< HEAD
+	// import logo from '../images/svve11-logo-blue-transparent-cropped.png';
+	// import Accordion from '../lib/Accordion.svelte';
+	// import Button from '../lib/Button.svelte';
+	// import Checkbox from '../lib/Checkbox.svelte';
+	// import Meter from '../lib/Meter.svelte';
+	// import NavBar from '../lib/NavBar.svelte';
+	// import RadioButton from '../lib/RadioButton.svelte';
+	// import Table from '../lib/Table.svelte';
+	// import TextInput from '../lib/TextInput.svelte';
+	import logo from '../images/svve11-logo-blue-transparent-cropped.png';
+=======
 	// importing all logo paths
 	import svve11Logo from '../images/svve11-logo-blue-transparent-cropped.png';
 	import jestLogo from '../images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png';
@@ -84,7 +96,18 @@
 			postText: 'Edge'
 		},
   }
+>>>>>>> main
 </script>
+
+<!-- Checking for hover prop tips -->
+<!-- <Accordion />
+<Button />
+<Checkbox />
+<Meter />
+<NavBar />
+<RadioButton />
+<Table />
+<TextInput /> -->
 
 <article id="splash" class="page-component">
 	<header>

@@ -1,6 +1,21 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
+	// function for button to execute
+	export let handleClick: () => void;
 
+<<<<<<< HEAD
+	// text to go inside button
+	export let content: string = '';
+
+	// button id
+	export let id: string = '';
+
+	// button aria label
+	export let label: string = '';
+
+	// button styles
+	export let style: string = '';
+=======
   type ButtonOptionTypes = {
     handleClick: () => void;
     content: string | null;
@@ -38,10 +53,29 @@
 
   // // button styles
   // export let style: string = '';
+>>>>>>> main
 </script>
 
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+id: string (required)
+label: string (required)
+content: string (required)
+handleClick: function (required)
+
+checkBoxLabelStyle: string (optional)
+name: string (optional)
+value: string (optional)
+```
+-->
+
 <!-- ************************* HTML ************************* -->
+<<<<<<< HEAD
+<button {id} aria-label={label} on:click={handleClick} {style}>
+=======
 <button {id} aria-label={label} on:click={handleClick} {style} class="sv-button">
+>>>>>>> main
 	{content}
 </button>
 

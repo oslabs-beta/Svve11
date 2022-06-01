@@ -48,8 +48,23 @@
 	// export let value: string = '';
 </script>
 
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+id: string (required)
+checkBoxLabel: string (required)
+
+checkBoxStyle: number (string)
+checked: boolean (optional)
+checkBoxLabelStyle: string (optional)
+name: string (optional)
+value: string (optional)
+```
+-->
+
 <!-- Rendering the checkbox -->
 <input
+	class="sv-checkbox-input"
 	style={checkBoxStyle}
 	type="checkbox"
 	{id}
@@ -60,9 +75,15 @@
 	class="sv-checkbox-input"
 />
 <!-- Rendering the text beside the checkbox -->
+<<<<<<< HEAD
+<label class="sv-checkbox-label" style={checkBoxLabelStyle + defaultStyle} for={id}>
+	{checkBoxLabel}
+</label>
+=======
 <label style={checkBoxLabelStyle + defaultStyle} for={id} class="sv-checkbox-label">
 	{checkBoxLabel}
 </label><br />
+>>>>>>> main
 
 <style>
 </style>
