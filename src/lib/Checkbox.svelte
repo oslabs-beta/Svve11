@@ -1,24 +1,24 @@
 <script lang="ts">
 
   type CheckBoxOptionTypes = {
-    checkBoxLabel: string;
-    id: string;
+    checkBoxLabel: string | null;
+    id: string | null;
     checked: boolean;
 
-    checkBoxStyle?: string;
-    checkBoxLabelStyle?: string;
-    name?: string;
-    value?: string;
+    checkBoxStyle?: string | null;
+    checkBoxLabelStyle?: string | null;
+    name?: string | null;
+    value?: string | null;
   }
 
   export let options: CheckBoxOptionTypes = {
-    checkBoxLabel: '',
-    id: '',
+    checkBoxLabel: null,
+    id: null,
     checked: false,
-    checkBoxStyle: '',
-    checkBoxLabelStyle: '',
-    name: '',
-    value: ''
+    checkBoxStyle: null,
+    checkBoxLabelStyle: null,
+    name: null,
+    value: null,
   }
   
   // Default styling for the label

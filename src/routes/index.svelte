@@ -8,6 +8,7 @@
 	import SafariLogo from '../images/tech-icons/Safari_browser_logo.svg';
 	import FirefoxLogo from '../images/tech-icons/Firefox_logo_2019.svg';
 	import EdgeLogo from '../images/tech-icons/Microsoft_Edge_logo_(2019).svg';
+
 </script>
 
 <article id="splash" class="page-component">

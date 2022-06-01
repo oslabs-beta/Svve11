@@ -3,18 +3,18 @@
 
   type ButtonOptionTypes = {
     handleClick: () => void;
-    content: string;
-    id: string;
-    label: string;
-    style?: string;
+    content: string | null;
+    id: string | null;
+    label: string | null;
+    style?: string | null;
   }
 
   export let options: ButtonOptionTypes = {
     handleClick: () => console.log('please enter handleClick fn'),
-    content: '',
-    id: '',
-    label: '',
-    style: '',
+    content: null,
+    id: null,
+    label: null,
+    style: null,
   }
 
   let { handleClick,
