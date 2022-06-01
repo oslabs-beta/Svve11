@@ -20,7 +20,7 @@
 					'Checkbox',
 					'Meter',
 					'Nav Bar',
-					'Radio Button',
+					//'Radio Button',
 					'Table',
 					'Text Input'
 				],
@@ -30,7 +30,7 @@
 					'/pages/checkbox',
 					'/pages/meter',
 					'/pages/navbar',
-					'/pages/radiobutton',
+					//'/pages/radiobutton',
 					'/pages/table',
 					'/pages/textinput'
 				]

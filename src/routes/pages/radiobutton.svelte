@@ -1,5 +1,6 @@
+<h1>Radio button page</h1>
 <script lang="ts">
-	import RadioButton from '$lib/RadioButton.svelte';
+	// import RadioButton from 'src/pending/RadioButton.svelte';
 	import Table from '$lib/Table.svelte';
 	import tableStyles from './tableStyles';
 
@@ -55,7 +56,7 @@ import RadioButton from 'svve11/RadioButton.svelte'
 				</section>
 			</fieldset>
 		</section>
-		<!-- Usage Guide -->
+		
 		<section>
 			<fieldset>
 				<legend>Usage</legend>
@@ -106,7 +107,7 @@ import RadioButton from 'svve11/RadioButton.svelte'
 					</code></pre>
 					<h4>Example Radio Button Group:</h4>
 					<div class="example-radiobutton">
-						<RadioButton
+						<!-- <RadioButton
 							options={{
 								name: 'food',
 								value: '1',
@@ -116,8 +117,8 @@ import RadioButton from 'svve11/RadioButton.svelte'
 								radioButtonStyle: 'height: 1.5em; width: 1.5em;',
 								radioButtonLabelStyle: 'font-size:1.5em;'
 							}}
-						/>
-						<RadioButton
+						/> -->
+						<!-- <RadioButton
 							options={{
 								name: 'food',
 								value: '2',
@@ -127,8 +128,8 @@ import RadioButton from 'svve11/RadioButton.svelte'
 								radioButtonStyle: 'height: 1.5em; width: 1.5em;',
 								radioButtonLabelStyle: 'font-size:1.5em;'
 							}}
-						/>
-						<RadioButton
+						/> -->
+						<!-- <RadioButton
 							options={{
 								name: 'food',
 								value: '3',
@@ -138,7 +139,7 @@ import RadioButton from 'svve11/RadioButton.svelte'
 								radioButtonStyle: 'height: 1.5em; width: 1.5em;',
 								radioButtonLabelStyle: 'font-size:1.5em;'
 							}}
-						/>
+						/> -->
 					</div>
 					<h4>Styling the Radio Button with Classes</h4>
 					<p>
@@ -168,8 +169,8 @@ import RadioButton from 'svve11/RadioButton.svelte'
 </article>
 
 <style>
-	.example-radiobutton {
+	/* .example-radiobutton {
 		display: grid;
 		grid-template-columns: 2em 2em;
-	}
-</style>
+	} */
+</style> 

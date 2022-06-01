@@ -1,4 +1,7 @@
 <script lang="ts">
+  
+  //re-do this to take an object with the details of radio group
+
 	type RadioButtonOptionTypes = {
 		radioButtonLabel: string | null;
 		id: string | null;
@@ -10,19 +13,26 @@
 		value?: string | null;
 	};
 
-	export let options: RadioButtonOptionTypes = {
-		radioButtonLabel: null,
-		id: null,
+  export let options: RadioButtonOptionTypes = {
+    radioButtonLabel: null,
+    id: null,
 
-		checked: false,
-		radioButtonStyle: null,
-		radioButtonLabelStyle: null,
-		name: null,
-		value: null
-	};
-	$: checked;
-	let { radioButtonLabel, id, checked, radioButtonStyle, radioButtonLabelStyle, name, value } =
-		options;
+    checked: false,
+    radioButtonStyle: null,
+    radioButtonLabelStyle: null,
+    name: null,
+    value: null,
+  }
+
+  let { radioButtonLabel,
+      id, 
+      checked,
+      radioButtonStyle,
+      radioButtonLabelStyle,
+      name,
+      value
+    } = options;
+
 	// <------- Required Props ------->
 	// label that corresponds to the component
 	// export let radioButtonLabel: any;
@@ -45,7 +55,7 @@ Props are passed in through the tableProps prop, which should be an object conta
 radioButtonLabel: string (required)
 id: string (required)
 
-checked: boolean (option) 
+checked: string (option) 
 radioButtonStyle: string (option)
 radioButtonLabelStyle: string (option)
 name: string (option)
@@ -55,15 +65,17 @@ value: string (option)
 
 <!-- Rendering the Radio Button  -->
 <input
-	class="sv-radio-button-input"
-	{name}
-	{value}
-	style={radioButtonStyle}
-	type="radio"
-	{id}
-	aria-label={radioButtonLabel}
-	aria-checked={checked}
+  class="sv-radio-button-input"
+  {name}
+  {value}
+  style={radioButtonStyle}
+  type="radio"
+  {id}
+  aria-label={radioButtonLabel}
+  aria-checked={checked}
+  bind:group={checked}
 />
+
 <!-- Rendering the text label for the radio button -->
 <label class="sv-radio-button-label" style={radioButtonLabelStyle} for={id}>
 	{radioButtonLabel}

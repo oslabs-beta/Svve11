@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom';
-import { render, fireEvent, getByRole, getAllByRole, queries } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
-import RadioButton from '../lib/RadioButton.svelte';
+import RadioButton from '../pending/RadioButton.svelte';
 
-const props = {
+const options = {
 	radioButtonLabel: 'Radio Button',
 	id: 'first',
 	checked: false,
@@ -16,7 +16,7 @@ const props = {
 let user;
 // beforeEach(() => {
 user = userEvent.setup();
-const { component, getByText } = render(RadioButton, { ...props });
+const { component } = render(RadioButton, { options });
 let radioButton = document.getElementById('first');
 // });
 
@@ -41,13 +41,10 @@ describe('Accessible testing for radioButton', () => {
 		expect(radioButton.getAttribute('type')).toEqual('radio');
 	});
 
-	test('checking if type is being defined', () => {
+	test('checking if name is being defined', () => {
 		expect(radioButton).toHaveAttribute('name');
 	});
 
-	test('checking if type is being defined', () => {
-		expect(radioButton).toHaveAttribute('type');
-	});
 });
 
 describe('Accessing by keyboard functionality', () => {

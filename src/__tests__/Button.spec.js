@@ -1,14 +1,14 @@
 /* eslint-disable no-undef */
 
 import '@testing-library/jest-dom';
-import { render, getByRole } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 // import '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
-
 import Button from '../lib/Button.svelte';
+
 let user;
 let button;
-const props = {
+const options = {
 	content: 'test descriptive content',
 	id: 'test-button',
 	label: 'accessible-button',
@@ -21,7 +21,7 @@ beforeEach(() => {
 	user = userEvent.setup();
 
 	// render a Button for testing
-	const { component, getByText } = render(Button, { ...props });
+	const { getByText } = render(Button, { options });
 	button = getByText('test descriptive content');
 });
 
