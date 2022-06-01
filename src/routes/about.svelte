@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AboutInfo from '../components/about-info.svelte';
-	import logo from '../images/svve11-logo-white-transparent-cropped.png';
+	import logo from '../images/svve11-logo-cropped-purple-transparent.png';
 	import Tim from '../images/timFancy.png';
 	import Simon from '../images/simonFancy.png';
 	import Nurbek from '../images/bekFancy.png';
@@ -68,7 +68,7 @@
 				height: 7rem;
 			}
 			h1 {
-				color: $white;
+				color: $color-primary;
 				margin-bottom: 0;
 				font-size: 8rem;
 			}
@@ -80,7 +80,7 @@
 				// padding-left: 0;
 				margin-top: 2rem;
 				margin-bottom: 3rem;
-				color: $white;
+				color: $color-primary;
 			}
 		}
 		#team-display {

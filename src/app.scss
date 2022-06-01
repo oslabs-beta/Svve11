@@ -10,12 +10,12 @@
 }
 
 *:not(.sv-accordion-button, code, .sv-button) {
-  color: $white;
+  color: $color-text-darkest;
 }
 
 html,
 body {
-  background-color:$black;
+  background-color:$white;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -34,7 +34,7 @@ body {
     margin-bottom: 0;
   }
   h2:not(.name) {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid $color-primary;
   }
   h3 {
     margin: 0;
@@ -57,7 +57,7 @@ body {
   code {
     font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, monospace;
     font-weight: lighter;
-    color: $darkgrey;
+    color: $color-text-dark;
 
     .curly-symbol {
       font-family: 'Fira Code', monospace;
@@ -79,19 +79,19 @@ body {
     }
     h1 {
       text-align: center;
-      color: $white;
+      color: $color-primary;
       margin-bottom: 0;
     }
     p {
       font-style: italic;
       font-weight: 400;
-      color: $white;
+      color: $color-primary;
     }
   }
   section {
-    *:not(code) {
-      color: $white;
-    }
+    // *:not(code) {
+    //   color: $white;
+    // }
   }
   pre {
     border: 2px solid $white;
@@ -110,7 +110,7 @@ body {
   position: fixed;
   z-index: 2;
   color: $white;
-  background-color: $darkgrey;
+  background-color: $color-primary-transparent;
   border: none;
   * {
     color: $white;
@@ -118,7 +118,7 @@ body {
 }
 #openbtn:hover {
   font-weight: bold;
-  color: $white;
+  color: $color-text-darkest;
   // font-size: 2.1rem;
 }
 
@@ -172,7 +172,7 @@ body {
   min-width: 250px;
   max-width: 480px;
   min-height: 100vh;
-  background-color: $black-transparent;
+  background-color: $color-primary-transparent;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -190,7 +190,7 @@ body {
   justify-content: flex-start;
 
   a {
-    color: $blue;
+    color: $color-primary;
   }
   header {
     .resource-links-list {
@@ -245,7 +245,7 @@ body {
       font-weight: 100;
     }
     thead {
-      background-color: $white;
+      background-color: $color-primary;
       text-align: left;
     }
   }
