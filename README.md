@@ -13,7 +13,7 @@
 
 ## About Us
 
-Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design!
+Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design philosophy!
 
 For easier readability of documentation, check out our website [http://www.svve11.io/](http://www.svve11.io/)
 
@@ -27,7 +27,7 @@ For easier readability of documentation, check out our website [http://www.svve1
 
 ## Getting Started
 
-### Installing Component Library as a product dependency
+### Installing the Component Library as a product dependency
 
 Svve11 can easily be installed for use in your application as follows.
 
@@ -52,62 +52,65 @@ npm install --save-dev 'svve11'
 
 1. Import the accordion component using the command below in the script section of your .svelte file.
 
-   ```js
-   import Accordion from 'svve11/Accordion.svelte';
-   ```
+```js
+import Accordion from 'svve11/Accordion.svelte';
+```
 
 2. To supply the accordion with its contents, an options object is passed as a prop to the accordion. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 4 properties.
 
-   - **`panelInfo`** (an _`array`_ of _`objects`_): This property is **required**. It must be an array of objects, with each object containing information for one accordion item. Each object must contain:
+   - (2) **required** props:
 
-     - **`id`** (_`number`_): used to set the `id` of the accordion header and panel. If you will have more than one accordion in your application, be sure to continue the sequence of numbers instead of starting back at 1.
-     - **`panelContent`** (_`string`_): sets the text contents of the panel.
-     - **`headerTitle`** (_`string`_): sets the title of the accordion section.
+     - **`panelInfo`** (an _`array`_ of _`objects`_): It must be an array of objects, with each object containing information for one accordion item. Each object must contain:
 
-   - **`headerLevel`** (_`number`_): This property is **required**, and sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
+       - **`id`** (_`number`_): used to set the `id` of the accordion header and panel. If you will have more than one accordion in your application, be sure to continue the sequence of numbers instead of starting back at 1.
+       - **`panelContent`** (_`string`_): sets the text contents of the panel.
+       - **`headerTitle`** (_`string`_): sets the title of the accordion section.
 
-   - **`styles`** (an _`array`_ of _`strings`_): This property is **optional**. If this property is supplied, it must be an array with 4 entries. Each entry is a string that resembles a style object. If you wish to leave out an entry in one position, `null` must be included at the correct index. An example style string is provided below.
+     - **`headerLevel`** (_`number`_): Sets the `aria-level` for each header in the accordion. For information on deciding the appropriate value to be supplied, visit [this](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level) webpage.
 
-     - The first entry will style the headers of the accordion.
-     - The second entry will style the panels of the accordion.
-     - The third entry will style each item (header and panel) within the accordion.
-     - The fourth entry will style the entirety of the accordion.
+   - (2) _optional_ props:
 
-   - **`multiselectable`** (_`boolean`_): This property is **optional**, and will default to `false`. When set to `true`, the accordion can expand multiple panels at one time. When set to `false`, the accordion can expand only one panel at a time. For accesibility purposes, it is recommended to leave this as the default setting.
+     - **`styles`** (_`object`_): This property is an object with four assignable key/value pairs. The required key properties are:
 
-   #### Example Options Object
+       - **`accordionHeaderStyle`**: sets the style attribute for each accordion header
+       - **`accordionPanelStyle`**: sets the style attribute for each accordion panel
+       - **`accordionItemStyle`**: sets the style attribute for each accordion item
+       - **`overallAccordionStyle`**: sets the style attribute for the accordion as a whole
 
-   ```js
-   const options = {
-   	panelInfo: [
-   		{
-   			id: 1,
-   			panelContent: 'My first panel text.',
-   			headerTitle: 'My first header title'
-   		},
-   		{
-   			id: 2,
-   			panelContent: 'My second panel text.',
-   			headerTitle: 'My second header title'
-   		}
-   	],
-   	headerLevel: 4,
-   	styles: ['header styles', 'panel styles', 'item styles', 'accordion styles'],
-   	multiselectable: false
-   };
-   ```
+     - **`multiselectable`** (_`boolean`_): This property is **optional**, and will default to `false`. When set to `true`, the accordion can expand multiple panels at one time. When set to `false`, the accordion can expand only one panel at a time. For accesibility purposes, it is recommended to leave this as the default setting.
 
-   #### Example Styles String
+#### Example Options Object
 
-   ```js
-   'height: 50px; width: 100%; background-color: coral; border: 1px solid black';
-   ```
+```js
+const accordionOptions = {
+	panelInfo: [
+		{
+			id: 1,
+			panelContent: 'My first panel text.',
+			headerTitle: 'My first header title'
+		},
+		{
+			id: 2,
+			panelContent: 'My second panel text.',
+			headerTitle: 'My second header title'
+		}
+	],
+	headerLevel: 4,
+	styles: {
+		accordionHeaderStyle: 'Header styles string',
+		accordionPanelStyle: 'Panel styles string;',
+		accordionItemStyle: 'Item styles string',
+		overallAccordionStyle: 'Accordion styles string'
+	},
+	multiselectable: false
+};
+```
 
 3. An accordion instance can be created by placing the code below in the body of your .svelte file.
 
-   ```js
-   <Accordion {options} />
-   ```
+```js
+<Accordion options={accordionOptions} />
+```
 
 ---
 
@@ -115,11 +118,11 @@ npm install --save-dev 'svve11'
 
 1. Import the Button component using the command below in the script section of your .svelte file.
 
-   ```js
-   import Button from 'svve11/Button.svelte';
-   ```
+```js
+import Button from 'svve11/Button.svelte';
+```
 
-2. The button component has (5) props:
+2. To supply the button with its contents, an options object is passed as a prop to the button. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 5 properties.
 
    - (4) **required** props:
 
@@ -129,19 +132,26 @@ npm install --save-dev 'svve11'
      - **`handleClick`** (_`function`_): defines the action or event to be triggered when the button is clicked.
 
    - (1) _optional_ prop:
+
      - **`style`** (_`string`_): sets the styles of the button component
+
+#### Example Options Object
+
+```js
+const buttonOptions = {
+	id: 'demo-button-1',
+	content: 'Click me!',
+	label: 'accessible-button-1',
+	handleClick: () => console.log('You clicked a button!'),
+	style: 'height: 50px; width: 300px;'
+};
+```
 
 3. A Button instance can be created by placing the code below in the body of your .svelte file.
 
-   ```js
-   <Button
-     id:'demo-button',
-     label:'an accessible button',
-     content:'Click me',
-     handleClick: () => console.log('you clicked a button!'),
-     style: 'background-color: blue; color: white;'
-   />
-   ```
+```js
+<Button options={buttonOptions} />
+```
 
 ---
 
@@ -149,26 +159,43 @@ npm install --save-dev 'svve11'
 
 1. Import the checkbox component using the command below in the script section of your .svelte file.
 
-   ```js
-   import Checkbox from 'svve11/Checkbox.svelte';
-   ```
+```js
+import Checkbox from 'svve11/Checkbox.svelte';
+```
 
-2. The checkbox component has (5) props:
+2. To supply the checkbox with its contents, an options object is passed as a prop to the checkbox. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 7 properties.
 
    - (3) **required** props:
 
      - **`id`** (_`string`_): sets the `id` attribute of the checkbox component. Be sure to have a unique string for each checkbox.
      - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component.
 
+<<<<<<< HEAD
    - (4) **optional** props:
      - **`checked`** (_`boolean`_): sets the status of the checkbox on load. If true, the checkbox will be checked upon load. This defaults to false.
+=======
+   - (4) _optional_ props:
+>>>>>>> main
      - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox.
      - **`checkBoxLabelStyle`** (_`string`_): sets the styling for the checkbox label text.
      - **`name`** (_`string`_): sets the group name to which the checkbox belongs. All checkbox in one group should have the same name attribute.
      - **`value`** (_`string`_): sets the value associated with the given checkbox.
 
+#### Example Options Object
+
+```js
+const checkboxOptions = {
+	checkBoxLabel: 'checkbox number one',
+	id: 'checkbox-1',
+	checked: false,
+	checkBoxStyle: 'height: 1.5em; width: 1.5em; vertical-align: middle;',
+	checkBoxLabelStyle: 'font-size:1em; vertical-align: middle;'
+};
+```
+
 3. An checkbox instance can be created by placing the code below in the body of your .svelte file.
 
+<<<<<<< HEAD
    ```js
    <Checkbox
    	checkBoxLabel="My first checkbox"
@@ -180,6 +207,11 @@ npm install --save-dev 'svve11'
    	value="foods"
    />
    ```
+=======
+```js
+<Checkbox options={checkboxOptions} />
+```
+>>>>>>> main
 
 ---
 
@@ -187,11 +219,11 @@ npm install --save-dev 'svve11'
 
 1. Import the meter component using the command below in the script section of your .svelte file.
 
-   ```js
-   import Meter from 'svve11/Meter.svelte';
-   ```
+```js
+import Meter from 'svve11/Meter.svelte';
+```
 
-2. The meter component has (13) attributes:
+2. To supply the meter with its contents, an options object is passed as a prop to the meter. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 13 properties.
 
    - (5) **required** props:
 
@@ -202,6 +234,7 @@ npm install --save-dev 'svve11'
      - **`id`** (_`string`_): sets the id for the meter. Remember to provide different id numbers when instantiating more than one meter on a page as the id should be unique.
 
    - (8) _optional_ props:
+
      - **`lowValue`** (_`number`_): sets the value from which a current value below is considered low. Must be greater than `minValue` and less than the `maxValue` and `highValue`.
      - **`highValue`** (_`number`_): sets the value from which a current value above is considered high. Must be less than `maxValue` and greater than the `minValue` and `lowValue`.
      - **`optimumValue`** (_`number`_): sets the optimal numeric value of the meter. Must be a number between the `minValue` and `maxValue`. If the optimal value is set between the `minValue` and `lowValue`, or the `maxValue` and `highValue`, this range is considered optimal. Different browsers will color the bar differently depending on where the current value falls in relation to the optimal value.
@@ -211,90 +244,101 @@ npm install --save-dev 'svve11'
      - **`meterStyle`** (_`string`_): sets the style for the meter for any custom styles.
      - **`labelStyle`** (_`string`_): sets the style for the meter label for any custom styles.
 
+#### Example Options Object
+
+```js
+const meterOptions = {
+	value: 60,
+	maxValue: 100,
+	minValue: 0,
+	meterLabel: 'Demo meter',
+	id: 1,
+	lowValue: 20,
+	highValue: 80,
+	optimumValue: 85
+};
+```
+
 3. A meter instance can be created by placing the code below in the body of your .svelte file.
 
-   ```js
-   <Meter
-   	value={60}
-   	maxValue={100}
-   	minValue={0}
-   	meterLabel="Demo meter"
-   	id={1}
-   	lowValue={20}
-   	highValue={80}
-   	optimumValue={85}
-   />
-   ```
+```js
+<Meter options={meterOptions} />
+```
 
 ---
 
 ### NavBar
 
-1. Import the accordion component using the command below in the script section of your .svelte file.
+1. Import the navigation bar (nav bar) component using the command below in the script section of your .svelte file.
 
-   ```js
-   import NavBar from 'svve11/NavBar.svelte';
-   ```
+```js
+import NavBar from 'svve11/NavBar.svelte';
+```
 
-2. To supply the nav bar with its contents, an options object is passed as a prop to the nav bar. This object can be created in the script section of the .svelte file or imported in from another location. The options object has (6) properties.
+2. To supply the nav bar with its contents, an options object is passed as a prop to the nav bar. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 10 properties.
 
-   - **`id`** (_`string`_): This property is **required**. This will be the id attribute you reference for styling inside your navbar component. An example would be “navbar”.
-   - **`contentInfo`** (an _`array`_ of _`objects`_): This property is **required**. It contains all the content to be displayed in your nav bar. Each object in the array must contain:
-     - **`subheading`** (_`string`_): This property is **optional**. Sets the subheading for this section of the nav bar.
-     - **`options`**(an _`array`_ of _`strings`_): This property is **required**. Contains strings in the order you want them to appear in the nav bar section.
-     - **`links`**(_`array`_): This property is **required**. Sets the href attributes for each option provided. This array should be provided in the same order that the options array was provided.
-   - **`header`** (_`string`_): This property is **optional**. It contains the heading for the entire nav bar.
-   - **`imgSrc`** (_`string`_): This property is **optional**. It contains the file path for an image you want included at the top of the nav bar, such as a company logo.
-   - **`imgClass`** (_`string`_): This property is **optional**. This will set the class name for the imgSrc for styling purposes.
-   - **`imgAlt`** (_`string`_): This property is **optional**. This sets the alternate text in the event the image cannot render.
+   - (5) **required** props:
 
-   #### Example Options Object
+     - **`id`** (_`string`_): This property is **required**. This will be the id attribute you reference for styling inside your navbar component. An example would be “navbar”.
+     - **`contentInfo`** (an _`array`_ of _`objects`_): This property is **required**. It contains all the content to be displayed in your nav bar. Each object in the array must contain:
+       - **`subheading`** (_`string`_): This property is **optional**. Sets the subheading for this section of the nav bar.
+       - **`options`**(an _`array`_ of _`strings`_): This property is **required**. Contains strings in the order you want them to appear in the nav bar section.
+       - **`links`**(_`array`_): This property is **required**. Sets the href attributes for each option provided. This array should be provided in the same order that the options array was provided.
 
-   ```js
-   const options = {
-      id: "testnav",
-      header: "Menu",
-      contentInfo: [
-            {
-               subheading: "general",
-               options: [
-               "option1", "option2", "option3"
-               ],
-               links: [
-               "", "", ""
-            ]
-            },
-            {
-            subheading: "other stuff",
+   - (5) _optional_ props:
+
+     - **`header`** (_`string`_): This property is **optional**. It contains the heading for the entire nav bar.
+     - **`imgSrc`** (_`string`_): This property is **optional**. It contains the file path for an image you want included at the top of the nav bar, such as a company logo.
+     - **`imgClass`** (_`string`_): This property is **optional**. This will set the class name for the imgSrc for styling purposes.
+     - **`imgAlt`** (_`string`_): This property is **optional**. This sets the alternate text in the event the image cannot render.
+
+#### Example Options Object
+
+```js
+const navBarOptions = {
+   id: "testnav",
+   header: "Menu",
+   contentInfo: [
+         {
+            subheading: "general",
             options: [
-               "option4", "option5", "option6"
-               ],
+            "option1", "option2", "option3"
+            ],
             links: [
-               "", "", ""
-            ]
-            }
-         ],
-            imgSrc: “./images/comp-logo.png”,
-            imgClass: “navbar-logo”,
-            imgAlt: “company logo”
-      }
-   ```
+            "", "", ""
+         ]
+         },
+         {
+         subheading: "other stuff",
+         options: [
+            "option4", "option5", "option6"
+            ],
+         links: [
+            "", "", ""
+         ]
+         }
+      ],
+         imgSrc: “./images/comp-logo.png”,
+         imgClass: “navbar-logo”,
+         imgAlt: “company logo”
+   }
+```
 
 3. A nav bar instance can be created by placing the code below in the body of your .svelte file.
 
-   ```js
-   <NavBar {options} />
-   ```
+```js
+<NavBar options={navBarOptions} />
+```
 
-   #### Nav Bar Styling
+#### Nav Bar Styling
 
-   Styles can be applied to different parts of the nav bar in your styling file by referencing the assigned class and id names.
+Styles can be applied to different parts of the nav bar in your styling file by referencing the assigned class and id names.
 
-   - **`NavBar as a whole`**: Has an id of set by the `id` property defined in the options object.
-   - **`NavBar Header`**: Has an id of “navbar-header”.
-   - **`NavBar Sections`**: Has a class of "sv-navbar-section".
-   - **`NavBar Subheading(s)`**: Has a class of “navbar-subheader”.
-   - **`NavBar Options`**: Has a class of “navbar-option”.
+- **`NavBar as a whole`**: Has an id of set by the `id` property defined in the options object.
+- **`NavBar Header`**: Has an id of “navbar-header”.
+- **`NavBar Sections`**: Has a class of "sv-navbar-section".
+- **`NavBar Subheading(s)`**: Has a class of “navbar-subheader”.
+- **`NavBar Options`**: Has a class of “navbar-option”.
 
 ---
 
@@ -302,37 +346,48 @@ npm install --save-dev 'svve11'
 
 1. Import the radio button component using the command below in the script section of your .svelte file.
 
-   ```js
-   import RadioButton from 'svve11/RadioButton.svelte';
-   ```
+```js
+import RadioButton from 'svve11/RadioButton.svelte';
+```
 
-2. The radio button component has (7) props:
+2. To supply the radio button with its contents, an options object is passed as a prop to the radio button. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 10 properties.
 
    - (3) **required** props:
 
      - **`id`** (_`string`_): sets the `id` attribute of the radio button component.
      - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
 
+<<<<<<< HEAD
    - (4) **optional** props:
      - **`checked`** (_`boolean`_): sets the initial state of the radio button, where true will render a pre-checked button and false will render a non-checked button.
+=======
+   - (4) _optional_ props:
+
+>>>>>>> main
      - **`radioButtonStyle`** (_`string`_): sets the styling for the radio button
      - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text'
      - **`name`** (_`string`_): sets the group name to which the radio button belongs. All radio buttons in one group should have the same name attribute. This property must be defined to allow only one radio button to be selected within a given group.
      - **`value`** (_`string`_): sets the value associated with the given radio button.
 
+#### Example Options Object
+
+```js
+const radioButtonOptions = {
+	id: 'radioButtonOne',
+	radioButtonLabel: 'Pizza',
+	checked: false,
+	radioButtonStyle: 'height: 1.5em; width: 1.5em;',
+	radioButtonLabelStyle: 'font-size:1.5em;',
+	name: 'food',
+	value: 1
+};
+```
+
 3. A radio button instance can be created by placing the code below in the body of your .svelte file.
 
-   ```js
-   <RadioButton
-   	id="radioButtonOne"
-   	radioButtonLabel="Pizza"
-   	checked={false}
-   	radioButtonStyle="height: 1.5em; width: 1.5em;"
-   	radioButtonLabelStyle="font-size:1.5em;"
-   	name="food"
-   	value={1}
-   />
-   ```
+```js
+<RadioButton options={radioButtonOptions} />
+```
 
 ---
 
@@ -340,9 +395,9 @@ npm install --save-dev 'svve11'
 
 1. Import the table component using the command below in the script section of your .svelte file.
 
-   ```js
-   import Table from 'svve11/Table.svelte';
-   ```
+```js
+import Table from 'svve11/Table.svelte';
+```
 
 2. To supply the table with its contents, a tableProps object is passed as a prop to the table. This object can be created in the script section of the .svelte file or imported in from another location. The tableProps object has (6) properties.
 
@@ -356,7 +411,7 @@ npm install --save-dev 'svve11'
          - each `string` in the inner `array` corresponds to a cell in the row
          - **Note:** the number of `strings` in each of these `arrays` should match the number of `strings` in the **`columnNames`** `array`
 
-   - (2) **optional** properties:
+   - (2) _optional_ properties:
 
      - **`id`** (_`string`_): sets the `id` attribute of the table
      - **`styles`** (_`object`_ with (6) optional properties):
@@ -367,36 +422,36 @@ npm install --save-dev 'svve11'
        - **`oddRowStyles`** (_`string`_): sets the `style` attributes of all the table's odd rows
        - **`evenRowStyles`** (_`string`_): sets the `style` attributes of all the table's even rows
 
-   #### Example tableProps Object
+#### Example Options Object
 
-   ```js
-   const tableProps = {
-   	id: 'demo-table',
-   	ariaLabel: 'demo',
-   	ariaDescription: 'svve11 team information',
-   	columnNames: ['Name', 'Age', 'Favorite Color'],
-   	rowsContent: [
-   		['Nurbek', '19', 'White'],
-   		['Paul', '26', 'Red'],
-   		['Tim', '29', 'Blue'],
-   		['Simon', '26', 'Green']
-   	],
-   	styles: {
-   		overallStyles: 'background-color: powderblue',
-   		titleStyles: 'text-align: left;',
-   		headersRowStyles: 'background-color: grey',
-   		generalRowStyles: 'font-weight: lighter',
-   		oddRowStyles: 'background-color: white',
-   		evenRowStyles: 'background-color: lightgrey'
-   	}
-   };
-   ```
+```js
+const tableOptions = {
+	id: 'demo-table',
+	ariaLabel: 'demo',
+	ariaDescription: 'svve11 team information',
+	columnNames: ['Name', 'Age', 'Favorite Color'],
+	rowsContent: [
+		['Nurbek', '19', 'White'],
+		['Paul', '26', 'Red'],
+		['Tim', '29', 'Blue'],
+		['Simon', '26', 'Green']
+	],
+	styles: {
+		overallStyles: 'background-color: powderblue',
+		titleStyles: 'text-align: left;',
+		headersRowStyles: 'background-color: grey',
+		generalRowStyles: 'font-weight: lighter',
+		oddRowStyles: 'background-color: white',
+		evenRowStyles: 'background-color: lightgrey'
+	}
+};
+```
 
 3. A table instance can be created by placing the code below in the body of your .svelte file.
 
-   ```js
-   <Table {tableProps} />
-   ```
+```js
+<Table options={tableOptions} />
+```
 
 ---
 
@@ -404,9 +459,9 @@ npm install --save-dev 'svve11'
 
 1. Import the text input component using the command below in the script section of your .svelte file.
 
-   ```js
-   import TextInput from 'svve11/TextInput.svelte';
-   ```
+```js
+import TextInput from 'svve11/TextInput.svelte';
+```
 
 2. The text input component has (6) props.
 
@@ -417,22 +472,28 @@ npm install --save-dev 'svve11'
      - **`id`** (_`string`_): Specifies a unique id for the text field for developers to reference. An example would be “user-email”.
      - **`type`** (_`string`_): Specifies what kind of input is expected by the developer. An example would be “email”.
 
-   - (2) **optional** props:
+   - (2) _optional_ props:
      - **`inputStyle`** (_`string`_): Used to style the text input box.
      - **`labelStyle`** (_`string`_): Used to style the label above the text input box.
 
+#### Example Options Object
+
+```js
+const textInputOptions = {
+	label: 'Your email here:',
+	placeholder: 'jsmith@gmail.com',
+	id: 'user-email',
+	type: 'email',
+	labelStyle: 'font-family:Times New Roman; font-size:20px',
+	inputStyle: 'color: blue'
+};
+```
+
 3. A text input instance can be created by placing the code below in the body of your .svelte file.
 
-   ```js
-   <TextInput
-   	label="Your email here:"
-   	placeholder="jsmith@gmail.com"
-   	id="user-email"
-   	type="email"
-   	labelStyle="font-family:Times New Roman; font-size:20px"
-   	inputStyle="color: blue"
-   />
-   ```
+```js
+<TextInput options={textInputOptions} />
+```
 
 4. The following are optional attributes available with this component. Each of these attributes has the same function as the HTML attribute with its same name. Please check [W3Schools](https://www.w3schools.com/tags/tag_input.asp) or [MDN's](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) webpages to learn more about how these work. By default, all attributes of type boolean are set to false.
 
@@ -502,3 +563,7 @@ Problems to fix:
 ## License
 
 This project is available under the MIT License.
+
+```
+
+```

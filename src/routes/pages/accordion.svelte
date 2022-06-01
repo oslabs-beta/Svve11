@@ -4,13 +4,18 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Accordion';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Accordion.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#accordion';
 
-	const options = {
+	const accordionOptions = {
 		multiselectable: false,
 		headerLevel: 4,
-		styles: [null, null, null, null],
+		styles: {
+			accordionHeaderStyle: '',
+			accordionPanelStyle: '',
+			accordionItemStyle: '',
+			overallAccordionStyle: ''
+		},
 		panelInfo: [
 			{
 				id: 1,
@@ -33,7 +38,7 @@
 		]
 	};
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-accordion',
 		ariaLabel: 'Accordion props table',
 		ariaDescription:
@@ -76,9 +81,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-            import <span class="curly-symbol">&#10100</span> Accordion <span class="curly-symbol"
-								>&#10101</span
-							> from 'svve11'
+            import Accordion from 'svve11/Accordion.svelte'
           </code></pre>
 				</section>
 			</fieldset>
@@ -179,7 +182,7 @@
             </code></pre>
 					<h4>Example Accordion:</h4>
 					<div class="example-accordion">
-						<Accordion {options} />
+						<Accordion options={accordionOptions} />
 					</div>
 				</section>
 			</fieldset>
@@ -190,7 +193,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

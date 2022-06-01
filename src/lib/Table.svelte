@@ -1,7 +1,7 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
 	// defining types for the props object
-	type TableProps = {
+	type TableOptions = {
 		id?: string;
 		ariaLabel: string;
 		ariaDescription: string;
@@ -19,7 +19,7 @@
 		evenRowStyles?: string | null;
 	};
 
-	export let tableProps: TableProps = {
+	export let options: TableOptions = {
 		id: '',
 		ariaLabel: '',
 		ariaDescription: '',
@@ -27,7 +27,7 @@
 		rowsContent: [['']]
 	};
 
-	const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = tableProps;
+	const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = options;
 	$: columnNames;
 	$: rowsContent;
 
@@ -39,8 +39,8 @@
 		oddRowStyles: string,
 		evenRowStyles: string;
 
-	if (tableProps.styles) {
-		styles = tableProps.styles;
+	if (options.styles) {
+		styles = options.styles;
 		if (styles.overallStyles) overallStyles = styles.overallStyles;
 		if (styles.titleStyles) titleStyles = styles.titleStyles;
 		if (styles.headersRowStyles) headersRowStyles = styles.headersRowStyles;
@@ -54,7 +54,7 @@
 <!-- @component
 https://svve11.io/pages/table
 
-Props are passed in through the tableProps prop, which should be an object containing the following properties
+Props are passed in through the options prop, which should be an object containing the following properties
 ```tsx
 	id: string (optional)
 	ariaLabel: string (required)

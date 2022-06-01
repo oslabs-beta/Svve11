@@ -1,4 +1,5 @@
 <script lang="ts">
+<<<<<<< HEAD
 	// import logo from '../images/svve11-logo-blue-transparent-cropped.png';
 	// import Accordion from '../lib/Accordion.svelte';
 	// import Button from '../lib/Button.svelte';
@@ -9,6 +10,93 @@
 	// import Table from '../lib/Table.svelte';
 	// import TextInput from '../lib/TextInput.svelte';
 	import logo from '../images/svve11-logo-blue-transparent-cropped.png';
+=======
+	// importing all logo paths
+	import svve11Logo from '../images/svve11-logo-blue-transparent-cropped.png';
+	import jestLogo from '../images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png';
+	import NVDALogo from '../images/tech-icons/nvda_200x200.png';
+	import VoiceOverLogo from '../images/tech-icons/voiceover_logo.png';
+	import JAWSLogo from '../images/tech-icons/JAWS-screenreader-logo.png';
+	import ChromeLogo from '../images/tech-icons/chrome-logo.svg';
+	import SafariLogo from '../images/tech-icons/Safari_browser_logo.svg';
+	import FirefoxLogo from '../images/tech-icons/Firefox_logo_2019.svg';
+	import EdgeLogo from '../images/tech-icons/Microsoft_Edge_logo_(2019).svg';
+	import ImageLink from '../pending/ImageLink.svelte';
+
+	// setting ImageLink props for each logo and its corresponding link
+	const imgLinkOptions = {
+    svve11: {
+			href: 'https://svve11.io/',
+			src: svve11Logo,
+			title: 'svve11 homepage',
+			alt: 'svve11 logo'
+		},
+		jest: {
+			href: 'https://jestjs.io/',
+			src: jestLogo,
+			title: 'Jest website',
+			alt: 'Jest logo',
+			imgClass:'tech-icon',
+			postText: 'Jest'
+		},
+		NVDA: {
+			href: 'https://www.nvaccess.org/download/',
+			src: NVDALogo,
+			title: 'NVDA website',
+			alt: 'NVDA logo',
+			imgClass:'tech-icon',
+			postText: 'NVDA'
+		},
+		VoiceOver: {
+			href: 'https://www.apple.com/accessibility/vision/',
+			src: VoiceOverLogo,
+			title: 'Apple VoiceOver website',
+			alt: 'Apple VoiceOver logo',
+			imgClass:'tech-icon',
+			postText: 'VoiceOver'
+		},
+		JAWS: {
+			href: 'https://www.freedomscientific.com/products/software/jaws/',
+			src: JAWSLogo,
+			title: 'JAWS website',
+			alt: 'JAWS logo',
+			imgClass:'tech-icon',
+			postText: 'JAWS'
+		},
+		Chrome: {
+			href: 'https://www.google.com/chrome/',
+			src: ChromeLogo,
+			title: 'Google Chrome website',
+			alt: 'Google Chrome logo',
+			imgClass:'tech-icon',
+			postText: 'Chrome'
+		},
+		Safari: {
+			href: 'https://www.apple.com/safari/',
+			src: SafariLogo,
+			title: 'Safari website',
+			alt: 'Safari logo',
+			imgClass:'tech-icon',
+			postText: 'Safari'
+		},
+		Firefox: {
+			href: 'https://www.mozilla.org/en-US/firefox/new/',
+			src: FirefoxLogo,
+			title: 'Mozilla Firefox website',
+			alt: 'Mozilla Firefox logo',
+			imgClass:'tech-icon',
+			postText: 'Safari'
+		},
+		Edge: {
+			href: 'https://www.microsoft.com/en-us/edge',
+			src: EdgeLogo,
+			title: 'Microsoft Edge website',
+			alt: 'Microsoft Edge logo',
+			imgClass:'tech-icon',
+			postText: 'Edge'
+		},
+  }
+>>>>>>> main
 </script>
 
 <!-- Checking for hover prop tips -->
@@ -24,7 +112,7 @@
 <article id="splash" class="page-component">
 	<header>
 		<h1 style="font-family: 'Lobster', cursive;">
-			It's a <img id="splash-logo" src={logo} alt="svve11 logo" /> day
+			It's a <img id="splash-logo" src={svve11Logo} alt="svve11 logo" /> day
 		</h1>
 
 		<p>
@@ -51,74 +139,72 @@
 			<section class="content-section">
 				<p>
 					All of our components have been fully tested against the <a
+						target="_blank"
 						href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Guides</a
 					> with our testing suite:
 				</p>
 				<ul id="testing-list">
 					<li>
 						Unit-testing of individual components with
-						<img
-							class="tech-icon"
-							src="src/images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png"
-							alt="Jest logo"
-						/><a href="https://jestjs.io/"> Jest </a>
+						<!-- <a target="_blank" href="https://jestjs.io/">
+							<img class="tech-icon" src={jestLogo} alt="Jest logo" />
+							Jest
+						</a> -->
+						<ImageLink options={imgLinkOptions.jest} />
 					</li>
 					<li>Screen readers:</li>
 					<ul>
 						<li>
-							<img class="tech-icon" src="src/images/tech-icons/nvda_200x200.png" alt="NVDA logo" />
-							<a href="https://www.nvaccess.org/download/">NVDA</a>
+							<!-- <a target="_blank" href="https://www.nvaccess.org/download/">
+								<img class="tech-icon" src={NVDALogo} alt="NVDA logo" />
+								NVDA
+							</a> -->
+							<ImageLink options={imgLinkOptions.NVDA} />
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/voiceover_logo.png"
-								alt="VoiceOver logo"
-							/>
-							<a href="https://www.apple.com/accessibility/vision/">VoiceOver</a>
+							<!-- <a target="_blank" href="https://www.apple.com/accessibility/vision/">
+								<img class="tech-icon" src={VoiceOverLogo} alt="VoiceOver logo" />
+								VoiceOver
+							</a> -->
+							<ImageLink options={imgLinkOptions.VoiceOver} />
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/JAWS-screenreader-logo(1).png"
-								alt="JAWS logo"
-							/>
-							<a href="https://www.freedomscientific.com/products/software/jaws/">JAWS</a>
+							<!-- <a target="_blank" href="https://www.freedomscientific.com/products/software/jaws/">
+								<img class="tech-icon" src={JAWSLogo} alt="JAWS logo" />
+								JAWS
+							</a> -->
+							<ImageLink options={imgLinkOptions.JAWS} />
 						</li>
 					</ul>
 					<li>Browsers:</li>
 					<ul>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/chrome-logo.svg"
-								alt="Google Chrome logo"
-							/>
-							<a href="https://www.google.com/chrome/">Google Chrome</a>
+							<!-- <a target="_blank" href="https://www.google.com/chrome/">
+								<img class="tech-icon" src={ChromeLogo} alt="Google Chrome logo" />
+								Google Chrome</a
+							> -->
+							<ImageLink options={imgLinkOptions.Chrome} />
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/Safari_browser_logo.svg"
-								alt="Safari logo"
-							/>
-							<a href="https://www.apple.com/safari/">Safari</a>
+							<!-- <a target="_blank" href="https://www.apple.com/safari/">
+								<img class="tech-icon" src={SafariLogo} alt="Safari logo" />
+								Safari
+							</a> -->
+							<ImageLink options={imgLinkOptions.Safari} />
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/Firefox_logo_2019.svg"
-								alt="Mozilla Firefox logo"
-							/>
-							<a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
+							<!-- <a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">
+								<img class="tech-icon" src={FirefoxLogo} alt="Mozilla Firefox logo" />
+								Mozilla Firefox
+							</a> -->
+							<ImageLink options={imgLinkOptions.Firefox} />
 						</li>
 						<li>
-							<img
-								class="tech-icon"
-								src="src/images/tech-icons/Microsoft_Edge_logo_(2019).svg"
-								alt="Microsoft Edge logo"
-							/>
-							<a href="https://www.microsoft.com/en-us/edge">Microsoft Edge</a>
+							<!-- <a target="_blank" href="https://www.microsoft.com/en-us/edge">
+								<img class="tech-icon" src={EdgeLogo} alt="Microsoft Edge logo" />
+								Microsoft Edge
+							</a> -->
+							<ImageLink options={imgLinkOptions.Edge} />
 						</li>
 					</ul>
 				</ul>
@@ -129,35 +215,4 @@
 
 <style lang="scss">
 	@import '../stylesheets/variables';
-
-	#splash {
-		header {
-			display: flex;
-			flex-direction: column;
-			#splash-logo {
-				display: inline-block;
-				height: 7rem;
-			}
-			h1 {
-				font-size: 8rem;
-				color: $blue;
-				margin-bottom: 0;
-			}
-			p {
-				font-size: 1.5rem;
-				font-style: italic;
-				font-weight: 400;
-				width: 65%;
-				padding-left: 3rem;
-				margin-top: 2rem;
-				margin-bottom: 3rem;
-				color: $darkgrey;
-			}
-		}
-		section {
-			* {
-				color: $blue;
-			}
-		}
-	}
 </style>

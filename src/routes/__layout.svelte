@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.scss';
-	import NavBar from '$lib/NavBar.svelte';
+	import NavBarWebsite from '../components/NavBar-website.svelte';
 	import logo from '../images/svve11-logo-white-transparent-cropped.png';
 
 	const navOptions = {
@@ -48,23 +48,22 @@
 </script>
 
 <svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lobster&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lobster&display=swap"
+		rel="stylesheet"
+	/>
 </svelte:head>
 
 <section class="main-container">
 	<!-- <section id="nav-container">
 		<NavBar options={navOptions} />
 	</section> -->
-	
-	<NavBar options={navOptions} />
 
+	<NavBarWebsite options={navOptions} />
 	<slot />
 </section>
 
-<style lang='scss'>
-	@import "../stylesheets/variables";
-
-
+<style lang="scss">
 </style>

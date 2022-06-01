@@ -3,10 +3,10 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Table';
-	const githubSourceLink = 'https://github.com/Svve11/';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Table.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#table';
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-table',
 		ariaLabel: 'Table props table',
 		ariaDescription: 'This table describes the props that should be passed to the table component',
@@ -27,9 +27,9 @@
 	<header>
 		<h1>{componentName}</h1>
 		<ul class="resource-links-list">
-			<li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+			<li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
 			<li>
-				WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+				WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
 			</li>
 		</ul>
 		<p class="header-paragraph">
@@ -46,9 +46,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import <span class="curly-symbol">&#10100</span> Table <span class="curly-symbol"
-								>&#10101</span
-							> from 'svve11'
+              import Table from 'svve11/Table.svelte'
             </code></pre>
 				</section>
 			</fieldset>
@@ -180,7 +178,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

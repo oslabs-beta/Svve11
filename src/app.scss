@@ -6,6 +6,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 100;
   color: $black;
+  white-space: normal;
 }
 
 html,
@@ -45,8 +46,8 @@ body {
     }
   }
   .tech-icon {
+    display: inline-block;
     height: 2rem;
-    margin-right: 1rem;
   }
   code {
     font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, monospace;
@@ -63,29 +64,85 @@ body {
 }
 
 #splash {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #splash-logo {
+      display: inline-block;
+    }
+    h1 {
+      text-align: center;
+      color: $blue;
+      margin-bottom: 0;
+    }
+    p {
+      font-style: italic;
+      font-weight: 400;
+      color: $darkgrey;
+    }
+  }
+  section {
+    * {
+      color: $blue;
+    }
+  }
   pre {
     border: 2px solid $blue;
-    box-shadow: .5rem .5rem $darkgrey;
+    box-shadow: .5em .5em $darkgrey;
   }
 }
 
 .main-container {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
-  display: grid;
-  grid-template-columns: 15% 85%;
+  
+  // display: grid;
+  // grid-template-columns: 15% 85%;
+  display: flex;
 }
 
-#nav-bar {
-  height: 100%;
-  margin: 0;
-  background-color: $blue;
-  padding: 2em 0em 1em 1em;
-  gap: 0.5em;
+#openbtn {
+  position: fixed;
+  z-index: 2;
+  color: $white;
+  background-color: $blue-transparent;
+  border: none;
+  * {
+    color: $white;
+  }
+}
+#openbtn:hover {
+  color: orange;
+  // font-size: 2.1rem;
+}
 
+.sv-navbar {
+  * {
+    display: none;
+  }
+  padding: 4em 0em 1em 1em;
+  height: 100%; // 100% Full-height
+  width: 0; // 0 width - change this with JavaScript
+  position: sticky; // Stay in place
+  z-index: 1; // Stay on top
+  top: 0;
+  left: 0;
+  overflow: hidden; // Disable scroll
+  transition: 0.5s; // 0.5 second transition effect to slide in the sidebar
+  
+  a { // sidebar links
+    display: block;
+    margin: 0;
+    padding: .5rem 0 ;
+    transition: 0.3s;
+  }
   img.svvell-logo {
-    width: 90%;
+    width: 80%;
+    max-width: 200px;
+    // width: 200px;
     height: auto;
     margin: 0;
   }
@@ -102,15 +159,32 @@ body {
   }
   li {
     list-style: none;
-    margin: .3rem;
+    // margin: .3rem;
   }
+}
+.open {
+  * {
+    display: initial;
+  }
+  min-width: 250px;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: $blue-transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  a {
+    font-size: 1rem;
+  }
+  position: fixed;
 }
 
 .page-component {
-  width: auto;
+  width: 100%;
   padding: 0;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 
   a {
     color: $blue;
@@ -126,11 +200,11 @@ body {
   main {
     
   }
-  article {
-    width: auto;
-  }
+  // article {
+  //   width: auto;
+  // }
   section {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .example-code {
     margin-bottom: 1.5rem;
@@ -139,7 +213,7 @@ body {
     line-height: 1.3;
   }
   pre {
-    width: 80%;
+    width: 100%;
     background-color: $lightgrey;
     border-radius: 0.5em;
     margin: 0;
@@ -160,7 +234,7 @@ body {
   }
   table {
     display: flexbox;
-    width: 80%;
+    width: 100%;
     margin-bottom: 3rem;
     
     * {
@@ -181,49 +255,108 @@ body {
 
 /********* Cell Phone Style **********/
 @media screen and (max-width: 667px) {
+  code {
+    white-space: normal;
+  }
+  #openbtn {
+    font-size: 1.5rem;
+  }
+  #splash {
+    header {
+      text-align: center;
+      #splash-logo {
+        height: .85em;
+      }
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+      }
+    }
+    
+    li {
+      list-style: none;
+    }
+  }
+  .open {
+    // min-width: 100%;
+  }
+  .page-component {
+    margin: 0 1.5rem;
+    .sv-accordion-item {
+      width: 100%;
+    }
+  }
+  a {
+    font-size: 14px;
+  }
   p {
-    font-size: 8px;
+    font-size: 14px;
   }
   h1 {
-    font-size: 20px;
+    padding-top: 1rem;
+    font-size: 30px;
   }
   h2 {
-    font-size: 14px;
-    margin: 0 0 10px 0;
+    font-size: 20px;
+    margin: 0 0 .7rem 0;
   }
   h3 {
-    font-size: 10px;
+    font-size: 18px;
   }
   h4 {
-    font-size: 8px;
+    font-size: 16px;
   }
   ul {
-    font-size: 8px;
-    padding-left: 10px;
+    font-size: 14px;
+    padding-left: .6rem;
+  }
+  li {
+    font-size: 14px;
   }
   .code-block {
-    font-size: 8px;
-    width: 100%;
+    font-size: 12px;
   }
   .curly-symbol {
-    font-size: 8px;
+    font-size: 12px;
   }
   .header-button {
-    font-size: 8px;
-  }
-  .navbar-subheader {
-    font-size: 8px;
-    margin-left: -10px;
+    font-size: 14px;
   }
   .props-table {
-    font-size: 8px;
+    font-size: 14px;
   }
 }
 
 /************* Tablet and Computer Styles **********/
 @media screen and (min-width: 668px) {
+  #openbtn {
+    font-size: 2rem;
+  }
+  #splash {
+    header {
+      #splash-logo {
+        height: 7rem;
+      }
+      h1 {
+        font-size: 8rem;
+      }
+      p {
+        text-indent: 3em;
+        font-size: 1.5rem;
+        // padding-left: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        width: 80%;
+      }
+    }
+  }
+
   .page-component {
-    margin: 0 5rem
+    margin: 0 8rem;
   }
   h1 {
     font-size: 42px;
@@ -251,6 +384,5 @@ body {
   }
   .code-block {
     font-size: 14px;
-    width: 100%;
   }
 }
