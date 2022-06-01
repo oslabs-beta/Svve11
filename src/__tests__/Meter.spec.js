@@ -21,10 +21,9 @@ describe('Meter Unit Tests', () => {
     let meter, label, meters, meterDiv
 
     beforeEach(() => {
-        const {getByTestId, getByText} = render(Meter, {...options, value: 60})
+        const {getByTestId, getByText} = render(Meter, {options: options, value: 60})
         meters = document.getElementsByTagName('meter')
         meter = getByTestId('meter-test')
-        meterDiv = document.getElementsByTagName('div')
         label = getByText('Test Meter: 60%')
     })
 
@@ -40,7 +39,7 @@ describe('Meter Unit Tests', () => {
 
     it('should have a meter with accessible attributes', () => {
         expect(meter).toHaveAttribute('aria-valuenow')
-        expect(meter.getAttribute('aria-valuenow')).toEqual(options.value.toString())
+        expect(meter.getAttribute('aria-valuenow')).toEqual('60')
         expect(meter).toHaveAttribute('aria-valuemax')
         expect(meter.getAttribute('aria-valuemax')).toEqual(options.maxValue.toString())
         expect(meter).toHaveAttribute('aria-valuemin')
@@ -65,7 +64,7 @@ describe('Meter Unit Tests', () => {
         expect(meter).toHaveAttribute('optimum')
         expect(meter.getAttribute('optimum')).toEqual(options.optimumValue.toString())
         expect(meter).toHaveAttribute('value')
-        expect(meter.getAttribute('value')).toEqual(options.value.toString())
+        expect(meter.getAttribute('value')).toEqual('60')
         expect(meter).toHaveAttribute('style')
         expect(meter.getAttribute('style')).toEqual('')
     })
