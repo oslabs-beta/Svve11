@@ -19,26 +19,25 @@
 	};
 
 	export let options: MeterOptionTypes = {
-		maxValue:100,
-		minValue:0,
+		maxValue: 100,
+		minValue: 0,
 		meterLabel: '',
-		id: '',
+		id: ''
 	};
 
 	let { maxValue, minValue, meterLabel, id } = options;
 
 	export let value: number;
 	$: value;
-	
 
-	let displayDecimal:boolean,
-		units:string,
-		valueText:string,
-		meterStyle:string,
-		labelStyle:string,
-		lowValue:number,
-		highValue:number,
-		optimumValue:number;
+	let displayDecimal: boolean,
+		units: string,
+		valueText: string,
+		meterStyle: string,
+		labelStyle: string,
+		lowValue: number,
+		highValue: number,
+		optimumValue: number;
 
 	if (options.displayDecimal) displayDecimal = options.displayDecimal;
 	if (options.units) units = options.units;
@@ -49,10 +48,9 @@
 	if (options.highValue) highValue = options.highValue;
 	if (options.optimumValue) optimumValue = options.optimumValue;
 
-
 	//Variables for displaying non percentage label of meter
-	let displayValue:number;
-	let displayString:string;
+	let displayValue: number;
+	let displayString: string;
 	$: displayValue, displayString;
 
 	// Build Display String. Default to percentage form unless displayDecimal is provided as true
@@ -60,7 +58,8 @@
 		if (displayDecimal) {
 			displayValue = value;
 			displayString = displayValue.toString() + units;
-		} else { // Default to percentage form
+		} else {
+			// Default to percentage form
 			displayValue = (value / maxValue) * 100;
 			displayString = displayValue + '%';
 		}
@@ -91,13 +90,13 @@ labelStyle  : string (optional)
 ```
 -->
 
-<label for={`meter-${id}`} id={`meter-label-${id}`} class='sv-meter-label' style={labelStyle}>
+<label for={`meter-${id}`} id={`meter-label-${id}`} class="sv-meter-label" style={labelStyle}>
 	{meterLabel}: {displayString}
 </label>
 
 <meter
 	class="sv-meter"
-	id='test'
+	id="test"
 	min={minValue}
 	max={maxValue}
 	low={lowValue}
