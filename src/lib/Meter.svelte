@@ -90,25 +90,30 @@ labelStyle  : string (optional)
 ```
 -->
 
-<label for={`meter-${id}`} id={`meter-label-${id}`} class="sv-meter-label" style={labelStyle}>
+<label
+	for={`meter-${id}`}
+	id={`meter-label-${id}`}
+	class="sv-meter-label"
+	style={labelStyle ? labelStyle : ''}
+>
 	{meterLabel}: {displayString}
 </label>
 
 <meter
 	class="sv-meter"
-	id="test"
+	id={`meter-${id}`}
 	min={minValue}
 	max={maxValue}
 	low={lowValue}
 	high={highValue}
 	optimum={optimumValue}
 	{value}
-	style={meterStyle}
+	style={meterStyle ? meterStyle : ''}
 	aria-valuenow={value}
 	aria-valuemax={maxValue}
 	aria-valuemin={minValue}
 	aria-labelledby={`meter-label-${id}`}
-	aria-valuetext={valueText}
+	aria-valuetext={valueText ? valueText : ''}
 	data-testid="meter-test"
 />
 

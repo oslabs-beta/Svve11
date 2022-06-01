@@ -16,12 +16,12 @@ describe('Accessible Accordion Unit Tests', () => {
 	const options = {
 		multiselectable: true,
 		headerLevel: 4,
-		styles: [
-			'background-color: coral',
-			'background-color: coral',
-			'border: 1px solid blue',
-			'border: 1px solid yellow'
-		],
+		styles: {
+			accordionHeaderStyle: 'Header styles string',
+			accordionPanelStyle: 'Panel styles string;',
+			accordionItemStyle: 'Item styles string',
+			overallAccordionStyle: 'Accordion styles string'
+		},
 		panelInfo: [
 			{
 				id: 1,
@@ -76,7 +76,7 @@ describe('Accessible Accordion Unit Tests', () => {
 		});
 
 		it('should have a class name set to header-button', () => {
-			expect(button.getAttribute('class')).toContain('header-button');
+			expect(button.getAttribute('class')).toContain('sv-accordion-button');
 		});
 
 		it('should habe an id attribute set to button and the id number', () => {
@@ -87,8 +87,8 @@ describe('Accessible Accordion Unit Tests', () => {
 			expect(button.getAttribute('aria-controls')).toEqual(`panel${options.panelInfo[0].id}`);
 		});
 
-		it('should be passed the styles string in the 0th index of the styles array', () => {
-			expect(button.getAttribute('style')).toEqual(options.styles[0]);
+		it('should be passed the styles string in the accordionHeaderStyle of the styles property in options object', () => {
+			expect(button.getAttribute('style')).toEqual(options.styles.accordionHeaderStyle);
 		});
 
 		it('should be able to have focus', () => {
@@ -149,7 +149,7 @@ describe('Accessible Accordion Unit Tests', () => {
 		});
 
 		it('should be passed the styles string in the 0th index of the styles array', () => {
-			expect(heading.getAttribute('style')).toEqual(options.styles[0]);
+			expect(heading.getAttribute('style')).toEqual(options.styles.accordionHeaderStyle);
 		});
 	});
 
@@ -179,7 +179,7 @@ describe('Accessible Accordion Unit Tests', () => {
 		});
 
 		it('should be passed the appropriate styles', () => {
-			expect(panel.getAttribute('style')).toEqual(options.styles[1]);
+			expect(panel.getAttribute('style')).toEqual(options.styles.accordionPanelStyle);
 		});
 	});
 
@@ -187,11 +187,11 @@ describe('Accessible Accordion Unit Tests', () => {
 		let items, item, button, panel, header, user;
 		beforeEach(() => {
 			const { getByText, getAllByRole } = render(Accordion, { options });
-			items = document.getElementsByClassName('accordion-item');
+			items = document.getElementsByClassName('sv-accordion-item');
 			item = items[0];
-			button = document.querySelector('#button1');
-			panel = document.querySelector('#panel1');
-			header = document.querySelectorAll('.accordion-header')[0];
+			button = document.querySelector('.sv-accordion-button');
+			panel = document.querySelector('.sv-accordion-panel');
+			header = document.querySelectorAll('.sv-accordion-header')[0];
 			user = userEvent.setup();
 		});
 
@@ -216,7 +216,7 @@ describe('Accessible Accordion Unit Tests', () => {
 	describe('Accordion Unit Tests', () => {
 		it('should have an aria-multiselectable attribute corresponding to that passed into the options object', () => {
 			const {} = render(Accordion, { options });
-			const accordion = document.getElementsByClassName('accordion-main')[0];
+			const accordion = document.getElementsByClassName('sv-accordion-main')[0];
 			expect(accordion.getAttribute('aria-multiselectable')).toEqual(`${options.multiselectable}`);
 		});
 	});
