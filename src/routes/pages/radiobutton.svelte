@@ -95,10 +95,28 @@
 		  name="food"
 		  value={1}
 		  radioButtonLabel="Pizza"
-		  id="radioButtonOne"
+		  id="radioBtn-1"
 		  checked={false}
-		  radioButtonStyle="height: 1.5em; width: 1.5em;"
-		  radioButtonLabelStyle="font-size:1.5em;"
+		  radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
+		  radioButtonLabelStyle="font-weight:bold;"
+		/>
+		<RadioButton
+		  name="food"
+		  value={2}
+		  radioButtonLabel="Spaghetti"
+		  id="radioBtn-2"
+		  checked={false}
+		  radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
+		  radioButtonLabelStyle="font-weight:bold;"
+		/>
+		<RadioButton
+		  name="food"
+		  value={3}
+		  radioButtonLabel="Salad"
+		  id="radioBtn-3"
+		  checked={false}
+		  radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
+		  radioButtonLabelStyle="font-weight:bold;"
 		/>`}
               </code></pre>
 					<h4>Example Radio Button Group:</h4>
@@ -109,8 +127,8 @@
 							radioButtonLabel="Pizza"
 							id="radioButtonOne"
 							checked={false}
-							radioButtonStyle="height: 1.5em; width: 1.5em;"
-							radioButtonLabelStyle="font-size:1.5em;"
+							radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
+							radioButtonLabelStyle="font-style: italic;"
 						/>
 						<RadioButton
 							name="food"
@@ -118,8 +136,8 @@
 							radioButtonLabel="Spaghetti"
 							id="radioButtonTwo"
 							checked={false}
-							radioButtonStyle="height: 1.5em; width: 1.5em;"
-							radioButtonLabelStyle="font-size:1.5em;"
+							radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
+							radioButtonLabelStyle="font-style: italic;"
 						/>
 						<RadioButton
 							name="food"
@@ -127,8 +145,8 @@
 							radioButtonLabel="Salad"
 							id="radioButtonThree"
 							checked={false}
-							radioButtonStyle="height: 1.5em; width: 1.5em;"
-							radioButtonLabelStyle="font-size:1.5em;"
+							radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
+							radioButtonLabelStyle="font-style: italic;"
 						/>
 					</div>
 				</section>

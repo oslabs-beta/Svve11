@@ -190,7 +190,7 @@
 					<div class="example-meter">
 						<pre><code class="code-block">
                           meterStyle='width: 50px;'
-                          labelStyle='font-size: 20px; color: blue;'
+                          labelStyle='font-size: 20px; color: powderblue;'
                   </code></pre>
 						<Meter
 							value={changingValue / 10}
@@ -200,7 +200,7 @@
 							id={1}
 							lowValue={5}
 							meterStyle="width: 50px;"
-							labelStyle="font-size: 20px; color: blue;"
+							labelStyle="font-size: 20px; color: powderblue;"
 						/>
 					</div>
 				</section>
