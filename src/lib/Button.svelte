@@ -1,6 +1,5 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-<<<<<<< HEAD
 
   type ButtonOptionTypes = {
     handleClick: () => void;
@@ -39,41 +38,6 @@
 
   // // button styles
   // export let style: string = '';
-=======
-	type ButtonOptionTypes = {
-		handleClick: () => void;
-		content: string;
-		id: string;
-		label: string;
-		style?: string;
-	};
-
-	export let options: ButtonOptionTypes = {
-		handleClick: () => console.log('please enter handleClick fn'),
-		content: '',
-		id: '',
-		label: '',
-		style: ''
-	};
-
-	$: handleClick, content, id, label, style;
-	let { handleClick, content, id, label, style } = options;
-
-	// // function for button to execute
-	// export let handleClick: () => void;
-
-	// // text to go inside button
-	// export let content: string = '';
-
-	// // button id
-	// export let id: string = '';
-
-	// // button aria label
-	// export let label: string = '';
-
-	// // button styles
-	// export let style: string = '';
->>>>>>> main
 </script>
 
 <!-- ************************* HTML ************************* -->
