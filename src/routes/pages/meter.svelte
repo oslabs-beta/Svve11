@@ -9,15 +9,11 @@
 	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Meter.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#meter';
 
-	let changingValue: number = 60;
-
-	$: changingValue;
+	let changingValue: number;
+	$: changingValue = 60;
 
 	const interval = setInterval(function () {
-		changingValue = Math.floor(Math.random() * 100 + 1);
-		console.log(changingValue);
-		meterOptions3 = { ...meterOptions3, value: changingValue };
-		console.log(meterOptions3);
+		changingValue = Math.floor(Math.random() * 100);
 	}, 2000);
 
 	onDestroy(() => clearInterval(interval));
@@ -39,32 +35,50 @@
 			['displayDecimal', 'boolean', 'false', 'false'],
 			['units', 'string', 'false', 'N/A'],
 			['meterStyle', 'string', 'false', 'N/A'],
-			['labelStyle', 'string', 'false', 'N/A']
+			['labelStyle', 'string', 'false', 'N/A'],
 		],
-		styles: tableStyles
+		styles: tableStyles,
+	};	
+
+	const meterOneOptions = {
+		maxValue: 100,
+		minValue: 0,
+		meterLabel: "Test Meter 1",
+		id: 1
 	};
-	let meterOptions3 = {
-		value: changingValue,
+
+	const meterTwoOptions = {
+		maxValue:100,
+		minValue:0,
+		meterLabel:"Test Meter 2",
+		id:2,
+		lowValue:20,
+		highValue:85,
+		optimumValue:80,
+	};
+
+	const meterThreeOptions = {
 		maxValue: 10,
 		minValue: 0,
-		meterLabel: 'Test Meter 1',
-		id: 1,
+		meterLabel: 'Test Meter 3',
+		id: 3,
 		lowValue: 5,
 		displayDecimal: false,
 		units: ' hours remaining',
 		valueText: `${changingValue} hours remaining`
 	};
-	$: meterOptions3;
-	const meterOptions4 = {
-		value: changingValue / 10,
+
+	const meterFourOptions = {
 		maxValue: 10,
 		minValue: 0,
-		meterLabel: 'Test Meter 1',
-		id: 1,
+		meterLabel: 'Test Meter 4',
+		id: 4,
 		lowValue: 5,
 		meterStyle: 'width: 50px;',
-		labelStyle: 'font-size: 20px; color: blue;'
+		labelStyle: 'font-weight: bold; color: powderblue;'
 	};
+
+
 </script>
 
 <article class="page-component">
@@ -108,7 +122,7 @@
 						file.
 					</p>
 					<pre><code class="code-block">
-              {`<Meter {value} {maxValue} {minValue} {meterLabel} {id}/>`}
+              {`<Meter {value} {options}/>`}
               </code></pre>
 					<p>The meter has 5 <span class="bold-word">required</span> attributes:</p>
 					<ul class="options-object-list">
@@ -164,35 +178,42 @@
 						<li>meterstyle (string): sets the style for the meter for any custom styles.</li>
 						<li>labelStyle (string): sets the style for the meter label for any custom styles.</li>
 					</ul>
+
 					<h4>Example Meter Code with only required props:</h4>
-					<pre><code class="code-block">
-              {`<Meter
-                value={60}
-                maxValue={100}
-                minValue={0}
-                meterLabel='Test Meter 1'
-                id={1}
-               />`}
-              </code></pre>
+					<pre>
+						<code class="code-block">
+              {`<script>
+							const meterOptions = {
+                maxValue:100,
+                minValue:0,
+                meterLabel:'Test Meter 1',
+                id:1
+							}
+							</script>
+							<Meter value={60} options={meterOptions} />`}
+						</code>
+					</pre>
+						
 					<h4>Example meter with only required props:</h4>
 					<div class="example-meter">
-						<!-- <Meter /> -->
+						<Meter value={changingValue} options={meterOneOptions} />
 					</div>
+
 					<h4>Example meter with highValue=85, lowValue=20 and optimalValue=80 props:</h4>
 					<div class="example-meter">
-						<!-- <Meter /> -->
+						<Meter value={changingValue} options={meterTwoOptions}/>
 					</div>
 					<h4>Example meter with displayDecimal=false and units props:</h4>
 					<div class="example-meter">
-						<!-- <Meter options={meterOptions3} />; -->
+						<Meter value={changingValue / 10} options={meterThreeOptions}/>
 					</div>
 					<h4>Example meter with style strings:</h4>
 					<div class="example-meter">
 						<pre><code class="code-block">
                           meterStyle='width: 50px;'
-                          labelStyle='font-size: 20px; color: powderblue;'
+                          labelStyle='font-weight: bold; color: powderblue;'
                   </code></pre>
-						<!-- <Meter options={meterOptions4} /> -->
+						<Meter value={changingValue / 10} options={meterFourOptions}/>
 					</div>
 
 					<h4>Styling the Meter with Classes</h4>
