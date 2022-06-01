@@ -190,7 +190,7 @@ import Meter from 'svve11/Meter.svelte'
 
 					<h4>Instantiating a Meter</h4>
 					<pre><code class="code-block">
-{`<Meter {value} options={meterOptions}/>`}
+{`<Meter value={reactiveValue} options={meterOptions}/>`}
               </code></pre>
 					<h4>Example meter with only required props:</h4>
 					<div class="example-meter">
