@@ -67,7 +67,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-            import NavBar from 'svve11/NavBar.svelte'
+import NavBar from 'svve11/NavBar.svelte'
           </code></pre>
 				</section>
 			</fieldset>
@@ -80,113 +80,97 @@
 				<section class="content-section">
 					<h3>Creating a Nav Bar</h3>
 					<p>
-						A nav bar instance can be created by placing the code below in the body of your Svelte
-						file.
-					</p>
-					<pre><code class="code-block">
-            {'<NavBar {options} />'}
-            </code></pre>
-					<p>
 						To supply the nav bar with its contents, an options object is passed as a prop to the
 						nav bar. This object can be created in the script section of the .svelte file or
 						imported in from another location. The options object has 6 properties.
 					</p>
 					<ul class="options-object-list">
+						<h4>Required Props</h4>
 						<li>
-							id (string): This property is <span class="bold-word">required</span>. This will be
-							the id attribute you reference for styling inside your navbar component.
+							id (string): This will be the id attribute you reference for styling inside your
+							navbar component.
 						</li>
 						<li>
-							contentInfo (array): This property is <span class="bold-word">required</span>. This
-							will set the main content in your nav bar. This array contains a series of objects
-							that should be defined as follows:
+							contentInfo (array): This will set the main content in your nav bar. This array
+							contains a series of objects that should be defined as follows:
 						</li>
 						<ul>
 							<li>
-								options (array): This property is <span class="bold-word">required</span>. The array
-								contains a series of strings, and the order of the strings will determine the order
-								they appear in the nav bar section. This will define the text labeling a given nav
-								landmark.
+								options (array): The array contains a series of strings, and the order of the
+								strings will determine the order they appear in the nav bar section. This will
+								define the text labeling a given nav landmark.
 							</li>
 							<li>
-								links (array): This property is <span class="bold-word">required</span>. The array
-								contains a series of strings, and the order of the strings should mimic that of the
-								options array above. These strings will set the href attribute of the anchor tag
-								that enable navigation.
+								links (array): The array contains a series of strings, and the order of the strings
+								should mimic that of the options array above. These strings will set the href
+								attribute of the anchor tag that enable navigation.
 							</li>
 							<li>
-								subheading (string): This property is <span class="bold-word">optional</span>. This
-								will set the subheading for a section of the nav bar.
+								subheading (string): This will set the subheading for a section of the nav bar.
 							</li>
 						</ul>
+						<h4>Optional Props</h4>
+						<li>header (string): This will set the heading for the entire nav bar.</li>
 						<li>
-							header (string): This property is <span class="bold-word">optional</span>. This will
-							set the heading for the entire nav bar.
+							imgSrc (string): This will set the file path for an image you want to include at the
+							top of the menu.
 						</li>
 						<li>
-							imgSrc (string): This property is <span class="bold-word">optional</span>. This will
-							set the file path for an image you want to include at the top of the menu.
+							imgClass (string): This will set the class for the image included with the imgSrc
+							attribute.
 						</li>
 						<li>
-							imgClass (string): This property is <span class="bold-word">optional</span>. This will
-							set the class for the image included with the imgSrc attribute.
-						</li>
-						<li>
-							imgAlt (string): This property is <span class="bold-word">optional</span>. This will
-							set the alternate text for the image included with the imgSrc attribute.
+							imgAlt (string): This will set the alternate text for the image included with the
+							imgSrc attribute.
 						</li>
 					</ul>
 					<h4>Example Options Object:</h4>
 					<pre><code class="code-block example-code">
-            {`options = {
-                id: 'nav-bar',
-                header: 'Menu',
-                contentInfo: [
-                    {
-                        subheading: '',
-                        options: ['Home', 'Github'],
-                        links: ['/', 'https://github.com/oslabs-beta/svve11']
-                    },
-                    {
-                        subheading: 'Library Components:',
-                        options: [
-                            'Accordion',
-                            'Button',
-                            'Checkbox',
-                            'Meter',
-                            'Nav Bar',
-                            'Radio Button',
-                            'Text Input'
-                        ],
-                        links: [
-                            '/pages/accordion',
-                            '/pages/button',
-                            '/pages/checkbox',
-                            '/pages/meter',
-                            '/pages/navbar',
-                            '/pages/radiobutton',
-                            '/pages/textinput'
-                        ]
-                    },
-                    {
-                        subheading: '',
-                        options: ['About the team'],
-                        links: ['/about']
-                    }
-                ],
-                imgSrc: logo,
-                imgClass: 'svvell-logo',
-                imgAlt: 'svve11'
-            };`}
+{`const navOptions = {
+  id: 'nav-bar',
+  contentInfo: [
+	{
+	  subheading: '',
+	  options: ['Home', 'Github'],
+	  links: ['/', 'https://github.com/oslabs-beta/svve11']
+	},
+	{
+	  subheading: 'Components',
+	  options: ['Accordion','Button','Checkbox','Meter','Nav Bar','Radio Button','Table','Text Input'],
+	  links: ['/pages/accordion','/pages/button','/pages/checkbox','/pages/meter','/pages/navbar','/pages/radiobutton','/pages/table','/pages/textinput']
+	},
+	{
+	  subheading: '',
+	  options: ['About the team'],
+	  links: ['/about']
+	}
+  ],
+  imgSrc: logo,
+  imgClass: 'svvell-logo',
+  imgAlt: 'svve11'
+};`}
 			</code></pre>
-					<p>
-						Styles can be applied to different parts of the NavBar in your CSS stylesheet by
-						referencing the appropriate id and class names.
-					</p>
+					<h4>Instantiating a nav bar</h4>
+					<pre><code class="code-block">
+{'<NavBar options={navOptions} />'}
+	</code></pre>
 					<p>
 						As an example, the nav bar for this webpage is made using this component and the options
 						object above was used to create it.
 					</p>
+
+					<h4>Styling the Nav Bar with Classes</h4>
+					<p>
+						The nav bar is made of 5 components that can have styles applied to them using the
+						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-navbar: This applies styling to the nav bar</li>
+						<li>sv-navbar-header: This applies styling to the main heading of the nav bar</li>
+						<li>sv-navbar-subheader: This applies styling to each subheading of the nav bar</li>
+						<li>sv-navbar-section: This applies styling to each section of the nav bar</li>
+						<li>sv-navbar-option: This applies styling to each option of the nav bar</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>

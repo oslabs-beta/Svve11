@@ -98,10 +98,11 @@
 </script>
 
 <!-- ************************* HTML ************************* -->
-<label for={id} style={labelStyle} class="sv-textinput-label">
+<label for={id} style={labelStyle} class="sv-text-input-label">
 	{label}
 </label>
 <input
+	class="sv-text-input"
 	{id}
 	{type}
 	{placeholder}

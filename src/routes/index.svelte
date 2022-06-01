@@ -10,6 +10,8 @@
 	import FirefoxLogo from '../images/tech-icons/Firefox_logo_2019.svg';
 	import EdgeLogo from '../images/tech-icons/Microsoft_Edge_logo_(2019).svg';
 	import ImageLink from '../pending/ImageLink.svelte';
+  import RadioButton from '../pending/RadioButton.svelte';
+import Radiobutton from './pages/radiobutton.svelte';
 
 	// setting ImageLink props for each logo and its corresponding link
 	const imgLinkOptions = {

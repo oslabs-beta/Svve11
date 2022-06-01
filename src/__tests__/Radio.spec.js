@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
-import RadioButton from '../lib/RadioButton.svelte';
+import RadioButton from '../pending/RadioButton.svelte';
 
 const options = {
 	radioButtonLabel: 'Radio Button',
