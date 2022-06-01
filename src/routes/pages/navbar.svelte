@@ -136,8 +136,8 @@ import NavBar from 'svve11/NavBar.svelte'
 	},
 	{
 	  subheading: 'Components',
-	  options: ['Accordion','Button','Checkbox','Meter','Nav Bar','Radio Button','Table','Text Input'],
-	  links: ['/pages/accordion','/pages/button','/pages/checkbox','/pages/meter','/pages/navbar','/pages/radiobutton','/pages/table','/pages/textinput']
+	  options: ['Accordion','Button','Checkbox', ...],
+	  links: ['/pages/accordion','/pages/button','/pages/checkbox',...]
 	},
 	{
 	  subheading: '',

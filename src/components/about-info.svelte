@@ -1,6 +1,6 @@
 <script lang="ts">
-	import GitHub from '../images/Github-logo-white.png';
-	import LinkedIn from '../images/LinkedIn-logo-white-circle.png';
+	import GitHub from '../images/Github-logo-circle-purple.png';
+	import LinkedIn from '../images/LinkedIn-logo-circle-purple.png';
 	export let name: string = '';
 	export let GitHubLink: string = '';
 	export let LinkedInLink: string = '';
@@ -25,7 +25,7 @@
 <style lang="scss">
 	@import '../stylesheets/variables';
 	* {
-		color: $white;
+		color: $color-text-darkest;
 	}
 
 	.team-member {

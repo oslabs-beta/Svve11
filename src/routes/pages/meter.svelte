@@ -9,15 +9,11 @@
 	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Meter.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#meter';
 
-	let changingValue: number = 60;
-
-	$: changingValue;
+	let changingValue: number;
+	$: changingValue = 60;
 
 	const interval = setInterval(function () {
-		changingValue = Math.floor(Math.random() * 100 + 1);
-		console.log(changingValue);
-		meterOptions3 = { ...meterOptions3, value: changingValue };
-		console.log(meterOptions3);
+		changingValue = Math.floor(Math.random() * 100);
 	}, 2000);
 
 	onDestroy(() => clearInterval(interval));
@@ -43,27 +39,43 @@
 		],
 		styles: tableStyles
 	};
-	let meterOptions3 = {
-		value: changingValue,
-		maxValue: 10,
+
+	const meterOneOptions = {
+		maxValue: 100,
 		minValue: 0,
 		meterLabel: 'Test Meter 1',
-		id: 1,
+		id: 1
+	};
+
+	const meterTwoOptions = {
+		maxValue: 100,
+		minValue: 0,
+		meterLabel: 'Test Meter 2',
+		id: 2,
+		lowValue: 20,
+		highValue: 85,
+		optimumValue: 80
+	};
+
+	const meterThreeOptions = {
+		maxValue: 10,
+		minValue: 0,
+		meterLabel: 'Test Meter 3',
+		id: 3,
 		lowValue: 5,
-		displayDecimal: false,
+		displayDecimal: true,
 		units: ' hours remaining',
 		valueText: `${changingValue} hours remaining`
 	};
-	$: meterOptions3;
-	const meterOptions4 = {
-		value: changingValue / 10,
+
+	const meterFourOptions = {
 		maxValue: 10,
 		minValue: 0,
-		meterLabel: 'Test Meter 1',
-		id: 1,
+		meterLabel: 'Test Meter 4',
+		id: 4,
 		lowValue: 5,
 		meterStyle: 'width: 50px;',
-		labelStyle: 'font-size: 20px; color: blue;'
+		labelStyle: 'font-weight: bold; color: powderblue;'
 	};
 </script>
 
@@ -91,7 +103,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import Meter from 'svve11/Meter.svelte'
+import Meter from 'svve11/Meter.svelte'
             </code></pre>
 				</section>
 			</fieldset>
@@ -104,19 +116,19 @@
 				<section class="content-section">
 					<h3>Creating a Meter</h3>
 					<p>
-						A meter instance can be created by placing the code below in the body of your Svelte
-						file.
+						To supply the meter with its contents, a value attribute and an options object are
+						passed as props to the meter. These can be defined in the script section of the .svelte
+						file or imported in from another location.
 					</p>
-					<pre><code class="code-block">
-              {`<Meter {value} {maxValue} {minValue} {meterLabel} {id}/>`}
-              </code></pre>
-					<p>The meter has 5 <span class="bold-word">required</span> attributes:</p>
 					<ul class="options-object-list">
+						<p>The value attribute is required and defined as follows:</p>
 						<li>
 							value (number): sets the current value of the meter. Must be within the minValue to
 							maxValue range. It is recommended to use a reactive variable to allow meter value to
 							change as necessary.
 						</li>
+						<p>The options object has 12 properties:</p>
+						<h4>Required Props</h4>
 						<li>maxValue (number): sets the maximum value for the meter range</li>
 						<li>minValue (number): sets the minimum value for the meter range.</li>
 						<li>
@@ -128,9 +140,7 @@
 							id (number): sets the id for the meter. Remember to provide different id numbers when
 							instantiating more than one meter on a page as the id should be unique.
 						</li>
-					</ul>
-					<p>The meter has 8 optional attributes:</p>
-					<ul>
+						<h4>Optional Props</h4>
 						<li>
 							highValue (number): sets the value from which a current value above is considered
 							high. Must be less than maxValue and greater than the minValue and lowValue.
@@ -164,35 +174,40 @@
 						<li>meterstyle (string): sets the style for the meter for any custom styles.</li>
 						<li>labelStyle (string): sets the style for the meter label for any custom styles.</li>
 					</ul>
-					<h4>Example Meter Code with only required props:</h4>
+
+					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
-              {`<Meter
-                value={60}
-                maxValue={100}
-                minValue={0}
-                meterLabel='Test Meter 1'
-                id={1}
-               />`}
+{`const meterOptions = {
+	maxValue: 100,
+	minValue: 0,
+	meterLabel: 'Demo meter',
+	id: 1,
+	lowValue: 20,
+	highValue: 85,
+	optimumValue: 80
+};`}
+					</code></pre>
+
+					<h4>Instantiating a Meter</h4>
+					<pre><code class="code-block">
+{`<Meter value={reactiveValue} options={meterOptions}/>`}
               </code></pre>
 					<h4>Example meter with only required props:</h4>
 					<div class="example-meter">
-						<!-- <Meter /> -->
+						<Meter value={Math.round(changingValue)} options={meterOneOptions} />
 					</div>
+
 					<h4>Example meter with highValue=85, lowValue=20 and optimalValue=80 props:</h4>
 					<div class="example-meter">
-						<!-- <Meter /> -->
+						<Meter value={Math.round(changingValue)} options={meterTwoOptions} />
 					</div>
 					<h4>Example meter with displayDecimal=false and units props:</h4>
 					<div class="example-meter">
-						<!-- <Meter options={meterOptions3} />; -->
+						<Meter value={changingValue / 10} options={meterThreeOptions} />
 					</div>
 					<h4>Example meter with style strings:</h4>
 					<div class="example-meter">
-						<pre><code class="code-block">
-                          meterStyle='width: 50px;'
-                          labelStyle='font-size: 20px; color: powderblue;'
-                  </code></pre>
-						<!-- <Meter options={meterOptions4} /> -->
+						<Meter value={Math.round(changingValue) / 10} options={meterFourOptions} />
 					</div>
 
 					<h4>Styling the Meter with Classes</h4>

@@ -2,7 +2,7 @@
 	import { afterUpdate } from 'svelte';
 
 	type MeterOptionTypes = {
-		value: number;
+		// value: number;
 		maxValue: number;
 		minValue: number;
 		meterLabel: string | null;
@@ -18,59 +18,40 @@
 		labelStyle?: string | null;
 	};
 
-	export let options: MeterOptionTypes;
-	//  = {
-	// 	value:,
-	// 	maxValue: Infinity,
-	// 	minValue: -Infinity,
-	// 	meterLabel: '',
-	// 	id: '',
+	export let options: MeterOptionTypes = {
+		maxValue: 100,
+		minValue: 0,
+		meterLabel: '',
+		id: ''
+	};
 
-	// 	displayDecimal: false,
-	// 	units: null,
-	// 	valueText: null,
-	// 	meterStyle: null,
-	// 	labelStyle: null,
-	// 	lowValue: null,
-	// 	highValue: null,
-	// 	optimumValue: null
-	// };
-	let {
-		value,
-		maxValue,
-		minValue,
-		meterLabel,
-		displayDecimal,
-		units,
-		valueText,
-		meterStyle,
-		labelStyle,
-		id,
-		lowValue,
-		highValue,
-		optimumValue
-	} = options;
+	let { maxValue, minValue, meterLabel, id } = options;
 
-	// //Require Props
-	// export let value: number;
-	// export let maxValue: number;
-	// export let minValue: number;
-	// export let meterLabel: string;
-	// export let id: number;
+	export let value: number;
+	$: value;
 
-	// //Optional Props
-	// export let lowValue: number;
-	// export let highValue: number;
-	// export let optimumValue: number;
-	// export let valueText: string = '';
-	// export let displayDecimal: boolean = false;
-	// export let units: string = '';
-	// export let meterStyle: string = '';
-	// export let labelStyle: string = '';
+	let displayDecimal: boolean,
+		units: string,
+		valueText: string,
+		meterStyle: string,
+		labelStyle: string,
+		lowValue: number,
+		highValue: number,
+		optimumValue: number;
+
+	if (options.displayDecimal) displayDecimal = options.displayDecimal;
+	if (options.units) units = options.units;
+	if (options.valueText) valueText = options.valueText;
+	if (options.meterStyle) meterStyle = options.meterStyle;
+	if (options.labelStyle) labelStyle = options.labelStyle;
+	if (options.lowValue) lowValue = options.lowValue;
+	if (options.highValue) highValue = options.highValue;
+	if (options.optimumValue) optimumValue = options.optimumValue;
 
 	//Variables for displaying non percentage label of meter
 	let displayValue: number;
 	let displayString: string;
+	$: displayValue, displayString;
 
 	// Build Display String. Default to percentage form unless displayDecimal is provided as true
 	afterUpdate(() => {
@@ -78,6 +59,7 @@
 			displayValue = value;
 			displayString = displayValue.toString() + units;
 		} else {
+			// Default to percentage form
 			displayValue = (value / maxValue) * 100;
 			displayString = displayValue + '%';
 		}
@@ -89,7 +71,7 @@
 </script>
 
 <!-- @component
-Props are passed in through the tableProps prop, which should be an object containing the following properties
+Props are passed in through the options prop, which should be an object containing the following properties
 ```tsx
 value: number (required)
 maxValue: number (required)
@@ -108,13 +90,13 @@ labelStyle  : string (optional)
 ```
 -->
 
-<label for={`meter-${id}`} id={`meter-label-${id}`} style={labelStyle}>
+<label for={`meter-${id}`} id={`meter-label-${id}`} class="sv-meter-label" style={labelStyle}>
 	{meterLabel}: {displayString}
 </label>
 
 <meter
 	class="sv-meter"
-	{id}
+	id="test"
 	min={minValue}
 	max={maxValue}
 	low={lowValue}

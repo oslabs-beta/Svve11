@@ -32,14 +32,14 @@
 
 
 <!-- ************************* HTML ************************* -->
-<a href={href} >
+<a href={href} target="_blank">
   {#if preText}
     {preText}
   {/if}
   <img 
     id={imgId ? imgId : ''} 
     class={imgClass ? imgClass + ' sv-imagelink-link' : 'sv-imagelink-link'}
-    {src} {title} {alt} target="_blank" 
+    {src} {title} {alt} 
   />
   {#if postText}
     {postText}

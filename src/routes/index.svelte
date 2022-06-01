@@ -1,6 +1,6 @@
 <script lang="ts">
 	// importing all logo paths
-	import svve11Logo from '../images/svve11-logo-white-transparent-cropped.png';
+	import svve11Logo from '../images/svve11-logo-cropped-purple-transparent.png';
 	import jestLogo from '../images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png';
 	import NVDALogo from '../images/tech-icons/nvda_200x200.png';
 	import VoiceOverLogo from '../images/tech-icons/voiceover_logo.png';

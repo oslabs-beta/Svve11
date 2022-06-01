@@ -246,11 +246,11 @@ The checkbox is made of 2 components that can have styles applied to them using 
 import Meter from 'svve11/Meter.svelte';
 ```
 
-2. To supply the meter with its contents, an options object is passed as a prop to the meter. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 13 properties.
+2. To supply the meter with its contents, a value attribute and an options object are passed as props to the meter. These can be defined in the script section of the .svelte file or imported in from another location.
 
    - (5) **required** props:
 
-     - **`value`** (_`number`_): sets the current value of the meter. Must be within the `minValue` to `maxValue` range. It is recommended to use a reactive variable to allow meter value to change as necessary.
+     - **`value`** (_`number`_): this is passed as an attribute directly to the meter, and not within the options object. Sets the current value of the meter. Must be within the `minValue` to `maxValue` range. It is recommended to use a reactive variable to allow meter value to change as necessary.
      - **`maxValue`** (_`number`_): sets the maximum value for the meter range.
      - **`minValue`** (_`number`_): sets the minimum value for the meter range.
      - **`meterLabel`** (_`string`_): sets the text label for the meter. The label will be automatically joined with a percentage calculation, unless otherwise specified. See `displayDecimal` in _optional_ props section.
