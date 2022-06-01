@@ -66,6 +66,25 @@
 	};
 </script>
 
+<!-- @component
+Props are passed in through the Accordion prop, which should be containing the following properties
+```tsx
+panelInfo: array of objects (required)
+Each array in the object contains:
+* id: number (required)
+* panelContent: string (required)
+* headerTitle: string (required)
+
+headerLevel: number (required)
+styles: an array of strings (optional) 
+* The first entry will style the headers of the accordion.
+* The second entry will style the panels of the accordion.
+* The third entry will style each item (header and panel) within the accordion.
+* The fourth entry will style the entirety of the accordion.
+multiselectable:boolean (optional)
+```
+-->
+
 <!-- aria-multiselectable indicates whether accordion permits multiple panels to be open at once 
 style are the custom styles supplied by a user of the library for the Accordion -->
 <div

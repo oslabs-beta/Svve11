@@ -7,7 +7,7 @@
 	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Accordion.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#accordion';
 
-	const options = {
+	const accordionOptions = {
 		multiselectable: false,
 		headerLevel: 4,
 		styles: {
@@ -38,7 +38,7 @@
 		]
 	};
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-accordion',
 		ariaLabel: 'Accordion props table',
 		ariaDescription:
@@ -169,7 +169,7 @@ import Accordion from 'svve11/Accordion.svelte'
 					</code></pre>
 					<h4>Example Accordion:</h4>
 					<div class="example-accordion">
-						<Accordion {options} />
+						<Accordion options={accordionOptions} />
 					</div>
 				</section>
 			</fieldset>
@@ -180,7 +180,7 @@ import Accordion from 'svve11/Accordion.svelte'
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

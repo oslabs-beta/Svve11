@@ -1,42 +1,81 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-	type ButtonOptionTypes = {
-		handleClick: () => void;
-		content: string;
-		id: string;
-		label: string;
-		style?: string;
-	};
+	// function for button to execute
+	export let handleClick: () => void;
 
-	export let options: ButtonOptionTypes = {
-		handleClick: () => console.log('please enter handleClick fn'),
-		content: '',
-		id: '',
-		label: '',
-		style: ''
-	};
+<<<<<<< HEAD
+	// text to go inside button
+	export let content: string = '';
 
-	$: handleClick, content, id, label, style;
-	let { handleClick, content, id, label, style } = options;
+	// button id
+	export let id: string = '';
 
-	// // function for button to execute
-	// export let handleClick: () => void;
+	// button aria label
+	export let label: string = '';
 
-	// // text to go inside button
-	// export let content: string = '';
+	// button styles
+	export let style: string = '';
+=======
+  type ButtonOptionTypes = {
+    handleClick: () => void;
+    content: string | null;
+    id: string | null;
+    label: string | null;
+    style?: string | null;
+  }
 
-	// // button id
-	// export let id: string = '';
+  export let options: ButtonOptionTypes = {
+    handleClick: () => console.log('please enter handleClick fn'),
+    content: null,
+    id: null,
+    label: null,
+    style: null,
+  }
 
-	// // button aria label
-	// export let label: string = '';
+  let { handleClick,
+        content,
+        id,
+        label,
+        style
+        } = options;
 
-	// // button styles
-	// export let style: string = '';
+  // // function for button to execute
+  // export let handleClick: () => void;
+
+  // // text to go inside button
+  // export let content: string = '';
+
+  // // button id
+  // export let id: string = '';
+
+  // // button aria label
+  // export let label: string = '';
+
+  // // button styles
+  // export let style: string = '';
+>>>>>>> main
 </script>
 
+<!-- @component
+Props are passed in through the tableProps prop, which should be an object containing the following properties
+```tsx
+id: string (required)
+label: string (required)
+content: string (required)
+handleClick: function (required)
+
+checkBoxLabelStyle: string (optional)
+name: string (optional)
+value: string (optional)
+```
+-->
+
 <!-- ************************* HTML ************************* -->
+<<<<<<< HEAD
+<button {id} aria-label={label} on:click={handleClick} {style}>
+=======
 <button {id} aria-label={label} on:click={handleClick} {style} class="sv-button">
+>>>>>>> main
 	{content}
 </button>
 
