@@ -19,7 +19,7 @@
 
 	onDestroy(() => clearInterval(interval));
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-meter',
 		ariaLabel: 'Meter props table',
 		ariaDescription: 'This table describes the props that should be passed to the meter',
@@ -212,7 +212,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

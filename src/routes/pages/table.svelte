@@ -6,7 +6,7 @@
 	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Table.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#table';
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-table',
 		ariaLabel: 'Table props table',
 		ariaDescription: 'This table describes the props that should be passed to the table component',
@@ -178,7 +178,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>

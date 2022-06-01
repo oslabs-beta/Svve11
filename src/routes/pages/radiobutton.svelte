@@ -7,7 +7,7 @@
 	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/RadioButton.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#radiobutton';
 
-	const tableProps = {
+	const tableOptions = {
 		id: 'props-table-button',
 		ariaLabel: 'Button props table',
 		ariaDescription:
@@ -140,7 +140,7 @@
 				<legend>Component API</legend>
 				<h2>Component API</h2>
 				<div role="region" tabindex="0" style="max-width:100%;overflow:auto" class="props-table">
-					<Table {tableProps} />
+					<Table options={tableOptions} />
 				</div>
 			</fieldset>
 		</section>
