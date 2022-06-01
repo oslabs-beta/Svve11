@@ -4,13 +4,18 @@
   
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14;
   font-weight: 100;
-  color: $black;
   white-space: normal;
+}
+
+*:not(.sv-accordion-button, code, .sv-button) {
+  color: $white;
 }
 
 html,
 body {
+  background-color:$black;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -28,7 +33,7 @@ body {
     margin-top: 1.5rem;
     margin-bottom: 0;
   }
-  h2 {
+  h2:not(.name) {
     border-bottom: 1px solid;
   }
   h3 {
@@ -63,7 +68,7 @@ body {
   }
 }
 
-#splash {
+#splash, #about {
   header {
     display: flex;
     flex-direction: column;
@@ -74,23 +79,23 @@ body {
     }
     h1 {
       text-align: center;
-      color: $blue;
+      color: $white;
       margin-bottom: 0;
     }
     p {
       font-style: italic;
       font-weight: 400;
-      color: $darkgrey;
+      color: $white;
     }
   }
   section {
-    * {
-      color: $blue;
+    *:not(code) {
+      color: $white;
     }
   }
   pre {
-    border: 2px solid $blue;
-    box-shadow: .5em .5em $darkgrey;
+    border: 2px solid $white;
+    // box-shadow: .5em .5em $white;
   }
 }
 
@@ -98,9 +103,6 @@ body {
   width: 100%;
   min-height: 100%;
   margin: 0;
-  
-  // display: grid;
-  // grid-template-columns: 15% 85%;
   display: flex;
 }
 
@@ -108,14 +110,15 @@ body {
   position: fixed;
   z-index: 2;
   color: $white;
-  background-color: $blue-transparent;
+  background-color: $darkgrey;
   border: none;
   * {
     color: $white;
   }
 }
 #openbtn:hover {
-  color: orange;
+  font-weight: bold;
+  color: $white;
   // font-size: 2.1rem;
 }
 
@@ -139,7 +142,7 @@ body {
     padding: .5rem 0 ;
     transition: 0.3s;
   }
-  img.svvell-logo {
+  img#svvell-logo {
     width: 80%;
     max-width: 200px;
     // width: 200px;
@@ -169,7 +172,7 @@ body {
   min-width: 250px;
   max-width: 480px;
   min-height: 100vh;
-  background-color: $blue-transparent;
+  background-color: $black-transparent;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -242,7 +245,7 @@ body {
       font-weight: 100;
     }
     thead {
-      background-color: #eee;
+      background-color: $white;
       text-align: left;
     }
   }
@@ -277,7 +280,6 @@ body {
         margin-bottom: 3rem;
       }
     }
-    
     li {
       list-style: none;
     }
@@ -286,6 +288,9 @@ body {
     margin: 0 1.5rem;
     .sv-accordion-item {
       width: 100%;
+    }
+    .sv-accordion-button:focus {
+      border: 5px solid $blue;
     }
   }
   a {

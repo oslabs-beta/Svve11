@@ -1,6 +1,6 @@
 <script lang="ts">
 	// importing all logo paths
-	import svve11Logo from '../images/svve11-logo-blue-transparent-cropped.png';
+	import svve11Logo from '../images/svve11-logo-white-transparent-cropped.png';
 	import jestLogo from '../images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png';
 	import NVDALogo from '../images/tech-icons/nvda_200x200.png';
 	import VoiceOverLogo from '../images/tech-icons/voiceover_logo.png';
@@ -133,66 +133,20 @@
 				<ul id="testing-list">
 					<li>
 						Unit-testing of individual components with
-						<!-- <a target="_blank" href="https://jestjs.io/">
-							<img class="tech-icon" src={jestLogo} alt="Jest logo" />
-							Jest
-						</a> -->
 						<ImageLink options={imgLinkOptions.jest} />
 					</li>
 					<li>Screen readers:</li>
 					<ul>
-						<li>
-							<!-- <a target="_blank" href="https://www.nvaccess.org/download/">
-								<img class="tech-icon" src={NVDALogo} alt="NVDA logo" />
-								NVDA
-							</a> -->
-							<ImageLink options={imgLinkOptions.NVDA} />
-						</li>
-						<li>
-							<!-- <a target="_blank" href="https://www.apple.com/accessibility/vision/">
-								<img class="tech-icon" src={VoiceOverLogo} alt="VoiceOver logo" />
-								VoiceOver
-							</a> -->
-							<ImageLink options={imgLinkOptions.VoiceOver} />
-						</li>
-						<li>
-							<!-- <a target="_blank" href="https://www.freedomscientific.com/products/software/jaws/">
-								<img class="tech-icon" src={JAWSLogo} alt="JAWS logo" />
-								JAWS
-							</a> -->
-							<ImageLink options={imgLinkOptions.JAWS} />
-						</li>
+						<li><ImageLink options={imgLinkOptions.NVDA} /></li>
+						<li><ImageLink options={imgLinkOptions.VoiceOver} /></li>
+						<li><ImageLink options={imgLinkOptions.JAWS} /></li>
 					</ul>
 					<li>Browsers:</li>
 					<ul>
-						<li>
-							<!-- <a target="_blank" href="https://www.google.com/chrome/">
-								<img class="tech-icon" src={ChromeLogo} alt="Google Chrome logo" />
-								Google Chrome</a
-							> -->
-							<ImageLink options={imgLinkOptions.Chrome} />
-						</li>
-						<li>
-							<!-- <a target="_blank" href="https://www.apple.com/safari/">
-								<img class="tech-icon" src={SafariLogo} alt="Safari logo" />
-								Safari
-							</a> -->
-							<ImageLink options={imgLinkOptions.Safari} />
-						</li>
-						<li>
-							<!-- <a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">
-								<img class="tech-icon" src={FirefoxLogo} alt="Mozilla Firefox logo" />
-								Mozilla Firefox
-							</a> -->
-							<ImageLink options={imgLinkOptions.Firefox} />
-						</li>
-						<li>
-							<!-- <a target="_blank" href="https://www.microsoft.com/en-us/edge">
-								<img class="tech-icon" src={EdgeLogo} alt="Microsoft Edge logo" />
-								Microsoft Edge
-							</a> -->
-							<ImageLink options={imgLinkOptions.Edge} />
-						</li>
+						<li><ImageLink options={imgLinkOptions.Chrome} /></li>
+						<li><ImageLink options={imgLinkOptions.Safari} /></li>
+						<li><ImageLink options={imgLinkOptions.Firefox} /></li>
+						<li><ImageLink options={imgLinkOptions.Edge} /></li>
 					</ul>
 				</ul>
 			</section>

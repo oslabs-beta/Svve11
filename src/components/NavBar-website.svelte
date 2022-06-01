@@ -1,49 +1,47 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
-  // import favicon from '../images/svve11-logo-notext.png';
-  import NavBarHeader from '../lib/NavBar/NavBarHeader.svelte';
-  import NavBarOptions from '../lib/NavBar/NavBarOptions.svelte';
-  import type { optionsTypes } from '../lib/NavBar/NavBarTypes';
+	// import favicon from '../images/svve11-logo-notext.png';
+	import ImageLink from '../pending/ImageLink.svelte';
+	import logo from '../images/svve11-logo-white-transparent-cropped.png';
 
-  //required attributes
-  export let options: optionsTypes = {
-    id: '',
-    header: '',
-    imgSrc: '',
-    imgClass: '',
-    imgAlt: '',
-    contentInfo: [],
-  }
+	import NavBarOptions from '../lib/NavBar/NavBarOptions.svelte';
+	import type { optionsTypes } from '../lib/NavBar/NavBarTypes';
 
-  let isOpen:boolean = false;
+	//required attributes
+	export let options: optionsTypes = {
+		id: '',
+		header: '',
+		imgSrc: '',
+		imgClass: '',
+		imgAlt: '',
+		contentInfo: []
+	};
 
-  const toggleNav = () => {
-    // const nav = document.getElementById("nav-bar")
-    isOpen = !isOpen;
-  }
+	let isOpen: boolean = false;
+
+	const toggleNav = () => {
+		isOpen = !isOpen;
+	};
+
+	const imgLinkOptions = {
+		href: '/',
+		src: logo,
+		title: 'svve11 homepage',
+		alt: 'svve11 logo',
+		imgId: 'svvell-logo'
+	};
 </script>
 
-
 <!-- ************************* HTML ************************* -->
-<button id="openbtn" on:click={toggleNav}>
-  &#9776;
-  <!-- <img src={favicon} alt="svve11 favicon" style="height:1em;"> -->
-  <!-- <span>Menu</span> -->
-</button>
+<button id="openbtn" on:click={toggleNav}> &#9776; </button>
 <nav id={options.id} class="sv-navbar" class:open={isOpen}>
-  <NavBarHeader 
-    header={options.header}
-    imgSrc={options.imgSrc}
-    imgClass={options.imgClass}
-    imgAlt={options.imgAlt}/>
-  <NavBarOptions 
-    contentInfo={options.contentInfo}/>
+	<ImageLink options={imgLinkOptions} />
+	<NavBarOptions contentInfo={options.contentInfo} />
 </nav>
 
-<!-- ************************* STYLES ************************* -->  
+<!-- ************************* STYLES ************************* -->
 <style lang="scss">
 	/*
     Style these however we'd like later
   */
-
 </style>

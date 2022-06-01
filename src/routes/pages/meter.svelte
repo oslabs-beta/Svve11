@@ -184,15 +184,15 @@
 					</div>
 					<h4>Example meter with displayDecimal=false and units props:</h4>
 					<div class="example-meter">
-						<Meter options={meterOptions3} />;
+						<!-- <Meter options={meterOptions3} />; -->
 					</div>
 					<h4>Example meter with style strings:</h4>
 					<div class="example-meter">
 						<pre><code class="code-block">
                           meterStyle='width: 50px;'
-                          labelStyle='font-size: 20px; color: blue;'
+                          labelStyle='font-size: 20px; color: powderblue;'
                   </code></pre>
-						<Meter options={meterOptions4} />
+						<!-- <Meter options={meterOptions4} /> -->
 					</div>
 				</section>
 			</fieldset>

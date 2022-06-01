@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AboutInfo from '../components/about-info.svelte';
-	import logo from '../images/svve11-logo-blue-transparent-cropped.png';
+	import logo from '../images/svve11-logo-white-transparent-cropped.png';
 	import Tim from '../images/timFancy.png';
 	import Simon from '../images/simonFancy.png';
 	import Nurbek from '../images/bekFancy.png';
@@ -55,63 +55,50 @@
 <style lang="scss">
 	@import '../stylesheets/variables';
 
+// regular styles
 	#about {
 		header {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			margin-bottom: 2rem;
 			#splash-logo {
 				display: inline-block;
 				height: 7rem;
 			}
 			h1 {
-				font-size: 8rem;
-				color: $blue;
+				color: $white;
 				margin-bottom: 0;
+				font-size: 8rem;
 			}
 			p {
 				font-size: 1.5rem;
 				font-style: italic;
 				font-weight: 400;
-				width: 65%;
-				padding-left: 0;
+				width: 80%;
+				// padding-left: 0;
 				margin-top: 2rem;
 				margin-bottom: 3rem;
-				color: $darkgrey;
+				color: $white;
 			}
 		}
 		#team-display {
 			display: flex;
 			justify-content: space-between;
-			width: 100%;
-			* {
-				color: $blue;
-			}
-
-			.team-images {
-				display: flex;
-				justify-content: space-between;
-			}
+			gap: 1em;
+			max-width: 90%;
 
 			.team-image {
-				height: 275px;
-				width: 275px;
+				height: 15vw;
+				width: auto;
 				border-radius: 100%;
-				margin-top: 80px;
-			}
-
-			.team-names {
-				display: flex;
-				justify-content: space-between;
-				margin: 0 20px;
-				p {
-					font-size: 2rem;
-				}
+				// margin-top: 80px;
 			}
 		}
 	}
 
+// mobile styles
 	@media screen and (max-width: 884px) {
 		#about {
 			header {
@@ -119,24 +106,21 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-
 				h1 {
-					font-size: 1.5rem;
+					font-size: 40px;
 				}
 				#splash-logo {
-					height: 1.5rem;
+					height: .85em;
 				}
 				p {
-					font-size: 1rem;
-					padding-left: 0;
-					width: 70%;
+					font-size: 1.1rem;
+					// width: 80%;
 				}
 			}
 
 			#team-display {
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
 				align-items: center;
 				width: 100%;
 
