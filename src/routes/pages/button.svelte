@@ -102,6 +102,14 @@ import Button from 'svve11/Button.svelte'
 					<div class="example-button">
 						<Button options={buttonOptions} />
 					</div>
+					<h4>Styling the Button with Classes</h4>
+					<p>
+						The button is made of 1 component that can have styles applied to it using the
+						pre-assigned class and a globally scoped CSS stylesheet. The class is:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-button: This applies styling to the button</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>

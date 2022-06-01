@@ -131,7 +131,6 @@ import TextInput from 'svve11/TextInput.svelte'
 					<div class="example-text-input">
 						<TextInput options={textInputOptions2} />
 					</div>
-
 					<p>
 						There are a number of other optional attributes available with this component. Each of
 						these attributes has the same function as the HTML attribute with its same name. Please
@@ -156,6 +155,18 @@ import TextInput from 'svve11/TextInput.svelte'
 						<li>multiple (booelan)</li>
 						<li>readonly (booelan)</li>
 						<li>required (booelan)</li>
+					</ul>
+
+					<h4>Styling the Text Input with Classes</h4>
+					<p>
+						The text input is made of 2 components that can have styles applied to them using the
+						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-text-input: This applies styling to the text input input element</li>
+						<li>
+							sv-text-input-label: This applies styling to the label for the text input element
+						</li>
 					</ul>
 				</section>
 			</fieldset>

@@ -158,6 +158,19 @@ import NavBar from 'svve11/NavBar.svelte'
 						As an example, the nav bar for this webpage is made using this component and the options
 						object above was used to create it.
 					</p>
+
+					<h4>Styling the Nav Bar with Classes</h4>
+					<p>
+						The nav bar is made of 5 components that can have styles applied to them using the
+						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-navbar: This applies styling to the nav bar</li>
+						<li>sv-navbar-header: This applies styling to the main heading of the nav bar</li>
+						<li>sv-navbar-subheader: This applies styling to each subheading of the nav bar</li>
+						<li>sv-navbar-section: This applies styling to each section of the nav bar</li>
+						<li>sv-navbar-option: This applies styling to each option of the nav bar</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>
