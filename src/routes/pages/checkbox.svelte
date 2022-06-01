@@ -109,6 +109,15 @@ import Checkbox from 'svve11/Checkbox.svelte'
 					<div class="example-checkbox">
 						<Checkbox options={checkboxOptions} />
 					</div>
+					<h4>Styling the Checkbox with Classes</h4>
+					<p>
+						The checkbox is made of 2 components that can have styles applied to them using the
+						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-checkbox-input: This applies styling to the checkbox itself</li>
+						<li>sv-checkbox-label: This applies styling to the label for each checkbox</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>

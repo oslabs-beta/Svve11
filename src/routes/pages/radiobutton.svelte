@@ -140,6 +140,17 @@ import RadioButton from 'svve11/RadioButton.svelte'
 							}}
 						/>
 					</div>
+					<h4>Styling the Radio Button with Classes</h4>
+					<p>
+						The radio button is made of 2 components that can have styles applied to them using the
+						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-radio-button-input: This applies styling to the radio button input element</li>
+						<li>
+							sv-radio-button-label: This applies styling to the label for the radio button element
+						</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>

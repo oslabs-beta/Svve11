@@ -117,7 +117,7 @@
 			<section class="content-section">
 				<p>For npm, run the following in your command line</p>
 				<pre><code class="code-block">  
-          npm install 'svve11'
+npm install 'svve11'
         </code></pre>
 			</section>
 
