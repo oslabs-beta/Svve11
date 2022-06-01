@@ -171,6 +171,25 @@ import Accordion from 'svve11/Accordion.svelte'
 					<div class="example-accordion">
 						<Accordion options={accordionOptions} />
 					</div>
+
+					<h4>Styling the Accordion with Classes</h4>
+					<p>
+						The accordion is made of 5 different components that can have styles applied to them
+						using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-accordion-main: This applies styling to the accordion as whole</li>
+						<li>
+							sv-accordion-item: This applies styling to each accordion item within an accordion
+						</li>
+						<li>
+							sv-accordion-header: This applies styling to each accordion header within an item
+						</li>
+						<li>
+							sv-accordion-button: This applies styling to each accordion button within a header
+						</li>
+						<li>sv-accordion-panel: This applies styling to each accordion panel within an item</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>

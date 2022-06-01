@@ -157,6 +157,22 @@ import Table from 'svve11/Table.svelte'
 							}}
 						/>
 					</div>
+					<h4>Styling the Table with Classes</h4>
+					<p>
+						The table is made of 5 components that can have styles applied to them using the
+						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-table: This applies styling to the table as a whole</li>
+						<li>sv-table-title: This applies styling to the table title</li>
+						<li>sv-table-row-headers: This applies styling to the header row of the table</li>
+						<li>sv-table-row: This applies styling to all of the rows in the table</li>
+						<ul>
+							<li>sv-table-row-even: This applies styling to each even row in the table</li>
+							<li>sv-table-row-odd: This applies styling to each odd row in the table</li>
+						</ul>
+						<li>sv-table-cell: This applies styling to each cell within the table</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>

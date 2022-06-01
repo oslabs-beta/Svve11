@@ -194,6 +194,16 @@
                   </code></pre>
 						<!-- <Meter options={meterOptions4} /> -->
 					</div>
+
+					<h4>Styling the Meter with Classes</h4>
+					<p>
+						The meter is made of 2 components that can have styles applied to them using the
+						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+					</p>
+					<ul class="options-object-list">
+						<li>sv-meter: This applies styling to the meter itself</li>
+						<li>sv-meter-label: This applies styling to the label for the meter</li>
+					</ul>
 				</section>
 			</fieldset>
 		</section>

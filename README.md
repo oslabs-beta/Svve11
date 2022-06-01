@@ -130,6 +130,16 @@ const accordionOptions = {
 <Accordion options={accordionOptions} />
 ```
 
+#### Styling the Accordion with Classes
+
+The accordion is made of 5 different components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+
+- sv-accordion-main: This applies styling to the accordion as whole
+- sv-accordion-item: This applies styling to each accordion item within an accordion
+- sv-accordion-header: This applies styling to each accordion header within an item
+- sv-accordion-button: This applies styling to each accordion button within a header
+- sv-accordion-panel: This applies styling to each accordion panel within an item
+
 ---
 
 ### Button
@@ -171,6 +181,12 @@ const buttonOptions = {
 <Button options={buttonOptions} />
 ```
 
+#### Styling the Button with Classes
+
+The button is made of 1 component that can have styles applied to it using the pre-assigned class and a globally scoped CSS stylesheet. The class is:
+
+- sv-button: This applies styling to the button
+
 ---
 
 ### CheckBox
@@ -183,12 +199,13 @@ import Checkbox from 'svve11/Checkbox.svelte';
 
 2. To supply the checkbox with its contents, an options object is passed as a prop to the checkbox. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 7 properties.
 
-   - (3) **required** props:
+   - (2) **required** props:
 
      - **`id`** (_`string`_): sets the `id` attribute of the checkbox component. Be sure to have a unique string for each checkbox.
      - **`checkBoxLabel`** (_`string`_): sets the text label that corresponds with component.
 
-   - (4) _optional_ props:
+   - (5) _optional_ props:
+     - **`checked`** (_`boolean`_): sets the initial state of the checkbox, where true will render a pre-checked box and false will render a non-checked checkbox.
      - **`checkBoxStyle`** (_`string`_): sets the styling for the checkbox.
      - **`checkBoxLabelStyle`** (_`string`_): sets the styling for the checkbox label text.
      - **`name`** (_`string`_): sets the group name to which the checkbox belongs. All checkbox in one group should have the same name attribute.
@@ -211,6 +228,13 @@ const checkboxOptions = {
 ```js
 <Checkbox options={checkboxOptions} />
 ```
+
+#### Styling the Checkbox with Classes
+
+The checkbox is made of 2 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+
+- sv-checkbox-input: This applies styling to the checkbox itself
+- sv-checkbox-label: This applies styling to the label for each checkbox
 
 ---
 
@@ -263,6 +287,13 @@ const meterOptions = {
 ```js
 <Meter options={meterOptions} />
 ```
+
+#### Styling the Meter with Classes
+
+The meter is made of 2 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+
+- sv-meter: This applies styling to the meter itself
+- sv-meter-label: This applies styling to the label for the meter
 
 ---
 
@@ -344,15 +375,15 @@ const navOptions = {
 <NavBar options={navOptions} />
 ```
 
-#### Nav Bar Styling
+#### Styling the Nav Bar with Classes
 
-Styles can be applied to different parts of the nav bar in your styling file by referencing the assigned class and id names.
+The nav bar is made of 5 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
 
-- **`NavBar as a whole`**: Has an id of set by the `id` property defined in the options object.
-- **`NavBar Header`**: Has an id of “navbar-header”.
-- **`NavBar Sections`**: Has a class of "sv-navbar-section".
-- **`NavBar Subheading(s)`**: Has a class of “navbar-subheader”.
-- **`NavBar Options`**: Has a class of “navbar-option”.
+- sv-navbar: This applies styling to the nav bar
+- sv-navbar-header: This applies styling to the main heading of the nav bar
+- sv-navbar-subheader: This applies styling to each subheading of the nav bar
+- sv-navbar-section: This applies styling to each section of the nav bar
+- sv-navbar-option: This applies styling to each option of the nav bar
 
 ---
 
@@ -397,6 +428,13 @@ const radioButtonOptions = {
 ```js
 <RadioButton options={radioButtonOptions} />
 ```
+
+#### Styling the Radio Button with Classes
+
+The radio button is made of 2 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+
+- sv-radio-button-input: This applies styling to the radio button input element
+- sv-radio-button-label: This applies styling to the label for the radio button element
 
 ---
 
@@ -462,6 +500,18 @@ const tableOptions = {
 <Table options={tableOptions} />
 ```
 
+#### Styling the Table with Classes
+
+The table is made of 5 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+
+- sv-table: This applies styling to the table as a whole
+- sv-table-title: This applies styling to the table title
+- sv-table-row-headers: This applies styling to the header row of the table
+- sv-table-row: This applies styling to all of the rows in the table
+  - sv-table-row-even: This applies styling to each even row in the table
+  - sv-table-row-odd: This applies styling to each odd row in the table
+- sv-table-cell: This applies styling to each cell within the table
+
 ---
 
 ### Text Input
@@ -518,6 +568,13 @@ const textInputOptions = {
    - **`multiple`** (_`boolean`_)
    - **`readonly`** (_`boolean`_)
    - **`required`** (_`boolean`_)
+
+#### Styling the Text Input with Classes
+
+The text input is made of 2 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+
+- sv-text-input: This applies styling to the text input input element
+- sv-text-input-label: This applies styling to the label for the text input element
 
 ---
 
