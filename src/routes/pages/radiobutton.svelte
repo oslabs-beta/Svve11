@@ -11,7 +11,7 @@
 		id: 'props-table-button',
 		ariaLabel: 'Button props table',
 		ariaDescription:
-			'This table describes the props that should be passed to the radio button component',
+			'This table describes the props that should be passed to the radio button in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
 			['id', 'string', 'true', 'N/A'],
@@ -50,7 +50,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import RadioButton from 'svve11/RadioButton.svelte'
+import RadioButton from 'svve11/RadioButton.svelte'
             </code></pre>
 				</section>
 			</fieldset>
@@ -62,91 +62,82 @@
 				<h2>Usage</h2>
 				<section class="content-section">
 					<h3>Creating a Radio Button</h3>
+
 					<p>
-						A radio button instance can be created by placing the code below in the body of your
-						Svelte file.
+						To supply the radio button with its contents, an options object is passed as a prop to
+						the radio button. This object can be created in the script section of the .svelte file
+						or imported in from another location. The options object has 6 properties.
 					</p>
-					<pre><code class="code-block">
-              {`<RadioButton {radioButtonLabel} {id} {checked} {radioButtonStyle} {radioButtonLabelStyle} />`}
-              </code></pre>
-					<p>Each attribute should be defined as follows:</p>
 					<ul class="options-object-list">
+						<h4>Required Props</h4>
 						<li>id (string): sets the id attribute of the radio button component.</li>
-						<li>
-							name (string): sets the name attribute of the radio component. This should be the same
-							string for each radio button within a group.
-						</li>
 						<li>
 							radioButtonLabel (string): sets the aria-label attribute of the radio button
 							component.
 						</li>
-						<li>
-							checked (boolean): sets the initial state of the radio button, where true will render
-							a pre-checked button and false will render a non-checked button.
-						</li>
+						<h4>Optional Props</h4>
+						<li>checked (boolean): sets whether the radio button will come pre-checked.</li>
 						<li>radioButtonStyle (string): sets the styling for the radio button</li>
 						<li>
 							radioButtonLabelStyle (string): sets the styling for the radio button label text.
 						</li>
+						<li>
+							name (string): sets the group name to which the radio button belongs. All radio
+							buttons in one group should have the same name attribute. This property must be
+							defined to allow only one radio button to be selected within a given group.
+						</li>
+						<li>value (string): sets the value associated with the given radio button.</li>
 					</ul>
-					<h4>Example Radio Button Code:</h4>
+					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
-		{`<RadioButton
-		  name="food"
-		  value={1}
-		  radioButtonLabel="Pizza"
-		  id="radioBtn-1"
-		  checked={false}
-		  radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
-		  radioButtonLabelStyle="font-weight:bold;"
-		/>
-		<RadioButton
-		  name="food"
-		  value={2}
-		  radioButtonLabel="Spaghetti"
-		  id="radioBtn-2"
-		  checked={false}
-		  radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
-		  radioButtonLabelStyle="font-weight:bold;"
-		/>
-		<RadioButton
-		  name="food"
-		  value={3}
-		  radioButtonLabel="Salad"
-		  id="radioBtn-3"
-		  checked={false}
-		  radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
-		  radioButtonLabelStyle="font-weight:bold;"
-		/>`}
+{`const radioButtonOptions = {
+	id: 'radioButtonOne',
+	radioButtonLabel: 'Pizza',
+	checked: false,
+	radioButtonStyle: 'height: 1.5em; width: 1.5em;',
+	radioButtonLabelStyle: 'font-size:1.5em;',
+	name: 'food',
+	value: 1
+};`}
               </code></pre>
+					<h4>Instantiating a radio button</h4>
+					<pre><code class="code-block">
+{`<RadioButton options={radioButtonOptions} />`}
+					</code></pre>
 					<h4>Example Radio Button Group:</h4>
 					<div class="example-radiobutton">
 						<RadioButton
-							name="food"
-							value={1}
-							radioButtonLabel="Pizza"
-							id="radioButtonOne"
-							checked={false}
-							radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
-							radioButtonLabelStyle="font-style: italic;"
+							options={{
+								name: 'food',
+								value: '1',
+								radioButtonLabel: 'Pizza',
+								id: 'radioButtonOne',
+								checked: false,
+								radioButtonStyle: 'height: 1.5em; width: 1.5em;',
+								radioButtonLabelStyle: 'font-size:1.5em;'
+							}}
 						/>
 						<RadioButton
-							name="food"
-							value={2}
-							radioButtonLabel="Spaghetti"
-							id="radioButtonTwo"
-							checked={false}
-							radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
-							radioButtonLabelStyle="font-style: italic;"
+							options={{
+								name: 'food',
+								value: '2',
+								radioButtonLabel: 'Spaghetti',
+								id: 'radioButtonTwo',
+								checked: false,
+								radioButtonStyle: 'height: 1.5em; width: 1.5em;',
+								radioButtonLabelStyle: 'font-size:1.5em;'
+							}}
 						/>
 						<RadioButton
-							name="food"
-							value={3}
-							radioButtonLabel="Salad"
-							id="radioButtonThree"
-							checked={false}
-							radioButtonStyle="margin-bottom: .5em; height: 1.5em; width: 1.5em;"
-							radioButtonLabelStyle="font-style: italic;"
+							options={{
+								name: 'food',
+								value: '3',
+								radioButtonLabel: 'Salad',
+								id: 'radioButtonThree',
+								checked: false,
+								radioButtonStyle: 'height: 1.5em; width: 1.5em;',
+								radioButtonLabelStyle: 'font-size:1.5em;'
+							}}
 						/>
 					</div>
 				</section>

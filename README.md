@@ -11,9 +11,27 @@
 
 <h1 align="center"> A Svelte Accessibility Component Library </h2>
 
+## Table of Contents
+
+- [About Us](#about-us)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Technologies](#technologies)
+- [Components](#components)
+  - [Accordion](#accordion)
+  - [Button](#button)
+  - [Checkbox](#checkbox)
+  - [Meter](#meter)
+  - [Nav Bar](#navbar)
+  - [Radio Button](#radio-button)
+  - [Table](#table)
+  - [Text Input](#text-input)
+- [The Svve11 Team](#the-svve11-team)
+- [How to Contribute](#if-you-want-to-contribute)
+
 ## About Us
 
-Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility first design philosophy!
+Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility-first design philosophy!
 
 For easier readability of documentation, check out our website [http://www.svve11.io/](http://www.svve11.io/)
 
@@ -40,7 +58,7 @@ npm install --save-dev 'svve11'
 
 3. Components can now be imported directly into your Svelte files as documented below.
 
-### Technologies
+## Technologies
 
 [Svelte](https://svelte.dev/) | [Javascript](https://www.javascript.com/) | [Typescript](https://www.typescriptlang.org/) | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) | [Jest](https://jestjs.io/) | [Svelte Testing Library](https://testing-library.com/docs/svelte-testing-library/intro/)
 
@@ -256,59 +274,74 @@ const meterOptions = {
 import NavBar from 'svve11/NavBar.svelte';
 ```
 
-2. To supply the nav bar with its contents, an options object is passed as a prop to the nav bar. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 10 properties.
+2. To supply the nav bar with its contents, an options object is passed as a prop to the nav bar. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 6 properties.
 
    - (5) **required** props:
 
-     - **`id`** (_`string`_): This property is **required**. This will be the id attribute you reference for styling inside your navbar component. An example would be “navbar”.
-     - **`contentInfo`** (an _`array`_ of _`objects`_): This property is **required**. It contains all the content to be displayed in your nav bar. Each object in the array must contain:
-       - **`subheading`** (_`string`_): This property is **optional**. Sets the subheading for this section of the nav bar.
-       - **`options`**(an _`array`_ of _`strings`_): This property is **required**. Contains strings in the order you want them to appear in the nav bar section.
-       - **`links`**(_`array`_): This property is **required**. Sets the href attributes for each option provided. This array should be provided in the same order that the options array was provided.
+     - **`id`** (_`string`_): This will be the id attribute you reference for styling inside your navbar component. An example would be “navbar”.
+     - **`contentInfo`** (an _`array`_ of _`objects`_): It contains all the content to be displayed in your nav bar. Each object in the array must contain:
+       - **`subheading`** (_`string`_): Sets the subheading for this section of the nav bar.
+       - **`options`**(an _`array`_ of _`strings`_): Contains strings in the order you want them to appear in the nav bar section.
+       - **`links`**(_`array`_): Sets the href attributes for each option provided. This array should be provided in the same order that the options array was provided.
 
    - (5) _optional_ props:
 
-     - **`header`** (_`string`_): This property is **optional**. It contains the heading for the entire nav bar.
-     - **`imgSrc`** (_`string`_): This property is **optional**. It contains the file path for an image you want included at the top of the nav bar, such as a company logo.
-     - **`imgClass`** (_`string`_): This property is **optional**. This will set the class name for the imgSrc for styling purposes.
-     - **`imgAlt`** (_`string`_): This property is **optional**. This sets the alternate text in the event the image cannot render.
+     - **`header`** (_`string`_): It contains the heading for the entire nav bar.
+     - **`imgSrc`** (_`string`_): It contains the file path for an image you want included at the top of the nav bar, such as a company logo.
+     - **`imgClass`** (_`string`_): This will set the class name for the imgSrc for styling purposes.
+     - **`imgAlt`** (_`string`_): This sets the alternate text in the event the image cannot render.
 
 #### Example Options Object
 
 ```js
-const navBarOptions = {
-   id: "testnav",
-   header: "Menu",
-   contentInfo: [
-         {
-            subheading: "general",
-            options: [
-            "option1", "option2", "option3"
-            ],
-            links: [
-            "", "", ""
-         ]
-         },
-         {
-         subheading: "other stuff",
-         options: [
-            "option4", "option5", "option6"
-            ],
-         links: [
-            "", "", ""
-         ]
-         }
-      ],
-         imgSrc: “./images/comp-logo.png”,
-         imgClass: “navbar-logo”,
-         imgAlt: “company logo”
-   }
+const navOptions = {
+	id: 'nav-bar',
+	// header: 'Menu',
+	contentInfo: [
+		{
+			subheading: '',
+			options: ['Home', 'Github'],
+			links: ['/', 'https://github.com/oslabs-beta/svve11']
+		},
+		{
+			subheading: 'Components',
+			options: [
+				'Accordion',
+				'Button',
+				'Checkbox',
+				'Meter',
+				'Nav Bar',
+				'Radio Button',
+				'Table',
+				'Text Input'
+			],
+			links: [
+				'/pages/accordion',
+				'/pages/button',
+				'/pages/checkbox',
+				'/pages/meter',
+				'/pages/navbar',
+				'/pages/radiobutton',
+				'/pages/table',
+				'/pages/textinput'
+			]
+		},
+		{
+			subheading: '',
+			options: ['About the team'],
+			links: ['/about']
+		}
+	],
+	imgSrc: logo,
+	imgClass: 'svvell-logo',
+	imgAlt: 'svve11'
+};
 ```
 
 3. A nav bar instance can be created by placing the code below in the body of your .svelte file.
 
 ```js
-<NavBar options={navBarOptions} />
+<NavBar options={navOptions} />
 ```
 
 #### Nav Bar Styling
@@ -331,15 +364,15 @@ Styles can be applied to different parts of the nav bar in your styling file by 
 import RadioButton from 'svve11/RadioButton.svelte';
 ```
 
-2. To supply the radio button with its contents, an options object is passed as a prop to the radio button. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 10 properties.
+2. To supply the radio button with its contents, an options object is passed as a prop to the radio button. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 6 properties.
 
-   - (3) **required** props:
+   - (2) **required** props:
 
      - **`id`** (_`string`_): sets the `id` attribute of the radio button component.
      - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
 
    - (4) _optional_ props:
-
+     - **`checked`** (_`boolean`_): sets whether the radio button will come pre-checked.
      - **`radioButtonStyle`** (_`string`_): sets the styling for the radio button
      - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text'
      - **`name`** (_`string`_): sets the group name to which the radio button belongs. All radio buttons in one group should have the same name attribute. This property must be defined to allow only one radio button to be selected within a given group.
@@ -375,7 +408,7 @@ const radioButtonOptions = {
 import Table from 'svve11/Table.svelte';
 ```
 
-2. To supply the table with its contents, a tableProps object is passed as a prop to the table. This object can be created in the script section of the .svelte file or imported in from another location. The tableProps object has (6) properties.
+2. To supply the table with its contents, an options object is passed as a prop to the table. This object can be created in the script section of the .svelte file or imported in from another location. The options object has (6) properties.
 
    - (4) **required** properties:
 
@@ -439,18 +472,18 @@ const tableOptions = {
 import TextInput from 'svve11/TextInput.svelte';
 ```
 
-2. The text input component has (6) props.
+2. To supply the text input with its contents, an options object is passed as a prop to the text input. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 6 properties.
 
    - (4) **required** props:
 
-     - **`label`** (_`string`_): A short summary describing what the text input is asking for from the user. An example would be “Your email here:”.
-     - **`placeholder`** (_`string`_): A short statement in the text input box that will hint to the user what kind of input is expected. An example would be “eg. jsmith@gmail.com”.
+     - **`label`** (_`string`_): describes what the text input is requesting from the user.
+     - **`placeholder`** (_`string`_): sets the text displayed in the text input box before the user inputs anything. This gives the user a hint as to what kind of input is being requested.
      - **`id`** (_`string`_): Specifies a unique id for the text field for developers to reference. An example would be “user-email”.
      - **`type`** (_`string`_): Specifies what kind of input is expected by the developer. An example would be “email”.
 
    - (2) _optional_ props:
-     - **`inputStyle`** (_`string`_): Used to style the text input box.
-     - **`labelStyle`** (_`string`_): Used to style the label above the text input box.
+     - **`inputStyle`** (_`string`_): sets the style attribute for the text input box.
+     - **`labelStyle`** (_`string`_): sets the style attribute for the label above the text input box.
 
 #### Example Options Object
 

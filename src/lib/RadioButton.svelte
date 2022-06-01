@@ -1,35 +1,28 @@
 <script lang="ts">
+	type RadioButtonOptionTypes = {
+		radioButtonLabel: string | null;
+		id: string | null;
 
-  type RadioButtonOptionTypes = {
-    radioButtonLabel: string | null;
-    id: string | null;
+		checked?: boolean;
+		radioButtonStyle?: string | null;
+		radioButtonLabelStyle?: string | null;
+		name?: string | null;
+		value?: string | null;
+	};
 
-    checked?: boolean;
-    radioButtonStyle?: string | null;
-    radioButtonLabelStyle?: string | null;
-    name?: string | null;
-    value?: string | null;
-  }
+	export let options: RadioButtonOptionTypes = {
+		radioButtonLabel: null,
+		id: null,
 
-  export let options: RadioButtonOptionTypes = {
-    radioButtonLabel: null,
-    id: null,
-
-    checked: false,
-    radioButtonStyle: null,
-    radioButtonLabelStyle: null,
-    name: null,
-    value: null,
-  }
-
-  let { radioButtonLabel,
-      id, 
-      checked,
-      radioButtonStyle,
-      radioButtonLabelStyle,
-      name,
-      value
-    } = options;
+		checked: false,
+		radioButtonStyle: null,
+		radioButtonLabelStyle: null,
+		name: null,
+		value: null
+	};
+	$: checked;
+	let { radioButtonLabel, id, checked, radioButtonStyle, radioButtonLabelStyle, name, value } =
+		options;
 	// <------- Required Props ------->
 	// label that corresponds to the component
 	// export let radioButtonLabel: any;
