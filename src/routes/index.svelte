@@ -1,16 +1,4 @@
 <script lang="ts">
-<<<<<<< HEAD
-	// import logo from '../images/svve11-logo-blue-transparent-cropped.png';
-	// import Accordion from '../lib/Accordion.svelte';
-	// import Button from '../lib/Button.svelte';
-	// import Checkbox from '../lib/Checkbox.svelte';
-	// import Meter from '../lib/Meter.svelte';
-	// import NavBar from '../lib/NavBar.svelte';
-	// import RadioButton from '../lib/RadioButton.svelte';
-	// import Table from '../lib/Table.svelte';
-	// import TextInput from '../lib/TextInput.svelte';
-	import logo from '../images/svve11-logo-blue-transparent-cropped.png';
-=======
 	// importing all logo paths
 	import svve11Logo from '../images/svve11-logo-blue-transparent-cropped.png';
 	import jestLogo from '../images/tech-icons/jest-logo-F9901EBBF7-seeklogo.com.png';
@@ -25,7 +13,7 @@
 
 	// setting ImageLink props for each logo and its corresponding link
 	const imgLinkOptions = {
-    svve11: {
+		svve11: {
 			href: 'https://svve11.io/',
 			src: svve11Logo,
 			title: 'svve11 homepage',
@@ -36,7 +24,7 @@
 			src: jestLogo,
 			title: 'Jest website',
 			alt: 'Jest logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Jest'
 		},
 		NVDA: {
@@ -44,7 +32,7 @@
 			src: NVDALogo,
 			title: 'NVDA website',
 			alt: 'NVDA logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'NVDA'
 		},
 		VoiceOver: {
@@ -52,7 +40,7 @@
 			src: VoiceOverLogo,
 			title: 'Apple VoiceOver website',
 			alt: 'Apple VoiceOver logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'VoiceOver'
 		},
 		JAWS: {
@@ -60,7 +48,7 @@
 			src: JAWSLogo,
 			title: 'JAWS website',
 			alt: 'JAWS logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'JAWS'
 		},
 		Chrome: {
@@ -68,7 +56,7 @@
 			src: ChromeLogo,
 			title: 'Google Chrome website',
 			alt: 'Google Chrome logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Chrome'
 		},
 		Safari: {
@@ -76,7 +64,7 @@
 			src: SafariLogo,
 			title: 'Safari website',
 			alt: 'Safari logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Safari'
 		},
 		Firefox: {
@@ -84,7 +72,7 @@
 			src: FirefoxLogo,
 			title: 'Mozilla Firefox website',
 			alt: 'Mozilla Firefox logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Safari'
 		},
 		Edge: {
@@ -92,11 +80,10 @@
 			src: EdgeLogo,
 			title: 'Microsoft Edge website',
 			alt: 'Microsoft Edge logo',
-			imgClass:'tech-icon',
+			imgClass: 'tech-icon',
 			postText: 'Edge'
-		},
-  }
->>>>>>> main
+		}
+	};
 </script>
 
 <!-- Checking for hover prop tips -->

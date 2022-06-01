@@ -1,27 +1,26 @@
 <script lang="ts">
+	type CheckBoxOptionTypes = {
+		checkBoxLabel: string | null;
+		id: string | null;
+		checked: boolean;
 
-  type CheckBoxOptionTypes = {
-    checkBoxLabel: string | null;
-    id: string | null;
-    checked: boolean;
+		checkBoxStyle?: string | null;
+		checkBoxLabelStyle?: string | null;
+		name?: string | null;
+		value?: string | null;
+	};
 
-    checkBoxStyle?: string | null;
-    checkBoxLabelStyle?: string | null;
-    name?: string | null;
-    value?: string | null;
-  }
+	export let options: CheckBoxOptionTypes = {
+		checkBoxLabel: null,
+		id: null,
+		checked: false,
+		checkBoxStyle: null,
+		checkBoxLabelStyle: null,
+		name: null,
+		value: null
+	};
 
-  export let options: CheckBoxOptionTypes = {
-    checkBoxLabel: null,
-    id: null,
-    checked: false,
-    checkBoxStyle: null,
-    checkBoxLabelStyle: null,
-    name: null,
-    value: null,
-  }
-  
-  // Default styling for the label
+	// Default styling for the label
 	// display: inline-block // Displays the label beside the checkbox
 	// user-select: none; Prevents text selection
 	export let defaultStyle: string = 'display: inline-block; user-select: none;';
@@ -72,18 +71,11 @@ value: string (optional)
 	bind:checked
 	name=""
 	value=""
-	class="sv-checkbox-input"
 />
 <!-- Rendering the text beside the checkbox -->
-<<<<<<< HEAD
-<label class="sv-checkbox-label" style={checkBoxLabelStyle + defaultStyle} for={id}>
-	{checkBoxLabel}
-</label>
-=======
 <label style={checkBoxLabelStyle + defaultStyle} for={id} class="sv-checkbox-label">
 	{checkBoxLabel}
 </label><br />
->>>>>>> main
 
 <style>
 </style>

@@ -1,54 +1,55 @@
 <script lang="ts">
 	import { afterUpdate } from 'svelte';
 
-  type MeterOptionTypes = {
-    value: number | null;
-    maxValue: number | null;
-    minValue: number | null;
-    meterLabel: string | null;
-    id: string | number | null;
+	type MeterOptionTypes = {
+		value: number | null;
+		maxValue: number | null;
+		minValue: number | null;
+		meterLabel: string | null;
+		id: string | number | null;
 
-    lowValue?: number | null;
-    highValue?: number | null;
-    optimumValue?: number | null;
-    valueText?: string | null;
-    displayDecimal?: boolean;
-    units?: string | null;
-    meterStyle?: string | null;
-    labelStyle?: string | null;
-  }
+		lowValue?: number | null;
+		highValue?: number | null;
+		optimumValue?: number | null;
+		valueText?: string | null;
+		displayDecimal?: boolean;
+		units?: string | null;
+		meterStyle?: string | null;
+		labelStyle?: string | null;
+	};
 
-  export let options: MeterOptionTypes = {
-    value: null,
-    maxValue: null,
-    minValue: null,
-    meterLabel: null,
-    id: null,
+	export let options: MeterOptionTypes = {
+		value: null,
+		maxValue: null,
+		minValue: null,
+		meterLabel: null,
+		id: null,
 
-    displayDecimal: false,
-    units: null,
-    valueText: null,
-    meterStyle: null,
-    labelStyle: null,
-    lowValue: null,
-    highValue: null,
-    optimumValue: null,
-  };
+		displayDecimal: false,
+		units: null,
+		valueText: null,
+		meterStyle: null,
+		labelStyle: null,
+		lowValue: null,
+		highValue: null,
+		optimumValue: null
+	};
 
-  let { value,
-        maxValue,
-        minValue,
-        meterLabel,
-        displayDecimal,
-        units,
-        valueText,
-        meterStyle,
-        labelStyle,
-        id,
-        lowValue,
-        highValue,
-        optimumValue
-        } = options;
+	let {
+		value,
+		maxValue,
+		minValue,
+		meterLabel,
+		displayDecimal,
+		units,
+		valueText,
+		meterStyle,
+		labelStyle,
+		id,
+		lowValue,
+		highValue,
+		optimumValue
+	} = options;
 
 	// //Require Props
 	// export let value: number;
@@ -112,13 +113,8 @@ labelStyle  : string (optional)
 </label>
 
 <meter
-<<<<<<< HEAD
-	class="meter"
-	id={`meter-${id}`}
-=======
 	class="sv-meter"
 	{id}
->>>>>>> main
 	min={minValue}
 	max={maxValue}
 	low={lowValue}

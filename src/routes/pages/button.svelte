@@ -9,7 +9,8 @@
 	const tableOptions = {
 		id: 'props-table-button',
 		ariaLabel: 'Button props table',
-		ariaDescription: 'This table describes the props that should be passed to the button component',
+		ariaDescription:
+			'This table describes the props that should be passed to the button in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
 			['id', 'string', 'true', 'N/A'],
@@ -54,7 +55,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import Button from 'svve11/Button.svelte'
+import Button from 'svve11/Button.svelte'
             </code></pre>
 				</section>
 			</fieldset>
@@ -67,45 +68,38 @@
 				<section class="content-section">
 					<h3>Creating a Button</h3>
 					<p>
-						A button instance can be created by placing the code below in the body of your Svelte
-						file.
+						To supply the button with its contents, an options object is passed as a prop to the
+						button. This object can be created in the script section of the .svelte file or imported
+						in from another location. The options object has 5 properties.
 					</p>
-					<pre><code class="code-block">
-              {`<Button {id} {label} {content} {handleClick} {style}/>`}
-              </code></pre>
-					<p>Each attribute should be defined as follows:</p>
 					<ul class="options-object-list">
-						<li>id (string): sets the id attribute of the button component.</li>
-						<li>label (string): sets the aria-label attribute of the button component.</li>
-						<li>content (string): sets the text that is displayed inside the button component.</li>
+						<h4>Required Props</h4>
+						<li>id (string): Sets the id attribute of the button component.</li>
+						<li>label (string): Sets the aria-label attribute of the button component.</li>
+						<li>content (string): Sets the text that is displayed inside the button component.</li>
 						<li>
-							handleClick (function): defined the action or event to be triggered when the button is
+							handleClick (function): Defines the action or event to be triggered when the button is
 							clicked.
 						</li>
-						<li>
-							style (string): This attribute is <span class="bold-word">optional</span> and sets the
-							styles of the button component.
-						</li>
+						<h4>Optional Props</h4>
+						<li>style (string): Sets the styles of the button component.</li>
 					</ul>
-					<h4>Example Button Code:</h4>
+					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
-              {`<Button 
-                id="demo-button-1" 
-                label="accessible-button-1" 
-                content="Click me!" 
-                handleClick={() => console.log('You clicked a button!')} 
-                style="height: 50px; width:300px;"
-              />`}
+{`const buttonOptions = {
+  id: 'demo-button-1',
+  content: 'Click me!',
+  label: 'accessible-button-1',
+  handleClick: () => console.log('You clicked a button!'),
+  style: 'height: 50px; width: 300px;'
+};`}
+              </code></pre>
+					<h4>Instantiating a button</h4>
+					<pre><code class="code-block">
+{`<Button options={buttonOptions}/>`}
               </code></pre>
 					<h4>Example Button:</h4>
 					<div class="example-button">
-						<!-- <Button
-							id="demo-button-1"
-							label="accesible-button-1"
-							content="Click me!"
-							handleClick={() => console.log('You clicked a button!')}
-							style="height: 50px; width: 300px;"
-						/> -->
 						<Button options={buttonOptions} />
 					</div>
 				</section>
