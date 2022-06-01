@@ -2,9 +2,9 @@
 	import { afterUpdate } from 'svelte';
 
 	type MeterOptionTypes = {
-		value: number | null;
-		maxValue: number | null;
-		minValue: number | null;
+		value: number;
+		maxValue: number;
+		minValue: number;
 		meterLabel: string | null;
 		id: string | number | null;
 
@@ -18,23 +18,23 @@
 		labelStyle?: string | null;
 	};
 
-	export let options: MeterOptionTypes = {
-		value: null,
-		maxValue: null,
-		minValue: null,
-		meterLabel: null,
-		id: null,
+	export let options: MeterOptionTypes;
+	//  = {
+	// 	value:,
+	// 	maxValue: Infinity,
+	// 	minValue: -Infinity,
+	// 	meterLabel: '',
+	// 	id: '',
 
-		displayDecimal: false,
-		units: null,
-		valueText: null,
-		meterStyle: null,
-		labelStyle: null,
-		lowValue: null,
-		highValue: null,
-		optimumValue: null
-	};
-
+	// 	displayDecimal: false,
+	// 	units: null,
+	// 	valueText: null,
+	// 	meterStyle: null,
+	// 	labelStyle: null,
+	// 	lowValue: null,
+	// 	highValue: null,
+	// 	optimumValue: null
+	// };
 	let {
 		value,
 		maxValue,

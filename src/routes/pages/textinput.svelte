@@ -11,7 +11,7 @@
 		id: 'props-table-accordion',
 		ariaLabel: 'Accordion props table',
 		ariaDescription:
-			'This table describes the props that should be passed to the text input component',
+			'This table describes the props that should be passed to the text input in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
 			['label', 'string', 'true', 'N/A'],
@@ -74,7 +74,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import TextInput from 'svve11/TextInput.svelte'
+import TextInput from 'svve11/TextInput.svelte'
             </code></pre>
 				</section>
 			</fieldset>
@@ -86,15 +86,14 @@
 				<h2>Usage</h2>
 				<section class="content-section">
 					<h3>Creating a Text Input</h3>
+
 					<p>
-						A text input instance can be created by placing the code below in the body of your
-						Svelte file.
+						To supply the text input with its contents, an options object is passed as a prop to the
+						text input. This object can be created in the script section of the .svelte file or
+						imported in from another location. The options object has 6 properties.
 					</p>
-					<pre><code class="code-block">
-              {`<TextInput {label} {placeholder} {id} {type} />`}
-              </code></pre>
-					<p>There are four required attributes:</p>
 					<ul class="options-object-list">
+						<h4>Required Props</h4>
 						<li>label (string): describes what the text input is requesting from the user</li>
 						<li>
 							placeholder (string): sets the text displayed in the text input box before the user
@@ -103,36 +102,31 @@
 						</li>
 						<li>id (string): sets the unique id for the text field</li>
 						<li>type (string): sets the the kind of input expected to be submitted by the user.</li>
+						<h4>Optional Props</h4>
+						<li>inputStyle (string): sets the style attribute for the text input box</li>
+						<li>
+							labelStyle (string): sets the style attribute for the label above the text input box
+						</li>
 					</ul>
-					<h4>Example Text Input Code:</h4>
+					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
-              {`<TextInput
-                 label='Your email here: '
-                 placeholder='jsmith@gmail.com'
-                 id='user-email'
-                 type='email'
-              />`}
-              </code></pre>
+{`const textInputOptions = {
+	label: 'Your email here:',
+	placeholder: 'jsmith@gmail.com',
+	id: 'user-email',
+	type: 'email',
+	labelStyle: 'font-family:Times New Roman; font-size:20px',
+	inputStyle: 'color: blue'
+};`}
+              		</code></pre>
+					<h4>Instantiating a text input</h4>
+					<pre><code class="code-block">
+{`<TextInput options={textInputOptions} />`}
+					</code></pre>
 					<h4>Example Text Input without styles:</h4>
 					<div class="example-text-input">
 						<TextInput options={textInputOptions1} />
 					</div>
-					<p>Styles are optional and can be passed to the text input box as follows:</p>
-					<ul class="options-object-list">
-						<li>inputStyle (string): styles the text input box</li>
-						<li>labelStyle (string): styles the text of the label for a text input box</li>
-					</ul>
-					<pre><code class="code-block">
-              {`<TextInput 
-                 label='Your email here: ' 
-                 placeholder='jsmith@gmail.com' 
-                 id='user-email' 
-                 type='email' 
-                 labelStyle='font-family:Times New Roman; font-size:20px; color: blue;' 
-                 inputStyle='color: blue'
-              />`}
-              </code></pre>
-
 					<h4>Example Text Input with styles:</h4>
 					<div class="example-text-input">
 						<TextInput options={textInputOptions2} />
@@ -145,8 +139,9 @@
 							>W3Schools' Input Tag Information</a
 						>
 						or
-						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text" target="_blank"
-							>MDN's Input Tag Information</a
+						<a
+							href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text"
+							target="_blank">MDN's Input Tag Information</a
 						> webpages to learn more about how these work. By default all attributes of type boolean
 						are set to false.
 					</p>

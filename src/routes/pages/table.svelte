@@ -46,7 +46,7 @@
 				<section class="content-section">
 					<p>Import the component in the script section of your Svelte file:</p>
 					<pre><code class="code-block">
-              import Table from 'svve11/Table.svelte'
+import Table from 'svve11/Table.svelte'
             </code></pre>
 				</section>
 			</fieldset>
@@ -58,47 +58,31 @@
 				<h2>Usage</h2>
 				<section class="content-section">
 					<h3>Creating a Table</h3>
+
 					<p>
-						A table instance can be created by placing the code below in the body of your Svelte
-						file.
-					</p>
-					<pre><code class="code-block">
-              {`<Table {tableProps}`}
-              </code></pre>
-					<p>
-						To supply the table with its contents, a tableProps object is passed as a prop to the
+						To supply the table with its contents, an options object is passed as a prop to the
 						table. This object can be created in the script section of the .svelte file or imported
-						in from another location. The tableProps object has (6) properties.
+						in from another location. The options object has (6) properties.
 					</p>
 					<ul class="options-object-list">
+						<h4>Required Props</h4>
+						<li>ariaLabel (string): sets the aria-label attribute of the table</li>
 						<li>
-							ariaLabel (string): This property is <span class="bold-word">required</span>, and sets
-							the aria-label attribute of the table
+							ariaDescription (string): sets the title of the table. It will also set the table's
+							aria-description attribute.
 						</li>
 						<li>
-							ariaDescription (string): This property is <span class="bold-word">required</span>,
-							and sets the title of the table. It will also set the table's aria-description
-							attribute.
+							columnNames (array of strings): each string in the array corresponds to a column name
+							of the table.
 						</li>
 						<li>
-							columnNames (array of strings): This property is <span class="bold-word"
-								>required</span
-							>. Each string in the array corresponds to column name of the table. Column names will
-							be added in the order they are input into this array.
+							rowsContent (array of arrays of strings): each inner array corresponds to a row of the
+							table. Each string in the inner array corresponds to a cell in the row. The number of
+							strings in each of these arrays should match the number of strings in the columnNames
+							array.
 						</li>
-						<li>
-							rowsContent (array of arrays of strings): This property is <span class="bold-word"
-								>required</span
-							>. Each array in the main array corresponds to a row in the table. Each string within
-							each array corresponds to the entry in a cell in the row, again with the order of
-							strings matching the order they will be placed in the row cells. The number of strings
-							in each array must match the number of columns, thus an empty string should be
-							supplied where an empty cell is desired.
-						</li>
-						<li>
-							id (string): This property is <span class="bold-word">optional</span>, and sets the id
-							attribtue of the table.
-						</li>
+						<h4>Optional Props</h4>
+						<li>id (string): sets the id attribtue of the table.</li>
 						<li>
 							styles (object): sets the styles for the various table components. Each key in the
 							object is defined as follows:
@@ -119,35 +103,39 @@
 							</li>
 						</ul>
 					</ul>
-					<h4>Example Table Code:</h4>
+					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
-            {`const tableProps = {
-                    id: 'demo-table',
-                    ariaLabel: 'demo',
-                    ariaDescription: 'svve11 team information',
-                    columnNames: ['Name', 'Age', 'Favorite Color'],
-                    rowsContent: [
-                        ['Nurbek', '19', 'White'],
-                        ['Paul', '26', 'Red'],
-                        ['Tim', '29', 'Blue'],
-                        ['Simon', '26', 'Green']
-                    ],
-                    styles: {
-                        overallStyles: 'background-color: powderblue',
-                        titleStyles: 'text-align: left;',
-                        headersRowStyles: 'background-color: grey',
-                        generalRowStyles: 'font-weight: lighter',
-                        oddRowStyles: 'background-color: white',
-                        evenRowStyles: 'background-color: lightgrey',
-                    }
-                };
-        
-            <Table {tableProps} />`}
-              </code></pre>
+{`const tableOptions = {
+  id: 'demo-table',
+  ariaLabel: 'demo',
+  ariaDescription: 'svve11 team information',
+  columnNames: ['Name', 'Age', 'Favorite Color'],
+  rowsContent: [
+	['Nurbek', '19', 'White'],
+	['Paul', '26', 'Red'],
+	['Tim', '29', 'Blue'],
+	['Simon', '26', 'Green']
+  ],
+  styles: {
+	overallStyles: 'background-color: powderblue',
+	titleStyles: 'text-align: left;',
+	headersRowStyles: 'background-color: grey, color: white',
+	generalRowStyles: 'font-weight: lighter',
+	oddRowStyles: 'background-color: white',
+	evenRowStyles: 'background-color: lightgrey'
+  }
+};`}
+             		</code></pre>
+
+					<h4>Instantiating a table</h4>
+					<pre><code class="code-block">
+{`<Table options={tableOptions}`}
+					</code></pre>
+
 					<h4>Example Table:</h4>
 					<div class="example-text-input">
 						<Table
-							tableProps={{
+							options={{
 								id: 'demo-table',
 								ariaLabel: 'demo',
 								ariaDescription: 'svve11 team information',
@@ -161,7 +149,7 @@
 								styles: {
 									overallStyles: 'background-color: powderblue',
 									titleStyles: 'text-align: left;',
-									headersRowStyles: 'background-color: grey',
+									headersRowStyles: 'background-color: grey; color: white',
 									generalRowStyles: 'font-weight: lighter',
 									oddRowStyles: 'background-color: white',
 									evenRowStyles: 'background-color: lightgrey'

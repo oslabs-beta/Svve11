@@ -9,12 +9,15 @@
 	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Meter.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#meter';
 
-	let changingValue: number;
+	let changingValue: number = 60;
 
-	$: changingValue = 60;
+	$: changingValue;
 
 	const interval = setInterval(function () {
-		changingValue = Math.floor(Math.random() * 100);
+		changingValue = Math.floor(Math.random() * 100 + 1);
+		console.log(changingValue);
+		meterOptions3 = { ...meterOptions3, value: changingValue };
+		console.log(meterOptions3);
 	}, 2000);
 
 	onDestroy(() => clearInterval(interval));
@@ -39,6 +42,28 @@
 			['labelStyle', 'string', 'false', 'N/A']
 		],
 		styles: tableStyles
+	};
+	let meterOptions3 = {
+		value: changingValue,
+		maxValue: 10,
+		minValue: 0,
+		meterLabel: 'Test Meter 1',
+		id: 1,
+		lowValue: 5,
+		displayDecimal: false,
+		units: ' hours remaining',
+		valueText: `${changingValue} hours remaining`
+	};
+	$: meterOptions3;
+	const meterOptions4 = {
+		value: changingValue / 10,
+		maxValue: 10,
+		minValue: 0,
+		meterLabel: 'Test Meter 1',
+		id: 1,
+		lowValue: 5,
+		meterStyle: 'width: 50px;',
+		labelStyle: 'font-size: 20px; color: blue;'
 	};
 </script>
 
@@ -151,40 +176,15 @@
               </code></pre>
 					<h4>Example meter with only required props:</h4>
 					<div class="example-meter">
-						<Meter
-							value={changingValue}
-							maxValue={100}
-							minValue={0}
-							meterLabel="Test Meter 1"
-							id={1}
-						/>
+						<!-- <Meter /> -->
 					</div>
 					<h4>Example meter with highValue=85, lowValue=20 and optimalValue=80 props:</h4>
 					<div class="example-meter">
-						<Meter
-							value={changingValue}
-							maxValue={100}
-							minValue={0}
-							meterLabel="Test Meter 1"
-							id={1}
-							lowValue={20}
-							highValue={75}
-							optimumValue={60}
-						/>
+						<!-- <Meter /> -->
 					</div>
 					<h4>Example meter with displayDecimal=false and units props:</h4>
 					<div class="example-meter">
-						<Meter
-							value={changingValue / 10}
-							maxValue={10}
-							minValue={0}
-							meterLabel="Test Meter 1"
-							id={1}
-							lowValue={5}
-							displayDecimal="false"
-							units=" hours remaining"
-							valueText={`${changingValue} hours remaining`}
-						/>
+						<Meter options={meterOptions3} />;
 					</div>
 					<h4>Example meter with style strings:</h4>
 					<div class="example-meter">
@@ -192,16 +192,7 @@
                           meterStyle='width: 50px;'
                           labelStyle='font-size: 20px; color: blue;'
                   </code></pre>
-						<Meter
-							value={changingValue / 10}
-							maxValue={10}
-							minValue={0}
-							meterLabel="Test Meter 1"
-							id={1}
-							lowValue={5}
-							meterStyle="width: 50px;"
-							labelStyle="font-size: 20px; color: blue;"
-						/>
+						<Meter options={meterOptions4} />
 					</div>
 				</section>
 			</fieldset>
