@@ -1,11 +1,5 @@
 import '@testing-library/jest-dom';
-import {
-	render,
-	getByRole,
-	getByAltText,
-	getAllByAltText,
-	getAllByRole
-} from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 import NavBar from '../lib/NavBar.svelte';
 

@@ -7,7 +7,7 @@ let user;
 let input;
 let label;
 
-const props = {
+const options = {
   label: "This is a test",
   placeholder: "Test",
   id: "testInputText",
@@ -19,7 +19,7 @@ beforeEach(() => {
   user = userEvent.setup();
 
   // render a Button for testing
-  const { component, getByText, getByLabelText } = render(TextInput, { ...props });
+  const { component, getByText, getByLabelText } = render(TextInput, { options });
   input = getByLabelText('This is a test');
   label = getByText('This is a test');
 });

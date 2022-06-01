@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import '@testing-library/jest-dom';
-import { render, getByText } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 
 import Table from './../lib/Table.svelte';
@@ -8,7 +8,7 @@ import Table from './../lib/Table.svelte';
 let user;
 let table;
 
-const tableProps = {
+const options = {
 	id: 'test-table',
 	ariaLabel: 'test',
 	ariaDescription: 'Table Component for Testing',
@@ -34,7 +34,7 @@ beforeEach(() => {
 	user = userEvent.setup();
 
 	// render a Table for testing
-	const { component } = render(Table, { tableProps });
+	const { component } = render(Table, { options });
 	table = document.getElementById('test-table');
 });
 

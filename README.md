@@ -341,7 +341,7 @@ import RadioButton from 'svve11/RadioButton.svelte';
    - (4) _optional_ props:
 
      - **`radioButtonStyle`** (_`string`_): sets the styling for the radio button
-     - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text'
+     - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text
      - **`name`** (_`string`_): sets the group name to which the radio button belongs. All radio buttons in one group should have the same name attribute. This property must be defined to allow only one radio button to be selected within a given group.
      - **`value`** (_`string`_): sets the value associated with the given radio button.
 

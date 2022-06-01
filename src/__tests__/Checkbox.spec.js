@@ -1,18 +1,22 @@
 import '@testing-library/jest-dom';
-import { render, fireEvent, getByRole, getAllByRole, queries } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event';
 import Checkbox from '../lib/Checkbox.svelte';
 
-const props = {
+let user;
+let checkbox;
+const options = {
 	checkBoxLabel: 'This is checkbox value',
 	id: 'checkBoxOne',
 	checked: false,
 	defaultStyle: 'display: inline-block; user-select: none;'
 };
 
-let user = userEvent.setup();
-const { component, getByText } = render(Checkbox, { ...props });
-let checkbox = document.getElementById('checkBoxOne');
+beforeEach(() => {
+  user = userEvent.setup();
+  const { component } = render(Checkbox, { options });
+  checkbox = document.getElementById('checkBoxOne');
+});
 
 describe('Accessible Checkbox Testing Unit Tests', () => {
 	test('checking for aria-label', () => {

@@ -4,7 +4,7 @@
     radioButtonLabel: string | null;
     id: string | null;
 
-    checked?: boolean;
+    checked?: string | null;
     radioButtonStyle?: string | null;
     radioButtonLabelStyle?: string | null;
     name?: string | null;
@@ -15,7 +15,7 @@
     radioButtonLabel: null,
     id: null,
 
-    checked: false,
+    checked: null,
     radioButtonStyle: null,
     radioButtonLabelStyle: null,
     name: null,
@@ -52,7 +52,7 @@ Props are passed in through the tableProps prop, which should be an object conta
 radioButtonLabel: string (required)
 id: string (required)
 
-checked: boolean (option) 
+checked: string (option) 
 radioButtonStyle: string (option)
 radioButtonLabelStyle: string (option)
 name: string (option)
@@ -70,6 +70,7 @@ value: string (option)
 	{id}
 	aria-label={radioButtonLabel}
 	aria-checked={checked}
+  {checked}
 />
 <!-- Rendering the text label for the radio button -->
 <label class="sv-radio-button-label" style={radioButtonLabelStyle} for={id}>
