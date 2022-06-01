@@ -1,7 +1,9 @@
 <!-- ************************* SCRIPTS ************************* -->
 <script lang="ts">
   // import favicon from '../images/svve11-logo-notext.png';
-  import NavBarHeader from '../lib/NavBar/NavBarHeader.svelte';
+  import ImageLink from "../pending/ImageLink.svelte";
+  import logo from '../images/svve11-logo-white-transparent-cropped.png';
+
   import NavBarOptions from '../lib/NavBar/NavBarOptions.svelte';
   import type { optionsTypes } from '../lib/NavBar/NavBarTypes';
 
@@ -18,8 +20,15 @@
   let isOpen:boolean = false;
 
   const toggleNav = () => {
-    // const nav = document.getElementById("nav-bar")
     isOpen = !isOpen;
+  }
+
+  const imgLinkOptions = {
+    href: '/',
+    src: logo,
+    title: 'svve11 homepage',
+    alt: 'svve11 logo',
+    imgId: 'svvell-logo'
   }
 </script>
 
@@ -27,15 +36,9 @@
 <!-- ************************* HTML ************************* -->
 <button id="openbtn" on:click={toggleNav}>
   &#9776;
-  <!-- <img src={favicon} alt="svve11 favicon" style="height:1em;"> -->
-  <!-- <span>Menu</span> -->
 </button>
 <nav id={options.id} class="sv-navbar" class:open={isOpen}>
-  <NavBarHeader 
-    header={options.header}
-    imgSrc={options.imgSrc}
-    imgClass={options.imgClass}
-    imgAlt={options.imgAlt}/>
+  <ImageLink options={imgLinkOptions} />
   <NavBarOptions 
     contentInfo={options.contentInfo}/>
 </nav>

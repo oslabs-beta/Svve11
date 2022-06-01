@@ -19,7 +19,7 @@
 <!-- iterating through the options, display the link and options string -->
 <ul class="sv-navbar-section">
 	{#each options as option, i}
-		<li class="sv-navbar-option"><a href={links[i]}>{option}</a></li>
+		<li class="sv-navbar-option"><a href={links[i]} target={links[i][0] !== '/' ? '_blank' : ''}>{option}</a></li>
 	{/each}
 </ul>
 
