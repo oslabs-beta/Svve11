@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        subheading?: string | undefined;
+        subheading: string;
         options?: string[] | undefined;
         links?: string[] | undefined;
     };

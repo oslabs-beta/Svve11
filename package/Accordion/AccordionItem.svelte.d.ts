@@ -1,10 +1,10 @@
 import { SvelteComponentTyped } from "svelte";
-import type { panelInfoTypes, accordionStylesObject } from './AccordionTypes';
+import type { panelInfoTypes, accordionStylesObjectTypes } from './AccordionTypes';
 declare const __propDef: {
     props: {
         options: panelInfoTypes;
         headerLevel?: number | undefined;
-        customStyles: accordionStylesObject;
+        customStyles: accordionStylesObjectTypes;
         isOpen: boolean;
     };
     events: {

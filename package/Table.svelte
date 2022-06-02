@@ -1,17 +1,17 @@
 <!-- ************************* SCRIPTS ************************* -->
-<script>export let tableProps = {
+<script>export let options = {
     id: '',
     ariaLabel: '',
     ariaDescription: '',
     columnNames: [''],
     rowsContent: [['']]
 };
-const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = tableProps;
+const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = options;
 $: columnNames;
 $: rowsContent;
 let styles, overallStyles, titleStyles, headersRowStyles, generalRowStyles, oddRowStyles, evenRowStyles;
-if (tableProps.styles) {
-    styles = tableProps.styles;
+if (options.styles) {
+    styles = options.styles;
     if (styles.overallStyles)
         overallStyles = styles.overallStyles;
     if (styles.titleStyles)
@@ -31,9 +31,9 @@ if (tableProps.styles) {
 <!-- @component
 https://svve11.io/pages/table
 
-Props are passed in through the tableProps prop, which should be an object containing the following properties
+Props are passed in through the options object that contains the following properties:
 ```tsx
-	id: string (optional)
+	id: string (required)
 	ariaLabel: string (required)
 	ariaDescription: string (required)
 	columnNames: array of string (required)
@@ -55,7 +55,6 @@ Props are passed in through the tableProps prop, which should be an object conta
 		class="sv-table"
 		style={overallStyles ? overallStyles : ''}
 	>
-
 		<!-- Title of the table - doubles as the aria-description text -->
 		<caption
 			id={ariaLabel + '_table_desc'}
@@ -94,8 +93,6 @@ Props are passed in through the tableProps prop, which should be an object conta
 				</tr>
 			{/each}
 		</tbody>
-
-		
 	</table>
 </div>
 
@@ -109,10 +106,5 @@ Props are passed in through the tableProps prop, which should be an object conta
 
 	th {
 		font-weight: 500;
-	}
-
-	td,
-	th {
-		background-color: white;
 	}
 </style>

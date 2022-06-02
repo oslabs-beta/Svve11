@@ -1,52 +1,46 @@
 <!-- ************************* SCRIPTS ************************* -->
-<script>//required attributes
-export let label = '';
-export let placeholder = '';
-export let id = '';
-export let type = '';
-//optional attributes
-export let max = '';
-export let min = '';
-export let maxlength = '';
-export let size = '';
-export let step = '';
-export let inputStyle = '';
-export let labelStyle = '';
-export let autocomplete = false;
-export let disabled = false;
-export let multiple = false;
-export let readonly = false;
-export let required = false;
+<script>export let options = {
+    label: null,
+    placeholder: null,
+    id: null,
+    type: null
+};
+let { label, placeholder, id, type, min, max, maxlength, size, step, inputStyle, labelStyle, autocomplete, disabled, multiple, readonly, required } = options;
 </script>
 
-
+<!-- @component
+Props are passed in through the options object which contains the following properties:
+```tsx
+label: string (required)
+placeholder: string (required)
+id: string (required)
+type: string (required)
+inputStyle: string (optional)
+labelStyle: string (optional)
+```
+-->
 <!-- ************************* HTML ************************* -->
-<label 
-  for={id}
-  style={labelStyle}
-  class='sv-textinput-label'>
-  {label}
+<label for={id} style={labelStyle} class="sv-text-input-label">
+	{label}
 </label>
-<input 
-  {id} 
-  {type} 
-  {placeholder} 
-  {min} 
-  {max} 
-  {maxlength} 
-  {size}
-  {step}
-  {disabled}
-  {autocomplete}
-  {multiple}
-  {readonly}
-  {required}
-  style={inputStyle}/>
+<input
+	class="sv-text-input"
+	{id}
+	{type}
+	{placeholder}
+	{min}
+	{max}
+	{maxlength}
+	{size}
+	{step}
+	{disabled}
+	{autocomplete}
+	{multiple}
+	{readonly}
+	{required}
+	style={inputStyle}
+/>
 
-
-<!-- ************************* STYLES ************************* -->  
+<!-- ************************* STYLES ************************* -->
 <style>
-	/*
-    Style these however we'd like later
-  */
 </style>

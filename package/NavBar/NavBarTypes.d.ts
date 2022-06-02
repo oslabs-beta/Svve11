@@ -1,5 +1,5 @@
 export declare type optionsTypes = {
-    id: string;
+    id?: string;
     header?: string;
     imgSrc?: string;
     imgClass?: string;

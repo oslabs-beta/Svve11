@@ -1,19 +1,19 @@
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        tableProps?: {
-            id?: string | undefined;
+        options?: {
+            id: string;
             ariaLabel: string;
             ariaDescription: string;
             columnNames: string[];
             rowsContent: string[][];
             styles?: {
-                overallStyles?: string | null | undefined;
-                titleStyles?: string | null | undefined;
-                headersRowStyles?: string | null | undefined;
-                generalRowStyles?: string | null | undefined;
-                oddRowStyles?: string | null | undefined;
-                evenRowStyles?: string | null | undefined;
+                overallStyles?: string | undefined;
+                titleStyles?: string | undefined;
+                headersRowStyles?: string | undefined;
+                generalRowStyles?: string | undefined;
+                oddRowStyles?: string | undefined;
+                evenRowStyles?: string | undefined;
             } | undefined;
         } | undefined;
     };
@@ -28,9 +28,9 @@ export declare type TableSlots = typeof __propDef.slots;
 /**
  * https://svve11.io/pages/table
  *
- * Props are passed in through the tableProps prop, which should be an object containing the following properties
+ * Props are passed in through the options object that contains the following properties:
  * ```tsx
- * id: string (optional)
+ * id: string (required)
  * ariaLabel: string (required)
  * ariaDescription: string (required)
  * columnNames: array of string (required)

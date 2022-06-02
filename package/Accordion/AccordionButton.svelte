@@ -9,7 +9,6 @@ export let isOpen;
 //this function is an event dispatcher which will dispatch to the main accordion containing the
 //the panel states for every panel to invoke the function, passing in the button target as an option
 const dispatch = createEventDispatcher();
-//I cannot figure out how to type the event here!!
 const handleHeaderClick = (event) => {
     dispatch('updatePanelStates', {
         target: event.target.id

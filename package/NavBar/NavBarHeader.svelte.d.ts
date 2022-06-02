@@ -1,10 +1,10 @@
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        header?: string | undefined;
-        imgSrc?: string | undefined;
-        imgClass?: string | undefined;
-        imgAlt?: string | undefined;
+        header: string;
+        imgSrc: string;
+        imgClass: string;
+        imgAlt: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;

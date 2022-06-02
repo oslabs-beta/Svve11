@@ -1,5 +1,4 @@
 import { SvelteComponentTyped } from "svelte";
-import type { accordionStylesObject } from './AccordionTypes';
 declare const __propDef: {
     props: {
         headerTitle: string;

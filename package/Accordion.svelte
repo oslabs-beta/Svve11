@@ -1,5 +1,6 @@
 <script>import { onMount } from 'svelte';
 import AccordionItem from './Accordion/AccordionItem.svelte';
+// top level Prop that provides all information for Accordion and child components
 export let options = {
     multiselectable: false,
     headerLevel: undefined,
@@ -7,7 +8,7 @@ export let options = {
 };
 let styles;
 $: styles;
-// if no custom styles supplied, set styles array to be all null
+// if no custom styles supplied, set styles array to be all empty strings
 if (!options.styles) {
     options.styles = {
         accordionHeaderStyle: '',
@@ -30,14 +31,12 @@ let panelStates;
 $: panelStates = [];
 onMount(() => {
     //Initially set all panelStates to be false
-    for (let i = 0; i < options.panelInfo.length; i++) {
-        panelStates.push(false);
-    }
-    panelStates = panelStates;
+    for (let i = 0; i < options.panelInfo.length; i++)
+        panelStates = [...panelStates, false];
 });
-// Need to type the event input and confirm the function is typed propery
+// Need to type the event input and confirm the function is typed property
 const updatePanelStates = (event) => {
-    // Determin index of panel to be expanded
+    // Determine index of panel to be expanded
     const panelIndex = Number(event.detail.target.slice(6)) - 1;
     // If panel at the index to be changed is already true, set to false (i.e. collapse the panel)
     if (panelStates[panelIndex] === true) {
@@ -63,6 +62,24 @@ const updatePanelStates = (event) => {
     }
 };
 </script>
+
+<!-- @component
+Props are passed in through the options object which contains the following properties:
+```tsx
+panelInfo: array of objects (required)
+Each object in the array contains:
+- id: number (required)
+- panelContent: string (required)
+- headerTitle: string (required)
+headerLevel: number (required)
+styles: an object with (4) properties (optional) 
+- accordionHeaderStyle: string (optional)
+- accordionPanelStyle: string (optional)
+- accordionItemStyle: string (optional)
+- overallAccordionStyle: string (optional)
+multiselectable:boolean (optional)
+```
+-->
 
 <!-- aria-multiselectable indicates whether accordion permits multiple panels to be open at once 
 style are the custom styles supplied by a user of the library for the Accordion -->
