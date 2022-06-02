@@ -1,7 +1,3 @@
-<div style='display: flex; justify-content: center; margin-bottom: 20px;' >
-<img src='./src/images/svve11-logo-cropped-blue.png' style='height: auto; width: 100%; margin: auto'>
-</div>
-
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" />
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com"/>
@@ -23,7 +19,7 @@
   - [Checkbox](#checkbox)
   - [Meter](#meter)
   - [Nav Bar](#navbar)
-  - [Radio Button](#radio-button)
+  <!-- - [Radio Button](#radio-button) -->
   - [Table](#table)
   - [Text Input](#text-input)
 - [The Svve11 Team](#the-svve11-team)
@@ -37,7 +33,7 @@ For easier readability of documentation, check out our website [http://www.svve1
 
 ## Features
 
-✅ **8 Components with an accessibility-first design** <br>
+✅ **7 Components with an accessibility-first design** <br>
 ✅ **Fully-tested for accessibility standards and functionality** <br>
 ✅ **Ready to use and easy to implement**
 
@@ -377,57 +373,6 @@ The nav bar is made of 5 components that can have styles applied to them using t
 
 ---
 
-### Radio Button
-
-1. Import the radio button component using the command below in the script section of your .svelte file.
-
-```js
-import RadioButton from 'svve11/RadioButton.svelte';
-```
-
-2. To supply the radio button with its contents, an options object is passed as a prop to the radio button. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 6 properties.
-
-   - (2) **required** props:
-
-     - **`id`** (_`string`_): sets the `id` attribute of the radio button component.
-     - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
-
-   - (4) _optional_ props:
-     - **`checked`** (_`boolean`_): sets whether the radio button will come pre-checked.
-     - **`radioButtonStyle`** (_`string`_): sets the styling for the radio button
-     - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text
-     - **`name`** (_`string`_): sets the group name to which the radio button belongs. All radio buttons in one group should have the same name attribute. This property must be defined to allow only one radio button to be selected within a given group.
-     - **`value`** (_`string`_): sets the value associated with the given radio button.
-
-#### Example Options Object
-
-```js
-const radioButtonOptions = {
-	id: 'radioButtonOne',
-	radioButtonLabel: 'Pizza',
-	checked: false,
-	radioButtonStyle: 'height: 1.5em; width: 1.5em;',
-	radioButtonLabelStyle: 'font-size:1.5em;',
-	name: 'food',
-	value: 1
-};
-```
-
-3. A radio button instance can be created by placing the code below in the body of your .svelte file.
-
-```js
-<RadioButton options={radioButtonOptions} />
-```
-
-#### Styling the Radio Button with Classes
-
-The radio button is made of 2 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
-
-- sv-radio-button-input: This applies styling to the radio button input element
-- sv-radio-button-label: This applies styling to the label for the radio button element
-
----
-
 ### Table
 
 1. Import the table component using the command below in the script section of your .svelte file.
@@ -624,6 +569,53 @@ Some enhancements to add:
 
 This project is available under the MIT License.
 
+<!-- ### Radio Button
+
+1. Import the radio button component using the command below in the script section of your .svelte file.
+
+```js
+import RadioButton from 'svve11/RadioButton.svelte';
 ```
 
+2. To supply the radio button with its contents, an options object is passed as a prop to the radio button. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 6 properties.
+
+   - (2) **required** props:
+
+     - **`id`** (_`string`_): sets the `id` attribute of the radio button component.
+     - **`radioButtonLabel`** (_`string`_): sets the text label that corresponds with component
+
+   - (4) _optional_ props:
+     - **`checked`** (_`boolean`_): sets whether the radio button will come pre-checked.
+     - **`radioButtonStyle`** (_`string`_): sets the styling for the radio button
+     - **`radioButtonLabelStyle`** (_`string`_): sets the styling for the radio button label text
+     - **`name`** (_`string`_): sets the group name to which the radio button belongs. All radio buttons in one group should have the same name attribute. This property must be defined to allow only one radio button to be selected within a given group.
+     - **`value`** (_`string`_): sets the value associated with the given radio button.
+
+#### Example Options Object
+
+```js
+const radioButtonOptions = {
+	id: 'radioButtonOne',
+	radioButtonLabel: 'Pizza',
+	checked: false,
+	radioButtonStyle: 'height: 1.5em; width: 1.5em;',
+	radioButtonLabelStyle: 'font-size:1.5em;',
+	name: 'food',
+	value: 1
+};
 ```
+
+3. A radio button instance can be created by placing the code below in the body of your .svelte file.
+
+```js
+<RadioButton options={radioButtonOptions} />
+```
+
+#### Styling the Radio Button with Classes
+
+The radio button is made of 2 components that can have styles applied to them using the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+
+- sv-radio-button-input: This applies styling to the radio button input element
+- sv-radio-button-label: This applies styling to the label for the radio button element
+
+--- -->
