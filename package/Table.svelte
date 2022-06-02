@@ -1,53 +1,30 @@
 <!-- ************************* SCRIPTS ************************* -->
-<script lang="ts">
-	// defining types for the props object
-	type TableOptions = {
-		id: string;
-		ariaLabel: string;
-		ariaDescription: string;
-		columnNames: string[];
-		rowsContent: string[][];
-		styles?: TableStyles;
-	};
-
-	type TableStyles = {
-		overallStyles?: string;
-		titleStyles?: string;
-		headersRowStyles?: string;
-		generalRowStyles?: string;
-		oddRowStyles?: string;
-		evenRowStyles?: string;
-	};
-
-	export let options: TableOptions = {
-		id: '',
-		ariaLabel: '',
-		ariaDescription: '',
-		columnNames: [''],
-		rowsContent: [['']]
-	};
-
-	const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = options;
-	$: columnNames;
-	$: rowsContent;
-
-	let styles,
-		overallStyles: string,
-		titleStyles: string,
-		headersRowStyles: string,
-		generalRowStyles: string,
-		oddRowStyles: string,
-		evenRowStyles: string;
-
-	if (options.styles) {
-		styles = options.styles;
-		if (styles.overallStyles) overallStyles = styles.overallStyles;
-		if (styles.titleStyles) titleStyles = styles.titleStyles;
-		if (styles.headersRowStyles) headersRowStyles = styles.headersRowStyles;
-		if (styles.generalRowStyles) generalRowStyles = styles.generalRowStyles;
-		if (styles.oddRowStyles) oddRowStyles = styles.oddRowStyles;
-		if (styles.evenRowStyles) evenRowStyles = styles.evenRowStyles;
-	}
+<script>export let options = {
+    id: '',
+    ariaLabel: '',
+    ariaDescription: '',
+    columnNames: [''],
+    rowsContent: [['']]
+};
+const { id, ariaLabel, ariaDescription, columnNames, rowsContent } = options;
+$: columnNames;
+$: rowsContent;
+let styles, overallStyles, titleStyles, headersRowStyles, generalRowStyles, oddRowStyles, evenRowStyles;
+if (options.styles) {
+    styles = options.styles;
+    if (styles.overallStyles)
+        overallStyles = styles.overallStyles;
+    if (styles.titleStyles)
+        titleStyles = styles.titleStyles;
+    if (styles.headersRowStyles)
+        headersRowStyles = styles.headersRowStyles;
+    if (styles.generalRowStyles)
+        generalRowStyles = styles.generalRowStyles;
+    if (styles.oddRowStyles)
+        oddRowStyles = styles.oddRowStyles;
+    if (styles.evenRowStyles)
+        evenRowStyles = styles.evenRowStyles;
+}
 </script>
 
 <!-- ************************* HTML ************************* -->

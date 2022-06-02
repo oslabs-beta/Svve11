@@ -8,8 +8,8 @@
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#checkbox';
 
 	const tableOptions = {
-		id: 'props-table-button',
-		ariaLabel: 'Button props table',
+		id: 'props-table-Checkbox',
+		ariaLabel: 'Checkbox props table',
 		ariaDescription:
 			'This table describes the props that should be passed to the checkbox in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
@@ -18,7 +18,9 @@
 			['checkBoxLabel', 'string', 'true', 'N/A'],
 			['checked', 'boolean', 'false', 'false'],
 			['checkBoxStyle', 'string', 'false', 'N/A'],
-			['checkBoxLabelStyle', 'string', 'false', 'N/A']
+			['checkBoxLabelStyle', 'string', 'false', 'N/A'],
+			['name', 'string', 'false', 'N/A'],
+			['value', 'string', 'false', 'N/A']
 		],
 		styles: tableStyles
 	};
@@ -109,16 +111,22 @@ import Checkbox from 'svve11/Checkbox.svelte'
 					<div class="example-checkbox">
 						<Checkbox options={checkboxOptions} />
 					</div>
-					<h4>Styling the Checkbox with Classes</h4>
-					<p>
-						The checkbox is made of 2 components that can have styles applied to them using the
-						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
-					</p>
-					<ul class="options-object-list">
-						<li>sv-checkbox-input: This applies styling to the checkbox itself</li>
-						<li>sv-checkbox-label: This applies styling to the label for each checkbox</li>
-					</ul>
 				</section>
+			</fieldset>
+		</section>
+
+		<section>
+			<fieldset>
+				<legend>Styling</legend>
+				<h2>Styling</h2>
+				<p>
+					The checkbox is made of 2 components that can have styles applied to them using the
+					pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+				</p>
+				<ul class="options-object-list">
+					<li>sv-checkbox-input: This applies styling to the checkbox itself</li>
+					<li>sv-checkbox-label: This applies styling to the label for each checkbox</li>
+				</ul>
 			</fieldset>
 		</section>
 

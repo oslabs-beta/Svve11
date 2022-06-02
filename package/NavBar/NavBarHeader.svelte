@@ -1,18 +1,13 @@
 <!-- ************************* SCRIPTS ************************* -->
-<script lang="ts">
-	//required attributes
-
-	// header of the nav bar
-	export let header: string;
-
-	// link to the src of the image
-	export let imgSrc: string;
-
-	// class name for the img for it be accessible
-	export let imgClass: string;
-
-	// alternate text if img does not display
-	export let imgAlt: string;
+<script>//required attributes
+// header of the nav bar
+export let header;
+// link to the src of the image
+export let imgSrc;
+// class name for the img for it be accessible
+export let imgClass;
+// alternate text if img does not display
+export let imgAlt;
 </script>
 
 <!-- ************************* HTML ************************* -->

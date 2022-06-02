@@ -21,8 +21,8 @@
 	export let options: MeterOptionTypes = {
 		maxValue: 100,
 		minValue: 0,
-		meterLabel: '',
-		id: ''
+		meterLabel: null,
+		id: null
 	};
 
 	let { maxValue, minValue, meterLabel, id } = options;
@@ -66,14 +66,15 @@
 	});
 
 	if (minValue > maxValue) {
-		console.log('The min value must be less than the max value');
+		alert('The minValue must be less than the maxValue for the meter component');
 	}
 </script>
 
 <!-- @component
-Props are passed in through the options prop, which should be an object containing the following properties
+Props are passed in through an options object, except for the value which is a separate attribute. 
+Options should be defined by an object containing the following properties
 ```tsx
-value: number (required)
+value: number (required) - Passed as separate attribute
 maxValue: number (required)
 minValue: number (required)
 meterLabel: string (required)

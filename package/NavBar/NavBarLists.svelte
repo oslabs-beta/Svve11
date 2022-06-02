@@ -1,13 +1,10 @@
 <!-- ************************* SCRIPTS ************************* -->
-<script lang="ts">
-	//required attributes
-	// Sets the subheading for this section of the nav bar.
-	export let subheading: string;
-
-	export let options: string[] = [];
-
-	// Sets the href attributes for each option provided.
-	export let links: string[] = [];
+<script>//required attributes
+// Sets the subheading for this section of the nav bar.
+export let subheading;
+export let options = [];
+// Sets the href attributes for each option provided.
+export let links = [];
 </script>
 
 <!-- ************************* HTML ************************* -->

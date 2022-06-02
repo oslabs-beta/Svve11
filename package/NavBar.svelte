@@ -1,15 +1,11 @@
 <!-- ************************* SCRIPTS ************************* -->
-<script lang="ts">
-	import NavBarHeader from './NavBar/NavBarHeader.svelte';
-	import NavBarOptions from './NavBar/NavBarOptions.svelte';
-	import type { optionsTypes } from './NavBar/NavBarTypes';
-
-	export let options: optionsTypes = {
-		// It contains all the content to be displayed in your nav bar. Each object in the array must contain:
-		contentInfo: []
-	};
-
-	let { id, header, imgSrc, imgClass, imgAlt, contentInfo } = options;
+<script>import NavBarHeader from './NavBar/NavBarHeader.svelte';
+import NavBarOptions from './NavBar/NavBarOptions.svelte';
+export let options = {
+    // It contains all the content to be displayed in your nav bar. Each object in the array must contain:
+    contentInfo: []
+};
+let { id, header, imgSrc, imgClass, imgAlt, contentInfo } = options;
 </script>
 
 <!-- @component

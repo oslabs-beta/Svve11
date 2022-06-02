@@ -1,20 +1,10 @@
 <!-- ************************* SCRIPTS ************************* -->
-<script lang="ts">
-	type ButtonOptionTypes = {
-		handleClick: () => void;
-		content: string | null;
-		label: string | null;
-		id?: string | null;
-		style?: string | null;
-	};
-
-	export let options: ButtonOptionTypes = {
-		handleClick: () => null,
-		content: null,
-		label: null
-	};
-
-	let { handleClick, content, id, label, style } = options;
+<script>export let options = {
+    handleClick: () => null,
+    content: null,
+    label: null
+};
+let { handleClick, content, id, label, style } = options;
 </script>
 
 <!-- @component

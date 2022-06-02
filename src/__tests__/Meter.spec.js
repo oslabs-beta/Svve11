@@ -15,7 +15,6 @@ describe('Meter Unit Tests', () => {
         optimumValue: 80,
         lowValue: 20,
         highValue: 85,
-
     }
 
     let meter, label, meters, meterDiv

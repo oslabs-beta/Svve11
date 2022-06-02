@@ -30,8 +30,8 @@
 			'This table describes the props that should be passed to the nav bar in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
-			['id', 'string', 'true', 'N/A'],
 			['contentInfo', 'array of objects', 'true', 'N/A'],
+			['id', 'string', 'false', 'N/A'],
 			['header', 'string', 'false', 'N/A'],
 			['imgSrc', 'string', 'false', 'N/A'],
 			['imgClass', 'string', 'false', 'N/A'],
@@ -87,10 +87,6 @@ import NavBar from 'svve11/NavBar.svelte'
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
 						<li>
-							id (string): This will be the id attribute you reference for styling inside your
-							navbar component.
-						</li>
-						<li>
 							contentInfo (array): This will set the main content in your nav bar. This array
 							contains a series of objects that should be defined as follows:
 						</li>
@@ -110,6 +106,10 @@ import NavBar from 'svve11/NavBar.svelte'
 							</li>
 						</ul>
 						<h4>Optional Props</h4>
+						<li>
+							id (string): This will be the id attribute you reference for styling inside your
+							navbar component.
+						</li>
 						<li>header (string): This will set the heading for the entire nav bar.</li>
 						<li>
 							imgSrc (string): This will set the file path for an image you want to include at the
@@ -126,8 +126,7 @@ import NavBar from 'svve11/NavBar.svelte'
 					</ul>
 					<h4>Example Options Object:</h4>
 					<pre><code class="code-block example-code">
-{`const navOptions = {
-  id: 'nav-bar',
+{`const navOptions = {}
   contentInfo: [
 	{
 	  subheading: '',
@@ -145,6 +144,7 @@ import NavBar from 'svve11/NavBar.svelte'
 	  links: ['/about']
 	}
   ],
+	id: 'nav-bar',
   imgSrc: logo,
   imgClass: 'svvell-logo',
   imgAlt: 'svve11'
@@ -158,20 +158,25 @@ import NavBar from 'svve11/NavBar.svelte'
 						As an example, the nav bar for this webpage is made using this component and the options
 						object above was used to create it.
 					</p>
-
-					<h4>Styling the Nav Bar with Classes</h4>
-					<p>
-						The nav bar is made of 5 components that can have styles applied to them using the
-						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
-					</p>
-					<ul class="options-object-list">
-						<li>sv-navbar: This applies styling to the nav bar</li>
-						<li>sv-navbar-header: This applies styling to the main heading of the nav bar</li>
-						<li>sv-navbar-subheader: This applies styling to each subheading of the nav bar</li>
-						<li>sv-navbar-section: This applies styling to each section of the nav bar</li>
-						<li>sv-navbar-option: This applies styling to each option of the nav bar</li>
-					</ul>
 				</section>
+			</fieldset>
+		</section>
+
+		<section>
+			<fieldset>
+				<legend>Styling</legend>
+				<h2>Styling the Nav Bar with Classes</h2>
+				<p>
+					The nav bar is made of 5 components that can have styles applied to them using the
+					pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+				</p>
+				<ul class="options-object-list">
+					<li>sv-navbar: This applies styling to the nav bar</li>
+					<li>sv-navbar-header: This applies styling to the main heading of the nav bar</li>
+					<li>sv-navbar-subheader: This applies styling to each subheading of the nav bar</li>
+					<li>sv-navbar-section: This applies styling to each section of the nav bar</li>
+					<li>sv-navbar-option: This applies styling to each option of the nav bar</li>
+				</ul>
 			</fieldset>
 		</section>
 

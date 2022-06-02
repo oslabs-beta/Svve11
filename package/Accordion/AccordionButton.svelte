@@ -1,29 +1,20 @@
-<script lang="ts">
-	// @ts-nocheck
-	import { createEventDispatcher } from 'svelte';
-	import type { accordionStylesObject } from './AccordionTypes';
-
-	export let headerTitle: string;
-	export let controls: string;
-	export let id: string;
-	export let customStyles: accordionStylesObject;
-	export let textToRead: string;
-	export let isOpen: boolean;
-
-	//this function is an event dispatcher which will dispatch to the main accordion containing the
-	//the panel states for every panel to invoke the function, passing in the button target as an option
-	const dispatch = createEventDispatcher<{
-		updatePanelStates: {
-			target: string;
-		};
-	}>();
-
-	const handleHeaderClick = (event: MouseEvent): void => {
-		dispatch('updatePanelStates', {
-			target: event.target.id
-		});
-		return;
-	};
+<script>// @ts-nocheck
+import { createEventDispatcher } from 'svelte';
+export let headerTitle;
+export let controls;
+export let id;
+export let customStyles;
+export let textToRead;
+export let isOpen;
+//this function is an event dispatcher which will dispatch to the main accordion containing the
+//the panel states for every panel to invoke the function, passing in the button target as an option
+const dispatch = createEventDispatcher();
+const handleHeaderClick = (event) => {
+    dispatch('updatePanelStates', {
+        target: event.target.id
+    });
+    return;
+};
 </script>
 
 <!-- Button Attributes:

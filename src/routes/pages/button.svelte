@@ -13,10 +13,10 @@
 			'This table describes the props that should be passed to the button in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
-			['id', 'string', 'true', 'N/A'],
 			['label', 'string', 'true', 'N/A'],
 			['content', 'string', 'true', 'N/A'],
 			['handleClick', 'function', 'false', 'N/A'],
+			['id', 'string', 'false', 'N/A'],
 			['style', 'string', 'false', 'N/A']
 		],
 		styles: tableStyles
@@ -26,7 +26,7 @@
 		id: 'demo-button-1',
 		content: 'Click me!',
 		label: 'accessible-button-1',
-		handleClick: () => console.log('You clicked a button!'),
+		handleClick: () => alert('You clicked a button!'),
 		style: 'height: 50px; width:300px;'
 	};
 </script>
@@ -35,9 +35,9 @@
 	<header>
 		<h1>{componentName}</h1>
 		<ul class="resource-links-list">
-			<li>Source: <a href={githubSourceLink}>{githubSourceLink}</a></li>
+			<li>Source: <a href={githubSourceLink} target="_blank">{githubSourceLink}</a></li>
 			<li>
-				WAI-ARIA: <a href={WAIARIApracticesLink}>{WAIARIApracticesLink}</a>
+				WAI-ARIA: <a href={WAIARIApracticesLink} target="_blank">{WAIARIApracticesLink}</a>
 			</li>
 		</ul>
 		<p class="header-paragraph">
@@ -74,7 +74,6 @@ import Button from 'svve11/Button.svelte'
 					</p>
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
-						<li>id (string): Sets the id attribute of the button component.</li>
 						<li>label (string): Sets the aria-label attribute of the button component.</li>
 						<li>content (string): Sets the text that is displayed inside the button component.</li>
 						<li>
@@ -82,6 +81,7 @@ import Button from 'svve11/Button.svelte'
 							clicked.
 						</li>
 						<h4>Optional Props</h4>
+						<li>id (string): Sets the id attribute of the button component.</li>
 						<li>style (string): Sets the styles of the button component.</li>
 					</ul>
 					<h4>Example Options Object:</h4>
@@ -90,7 +90,7 @@ import Button from 'svve11/Button.svelte'
   id: 'demo-button-1',
   content: 'Click me!',
   label: 'accessible-button-1',
-  handleClick: () => console.log('You clicked a button!'),
+  handleClick: () => alert('You clicked a button!'),
   style: 'height: 50px; width: 300px;'
 };`}
               </code></pre>
@@ -102,15 +102,20 @@ import Button from 'svve11/Button.svelte'
 					<div class="example-button">
 						<Button options={buttonOptions} />
 					</div>
-					<h4>Styling the Button with Classes</h4>
-					<p>
-						The button is made of 1 component that can have styles applied to it using the
-						pre-assigned class and a globally scoped CSS stylesheet. The class is:
-					</p>
-					<ul class="options-object-list">
-						<li>sv-button: This applies styling to the button</li>
-					</ul>
 				</section>
+			</fieldset>
+		</section>
+		<section>
+			<fieldset>
+				<legend>Styling</legend>
+				<h2>Styling</h2>
+				<p>
+					The button is made of 1 component that can have styles applied to it using the
+					pre-assigned class and a globally scoped CSS stylesheet. The class is:
+				</p>
+				<ul class="options-object-list">
+					<li>sv-button: This applies styling to the button</li>
+				</ul>
 			</fieldset>
 		</section>
 
