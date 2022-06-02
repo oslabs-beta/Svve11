@@ -16,6 +16,7 @@
 html,
 body {
   background-color:$white;
+  
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -63,7 +64,7 @@ body {
       font-family: 'Fira Code', monospace;
     }
   }
-  .bold-word {
+  .bold {
     font-weight: 600;
   }
 }
@@ -86,6 +87,7 @@ body {
       font-style: italic;
       font-weight: 400;
       color: $color-primary;
+      text-shadow: .05em .05em $lightgrey;
     }
   }
   section {
@@ -94,8 +96,50 @@ body {
     // }
   }
   pre {
-    border: 2px solid $white;
-    // box-shadow: .5em .5em $white;
+    border: 2px solid $color-primary;
+    box-shadow: .5em .5em $color-primary-transparent;
+    margin-bottom: 3em;
+  }
+  #home-testing-info {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    // align-items: flex-start;
+
+    #testing-suite {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1em;
+      * {
+        margin: 0;
+      }
+      li {
+        list-style-type: none;
+        text-align: center;
+        margin-left: -3em;
+      }
+    }
+    section {
+      display: grid;
+      grid-template-columns: 5em 10em;
+      grid-template-rows: 1fr;
+      span {
+        grid-column: 0 1;
+      }
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 5em);
+      column-gap: 0;
+    }
+    // li {
+    //   text-align: left;
+    //   margin: 0;
+    //   margin-bottom: 1em;
+    // }
   }
 }
 
@@ -216,6 +260,7 @@ body {
     line-height: 1.3;
   }
   pre {
+    border: 1.5px solid $color-primary;
     width: 100%;
     background-color: $lightgrey;
     border-radius: 0.5em;

@@ -28,8 +28,10 @@
 		src: logo,
 		title: 'svve11 homepage',
 		alt: 'svve11 logo',
-		imgId: 'svvell-logo'
+		imgId: 'svvell-logo',
+		newTab: false
 	};
+
 </script>
 
 <!-- ************************* HTML ************************* -->

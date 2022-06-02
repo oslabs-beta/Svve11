@@ -94,18 +94,18 @@ import TextInput from 'svve11/TextInput.svelte'
 					</p>
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
-						<li>label (string): describes what the text input is requesting from the user</li>
+						<li><span class="bold">label</span> (string): describes what the text input is requesting from the user</li>
 						<li>
-							placeholder (string): sets the text displayed in the text input box before the user
+							<span class="bold">placeholder</span> (string): sets the text displayed in the text input box before the user
 							inputs anything. This gives the user a hint as to what kind of input is being
 							requested.
 						</li>
-						<li>id (string): sets the unique id for the text field</li>
-						<li>type (string): sets the the kind of input expected to be submitted by the user.</li>
+						<li><span class="bold">id</span> (string): sets the unique id for the text field</li>
+						<li><span class="bold">type</span> (string): sets the the kind of input expected to be submitted by the user.</li>
 						<h4>Optional Props</h4>
-						<li>inputStyle (string): sets the style attribute for the text input box</li>
+						<li><span class="bold">inputStyle</span> (string): sets the style attribute for the text input box</li>
 						<li>
-							labelStyle (string): sets the style attribute for the label above the text input box
+							<span class="bold">labelStyle</span> (string): sets the style attribute for the label above the text input box
 						</li>
 					</ul>
 					<h4>Example Options Object:</h4>
@@ -145,16 +145,16 @@ import TextInput from 'svve11/TextInput.svelte'
 						are set to false.
 					</p>
 					<ul>
-						<li>max (string)</li>
-						<li>min (string)</li>
-						<li>maxLength (string)</li>
-						<li>size (string)</li>
-						<li>step (string)</li>
-						<li>autocomplete (booelan)</li>
-						<li>disabled (booelan)</li>
-						<li>multiple (booelan)</li>
-						<li>readonly (booelan)</li>
-						<li>required (booelan)</li>
+						<li><span class="bold">max</span> (string)</li>
+						<li><span class="bold">min</span> (string)</li>
+						<li><span class="bold">maxLength</span> (string)</li>
+						<li><span class="bold">size</span> (string)</li>
+						<li><span class="bold">step</span> (string)</li>
+						<li><span class="bold">autocomplete</span> (booelan)</li>
+						<li><span class="bold">disabled</span> (booelan)</li>
+						<li><span class="bold">multiple</span> (booelan)</li>
+						<li><span class="bold">readonly</span> (booelan)</li>
+						<li><span class="bold">required</span> (booelan)</li>
 					</ul>
 
 					<section>
@@ -166,9 +166,9 @@ import TextInput from 'svve11/TextInput.svelte'
 								the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
 							</p>
 							<ul class="options-object-list">
-								<li>sv-text-input: This applies styling to the text input input element</li>
+								<li><span class="bold">sv-text-input</span>: This applies styling to the text input input element</li>
 								<li>
-									sv-text-input-label: This applies styling to the label for the text input element
+									<span class="bold">sv-text-input-label</span>: This applies styling to the label for the text input element
 								</li>
 							</ul>
 						</fieldset>

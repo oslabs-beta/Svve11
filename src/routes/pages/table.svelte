@@ -66,40 +66,40 @@ import Table from 'svve11/Table.svelte'
 					</p>
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
-						<li>ariaLabel (string): sets the aria-label attribute of the table</li>
+						<li><span class="bold">ariaLabel</span> (string): sets the aria-label attribute of the table</li>
 						<li>
-							ariaDescription (string): sets the title of the table. It will also set the table's
+							<span class="bold">ariaDescription</span> (string): sets the title of the table. It will also set the table's
 							aria-description attribute.
 						</li>
 						<li>
-							columnNames (array of strings): each string in the array corresponds to a column name
+							<span class="bold">columnNames</span> (array of strings): each string in the array corresponds to a column name
 							of the table.
 						</li>
 						<li>
-							rowsContent (array of arrays of strings): each inner array corresponds to a row of the
+							<span class="bold">rowsContent</span> (array of arrays of strings): each inner array corresponds to a row of the
 							table. Each string in the inner array corresponds to a cell in the row. The number of
 							strings in each of these arrays should match the number of strings in the columnNames
 							array.
 						</li>
 						<h4>Optional Props</h4>
-						<li>id (string): sets the id attribtue of the table.</li>
+						<li><span class="bold">id</span> (string): sets the id attribtue of the table.</li>
 						<li>
-							styles (object): sets the styles for the various table components. Each key in the
+							<span class="bold">styles</span> (object): sets the styles for the various table components. Each key in the
 							object is defined as follows:
 						</li>
 						<ul>
 							<li>
-								overallStyles (string): sets the style attribute of the overall table element.
+								<span class="bold">overallStyles</span> (string): sets the style attribute of the overall table element.
 							</li>
-							<li>titleStyles (string): sets the style attribute of the table's title</li>
+							<li><span class="bold">titleStyles</span> (string): sets the style attribute of the table's title</li>
 							<li>
-								headersRowStyles (string): sets the style attribute of the first row of the table
+								<span class="bold">headersRowStyles</span> (string): sets the style attribute of the first row of the table
 								which contains the column names.
 							</li>
-							<li>generalRowStyles (string): sets the attribute of all the table's rows.</li>
-							<li>oddRowStyles (string): sets the style attributes of all the table's odd rows.</li>
+							<li><span class="bold">generalRowStyles</span> (string): sets the attribute of all the table's rows.</li>
+							<li><span class="bold">oddRowStyles</span> (string): sets the style attributes of all the table's odd rows.</li>
 							<li>
-								evenRowStyles (string): sets the style attribute of all the table's even rows.
+								<span class="bold">evenRowStyles</span> (string): sets the style attribute of all the table's even rows.
 							</li>
 						</ul>
 					</ul>
@@ -166,15 +166,15 @@ import Table from 'svve11/Table.svelte'
 								scoped CSS stylesheet. The classes are:
 							</p>
 							<ul class="options-object-list">
-								<li>sv-table: This applies styling to the table as a whole</li>
-								<li>sv-table-title: This applies styling to the table title</li>
-								<li>sv-table-row-headers: This applies styling to the header row of the table</li>
-								<li>sv-table-row: This applies styling to all of the rows in the table</li>
+								<li><span class="bold">sv-table</span>: This applies styling to the table as a whole</li>
+								<li><span class="bold">sv-table-title</span>: This applies styling to the table title</li>
+								<li><span class="bold">sv-table-row-headers</span>: This applies styling to the header row of the table</li>
+								<li><span class="bold">sv-table-row</span>: This applies styling to all of the rows in the table</li>
 								<ul>
-									<li>sv-table-row-even: This applies styling to each even row in the table</li>
-									<li>sv-table-row-odd: This applies styling to each odd row in the table</li>
+									<li><span class="bold">sv-table-row-even</span>: This applies styling to each even row in the table</li>
+									<li><span class="bold">sv-table-row-odd</span>: This applies styling to each odd row in the table</li>
 								</ul>
-								<li>sv-table-cell: This applies styling to each cell within the table</li>
+								<li><span class="bold">sv-table-cell</span>: This applies styling to each cell within the table</li>
 							</ul>
 						</fieldset>
 					</section>

@@ -74,15 +74,15 @@ import Button from 'svve11/Button.svelte'
 					</p>
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
-						<li>label (string): Sets the aria-label attribute of the button component.</li>
-						<li>content (string): Sets the text that is displayed inside the button component.</li>
+						<li><span class="bold">label</span> (string): Sets the aria-label attribute of the button component.</li>
+						<li><span class="bold">content</span> (string): Sets the text that is displayed inside the button component.</li>
 						<li>
-							handleClick (function): Defines the action or event to be triggered when the button is
+							<span class="bold">handleClick</span> (function): Defines the action or event to be triggered when the button is
 							clicked.
 						</li>
 						<h4>Optional Props</h4>
-						<li>id (string): Sets the id attribute of the button component.</li>
-						<li>style (string): Sets the styles of the button component.</li>
+						<li><span class="bold">id</span> (string): Sets the id attribute of the button component.</li>
+						<li><span class="bold">style</span> (string): Sets the styles of the button component.</li>
 					</ul>
 					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
@@ -114,7 +114,7 @@ import Button from 'svve11/Button.svelte'
 					pre-assigned class and a globally scoped CSS stylesheet. The class is:
 				</p>
 				<ul class="options-object-list">
-					<li>sv-button: This applies styling to the button</li>
+					<li><span class="bold">sv-button</span>: This applies styling to the button</li>
 				</ul>
 			</fieldset>
 		</section>

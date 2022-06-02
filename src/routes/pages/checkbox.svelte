@@ -76,22 +76,22 @@ import Checkbox from 'svve11/Checkbox.svelte'
 					</p>
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
-						<li>id (string): sets the id attribute of the checkbox component.</li>
+						<li><span class="bold">id</span> (string): sets the id attribute of the checkbox component.</li>
 						<li>
-							checkBoxLabel (string): sets the aria-label attribute of the checkbox component.
+							<span class="bold">checkBoxLabel</span> (string): sets the aria-label attribute of the checkbox component.
 						</li>
 						<h4>Optional Props</h4>
 						<li>
-							checked (boolean): sets the initial state of the checkbox, where true will render a
+							<span class="bold">checked</span> (boolean): sets the initial state of the checkbox, where true will render a
 							pre-checked box and false will render a non-checked checkbox.
 						</li>
-						<li>checkBoxStyle (string): sets the styling for the checkbox</li>
-						<li>checkBoxLabelStyle (string): sets the styling for the checkbox label text.</li>
+						<li><span class="bold">checkBoxStyle</span> (string): sets the styling for the checkbox</li>
+						<li><span class="bold">checkBoxLabelStyle</span> (string): sets the styling for the checkbox label text.</li>
 						<li>
-							name (string): sets the group name to which the checkbox belongs. All checkbox in one
+							<span class="bold">name</span> (string): sets the group name to which the checkbox belongs. All checkbox in one
 							group should have the same name attribute.
 						</li>
-						<li>value (string): sets the value associated with the given checkbox.</li>
+						<li><span class="bold">value</span> (string): sets the value associated with the given checkbox.</li>
 					</ul>
 					<h4>Example Options Object:</h4>
 					<pre><code class="code-block">
@@ -124,8 +124,8 @@ import Checkbox from 'svve11/Checkbox.svelte'
 					pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
 				</p>
 				<ul class="options-object-list">
-					<li>sv-checkbox-input: This applies styling to the checkbox itself</li>
-					<li>sv-checkbox-label: This applies styling to the label for each checkbox</li>
+					<li><span class="bold">sv-checkbox-input</span>: This applies styling to the checkbox itself</li>
+					<li><span class="bold">sv-checkbox-label</span>: This applies styling to the label for each checkbox</li>
 				</ul>
 			</fieldset>
 		</section>
