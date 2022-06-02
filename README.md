@@ -53,7 +53,7 @@ Svve11 can easily be installed for use in your application as follows.
 2. Run the following command in your terminal.
 
 ```node
-npm install --save-dev 'svve11'
+npm install svve11
 ```
 
 3. Components can now be imported directly into your Svelte files as documented below.

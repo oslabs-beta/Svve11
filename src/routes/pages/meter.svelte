@@ -124,56 +124,56 @@ import Meter from 'svve11/Meter.svelte'
 					<ul class="options-object-list">
 						<p>The value attribute is required and defined as follows:</p>
 						<li>
-							value (number): sets the current value of the meter. Must be within the minValue to
+							<span class="bold">value</span> (number): sets the current value of the meter. Must be within the minValue to
 							maxValue range. It is recommended to use a reactive variable to allow meter value to
 							change as necessary.
 						</li>
 						<p>The options object has 12 properties:</p>
 						<h4>Required Props</h4>
-						<li>maxValue (number): sets the maximum value for the meter range</li>
-						<li>minValue (number): sets the minimum value for the meter range.</li>
+						<li><span class="bold">maxValue</span> (number): sets the maximum value for the meter range</li>
+						<li><span class="bold">minValue</span> (number): sets the minimum value for the meter range.</li>
 						<li>
-							meterLabel (string): sets the text label for the meter. The label will be
+							<span class="bold">meterLabel</span> (string): sets the text label for the meter. The label will be
 							automatically joined with a percentage calculation, unless otherwise specified. See
 							displayDecimal in optional props section below.
 						</li>
 						<li>
-							id (number): sets the id for the meter. Remember to provide different id numbers when
+							<span class="bold">id</span> (number): sets the id for the meter. Remember to provide different id numbers when
 							instantiating more than one meter on a page as the id should be unique.
 						</li>
 						<h4>Optional Props</h4>
 						<li>
-							highValue (number): sets the value from which a current value above is considered
+							<span class="bold">highValue</span> (number): sets the value from which a current value above is considered
 							high. Must be less than maxValue and greater than the minValue and lowValue.
 						</li>
 						<li>
-							lowValue (number): sets the value from which a current value below is considered low.
+							<span class="bold">lowValue</span> (number): sets the value from which a current value below is considered low.
 							Must be greater than minValue and less than the maxValue and highValue.
 						</li>
 						<li>
-							optimumValue (number): sets the optimal numeric value of the meter. Must be a number
+							<span class="bold">optimumValue</span> (number): sets the optimal numeric value of the meter. Must be a number
 							between the minValue and maxValue. If the optimal value is set between the minValue
 							and lowValue, or the maxValue and highValue, this range is considered optimal.
 							Different browsers will color the bar differently depending on where the current value
 							falls in relation to the optimal value.
 						</li>
 						<li>
-							valueText (string): used for assistive technologies that read the value of the meter
+							<span class="bold">valueText</span> (string): used for assistive technologies that read the value of the meter
 							to the users. Most assistive technologies will read value as a percentage by default,
 							thus this props should be provided if a percentage read does not make sense in the
 							context of your meter use.
 						</li>
 						<li>
-							displayDecimal (boolean): this will default to false. If set to true, this indicates
+							<span class="bold">displayDecimal</span> (boolean): this will default to false. If set to true, this indicates
 							to the meter that the value should not be presented as a percentage. This prop must be
 							accompanied by the units prop described next.
 						</li>
 						<li>
-							units (string): sets the units to be displayed in the meter label should the
+							<span class="bold">units</span> (string): sets the units to be displayed in the meter label should the
 							percentage appearance not be relevant.
 						</li>
-						<li>meterstyle (string): sets the style for the meter for any custom styles.</li>
-						<li>labelStyle (string): sets the style for the meter label for any custom styles.</li>
+						<li><span class="bold">meterstyle</span> (string): sets the style for the meter for any custom styles.</li>
+						<li><span class="bold">labelStyle</span> (string): sets the style for the meter label for any custom styles.</li>
 					</ul>
 
 					<h4>Example Options Object:</h4>
@@ -223,8 +223,8 @@ import Meter from 'svve11/Meter.svelte'
 					pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
 				</p>
 				<ul class="options-object-list">
-					<li>sv-meter: This applies styling to the meter itself</li>
-					<li>sv-meter-label: This applies styling to the label for the meter</li>
+					<li><span class="bold">sv-meter</span>: This applies styling to the meter itself</li>
+					<li><span class="bold">sv-meter-label</span>: This applies styling to the label for the meter</li>
 				</ul>
 			</fieldset>
 		</section>

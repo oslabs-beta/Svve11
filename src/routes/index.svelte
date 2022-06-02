@@ -19,7 +19,8 @@
 			href: 'https://svve11.io/',
 			src: svve11Logo,
 			title: 'svve11 homepage',
-			alt: 'svve11 logo'
+			alt: 'svve11 logo',
+			newTab: false,
 		},
 		jest: {
 			href: 'https://jestjs.io/',
@@ -27,7 +28,8 @@
 			title: 'Jest website',
 			alt: 'Jest logo',
 			imgClass: 'tech-icon',
-			postText: 'Jest'
+			postText: 'Jest',
+			newTab: true,
 		},
 		NVDA: {
 			href: 'https://www.nvaccess.org/download/',
@@ -35,7 +37,8 @@
 			title: 'NVDA website',
 			alt: 'NVDA logo',
 			imgClass: 'tech-icon',
-			postText: 'NVDA'
+			postText: 'NVDA',
+			newTab: true,
 		},
 		VoiceOver: {
 			href: 'https://www.apple.com/accessibility/vision/',
@@ -43,7 +46,8 @@
 			title: 'Apple VoiceOver website',
 			alt: 'Apple VoiceOver logo',
 			imgClass: 'tech-icon',
-			postText: 'VoiceOver'
+			postText: 'VoiceOver',
+			newTab: true,
 		},
 		JAWS: {
 			href: 'https://www.freedomscientific.com/products/software/jaws/',
@@ -51,7 +55,8 @@
 			title: 'JAWS website',
 			alt: 'JAWS logo',
 			imgClass: 'tech-icon',
-			postText: 'JAWS'
+			postText: 'JAWS',
+			newTab: true,
 		},
 		Chrome: {
 			href: 'https://www.google.com/chrome/',
@@ -59,7 +64,8 @@
 			title: 'Google Chrome website',
 			alt: 'Google Chrome logo',
 			imgClass: 'tech-icon',
-			postText: 'Chrome'
+			postText: 'Chrome',
+			newTab: true,
 		},
 		Safari: {
 			href: 'https://www.apple.com/safari/',
@@ -67,7 +73,8 @@
 			title: 'Safari website',
 			alt: 'Safari logo',
 			imgClass: 'tech-icon',
-			postText: 'Safari'
+			postText: 'Safari',
+			newTab: true,
 		},
 		Firefox: {
 			href: 'https://www.mozilla.org/en-US/firefox/new/',
@@ -75,7 +82,8 @@
 			title: 'Mozilla Firefox website',
 			alt: 'Mozilla Firefox logo',
 			imgClass: 'tech-icon',
-			postText: 'Firefox'
+			postText: 'Firefox',
+			newTab: true,
 		},
 		Edge: {
 			href: 'https://www.microsoft.com/en-us/edge',
@@ -83,20 +91,11 @@
 			title: 'Microsoft Edge website',
 			alt: 'Microsoft Edge logo',
 			imgClass: 'tech-icon',
-			postText: 'Edge'
+			postText: 'Edge',
+			newTab: true,
 		}
 	};
 </script>
-
-<!-- Checking for hover prop tips -->
-<!-- <Accordion />
-<Button />
-<Checkbox />
-<Meter />
-<NavBar />
-<RadioButton />
-<Table />
-<TextInput /> -->
 
 <article id="splash" class="page-component">
 	<header>
@@ -119,7 +118,7 @@
 			<section class="content-section">
 				<p>For npm, run the following in your command line</p>
 				<pre><code class="code-block">  
-npm install 'svve11'
+npm install svve11
         </code></pre>
 			</section>
 

@@ -87,40 +87,40 @@ import NavBar from 'svve11/NavBar.svelte'
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
 						<li>
-							contentInfo (array): This will set the main content in your nav bar. This array
+							<span class="bold">contentInfo</span> (array): This will set the main content in your nav bar. This array
 							contains a series of objects that should be defined as follows:
 						</li>
 						<ul>
 							<li>
-								options (array): The array contains a series of strings, and the order of the
+								<span class="bold">options</span> (array): The array contains a series of strings, and the order of the
 								strings will determine the order they appear in the nav bar section. This will
 								define the text labeling a given nav landmark.
 							</li>
 							<li>
-								links (array): The array contains a series of strings, and the order of the strings
+								<span class="bold">links</span> (array): The array contains a series of strings, and the order of the strings
 								should mimic that of the options array above. These strings will set the href
 								attribute of the anchor tag that enable navigation.
 							</li>
 							<li>
-								subheading (string): This will set the subheading for a section of the nav bar.
+								<span class="bold">subheading</span> (string): This will set the subheading for a section of the nav bar.
 							</li>
 						</ul>
 						<h4>Optional Props</h4>
 						<li>
-							id (string): This will be the id attribute you reference for styling inside your
+							<span class="bold">id</span> (string): This will be the id attribute you reference for styling inside your
 							navbar component.
 						</li>
-						<li>header (string): This will set the heading for the entire nav bar.</li>
+						<li><span class="bold">header</span> (string): This will set the heading for the entire nav bar.</li>
 						<li>
-							imgSrc (string): This will set the file path for an image you want to include at the
+							<span class="bold">imgSrc</span> (string): This will set the file path for an image you want to include at the
 							top of the menu.
 						</li>
 						<li>
-							imgClass (string): This will set the class for the image included with the imgSrc
+							<span class="bold">imgClass</span> (string): This will set the class for the image included with the imgSrc
 							attribute.
 						</li>
 						<li>
-							imgAlt (string): This will set the alternate text for the image included with the
+							<span class="bold">imgAlt</span> (string): This will set the alternate text for the image included with the
 							imgSrc attribute.
 						</li>
 					</ul>
@@ -171,11 +171,11 @@ import NavBar from 'svve11/NavBar.svelte'
 					pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
 				</p>
 				<ul class="options-object-list">
-					<li>sv-navbar: This applies styling to the nav bar</li>
-					<li>sv-navbar-header: This applies styling to the main heading of the nav bar</li>
-					<li>sv-navbar-subheader: This applies styling to each subheading of the nav bar</li>
-					<li>sv-navbar-section: This applies styling to each section of the nav bar</li>
-					<li>sv-navbar-option: This applies styling to each option of the nav bar</li>
+					<li><span class="bold">sv-navbar</span>: This applies styling to the nav bar</li>
+					<li><span class="bold">sv-navbar-header</span>: This applies styling to the main heading of the nav bar</li>
+					<li><span class="bold">sv-navbar-subheader</span>: This applies styling to each subheading of the nav bar</li>
+					<li><span class="bold">sv-navbar-section</span>: This applies styling to each section of the nav bar</li>
+					<li><span class="bold">sv-navbar-option</span>: This applies styling to each option of the nav bar</li>
 				</ul>
 			</fieldset>
 		</section>

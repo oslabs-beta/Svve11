@@ -7,6 +7,7 @@
     src: string;
     title: string;
     alt: string;
+    newTab?: boolean;
     imgId?: string;
     imgClass?: string;
     preText?: string;
@@ -22,17 +23,18 @@
   }
 
   const { href, src, title, alt } = options;
-  let imgId:string, imgClass:string, preText:string, postText:string;
+  let imgId:string, imgClass:string, preText:string, postText:string, newTab:boolean=false;
 
   if (options.imgId) imgId = options.imgId;
   if (options.imgClass) imgClass = options.imgClass;
   if (options.preText) preText = options.preText;
   if (options.postText) postText = options.postText;
+  if (options.newTab) newTab = options.newTab;
 </script>
 
 
 <!-- ************************* HTML ************************* -->
-<a href={href} target="_blank">
+<a href={href} target={newTab ? "_blank" : ''}>
   {#if preText}
     {preText}
   {/if}

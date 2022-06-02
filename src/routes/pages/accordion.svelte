@@ -101,20 +101,20 @@ import Accordion from 'svve11/Accordion.svelte'
 					<ul class="options-object-list">
 						<h4>Required Props</h4>
 						<li>
-							panelInfo (array): It must be an array of objects, with each object containing
+							<span class="bold">panelInfo</span> (array): It must be an array of objects, with each object containing
 							information for one accordion item. Each object must contain:
 						</li>
 						<ul>
 							<li>
-								id (number): Used to set the `id` of the accordion header and panel. If you will
+								<span class="bold">id </span>(number): Used to set the `id` of the accordion header and panel. If you will
 								have more than one accordion in your application, be sure to continue the sequence
 								of numbers instead of starting back at 1.
 							</li>
-							<li>panelContent (string): Sets text contents of the panel.</li>
-							<li>headerTitle (string): Sets the title of the accordion section.</li>
+							<li><span class="bold">panelContent</span> (string): Sets text contents of the panel.</li>
+							<li><span class="bold">headerTitle</span> (string): Sets the title of the accordion section.</li>
 						</ul>
 						<li>
-							headerLevel (number): Sets the aria-level for each header in the accordion. For
+							<span class="bold">headerLevel</span> (number): Sets the aria-level for each header in the accordion. For
 							information on deciding the appropriate value to be supplied, visit this
 							<a
 								href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-level"
@@ -123,17 +123,17 @@ import Accordion from 'svve11/Accordion.svelte'
 						</li>
 						<h4>Optional Props</h4>
 						<li>
-							styles (object): This property is an object with four assignable key/value pairs. The
+							<span class="bold">styles</span> (object): This property is an object with four assignable key/value pairs. The
 							values must be strings, and the required key properties are:
 						</li>
 						<ul>
-							<li>accordionHeaderStyle: sets the style attribute for each accordion header</li>
-							<li>accordionPanelStyle: sets the style attribute for each accordion panel</li>
-							<li>accordionItemStyle: sets the style attribute for each accordion item</li>
-							<li>overallAccordionStyle: sets the style attribute for the accordion as a whole</li>
+							<li><span class="bold">accordionHeaderStyle</span>: sets the style attribute for each accordion header</li>
+							<li><span class="bold">accordionPanelStyle</span>: sets the style attribute for each accordion panel</li>
+							<li><span class="bold">accordionItemStyle</span>: sets the style attribute for each accordion item</li>
+							<li><span class="bold">overallAccordionStyle</span>: sets the style attribute for the accordion as a whole</li>
 						</ul>
 						<li>
-							multiselectable (boolean): This will default to false. When set to true, the accordion
+							<span class="bold">multiselectable</span> (boolean): This will default to false. When set to true, the accordion
 							can expand multiple panels at one time. When set to false, the accordion can expand
 							only one panel at a time.
 						</li>
@@ -185,15 +185,15 @@ import Accordion from 'svve11/Accordion.svelte'
 					the pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
 				</p>
 				<ul class="options-object-list">
-					<li>sv-accordion-main: This applies styling to the accordion as whole</li>
+					<li><span class="bold">sv-accordion-main</span>: This applies styling to the accordion as whole</li>
 					<li>
-						sv-accordion-item: This applies styling to each accordion item within an accordion
+						<span class="bold">sv-accordion-item</span>: This applies styling to each accordion item within an accordion
 					</li>
-					<li>sv-accordion-header: This applies styling to each accordion header within an item</li>
+					<li><span class="bold">sv-accordion-header</span>: This applies styling to each accordion header within an item</li>
 					<li>
-						sv-accordion-button: This applies styling to each accordion button within a header
+						<span class="bold">sv-accordion-button</span>: This applies styling to each accordion button within a header
 					</li>
-					<li>sv-accordion-panel: This applies styling to each accordion panel within an item</li>
+					<li><span class="bold">sv-accordion-panel</span>: This applies styling to each accordion panel within an item</li>
 				</ul>
 			</fieldset>
 		</section>

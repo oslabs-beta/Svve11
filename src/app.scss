@@ -63,7 +63,7 @@ body {
       font-family: 'Fira Code', monospace;
     }
   }
-  .bold-word {
+  .bold {
     font-weight: 600;
   }
 }
@@ -94,8 +94,8 @@ body {
     // }
   }
   pre {
-    border: 2px solid $white;
-    // box-shadow: .5em .5em $white;
+    border: 2px solid $color-primary;
+    box-shadow: .5em .5em $color-primary-transparent
   }
 }
 
