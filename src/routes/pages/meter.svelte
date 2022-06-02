@@ -21,7 +21,8 @@
 	const tableOptions = {
 		id: 'props-table-meter',
 		ariaLabel: 'Meter props table',
-		ariaDescription: 'This table describes the props that should be passed to the meter',
+		ariaDescription:
+			'This table describes the props that should be passed to the meter in the options object',
 		columnNames: ['Prop', 'Type', 'Required', 'Default Value'],
 		rowsContent: [
 			['value', 'number', 'true', 'N/A'],
@@ -75,7 +76,7 @@
 		id: 4,
 		lowValue: 5,
 		meterStyle: 'width: 50px;',
-		labelStyle: 'font-weight: bold; color: powderblue;'
+		labelStyle: 'font-weight: bold; color: blue;'
 	};
 </script>
 
@@ -209,17 +210,22 @@ import Meter from 'svve11/Meter.svelte'
 					<div class="example-meter">
 						<Meter value={Math.round(changingValue) / 10} options={meterFourOptions} />
 					</div>
-
-					<h4>Styling the Meter with Classes</h4>
-					<p>
-						The meter is made of 2 components that can have styles applied to them using the
-						pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
-					</p>
-					<ul class="options-object-list">
-						<li>sv-meter: This applies styling to the meter itself</li>
-						<li>sv-meter-label: This applies styling to the label for the meter</li>
-					</ul>
 				</section>
+			</fieldset>
+		</section>
+
+		<section>
+			<fieldset>
+				<legend>Styling</legend>
+				<h2>Styling</h2>
+				<p>
+					The meter is made of 2 sub-components that can have styles applied to them using the
+					pre-assigned classes and a globally scoped CSS stylesheet. The classes are:
+				</p>
+				<ul class="options-object-list">
+					<li>sv-meter: This applies styling to the meter itself</li>
+					<li>sv-meter-label: This applies styling to the label for the meter</li>
+				</ul>
 			</fieldset>
 		</section>
 

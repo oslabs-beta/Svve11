@@ -4,11 +4,11 @@
 	import AccordionPanel from './AccordionPanel.svelte';
 	import AccordionHeader from './AccordionHeader.svelte';
 
-	import type { panelInfoTypes, accordionStylesObject } from './AccordionTypes';
+	import type { panelInfoTypes, accordionStylesObjectTypes } from './AccordionTypes';
 
 	export let options: panelInfoTypes;
 	export let headerLevel: number = 2;
-	export let customStyles: accordionStylesObject;
+	export let customStyles: accordionStylesObjectTypes;
 	export let isOpen: boolean;
 
 	// this is to supply the data-state of the accordion item with expanded

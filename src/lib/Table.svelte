@@ -2,7 +2,7 @@
 <script lang="ts">
 	// defining types for the props object
 	type TableOptions = {
-		id?: string;
+		id: string;
 		ariaLabel: string;
 		ariaDescription: string;
 		columnNames: string[];
@@ -11,12 +11,12 @@
 	};
 
 	type TableStyles = {
-		overallStyles?: string | null;
-		titleStyles?: string | null;
-		headersRowStyles?: string | null;
-		generalRowStyles?: string | null;
-		oddRowStyles?: string | null;
-		evenRowStyles?: string | null;
+		overallStyles?: string;
+		titleStyles?: string;
+		headersRowStyles?: string;
+		generalRowStyles?: string;
+		oddRowStyles?: string;
+		evenRowStyles?: string;
 	};
 
 	export let options: TableOptions = {
@@ -54,9 +54,9 @@
 <!-- @component
 https://svve11.io/pages/table
 
-Props are passed in through the options prop, which should be an object containing the following properties
+Props are passed in through the options object that contains the following properties:
 ```tsx
-	id: string (optional)
+	id: string (required)
 	ariaLabel: string (required)
 	ariaDescription: string (required)
 	columnNames: array of string (required)
@@ -78,7 +78,6 @@ Props are passed in through the options prop, which should be an object containi
 		class="sv-table"
 		style={overallStyles ? overallStyles : ''}
 	>
-
 		<!-- Title of the table - doubles as the aria-description text -->
 		<caption
 			id={ariaLabel + '_table_desc'}
@@ -117,8 +116,6 @@ Props are passed in through the options prop, which should be an object containi
 				</tr>
 			{/each}
 		</tbody>
-
-		
 	</table>
 </div>
 
@@ -132,10 +129,5 @@ Props are passed in through the options prop, which should be an object containi
 
 	th {
 		font-weight: 500;
-	}
-
-	td,
-	th {
-		background-color: white;
 	}
 </style>

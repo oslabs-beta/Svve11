@@ -152,15 +152,15 @@ import Button from 'svve11/Button.svelte';
 
 2. To supply the button with its contents, an options object is passed as a prop to the button. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 5 properties.
 
-   - (4) **required** props:
+   - (3) **required** props:
 
-     - **`id`** (_`string`_): sets the `id` attribute of the button component.
      - **`label`** (_`string`_): sets the `aria-label` attribute.
      - **`content`** (_`string`_): sets the text that is displayed inside the button component.
      - **`handleClick`** (_`function`_): defines the action or event to be triggered when the button is clicked.
 
-   - (1) _optional_ prop:
+   - (2) _optional_ props:
 
+     - **`id`** (_`string`_): sets the `id` attribute of the button component.
      - **`style`** (_`string`_): sets the styles of the button component
 
 #### Example Options Object
@@ -307,9 +307,8 @@ import NavBar from 'svve11/NavBar.svelte';
 
 2. To supply the nav bar with its contents, an options object is passed as a prop to the nav bar. This object can be created in the script section of the .svelte file or imported in from another location. The options object has 6 properties.
 
-   - (5) **required** props:
+   - (4) **required** props:
 
-     - **`id`** (_`string`_): This will be the id attribute you reference for styling inside your navbar component. An example would be “navbar”.
      - **`contentInfo`** (an _`array`_ of _`objects`_): It contains all the content to be displayed in your nav bar. Each object in the array must contain:
        - **`subheading`** (_`string`_): Sets the subheading for this section of the nav bar.
        - **`options`**(an _`array`_ of _`strings`_): Contains strings in the order you want them to appear in the nav bar section.
@@ -317,6 +316,7 @@ import NavBar from 'svve11/NavBar.svelte';
 
    - (5) _optional_ props:
 
+     - **`id`** (_`string`_): This will be the id attribute you reference for styling inside your navbar component. An example would be “navbar”.
      - **`header`** (_`string`_): It contains the heading for the entire nav bar.
      - **`imgSrc`** (_`string`_): It contains the file path for an image you want included at the top of the nav bar, such as a company logo.
      - **`imgClass`** (_`string`_): This will set the class name for the imgSrc for styling purposes.
@@ -336,23 +336,13 @@ const navOptions = {
 		},
 		{
 			subheading: 'Components',
-			options: [
-				'Accordion',
-				'Button',
-				'Checkbox',
-				'Meter',
-				'Nav Bar',
-				'Radio Button',
-				'Table',
-				'Text Input'
-			],
+			options: ['Accordion', 'Button', 'Checkbox', 'Meter', 'Nav Bar', 'Table', 'Text Input'],
 			links: [
 				'/pages/accordion',
 				'/pages/button',
 				'/pages/checkbox',
 				'/pages/meter',
 				'/pages/navbar',
-				'/pages/radiobutton',
 				'/pages/table',
 				'/pages/textinput'
 			]

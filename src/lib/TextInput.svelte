@@ -6,11 +6,11 @@
 		id: string | null;
 		type: InputTypes | null;
 
-		max?: string | null;
-		min?: string | null;
-		maxlength?: string | null;
-		size?: string | null;
-		step?: string | null;
+		max?: number | null;
+		min?: number | null;
+		maxlength?: number | null;
+		size?: number | null;
+		step?: number | null;
 		inputStyle?: string | null;
 		labelStyle?: string | null;
 
@@ -39,21 +39,7 @@
 		label: null,
 		placeholder: null,
 		id: null,
-		type: null,
-
-		min: null,
-		max: null,
-		maxlength: null,
-		size: null,
-		step: null,
-		inputStyle: null,
-		labelStyle: null,
-
-		autocomplete: false,
-		disabled: false,
-		multiple: false,
-		readonly: false,
-		required: false
+		type: null
 	};
 
 	let {
@@ -74,29 +60,19 @@
 		readonly,
 		required
 	} = options;
-
-	// //required attributes
-	// export let label: string = '';
-	// export let placeholder: string = '';
-	// export let id: string = '';
-	// export let type: string = '';
-
-	// //optional attributes
-	// export let max: string = '';
-	// export let min: string = '';
-	// export let maxlength: string = '';
-	// export let size: string = '';
-	// export let step: string = '';
-	// export let inputStyle: string = '';
-	// export let labelStyle: string = '';
-
-	// export let autocomplete: boolean = false;
-	// export let disabled: boolean = false;
-	// export let multiple: boolean = false;
-	// export let readonly: boolean = false;
-	// export let required: boolean = false;
 </script>
 
+<!-- @component
+Props are passed in through the options object which contains the following properties:
+```tsx
+label: string (required)
+placeholder: string (required)
+id: string (required)
+type: string (required)
+inputStyle: string (optional)
+labelStyle: string (optional)
+```
+-->
 <!-- ************************* HTML ************************* -->
 <label for={id} style={labelStyle} class="sv-text-input-label">
 	{label}
@@ -121,7 +97,4 @@
 
 <!-- ************************* STYLES ************************* -->
 <style>
-	/*
-    Style these however we'd like later
-  */
 </style>

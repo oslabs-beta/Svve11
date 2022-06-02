@@ -4,7 +4,6 @@
 	export let name: string = '';
 	export let GitHubLink: string = '';
 	export let LinkedInLink: string = '';
-	
 </script>
 
 <section class="team-member">
@@ -12,10 +11,10 @@
 	<h2 class="name">{name}</h2>
 	<h3 class="role">Software Engineer</h3>
 	<section class="team-member-info">
-		<a href={GitHubLink}>
+		<a href={GitHubLink} target="_blank">
 			<img src={GitHub} alt="GitHub Logo" class="github-logo" />
 		</a>
-		<a href={LinkedInLink}>
+		<a href={LinkedInLink} target="_blank">
 			<img src={LinkedIn} alt="LinkedIn Logo" class="linkedin-logo" />
 		</a>
 		<!-- {GitHubLink} -->
@@ -32,14 +31,14 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: .5rem;
+		gap: 0.5rem;
 		.name {
 			font-size: 2rem;
 			margin-bottom: 0;
 		}
 		.role {
 			font-size: 1.4rem;
-			margin:0;
+			margin: 0;
 			margin-bottom: 1rem;
 		}
 		.team-member-info {

@@ -10,8 +10,8 @@
 	import FirefoxLogo from '../images/tech-icons/Firefox_logo_2019.svg';
 	import EdgeLogo from '../images/tech-icons/Microsoft_Edge_logo_(2019).svg';
 	import ImageLink from '../pending/ImageLink.svelte';
-  import RadioButton from '../pending/RadioButton.svelte';
-import Radiobutton from './pages/radiobutton.svelte';
+	import RadioButton from '../pending/RadioButton.svelte';
+	import Radiobutton from './pages/radiobutton.svelte';
 
 	// setting ImageLink props for each logo and its corresponding link
 	const imgLinkOptions = {
@@ -75,7 +75,7 @@ import Radiobutton from './pages/radiobutton.svelte';
 			title: 'Mozilla Firefox website',
 			alt: 'Mozilla Firefox logo',
 			imgClass: 'tech-icon',
-			postText: 'Safari'
+			postText: 'Firefox'
 		},
 		Edge: {
 			href: 'https://www.microsoft.com/en-us/edge',
@@ -119,7 +119,7 @@ import Radiobutton from './pages/radiobutton.svelte';
 			<section class="content-section">
 				<p>For npm, run the following in your command line</p>
 				<pre><code class="code-block">  
-          npm install 'svve11'
+npm install 'svve11'
         </code></pre>
 			</section>
 
