@@ -7,6 +7,7 @@
     src: string;
     title: string;
     alt: string;
+    linkRel?: string;
     newTab?: boolean;
     imgId?: string;
     imgClass?: string;
