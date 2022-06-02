@@ -122,38 +122,44 @@ npm install svve11
         </code></pre>
 			</section>
 
-			<legend />
+			<legend>Testing Suite</legend>
 			<h2>Fully tested, ready-to-use</h2>
-			<section class="content-section">
+			<section id="home-testing-info" class="content-section">
 				<p>
 					All of our components have been fully tested against the <a
 						target="_blank"
 						href="https://www.w3.org/WAI/ARIA/apg/">WAI-ARIA Authoring Guides</a
 					> with our testing suite:
 				</p>
-				<ul id="testing-list">
-					<li>
-						Unit-testing of individual components with
-						<ImageLink options={imgLinkOptions.jest} />
-					</li>
-					<li>Screen readers:</li>
-					<ul>
-						<li><ImageLink options={imgLinkOptions.NVDA} /></li>
-						<li><ImageLink options={imgLinkOptions.VoiceOver} /></li>
-						<li><ImageLink options={imgLinkOptions.JAWS} /></li>
-					</ul>
-					<li>Browsers:</li>
-					<ul>
-						<li><ImageLink options={imgLinkOptions.Chrome} /></li>
-						<li><ImageLink options={imgLinkOptions.Safari} /></li>
-						<li><ImageLink options={imgLinkOptions.Firefox} /></li>
-						<li><ImageLink options={imgLinkOptions.Edge} /></li>
-					</ul>
-				</ul>
+				<section id="testing-suite">
+					<section>
+						<span class="bold">Unit-Testing:</span>
+						<ul><li><ImageLink options={imgLinkOptions.jest} /></li></ul>
+					</section>
+					<section>
+						<span class="bold">Browsers:</span>
+						<ul>
+							<li><ImageLink options={imgLinkOptions.Chrome} /></li>
+							<li><ImageLink options={imgLinkOptions.Safari} /></li>
+							<li><ImageLink options={imgLinkOptions.Firefox} /></li>
+							<li><ImageLink options={imgLinkOptions.Edge} /></li>
+						</ul>
+					</section>
+					<section>
+						<span class="bold">Screen Readers:</span>
+						<ul>
+							<li><ImageLink options={imgLinkOptions.NVDA} /></li>
+							<li><ImageLink options={imgLinkOptions.VoiceOver} /></li>
+							<li><ImageLink options={imgLinkOptions.JAWS} /></li>
+						</ul>
+					</section>
+				</section>	
+		
 			</section>
 		</fieldset>
 	</section>
 </article>
+			
 
 <style lang="scss">
 	@import '../stylesheets/variables';

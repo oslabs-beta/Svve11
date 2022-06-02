@@ -42,7 +42,7 @@
     id={imgId ? imgId : ''} 
     class={imgClass ? imgClass + ' sv-imagelink-link' : 'sv-imagelink-link'}
     {src} {title} {alt} 
-  />
+  /><br>
   {#if postText}
     {postText}
   {/if}

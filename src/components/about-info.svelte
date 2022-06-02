@@ -45,6 +45,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			text-align: center;
 			gap: 1em;
 			a img {
 				height: 3em;
