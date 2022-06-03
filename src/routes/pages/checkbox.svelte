@@ -4,7 +4,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Checkbox';
-	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Checkbox.svelte';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/blob/main/package/Checkbox.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#checkbox';
 
 	const tableOptions = {

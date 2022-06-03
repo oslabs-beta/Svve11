@@ -4,7 +4,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Text Input';
-	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/TextInput.svelte';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/blob/main/package/TextInput.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#combobox';
 
 	const tableOptions = {

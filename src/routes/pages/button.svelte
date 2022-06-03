@@ -3,7 +3,7 @@
 	import Table from '$lib/Table.svelte';
 	import tableStyles from './tableStyles';
 	const componentName = 'Button';
-	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Button.svelte';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/blob/main/package/Button.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#button';
 
 	const tableOptions = {
