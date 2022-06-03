@@ -6,7 +6,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Meter';
-	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Meter.svelte';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/blob/main/package/Meter.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#meter';
 
 	let changingValue: number;

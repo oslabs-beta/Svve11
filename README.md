@@ -9,7 +9,7 @@
   <img src="https://travis-ci.org/boennemann/badges.svg?branch=master" /> 
 </p>
 
-<h1 align="center"> A Svelte Accessibility Component Library </h2>
+<h1 align="center"> A Svelte Accessibility-First Component Library </h2>
 
 ## Table of Contents
 

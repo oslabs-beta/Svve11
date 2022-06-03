@@ -3,7 +3,7 @@
 	import tableStyles from './tableStyles';
 
 	const componentName = 'Table';
-	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/package/Table.svelte';
+	const githubSourceLink = 'https://github.com/oslabs-beta/Svve11/blob/main/package/Table.svelte';
 	const WAIARIApracticesLink = 'https://w3c.github.io/aria-practices/#table';
 
 	const tableOptions = {
