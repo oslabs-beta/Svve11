@@ -33,7 +33,7 @@
 
 Welcome to Svve11! We bring to your Svelte applications a **fully tested**, **ready-to-use** library of components with an accessibility-first design philosophy!
 
-For easier readability of documentation, check out our website [http://www.svve11.io/](http://www.svve11.io/)
+For easier readability of documentation, check out our website [https://svve11-five.vercel.app](https://svve11-five.vercel.app)
 
 ## Features
 
